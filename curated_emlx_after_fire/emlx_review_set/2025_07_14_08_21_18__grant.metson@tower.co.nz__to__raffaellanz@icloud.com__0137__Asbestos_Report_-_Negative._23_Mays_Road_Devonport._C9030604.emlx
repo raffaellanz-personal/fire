@@ -1,0 +1,1271 @@
+61513     
+Return-path: <Grant.Metson@tower.co.nz>
+Original-recipient: rfc822;raffaellanz@icloud.com
+Received: from p00-icloudmta-smtpin-us-west-3a-10-percent-5 by p136-mailgateway-smtp-7cbd6f5bd6-kvf5s (mailgateway 2526B49)
+	with SMTP id 6e73b52b-0df2-41b3-80aa-8da53affcb98 
+	for <raffaellanz@icloud.com>; Mon, 14 Jul 2025 08:21:32 GMT
+X-Apple-MoveToFolder: INBOX 
+X-Apple-Action: MOVE_TO_FOLDER/INBOX
+X-Apple-UUID: 6e73b52b-0df2-41b3-80aa-8da53affcb98
+Received: from mx07-0055a601.pphosted.com (mx07-0055a601.pphosted.com [185.132.183.220])
+	by p00-icloudmta-smtpin-us-west-3a-10-percent-5.p00-icloudmta-smtpin-vip.icloud-mail-production.svc.kube.us-west-3a.k8s.cloud.apple.com (Postfix) with ESMTPS id 6FF9FC000CA
+	for <raffaellanz@icloud.com>; Mon, 14 Jul 2025 08:21:26 +0000 (UTC)
+X-ICL-Info: GAtbRVYDBVFFSlVHSgQCUFUKE0oWX1gHVQoPB0UBDldbSFVFVgEOUVtLVEdYVVJfMgsHGQweewcBCgkZOERZFRALSBQXHlgYVR8CSgxfQQcHVwUYVl5MQgcaWwUZVlADEBUKFhZKdgsWFQkCHB5VDRhZDhIUXwsPDUlRWkgAA1cUT1ZGVkBGChoKEhIcHlUNGFkWAwoNWxpFTktHSAUDA0NJV1kIQF4NBg0DE1ZTWQ9VHQJKDF9BBwdXBRhWXkxCGBACSkR9c1IlS15FNXICVkVKU0RAAXRSNkggQTkHAlRGSVVPSAlyVUBNJzc1dQYyR0FUOjoEAlJGVyciK2AEWkdXNiU3dBgtIC0qODd7GCE6NFg=
+X-ICL-Score: 2.33303302442
+Authentication-Results: bimi.icloud.com; bimi=none
+X-ARC-Info: policy=fail; arc=fail; id=mx.microsoft.com 1
+Authentication-Results: arc.icloud.com; arc=fail
+Authentication-Results: dmarc.icloud.com; dmarc=pass header.from=tower.co.nz
+X-DMARC-Policy: v=DMARC1; p=reject; rua=mailto:dmarc_rua@emaildefense.proofpoint.com,mailto:dmarc_agg@vali.email,mailto:dmarc-reports@tower.co.nz; ruf=mailto:dmarc-reports@tower.co.nz,mailto:dmarc_ruf@emaildefense.proofpoint.com; fo=1; ri=3600
+X-DMARC-Info: pass=pass; dmarc-policy=reject; s=r1; d=r1; pdomain=tower.co.nz
+Authentication-Results: dkim-verifier.icloud.com;
+	dkim=pass (2048-bit key) header.d=tower.co.nz header.i=@tower.co.nz header.b=hzNvA1K4
+Authentication-Results: dkim-verifier.icloud.com;
+	dkim=fail reason="signature verification failed - bh mismatch" (1024-bit key) header.d=tower.co.nz header.i=@tower.co.nz header.b=mJHxJq/p
+Authentication-Results: spf.icloud.com; spf=pass (spf.icloud.com: domain of Grant.Metson@tower.co.nz designates 185.132.183.220 as permitted sender) smtp.mailfrom=Grant.Metson@tower.co.nz
+Received-SPF: pass (spf.icloud.com: domain of Grant.Metson@tower.co.nz designates 185.132.183.220 as permitted sender) receiver=spf.icloud.com; client-ip=185.132.183.220; helo=mx07-0055a601.pphosted.com; envelope-from=Grant.Metson@tower.co.nz
+Received: from pps.filterd (m0210313.ppops.net [127.0.0.1])
+	by mx08-0055a601.pphosted.com (8.18.1.8/8.18.1.8) with ESMTP id 56E8JdRe2379044
+	for <raffaellanz@icloud.com>; Mon, 14 Jul 2025 20:21:25 +1200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tower.co.nz; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=towerpp; bh=WuLaCszm1seswUgXMbpTZY3ssR
+	R2kyLp/eUWmx2xSoE=; b=hzNvA1K4DAZrfs+PjzQ2T5VcDVNTTgz0i7/j7V11ho
+	O292hIlJ3kcRatB30QTIMfk3En8+jAS/1FxYD3/ihoiYt7yftZJhi/BjTm7ERPo8
+	uihzKx5XBTQz+oiSAeIN8Lz8qvbK9Yf55Z4M0cXVmnA6qyEcuYvw0DwIvb8u4k03
+	FEguuUUab4m6ADdSUfnouvxq2VDPIdstUKPyhEAjHC08mafEx5/3VElEyZlKZJb0
+	do3Ae04cqMhO/jcyskEN7DG/x9sOKA2rI3tFQBebllyNvzHkDevF2s0BAdev0h1M
+	HTfWyg1rxR56fBkHuUyJvMWi/ztHq18Tup4udCpjFGzQ==
+Received: from meupr01cu001.outbound.protection.outlook.com (mail-australiasoutheastazon11020102.outbound.protection.outlook.com [52.101.152.102])
+	by mx08-0055a601.pphosted.com (PPS) with ESMTPS id 47u8fwsa6s-1
+	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT)
+	for <raffaellanz@icloud.com>; Mon, 14 Jul 2025 20:21:24 +1200 (NZT)
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=CUtWtaSetMD/KIDMkOYqIvOEPMSgXhWQv4yAXFWPZ3lkp9C2flil9zRQeKVqRx2S8KKIyiZ7zRAFrwGjd4Bx0fWSryYd5ZPS+B0xpYxrj0fJo5D3hg4b68t7eXjGNmd7QTG7zBSA6OiDWBQzDkovmf0Za3PAlRPbPR9CAfN6B7NPaOD80+09LiYetHCHa7alLzB1Xn2eCIaPwd0QLdnc1ySycokHkWBqgciWUAI8yiM+lr4uzhOKQilR5GFSiYZ515Lx2OAvEjg3rR17yMblh1Zv4BoJ0klhgZU37x3II1lMDWUoaGflgBxo9OwqqTOyBETfRgoCDFeMlid0rCI5Ng==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=CiWUCNxMlUryZxmjwFm8UuPfBNEak/baomYo1dvROIU=;
+ b=h/UgiKlleMt3/M0JJUeQMDFI+h4uEpiEv0pWcqIx0pEvM5E/BnqIhAZkB19YT+uVIo7MTdB6gRvcPVSWSls6JkpA0+5F2ypv7ZL9b4Gb2/4bjBKRW/UOPNFcLhCE9iL9BhO4cDO9VzCzr361O2uSbzzlyeb0aSqp/JpGDeblD1xOKs5A3OzFh+WbC3Z1B7ZTq8NuQN/0Shcro/ekbDHNZB/0XI5iYwifH87rR1AhbHDSduLHhfg0cRfNNvsYKQwk3BU9lsSFQneaYjAN8vJPoFOnzdzQmiT2JR8nmeKM19wPMpweEAycFOuHTq+TY3tlrkeuhChRc6ttocpw/xn0fw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=tower.co.nz; dmarc=pass action=none header.from=tower.co.nz;
+ dkim=pass header.d=tower.co.nz; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tower.co.nz;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=CiWUCNxMlUryZxmjwFm8UuPfBNEak/baomYo1dvROIU=;
+ b=mJHxJq/pMKb13O+WY7tp8k2gqov1YVvMqZn6gMVoRLcK6owLQtkokWJYnU3SN2uH1fFLF0Xa4o+Ew6N7a+CNQfUZOXIkykkL/tmYy3YjR/VYayF1ph1qexd3SjV9FJCLJYdUzaKClPPp0YgxTxGOif+7wgsOUvdWs9b2U+RWawM=
+Received: from ME0P282MB4403.AUSP282.PROD.OUTLOOK.COM (2603:10c6:220:221::13)
+ by SY2PPFC74E65417.AUSP282.PROD.OUTLOOK.COM (2603:10c6:18::231) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8922.32; Mon, 14 Jul
+ 2025 08:21:18 +0000
+Received: from ME0P282MB4403.AUSP282.PROD.OUTLOOK.COM
+ ([fe80::faed:ca18:e90b:2b89]) by ME0P282MB4403.AUSP282.PROD.OUTLOOK.COM
+ ([fe80::faed:ca18:e90b:2b89%3]) with mapi id 15.20.8922.028; Mon, 14 Jul 2025
+ 08:21:18 +0000
+From: Grant Metson <Grant.Metson@tower.co.nz>
+To: Raffaella del Prete <raffaellanz@icloud.com>
+CC: Chris Cornwall <Chris.Cornwall@tower.co.nz>, Claims <Claims@tower.co.nz>
+Subject: RE: Asbestos Report - Negative. 23 Mays Road, Devonport. C90306048
+Thread-Topic: Asbestos Report - Negative. 23 Mays Road, Devonport. C90306048
+Thread-Index: Adv0bmSCcXu6uNB2T4KhtJOInrH+jAAFMkQAAAU7LXA=
+Date: Mon, 14 Jul 2025 08:21:18 +0000
+Message-ID:
+ <ME0P282MB44035381B0C1F6A746303809D754A@ME0P282MB4403.AUSP282.PROD.OUTLOOK.COM>
+References:
+ <ME0P282MB44034252949BFAA931D0758ED754A@ME0P282MB4403.AUSP282.PROD.OUTLOOK.COM>
+ <3FEF0440-D99E-46C0-96C6-1E619B3F4F0D@icloud.com>
+In-Reply-To: <3FEF0440-D99E-46C0-96C6-1E619B3F4F0D@icloud.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: yes
+X-MS-TNEF-Correlator:
+msip_labels:
+ MSIP_Label_20c4a984-2032-481d-a198-97bb26dab3ea_ActionId=28a261b9-8318-4e11-b45c-2b5f4b153135;MSIP_Label_20c4a984-2032-481d-a198-97bb26dab3ea_ContentBits=0;MSIP_Label_20c4a984-2032-481d-a198-97bb26dab3ea_Enabled=true;MSIP_Label_20c4a984-2032-481d-a198-97bb26dab3ea_Method=Privileged;MSIP_Label_20c4a984-2032-481d-a198-97bb26dab3ea_Name=Standard;MSIP_Label_20c4a984-2032-481d-a198-97bb26dab3ea_SetDate=2025-07-14T08:21:10Z;MSIP_Label_20c4a984-2032-481d-a198-97bb26dab3ea_SiteId=ff85220d-ac35-48f0-b12a-0ca11f170147;MSIP_Label_20c4a984-2032-481d-a198-97bb26dab3ea_Tag=10,
+ 0, 1, 1;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: ME0P282MB4403:EE_|SY2PPFC74E65417:EE_
+x-ms-office365-filtering-correlation-id: b42889ac-3209-40b2-f4c5-08ddc2af68ba
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam:
+ BCL:0;ARA:13230040|366016|1800799024|376014|8096899003|38070700018|13003099007|4013099003|4053099003|7053199007;
+x-microsoft-antispam-message-info:
+ =?utf-8?B?TDArY2dsVWwxdkdQTnZDby9RV0poaGhpeXRQRHF5K0dqNkRlaWtQWXQreStM?=
+ =?utf-8?B?YnkwOS9Bd2pwa3l0bEROcWY2emtFTlBoTGpTSHBHdXNzUi9RVllqRlVVVzFD?=
+ =?utf-8?B?cnowdXNtaWJOZG9OMThzQ3FzcUNSWlFna1dWY25UQnFQNFVmUlVEamlRZG9L?=
+ =?utf-8?B?L1J6dVRpeWx4Rjc5UzNMWG5CdUVFd3BtdlVSSlo5NGljTDdseUtSOVBBS09V?=
+ =?utf-8?B?SEN3L21ITFR1OE5iNlBXZXBXN2t3cVYzMzc0aVJRK0xyNTRjMXVqakVWc2F1?=
+ =?utf-8?B?K00vNy9vaytaQVpxVW53V2psZENoVjBqamwxNkJYNEN3ZXRLcTJ1UUhPNXN5?=
+ =?utf-8?B?dUhLLzVHbWVWVmJNTmFjRFZzZ0J5TGxldnVqSjk5RFRmK3drWHZJWGI1blgx?=
+ =?utf-8?B?Y3BOM0xqbnYvaEIvMW9TWG1GZktSSkZUUHRzRTJYcnZib3d0dXRXUWZ5UFpG?=
+ =?utf-8?B?UTMxcXBybWM4TVdJS1dSS1BnU3V1bEFjbTdVK01mQVJsRkRlbGd1NWdTM1hY?=
+ =?utf-8?B?UVhHM3EzbTZIR0FRcjQwR0RXOEJWL25XdmIvT2RGODFFcDNtUWNOakY5aUFn?=
+ =?utf-8?B?aWVvaE1WbVpBajIyRnVtWnRsYk0yQ1pJNzNXU2lFamlqSVcxZk44STBDajVt?=
+ =?utf-8?B?M3A3QWp3OTFTZHlDSnJpbUwrV0RXTGFMYTR6UEsxV1RPSmVmUGhSYjBPcGor?=
+ =?utf-8?B?TUd3MUZXakdEK01QbzAxeHJraWpmdVltYmV0bHBNdFk2Y3lBRkkyUGJpNDNn?=
+ =?utf-8?B?VHI2MjVNMmJSaEhUVC9UWXpNMUxFTEdEc3lucnF6MVBlUFlsampIaTljc01M?=
+ =?utf-8?B?bm1OU0RST2FhSUhaNlpCcEErK2RETHFxblh5L3RXbll0N0EwcHVSdDl2RVVj?=
+ =?utf-8?B?UUZiV0pIaXk2aXh2OG1GLzYzU3RqRXRSNlhWVGVQclBGZWtTV09nYnEwcVVl?=
+ =?utf-8?B?L0FmVkxOMjlNOU1ma05MVEtkK2FmYmlQUVgyNlJvM2g1R0QwRXNEVElHNVZB?=
+ =?utf-8?B?ZnFud0R0SERHOTlTT3oxRnhzSEs1SXFSOGc4WGpDaG9Tc3pqcVM0aDVGQzNP?=
+ =?utf-8?B?QS9tVkY3Sm9aeW5kSHdmSElzMVZ5WTVZUmpnQlJ2RElMbWdTeDNCSFpwUFUy?=
+ =?utf-8?B?SU8xNWJNcVZNQjZpMW5PS01VQzUva2hHeHc5ZHI3ejVmeklvYzM0b3RIN3V0?=
+ =?utf-8?B?SVc5SkJGSFY0T2hNanc5eXBzTkxUTHowSEVpWldhMEd3bE9ReDFwVHdNM2Vt?=
+ =?utf-8?B?RXhPRHF5QlpWOUtPUzY4U0VWZGJPc1VQNVhycFZVWTdhV3dpTUFpYzRINWNo?=
+ =?utf-8?B?bHhGZUdsSXhPWFZQUHkza2doaTFSbFJWa0JVNE1mMHhXM3lRaU8rR1FJdjZx?=
+ =?utf-8?B?cmxsa2tEb1dHaHpSdktYUTgwSUVZWnowamRxSm5TRDFqOTZ2VGIxOVZFa0hD?=
+ =?utf-8?B?NnFEODhiU3ozelhwNFBPS3AyYW90cEdXMFV2T3RjM0twM3dHazJxVlRNRGdX?=
+ =?utf-8?B?NnFsd0R4bmhFYnd3K3YwY0p1akVXaUVPUkl0eGRhR2NuNHRFeHV0alVETWc3?=
+ =?utf-8?B?U3ppRGxtd1Z5M3JLWlJncWY2eE9Ebmd2Z2h4azZKTjJEZmw3RWF5TGVBQkVw?=
+ =?utf-8?B?QjNJQlM3L0lWbU5SZzVKUUtlUW5talh3WkgwdEJhQnZIUWZHTzdUMTVHWVY3?=
+ =?utf-8?B?K1dQbFZ6SjBCWWV6ekZQK2JZMmNBQ2lSM2pmMnNzdDdUWG5HNzM4UEVlMWpC?=
+ =?utf-8?B?amN6L3dSQ0ZhejhXc2RrckJiL2luOGJ0a2ZYa2ZOWTF3V3FDS25XN1ZZUHl2?=
+ =?utf-8?B?SW9wc1IxaHIxcXZNY3A2dTFtNWFadGlkKzZzUm44cDM4RUI3SnVFQ0c3dUhQ?=
+ =?utf-8?B?VGlVMEFoa09RMEJBaVlXWVhtWnpKRjNJL0xUcWpOVjFhRzA3RE5wSElkVkxz?=
+ =?utf-8?Q?71gKhfndHcJkxSo9jbbCkrERjqxvA9l7?=
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:ME0P282MB4403.AUSP282.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(376014)(8096899003)(38070700018)(13003099007)(4013099003)(4053099003)(7053199007);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0:
+ =?utf-8?B?bHgzMDBqL2tWd0t6R1ZTS2NYdk5OQXNHRFcvS0xHTzMwTDJKZlhGcDUzZWdB?=
+ =?utf-8?B?Z1dkczNVTUlpSTRpYi9ENDhiK2lDTDdxZ3ZsWW5SNllEM2pKVjFnMlV5eXVY?=
+ =?utf-8?B?UlhJZG9hWWZORy9CWWdySENEV0Z6MVFEYmlPcytNTDZDalgrV0l5QnozR3Qz?=
+ =?utf-8?B?Sy9BSlUvZVVjamVIQWlwME8xMWpjMHpOS3FzWGpxZzRnZ1FLTVFCY1d5Njdq?=
+ =?utf-8?B?VFJPdHpuWndBTGZ3NG9zQ0lBSStVQlB4Rzd3dG0wM1NFK1Y3S1N2R0VNeWc4?=
+ =?utf-8?B?RzlLR3o3aGc4VCt0cURsUy9hTVNva1pCRmcrZWxUN29SNnI5K2EvYUNSNEZL?=
+ =?utf-8?B?SkY2bnhadnErMmltN2xYWktpeVcvLzFTbldZYmxPMTFyM1ZZNzRxZENSUjNw?=
+ =?utf-8?B?SHV6Mlg4YTFrL3hScGFuVTFNTnFJN1BWR3puSVMzSE4vWjl1Y3BrOHBqQkFR?=
+ =?utf-8?B?TmIza1VGdTJtb1VRdFQ1UWw5L3FnU3c4UWlVZWllb2h4S1ZobEtCcVVwcFpE?=
+ =?utf-8?B?dG1nV3FMK1U3QnQxVUljUEs4UFZVc082bDR2L0wyNlIzdDZ0eXpWb2FDQU1S?=
+ =?utf-8?B?Um1GR1lQSk5LTCtUWUpzdUFXSTk5bHJ1cTgzbllTMTFZSmpTWnAzZEdxYUU2?=
+ =?utf-8?B?WkpWYWR3VEM0QmdmaXlwVGR3ZExKQm01QSt3aTZxaHdWY2NSUHZUVEFYUkoy?=
+ =?utf-8?B?YUZFVlZYcUJXRzZIZ3pnRDh0SXlCZ3lXY1FMSTFFcTdGcHJaYSt2MDVuOExs?=
+ =?utf-8?B?UURCNWhoaDRNL0pCRi8xdkRvelRCTUVXNlU2NllZSzhHUjg5Qzh1R1p3TTFT?=
+ =?utf-8?B?QTcxZWp1T29reWZhSGlHUzhpM0FjdGNjUTZQalZURkErMm83bUkwcjJEVkNO?=
+ =?utf-8?B?clhVdU45L3d4Z0VQb3lzbExYci9rWnRBSVZWNEVqb0tSNjNMVkhMWGNYRmRh?=
+ =?utf-8?B?ejZCVWE3elZqWEJ6ZnN0WnFMM1RqMWtldnRweU1JTGVQOUp6OVRCMGlIQzMx?=
+ =?utf-8?B?QkVpb3hDSzRtYTRxNjdDUUM0YTRFaTMrWFQ4TEJwREtOYi9JcVA0MitEM0M2?=
+ =?utf-8?B?bTlrWkRkN1VRcDJMMnZGQWNrY0paNFArR21iWlZYcy9xeXFsUzNEVmd3Zy96?=
+ =?utf-8?B?amc5VzZSc1JEVnREL0JLcDlwQVc2YmFIYWtPcnpuclB2bWNrbUkwVWtMUnBv?=
+ =?utf-8?B?NjNrK2NpR1VoZlNnWEZ4TXRCRGg1VGpkUlVkaTdMYS9iTVhBTVNRazV0TU9V?=
+ =?utf-8?B?eWlSRjBZVDhnOVB3NW0yMzh6cHRsU2dVam8vMEMwKysvTTJOY2RxbzY4NXZJ?=
+ =?utf-8?B?cWJQdHN6NHo2cVF0Rk9JKzRDckdJcjR1MVQwQytvRlB2ZnE2RWZ1eGVuTS8r?=
+ =?utf-8?B?M01jUTYxTmRSOU8vWHZjRUt1OCszK2MxRW9haGhEaEJub3hxVGUwN0ZPcWJS?=
+ =?utf-8?B?UGFkQnR4UThSWHprM0JaYm51M1FYQTIzL1VBY2wyUmRZMVFaUTNWZlRnY2l0?=
+ =?utf-8?B?Y2lKclEyQ2dHcnlvSTg4OFB3L1NYeU11YTVjWkY0L1NrWTNFMHJqNnROenBu?=
+ =?utf-8?B?b1pTM0JpZVpKVlhpN05ONERHUGNaTFNYamN3Z3dXeDVrUUNyWU54WmV5TmtM?=
+ =?utf-8?B?MEpHV2IzTmEvZGUxZ0N4NzNqcmdpU25qaTdaVjJWc3hRTVcyeWZNMUpjanZQ?=
+ =?utf-8?B?UStCM1Z6ME02c2s0T2hUQWhnSG9WbnZhWHVrR3pyd3FTMzBkT0tBSUo4Vjhv?=
+ =?utf-8?B?T3hmNU94M2lENEVUUEtCYkJOQll5bkZRdkk0aXFsb1NQTjNmc0UrdDdDazRW?=
+ =?utf-8?B?WHY3Nm4rcTNxQWtaRlR5Q2dOMVlLQUxVRWQ1OC9RTEJDR1VWS3ZRb0RLWUhB?=
+ =?utf-8?B?QXJzVjUzdFkvTWJwS1JVVnJQYkk3aHhYOTY3cVkvR2VaWkJ0Q3I3MjgzUVhS?=
+ =?utf-8?B?Z2JJL083REJrN1A4a0RicVBmSHAyY0hBKzZOWWpma0xtVE16TTdraFEyKzd1?=
+ =?utf-8?B?NVRxeWJEcDNFRjRmdVF0b2VFQ2FReUJOa3hYOG4zckVGeVU5K3A4aFNJV1pZ?=
+ =?utf-8?B?QXIvUzRwc3V0Z2xnYkplTmNNNFNjZHZpeXBORUJQVlhqaXNoY2FmZmN0enJa?=
+ =?utf-8?Q?Y7mLbItD/PZDmO5VIs5Nr/v2X?=
+Content-Type: multipart/related;
+	boundary="_005_ME0P282MB44035381B0C1F6A746303809D754AME0P282MB4403AUSP_";
+	type="multipart/alternative"
+MIME-Version: 1.0
+X-OriginatorOrg: tower.co.nz
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: ME0P282MB4403.AUSP282.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-Network-Message-Id: b42889ac-3209-40b2-f4c5-08ddc2af68ba
+X-MS-Exchange-CrossTenant-originalarrivaltime: 14 Jul 2025 08:21:18.8369
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: ff85220d-ac35-48f0-b12a-0ca11f170147
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: k1TG2/A++Lvh6R3QxJNRuQk7JZonyCPij/11l/TuG/4KBN027/ckQVYvxifr7Bc25isL5FjLkonHpadX7w45TQQLwA7m8lHHHiqP/jzHJnw=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SY2PPFC74E65417
+X-MANTSH: 1TFkXGxoaHxEKWUQXbUtdS05ZYmFwQlIRCllNF25PRkNcT1gRCl9ZFxkfGBEKX00
+ XZEVETxEKWUkXHR9xGwYbHxp3BhMYBhkaQhseBhoGEh4GGRpxGxAadwYaBhsaBhkaBhoGGgYac
+ RoQGncGGhEKWV4XbGx5EQpDThdHYx1LRXlaZXpSaXtrfVpNSR4cf0BMaWNrGkJhH10fbhEKWFw
+ XGQQaBB8bBRsaGgQSGAQeGAQYExAbHhofGhEKXlkXTFtHYUARCk1cFxscEhEKTFoXaGtra2sRC
+ kxGF29ra2tiTWsRCkNaFxsSHwQbGRgEGxIZBBgYGhEKQl4XGxEKREkXGBEKQlwXGxEKXk4XGxE
+ KQksXYG0fGHN6eWx6T1IRCkJJF2BtHxhzenlsek9SEQpCRRdiRBllYEhNbBxBHxEKQk4XYG0fG
+ HN6eWx6T1IRCkJMF2RJGHtFGxlvTGJ/EQpCbBdtWAVDQ3lsYRocTxEKQkAXaFIYXWEFUhljcE4
+ RCkJYF2JGaUxJE1tJWHplEQpNXhcbEQpaWBcYEQpwZxd6bRhEexxpQkBIQRAZGhEKcGgXbQVlf
+ EhQX1hnbH0QGRoRCnBoF2xGQX9hXBltW2dbEBkaEQpwaBdhTnISfwFGQ2YTHxAZGhEKcGgXZ0w
+ TSF5Ye0FkGEgQGRoRCnBoF2tpX1pQYFtrY2xAEBkaEQpwaBdkUFJwf195QGNeRhAZGhEKcGgXZ
+ kl9TmZweERCR3gQGRoRCnBoF2ZvUF95WgFjW3oYEBkaEQpwfxdhemQfexxeYgF5RRAZGhEKcF8
+ XbW5iaxJDW2VaaEwQGxIRCnB9F2hbcBltaHsFBWlJEBsSEQpwZxdhHX9QcngYZBhZTBAZGhEKc
+ GcXZmRkTFpHGkhOX3sQGRoRCnBnF21acAVeSGVcRmt5EB4SEQpwfxdhZm9bGmdkQkgdWxAYGRE
+ KcF8XZ0BJfRJ8YmNATgEQGBIRCnB9F2wSfW5lEmdoU3tsEBkaEQpwfRdoW3AZbWh7BQVpSRAbE
+ hEKcGwXZn9tRH0Sc2Jfex8QGRoRCnBMF2xcWAV9fFlmeXsYEBkaEQpwQxdtS3NwfnhuTUxHGRA
+ ZGhEKbX4XGxEKWE0XSxE=
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzE0MDA0OCBTYWx0ZWRfXxmlScWf/gxpO
+ 4dSEpwj5bGRsabJQRssOQ+88IyCEKcC21Ij9Ejx83h0s9/i/QozGsoYI3mrFc57jbWVXF3rxuSy
+ QIpjdGh5j+9iztb2lCQ7vlGjHaZHZw5QUhXY7BL3aAeVyihFdz4JhT4glnMEEnJJTl3YzVbIc9c
+ jvqAsgr1RZV++FIAycYLA5ODZ+vBsqsS07KUlzvj7Vf+C68qkXaMly18+ixvhUp94sGM1iD7/Cu
+ bJTwsRm8sST+A6F5ehMux9qKqkLuExRqzrPCxsIlRKxAIKeejGXksE9oVXnpd/eH9Q9wZcKqA5r
+ yE466JCDL1LAdq4Dsj3
+X-Proofpoint-GUID: mI7aoSpOPxCQAWpgc46UjfCIA0hK5w5D
+X-Proofpoint-ORIG-GUID: mI7aoSpOPxCQAWpgc46UjfCIA0hK5w5D
+
+
+--_005_ME0P282MB44035381B0C1F6A746303809D754AME0P282MB4403AUSP_
+Content-Type: multipart/alternative;
+	boundary=_000_ME0P282MB44035381B0C1F6A746303809D754AME0P282MB4403AUSP_
+
+
+--_000_ME0P282MB44035381B0C1F6A746303809D754AME0P282MB4403AUSP_
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=utf-8
+
+Thanks, Rafaella,
+We will instruct Asset Restore to attend and complete next steps as soon as=
+ possible.
+Many Thanks,
+Grant.
+
+[cid:image001.png@01DBF4FC.D9B6E6A0]
+Grant Metson
+Regional Manager - House Assessing
+Phone 021 744 288
+Level 5, 136 Fanshawe Street,
+PO Box 90347, Auckland 1142
+
+[Text  Description automatically generated with low confidence]
+Fair Insurance Code
+Tower is a member of the Insurance Council of New Zealand (ICNZ).
+We abide by the ICNZ Fair Insurance Code<https://www.icnz.org.nz/fair-insur=
+ance-code/>.
+
+
+From: Raffaella del Prete <raffaellanz@icloud.com>
+Sent: Monday, July 14, 2025 5:50 PM
+To: Grant Metson <Grant.Metson@tower.co.nz>
+Cc: Chris Cornwall <Chris.Cornwall@tower.co.nz>; Claims <Claims@tower.co.nz>
+Subject: Re: Asbestos Report - Negative. 23 Mays Road, Devonport. C90306048
+
+Hi Grant, Great to hear the asbestos report came back clear=E2=80=94fantast=
+ic news! I'm happy for Asset Restore to begin the initial fire and smoke cl=
+ean. I=E2=80=99m available to meet them at the property tomorrow (Tuesday) =
+before 8 am (you can reach me at
+
+
+Hi Grant,
+
+Great to hear the asbestos report came back clear=E2=80=94fantastic news! I=
+'m happy for Asset Restore to begin the initial fire and smoke clean. I=E2=
+=80=99m available to meet them at the property tomorrow (Tuesday) before 8=
+=E2=80=AFam (you can reach me at 0275089102), or on Wednesday anytime befor=
+e 11=E2=80=AFam.
+
+Just a quick reminder regarding the contents insurance: As discussed with C=
+hris, I=E2=80=99ve removed several items from the property following the fi=
+re=E2=80=94particularly electronics and lithium-powered devices, which coul=
+d present a safety risk. Could you please advise on the next steps for asse=
+ssing these?
+
+Lastly, regarding the Assessment-Only Focus, I=E2=80=99m unclear on what =
+=E2=80=9CThis will occur as per process=E2=80=9D means. Could you clarify w=
+hat the process entails?
+
+Kind regards,
+Raffaella
+
+
+
+
+On 14 Jul 2025, at 3:21=E2=80=AFPM, Grant Metson <Grant.Metson@tower.co.nz<=
+mailto:Grant.Metson@tower.co.nz>> wrote:
+
+Hi Rafaella,
+Please find attached for your records a copy of the Asbestos Survey which w=
+e have just received.
+There was no asbestos found to be present within the structure, the surroun=
+ds, the contents or any of the debris.
+We are now ready to move onto the next stage in the process which will be t=
+o undertake and complete as follows:
+
+Contents Appraisal
+Contents Removal
+Full decontamination clean upstairs level.
+Strip-out dwelling to provide visibility for scope of works
+All of the stages/processes listed above can be completed in chronological =
+order as above, by Asset Restore.
+
+Below I have provided answers in blue to your recent questions. Which I tru=
+st will allow us to move forward with the claim progression.
+
+
+  *   Clarify Claim Scope: Is this the plan for both house and contents cla=
+ims? If so, should it therefore be linked to both policy numbers to ensure =
+all coverage is included? The structural claim will require a scope -of wor=
+ks which is identified in the process list. The contents claim will have a =
+schedule of contents determined. This is also listed I the process list pro=
+vided. The 2 do not need to be linked. They can be cross referenced if need=
+ed.
+  *   Prioritize Health & Safety: I=E2=80=99d feel more comfortable if we s=
+cheduled independent assessments (electrical, structural, gas, moisture/mou=
+ld) before any major work, alongside the July 9 asbestos survey. The master=
+ electrician=E2=80=99s finding that the property is uninhabitable due to el=
+ectrical hazards is a key concern. This can all be scheduled now that we ha=
+ve asbestos clearance. Do you want me to schedule this to occur ASAP?
+  *   Assessment-Only Focus: As previously expressed, could we limit initia=
+l tasks to enabling damage assessment (e.g., securing the site, debris remo=
+val) rather than repairs (e.g., upstairs decontamination, curtain cleaning)=
+? This would allow for a thorough evaluation and mutual agreement on remedi=
+ation. The planned upstairs cleaning (July 21-25) feels premature for these=
+ reasons:
+
+     *   We need to assess damage before repair to preserve evidence. This =
+will occur as per process.
+     *   If the gas unit (likely damaged) requires removal, the ceiling may=
+ need cutting, necessitating re-cleaning. Yes =E2=80=93 but this will form =
+part of the repair process. It all needs to be assessed first.
+     *   The electrician=E2=80=99s uninhabitable ruling requires electrical=
+ work first. This will occur as per process.
+     *   Firefighters switched off water (possibly gas?) and electricity, w=
+hich must be assessed and remediated. This will occur as per process.
+     *   With 4 pets and hybrid work, noisy basement/deck/roof work makes l=
+iving there untenable until completed. That is your decision when you choos=
+e to re-occupy. There is no pressure from your insurer to do so.
+
+  *   Asbestos Survey Details: While I=E2=80=99m supportive of the July 9 s=
+urvey, could you please share who will conduct it, the scope and tests invo=
+lved, and how I can independently verify the results? Also, can the funding=
+ for this be covered under the claim preparation provision?Provided and sha=
+red with you.
+  *   Structural Engineer Guidelines: I previously asked about guidelines f=
+or paying a structural engineer, as per the provision for claim preparation=
+. Could you please provide these, as I believe an independent assessment sh=
+ould precede any repair work? Agreed. It will precede repair work =E2=80=93=
+ but the site must be cleaned and cleared first so the structure can be pro=
+perly assessed.
+One of the things I should underline is that with any claim of this nature =
+there are multiple cleaning processes which occur =E2=80=93 these are norma=
+lly as follows:
+
+
+  1.  Initial fire/smoke clean: to allow for detailed and accurate structur=
+al assessment. To reduce smoke and other claim related odors. To prevent fu=
+rther contamination and spreading of soot, etc.
+  2.  Subsequent and multiple site cleans during repair works: this is a co=
+nstant process of keeping the site tidy.
+  3.  Final professional clean: this is completed before the home is re-occ=
+upied.
+
+My apologies =E2=80=93 I was not clear enough to explain that the cleaning =
+process is not singular and final =E2=80=93 it is part of an ongoing proces=
+s as described above.
+
+Please let me know when we can issue instructions for Asset Managers to con=
+tinue with the next steps in the process provided.
+Best Regards,
+Grant.
+
+[cid:image001.png@01DBF4FC.D9B6E6A0]
+Grant Metson
+Regional Manager - House Assessing
+Phone 021 744 288
+Level 5, 136 Fanshawe Street,
+PO Box 90347, Auckland 1142
+
+[cid:image002.png@01DBF4FC.D9B6E6A0]
+Fair Insurance Code
+Tower is a member of the Insurance Council of New Zealand (ICNZ).
+We abide by the ICNZ Fair Insurance Code [icnz.org.nz]<https://urldefense.c=
+om/v3/__https:/www.icnz.org.nz/fair-insurance-code/__;!!NPvfczxIteVBjg!GovX=
+JEi5ANUpSV4fuixpja__fSF8DMHZAZ5JKlrUAyX2CyAe4lOFVpQfXB_zyB-WMBlx_yx5vdQ6QK5=
+aqFDXCL7xKSU$>.
+
+
+
+________________________________
+
+The information contained in this email message is confidential and may be =
+legally privileged. If you are not the intended recipient, please note that=
+ any use, dissemination, distribution, or reproduction of this message in a=
+ny form whatsoever, is strictly prohibited. If you received this email in e=
+rror, please notify me by return email, delete your copy, and accept my apo=
+logies for any inconvenience caused. Please note that your receipt of this =
+email from a Tower email address does not constitute our consent for you to=
+ send any other electronic information to Tower by return, unless specifica=
+lly stated otherwise.
+
+
+
+________________________________
+
+The information contained in this email message is confidential and may be =
+legally privileged. If you are not the intended recipient, please note that=
+ any use, dissemination, distribution, or reproduction of this message in a=
+ny form whatsoever, is strictly prohibited. If you received this email in e=
+rror, please notify me by return email, delete your copy, and accept my apo=
+logies for any inconvenience caused. Please note that your receipt of this =
+email from a Tower email address does not constitute our consent for you to=
+ send any other electronic information to Tower by return, unless specifica=
+lly stated otherwise.
+
+--_000_ME0P282MB44035381B0C1F6A746303809D754AME0P282MB4403AUSP_
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=utf-8
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micr=
+osoft-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:x=3D"urn:schemas-microsoft-com:office:excel" xmlns:m=3D"http://schema=
+s.microsoft.com/office/2004/12/omml" xmlns=3D"http://www.w3.org/TR/REC-html=
+40">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<meta name=3D"Generator" content=3D"Microsoft Word 15 (filtered medium)">
+<!--[if !mso]><style>v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style><![endif]--><style><!--
+/* Font Definitions */
+@font-face
+	{font-family:Helvetica;
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:"Cordia New";
+	panose-1:2 11 3 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:DengXian;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:Aptos;}
+@font-face
+	{font-family:"Aptos Display";}
+@font-face
+	{font-family:"Segoe UI";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:"\@DengXian";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:blue;
+	text-decoration:underline;}
+span.xapple-converted-space
+	{mso-style-name:x_apple-converted-space;}
+p.xmsonormal, li.xmsonormal, div.xmsonormal
+	{mso-style-name:x_msonormal;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+p.xmsolistparagraph, li.xmsolistparagraph, div.xmsolistparagraph
+	{mso-style-name:x_msolistparagraph;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+span.EmailStyle24
+	{mso-style-type:personal-reply;
+	font-family:"Aptos",sans-serif;
+	color:windowtext;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:10.0pt;
+	mso-ligatures:none;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+/* List Definitions */
+@list l0
+	{mso-list-id:1437748938;
+	mso-list-template-ids:-954319398;}
+@list l1
+	{mso-list-id:1768891915;
+	mso-list-template-ids:966324680;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]-->
+</head>
+<body lang=3D"EN-US" link=3D"blue" vlink=3D"purple" style=3D"word-wrap:brea=
+k-word">
+<div class=3D"WordSection1">
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">Thanks, Rafaella,<o=
+:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">We will instruct As=
+set Restore to attend and complete next steps as soon as possible.<o:p></o:=
+p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">Many Thanks,<o:p></=
+o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">Grant. <o:p></o:p><=
+/span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt"><o:p>&nbsp;</o:p></=
+span></p>
+<div>
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" style=3D"border-collapse:collapse">
+<tbody>
+<tr style=3D"height:126.75pt">
+<td width=3D"243" style=3D"width:182.25pt;padding:0in 5.4pt 0in 5.4pt;heigh=
+t:126.75pt">
+<p class=3D"MsoNormal"><img width=3D"163" height=3D"123" style=3D"width:1.6=
+979in;height:1.2812in" id=3D"Picture_x0020_240225973" src=3D"cid:image001.p=
+ng@01DBF4FC.D9B6E6A0"><span lang=3D"EN-NZ" style=3D"font-size:10.0pt"><o:p>=
+</o:p></span></p>
+</td>
+<td width=3D"356" style=3D"width:267.0pt;padding:0in 5.4pt 0in 5.4pt;height=
+:126.75pt">
+<p class=3D"MsoNormal" style=3D"line-height:150%"><b><span style=3D"font-si=
+ze:10.0pt;line-height:150%;font-family:&quot;Verdana&quot;,sans-serif;color=
+:#001272;mso-ligatures:standardcontextual;mso-fareast-language:EN-NZ">Grant=
+ Metson<o:p></o:p></span></b></p>
+<p class=3D"MsoNormal" style=3D"line-height:150%"><span style=3D"font-size:=
+10.0pt;line-height:150%;font-family:&quot;Verdana&quot;,sans-serif;color:#0=
+02060;background:white;mso-ligatures:standardcontextual">Regional Manager -=
+ House Assessing</span><span style=3D"line-height:150%;mso-ligatures:standa=
+rdcontextual"><o:p></o:p></span></p>
+<p class=3D"MsoNormal" style=3D"line-height:150%"><span style=3D"font-size:=
+10.0pt;line-height:150%;font-family:&quot;Verdana&quot;,sans-serif;color:#0=
+01272;mso-ligatures:standardcontextual;mso-fareast-language:EN-NZ">Phone 02=
+1 744 288</span><span style=3D"font-size:10.0pt;line-height:150%;color:blac=
+k;mso-ligatures:standardcontextual;mso-fareast-language:EN-NZ"><br>
+</span><span style=3D"font-size:10.0pt;line-height:150%;font-family:&quot;V=
+erdana&quot;,sans-serif;color:#001272;mso-ligatures:standardcontextual;mso-=
+fareast-language:EN-NZ">Level 5, 136 Fanshawe Street,
+</span><span style=3D"font-size:10.0pt;line-height:150%;color:black;mso-lig=
+atures:standardcontextual;mso-fareast-language:EN-NZ"><br>
+</span><span style=3D"font-size:10.0pt;line-height:150%;font-family:&quot;V=
+erdana&quot;,sans-serif;color:#001272;mso-ligatures:standardcontextual;mso-=
+fareast-language:EN-NZ">PO Box 90347,&nbsp;Auckland&nbsp;1142<o:p></o:p></s=
+pan></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;mso-ligatures:standardcontextual"><o:p>&nbsp;</o:p><=
+/span></p>
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" width=3D"599" style=3D"width:449.25pt;border-collapse:collapse">
+<tbody>
+<tr style=3D"height:58.5pt">
+<td width=3D"71" style=3D"width:53.25pt;padding:0in 5.4pt 0in 5.4pt;height:=
+58.5pt">
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto;text-align:justify">
+<img width=3D"54" height=3D"57" style=3D"width:.5625in;height:.5937in" id=
+=3D"Picture_x0020_827621380" src=3D"cid:image002.png@01DBF4FC.D9B6E6A0" alt=
+=3D"Text
+
+Description automatically generated with low confidence"><span style=3D"mso=
+-ligatures:standardcontextual"><o:p></o:p></span></p>
+</td>
+<td width=3D"364" style=3D"width:272.8pt;padding:0in 5.4pt 0in 5.4pt;height=
+:58.5pt">
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto;line-height:115%">
+<b><span lang=3D"EN-NZ" style=3D"font-size:7.0pt;line-height:115%;font-fami=
+ly:&quot;Verdana&quot;,sans-serif;color:#001272;mso-ligatures:standardconte=
+xtual">Fair Insurance Code</span></b><span lang=3D"EN-NZ" style=3D"font-siz=
+e:7.0pt;line-height:115%;font-family:&quot;Times New Roman&quot;,serif;mso-=
+ligatures:standardcontextual;mso-fareast-language:EN-NZ"><br>
+</span><span lang=3D"EN-NZ" style=3D"font-size:7.0pt;line-height:115%;font-=
+family:&quot;Verdana&quot;,sans-serif;color:#001272;mso-ligatures:standardc=
+ontextual">Tower is a member of the Insurance Council of New Zealand (ICNZ).
+</span><span lang=3D"EN-NZ" style=3D"font-size:7.0pt;line-height:115%;font-=
+family:&quot;Times New Roman&quot;,serif;mso-ligatures:standardcontextual;m=
+so-fareast-language:EN-NZ"><br>
+</span><span lang=3D"EN-NZ" style=3D"font-size:7.0pt;line-height:115%;font-=
+family:&quot;Verdana&quot;,sans-serif;color:#001272;mso-ligatures:standardc=
+ontextual">We abide by the&nbsp;</span><span lang=3D"EN-NZ" style=3D"font-f=
+amily:&quot;Times New Roman&quot;,serif;mso-ligatures:standardcontextual;ms=
+o-fareast-language:EN-NZ"><a href=3D"https://www.icnz.org.nz/fair-insurance=
+-code/"><span style=3D"font-size:7.0pt;line-height:115%;font-family:&quot;V=
+erdana&quot;,sans-serif">ICNZ
+ Fair Insurance Code</span></a></span><span lang=3D"EN-NZ" style=3D"font-si=
+ze:7.0pt;line-height:115%;font-family:&quot;Verdana&quot;,sans-serif;color:=
+#001272;mso-ligatures:standardcontextual">.&nbsp;</span><span style=3D"line=
+-height:115%;mso-ligatures:standardcontextual"><o:p></o:p></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;mso-ligatures:standardcontextual"><o:p>&nbsp;</o:p><=
+/span></p>
+</div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt"><o:p>&nbsp;</o:p></=
+span></p>
+<div>
+<div style=3D"border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;font-family:&quot=
+;Calibri&quot;,sans-serif">From:</span></b><span style=3D"font-size:11.0pt;=
+font-family:&quot;Calibri&quot;,sans-serif"> Raffaella del Prete &lt;raffae=
+llanz@icloud.com&gt;
+<br>
+<b>Sent:</b> Monday, July 14, 2025 5:50 PM<br>
+<b>To:</b> Grant Metson &lt;Grant.Metson@tower.co.nz&gt;<br>
+<b>Cc:</b> Chris Cornwall &lt;Chris.Cornwall@tower.co.nz&gt;; Claims &lt;Cl=
+aims@tower.co.nz&gt;<br>
+<b>Subject:</b> Re: Asbestos Report - Negative. 23 Mays Road, Devonport. C9=
+0306048<o:p></o:p></span></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<div>
+<div>
+<p class=3D"MsoNormal" style=3D"mso-line-height-alt:.75pt"><span style=3D"f=
+ont-size:1.0pt;color:white">Hi Grant, Great to hear the asbestos report cam=
+e back clear=E2=80=94fantastic news! I'm happy for Asset Restore to begin t=
+he initial fire and smoke clean. I=E2=80=99m available
+ to meet them at the property tomorrow (Tuesday) before 8 am (you can reach=
+ me at<o:p></o:p></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"mso-line-height-alt:.75pt"><span style=3D"f=
+ont-size:1.0pt;color:white"><o:p></o:p></span></p>
+</div>
+<p>Hi Grant,<o:p></o:p></p>
+<p>Great to hear the asbestos report came back clear=E2=80=94fantastic news=
+! I'm happy for Asset Restore to begin the initial fire and smoke clean. I=
+=E2=80=99m available to meet them at the property tomorrow (Tuesday) before=
+ 8<span style=3D"font-family:&quot;Arial&quot;,sans-serif">=E2=80=AF</span>=
+am
+ (you can reach me at 0275089102), or on Wednesday anytime before 11<span s=
+tyle=3D"font-family:&quot;Arial&quot;,sans-serif">=E2=80=AF</span>am.<o:p><=
+/o:p></p>
+<p>Just a quick reminder regarding the contents insurance: As discussed wit=
+h Chris, I=E2=80=99ve removed several items from the property following the=
+ fire=E2=80=94particularly electronics and lithium-powered devices, which c=
+ould present a safety risk. Could you please advise
+ on the next steps for assessing these?<o:p></o:p></p>
+<p>Lastly, regarding the Assessment-Only Focus, I=E2=80=99m unclear on what=
+ =E2=80=9CThis will occur as per process=E2=80=9D means. Could you clarify =
+what the process entails?<o:p></o:p></p>
+<p>Kind regards,<br>
+Raffaella<o:p></o:p></p>
+<p><o:p>&nbsp;</o:p></p>
+<div>
+<p class=3D"MsoNormal"><br>
+<br>
+<o:p></o:p></p>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<p class=3D"MsoNormal">On 14 Jul 2025, at 3:21<span style=3D"font-family:&q=
+uot;Arial&quot;,sans-serif">=E2=80=AF</span>PM, Grant Metson &lt;<a href=3D=
+"mailto:Grant.Metson@tower.co.nz">Grant.Metson@tower.co.nz</a>&gt; wrote:<o=
+:p></o:p></p>
+</div>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">Hi Rafaella,</span>=
+<span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif"=
+><o:p></o:p></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">Please find attache=
+d for your records a copy of the Asbestos Survey which we have just receive=
+d.</span><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sa=
+ns-serif"><o:p></o:p></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">There was no asbest=
+os found to be present within the structure, the surrounds, the contents or=
+ any of the debris.</span><span style=3D"font-size:11.0pt;font-family:&quot=
+;Calibri&quot;,sans-serif"><o:p></o:p></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">We are now ready to=
+ move onto the next stage in the process which will be to undertake and com=
+plete as follows:</span><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif"><o:p></o:p></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">&nbsp;</span><span =
+style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif"><o:p>=
+</o:p></span></p>
+</div>
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" width=3D"385" style=3D"width:289.0pt;border-collapse:collapse">
+<tbody>
+<tr style=3D"height:13.5pt">
+<td width=3D"385" nowrap=3D"" valign=3D"bottom" style=3D"width:289.0pt;padd=
+ing:0in 5.4pt 0in 5.4pt;height:13.5pt">
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ap=
+tos Display&quot;,sans-serif">Contents Appraisal</span><span style=3D"font-=
+size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif"><o:p></o:p></span><=
+/p>
+</div>
+</td>
+</tr>
+<tr style=3D"height:13.5pt">
+<td width=3D"385" nowrap=3D"" valign=3D"bottom" style=3D"width:289.0pt;padd=
+ing:0in 5.4pt 0in 5.4pt;height:13.5pt">
+</td>
+</tr>
+<tr style=3D"height:13.5pt">
+<td width=3D"385" nowrap=3D"" valign=3D"bottom" style=3D"width:289.0pt;padd=
+ing:0in 5.4pt 0in 5.4pt;height:13.5pt">
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ap=
+tos Display&quot;,sans-serif">Contents Removal</span><span style=3D"font-si=
+ze:11.0pt;font-family:&quot;Calibri&quot;,sans-serif"><o:p></o:p></span></p>
+</div>
+</td>
+</tr>
+<tr style=3D"height:13.5pt">
+<td width=3D"385" nowrap=3D"" valign=3D"bottom" style=3D"width:289.0pt;padd=
+ing:0in 5.4pt 0in 5.4pt;height:13.5pt">
+</td>
+</tr>
+<tr style=3D"height:13.5pt">
+<td width=3D"385" nowrap=3D"" valign=3D"bottom" style=3D"width:289.0pt;padd=
+ing:0in 5.4pt 0in 5.4pt;height:13.5pt">
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ap=
+tos Display&quot;,sans-serif">Full decontamination clean upstairs level.</s=
+pan><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-se=
+rif"><o:p></o:p></span></p>
+</div>
+</td>
+</tr>
+<tr style=3D"height:13.5pt">
+<td width=3D"385" nowrap=3D"" valign=3D"bottom" style=3D"width:289.0pt;padd=
+ing:0in 5.4pt 0in 5.4pt;height:13.5pt">
+</td>
+</tr>
+<tr style=3D"height:13.5pt">
+<td width=3D"385" nowrap=3D"" valign=3D"bottom" style=3D"width:289.0pt;padd=
+ing:0in 5.4pt 0in 5.4pt;height:13.5pt">
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ap=
+tos Display&quot;,sans-serif">Strip-out dwelling to provide visibility for =
+scope of works</span><span style=3D"font-size:11.0pt;font-family:&quot;Cali=
+bri&quot;,sans-serif"><o:p></o:p></span></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">All of the stages/p=
+rocesses listed above can be completed in chronological order as above, by =
+Asset Restore.</span><span style=3D"font-size:11.0pt;font-family:&quot;Cali=
+bri&quot;,sans-serif"><o:p></o:p></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">&nbsp;</span><span =
+style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif"><o:p>=
+</o:p></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">Below I have provid=
+ed answers<span class=3D"xapple-converted-space">&nbsp;</span><b><span styl=
+e=3D"color:#0070C0">in blue</span></b><span class=3D"xapple-converted-space=
+"><span style=3D"color:#0070C0">&nbsp;</span></span>to
+ your recent questions. Which I trust will allow us to move forward with th=
+e claim progression. &nbsp;</span><span style=3D"font-size:11.0pt;font-fami=
+ly:&quot;Calibri&quot;,sans-serif"><o:p></o:p></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">&nbsp;</span><span =
+style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif"><o:p>=
+</o:p></span></p>
+</div>
+<ul style=3D"margin-top:0in" type=3D"disc">
+<li class=3D"xmsonormal" style=3D"color:#0070C0;margin-top:0in;margin-botto=
+m:0in;mso-list:l1 level1 lfo1">
+<strong><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,san=
+s-serif;color:windowtext">Clarify Claim Scope</span></strong><span style=3D=
+"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;color:windowte=
+xt">: Is this the plan for both house and contents claims?
+ If so, should it therefore be linked to both policy numbers to ensure all =
+coverage is included?<span class=3D"xapple-converted-space">&nbsp;</span></=
+span><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-s=
+erif">The structural claim will require a scope -of
+ works which is identified in the process list. The contents claim will hav=
+e a schedule of contents determined. This is also listed I the process list=
+ provided. The 2 do not need to be linked. They can be cross referenced if =
+needed. &nbsp;<o:p></o:p></span></li><li class=3D"xmsonormal" style=3D"colo=
+r:#0070C0;margin-top:0in;margin-bottom:0in;mso-list:l1 level1 lfo1">
+<strong><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,san=
+s-serif;color:windowtext">Prioritize Health &amp; Safety</span></strong><sp=
+an style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;col=
+or:windowtext">: I=E2=80=99d feel more comfortable if we scheduled independ=
+ent
+ assessments (electrical, structural, gas, moisture/mould) before any major=
+ work, alongside the July 9 asbestos survey. The master electrician=E2=80=
+=99s finding that the property is uninhabitable due to electrical hazards i=
+s a key concern.<span class=3D"xapple-converted-space">&nbsp;</span></span>=
+<span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif"=
+>This
+ can all be scheduled now that we have asbestos clearance.<span class=3D"xa=
+pple-converted-space">&nbsp;</span><u>Do you want me to schedule this to oc=
+cur ASAP?</u><o:p></o:p></span></li><li class=3D"xmsonormal" style=3D"margi=
+n-top:0in;margin-bottom:0in;mso-list:l1 level1 lfo1">
+<strong><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,san=
+s-serif">Assessment-Only Focus</span></strong><span style=3D"font-size:11.0=
+pt;font-family:&quot;Calibri&quot;,sans-serif">: As previously expressed, c=
+ould we limit initial tasks to enabling damage assessment
+ (e.g., securing the site, debris removal) rather than repairs (e.g., upsta=
+irs decontamination, curtain cleaning)? This would allow for a thorough eva=
+luation and mutual agreement on remediation. The planned upstairs cleaning =
+(July 21-25) feels premature for
+ these reasons:<o:p></o:p></span></li></ul>
+<ul style=3D"margin-top:0in" type=3D"disc">
+<ol style=3D"margin-top:0in" start=3D"1" type=3D"1">
+<li class=3D"xmsonormal" style=3D"color:#00B050;margin-top:0in;margin-botto=
+m:0in;mso-list:l1 level2 lfo1">
+<span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif"=
+>We need to assess damage before repair to preserve evidence.<span class=3D=
+"xapple-converted-space">&nbsp;</span></span><span style=3D"font-size:11.0p=
+t;font-family:&quot;Calibri&quot;,sans-serif;color:#0070C0">This
+ will occur as per process.<span class=3D"xapple-converted-space">&nbsp;</s=
+pan></span><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,=
+sans-serif"><o:p></o:p></span></li><li class=3D"xmsonormal" style=3D"color:=
+#0070C0;margin-top:0in;margin-bottom:0in;mso-list:l1 level2 lfo1">
+<span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;=
+color:#00B050">If the gas unit (likely damaged) requires removal, the ceili=
+ng may need cutting, necessitating re-cleaning.<span class=3D"xapple-conver=
+ted-space">&nbsp;</span></span><span style=3D"font-size:11.0pt;font-family:=
+&quot;Calibri&quot;,sans-serif">Yes
+ =E2=80=93 but this will form part of the repair process. It all needs to b=
+e assessed first. &nbsp;<o:p></o:p></span></li><li class=3D"xmsonormal" sty=
+le=3D"color:#00B050;margin-top:0in;margin-bottom:0in;mso-list:l1 level2 lfo=
+1">
+<span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif"=
+>The electrician=E2=80=99s uninhabitable ruling requires electrical work fi=
+rst.<span class=3D"xapple-converted-space">&nbsp;</span></span><span style=
+=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;color:#0070=
+C0">This
+ will occur as per process.<span class=3D"xapple-converted-space">&nbsp;</s=
+pan></span><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,=
+sans-serif">&nbsp;<o:p></o:p></span></li><li class=3D"xmsonormal" style=3D"=
+color:#00B050;margin-top:0in;margin-bottom:0in;mso-list:l1 level2 lfo1">
+<span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif"=
+>Firefighters switched off water (possibly gas?) and electricity, which mus=
+t be assessed and remediated.<span class=3D"xapple-converted-space">&nbsp;<=
+/span></span><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot=
+;,sans-serif;color:#0070C0">This
+ will occur as per process.<span class=3D"xapple-converted-space">&nbsp;</s=
+pan></span><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,=
+sans-serif">&nbsp;<o:p></o:p></span></li><li class=3D"xmsonormal" style=3D"=
+color:#00B050;margin-top:0in;margin-bottom:0in;mso-list:l1 level2 lfo1">
+<span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif"=
+>With 4 pets and hybrid work, noisy basement/deck/roof work makes living th=
+ere untenable until completed.<span class=3D"xapple-converted-space">&nbsp;=
+</span></span><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quo=
+t;,sans-serif;color:#0070C0">That
+ is your decision when you choose to re-occupy. There is no pressure from y=
+our insurer to do so.</span><span style=3D"font-size:11.0pt;font-family:&qu=
+ot;Calibri&quot;,sans-serif"><o:p></o:p></span></li></ol>
+</ul>
+<ul style=3D"margin-top:0in" type=3D"disc">
+<li class=3D"xmsonormal" style=3D"color:#0070C0;margin-top:0in;margin-botto=
+m:0in;mso-list:l1 level1 lfo1">
+<strong><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,san=
+s-serif;color:windowtext">Asbestos Survey Details</span></strong><span styl=
+e=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;color:wind=
+owtext">: While I=E2=80=99m supportive of the July 9 survey, could
+ you please share who will conduct it, the scope and tests involved, and ho=
+w I can independently verify the results? Also, can the funding for this be=
+ covered under the claim preparation provision?</span><span style=3D"font-s=
+ize:11.0pt;font-family:&quot;Calibri&quot;,sans-serif">Provided
+ and shared with you.<o:p></o:p></span></li><li class=3D"xmsonormal" style=
+=3D"margin-top:0in;margin-bottom:0in;mso-list:l1 level1 lfo1">
+<strong><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,san=
+s-serif">Structural Engineer Guidelines</span></strong><span style=3D"font-=
+size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif">: I previously aske=
+d about guidelines for paying a structural engineer, as
+ per the provision for claim preparation. Could you please provide these, a=
+s I believe an independent assessment should precede any repair work?<span =
+class=3D"xapple-converted-space">&nbsp;</span><span style=3D"color:#0070C0"=
+>Agreed. It will precede repair work =E2=80=93 but
+ the site must be cleaned and cleared first so the structure can be properl=
+y assessed.<span class=3D"xapple-converted-space">&nbsp;</span></span></spa=
+n><span style=3D"font-size:11.0pt;color:#0070C0">&nbsp;</span><span style=
+=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif"><o:p></o:p=
+></span></li></ul>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">One of the things I=
+ should underline is that with any claim of this nature there are multiple =
+cleaning processes which occur =E2=80=93 these are normally as follows:</sp=
+an><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-ser=
+if"><o:p></o:p></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">&nbsp;</span><span =
+style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif"><o:p>=
+</o:p></span></p>
+</div>
+<ol style=3D"margin-top:0in" start=3D"1" type=3D"1">
+<li class=3D"xmsolistparagraph" style=3D"margin-top:0in;margin-bottom:0in;m=
+so-list:l0 level1 lfo2">
+<b><u><span style=3D"font-size:11.0pt">Initial fire/smoke clean:</span></u>=
+</b><span class=3D"xapple-converted-space"><span style=3D"font-size:11.0pt"=
+>&nbsp;</span></span><span style=3D"font-size:11.0pt">to allow for detailed=
+ and accurate structural assessment. To reduce
+ smoke and other claim related odors. To prevent further contamination and =
+spreading of soot, etc.</span><span style=3D"font-size:11.0pt;font-family:&=
+quot;Calibri&quot;,sans-serif"><o:p></o:p></span></li><li class=3D"xmsolist=
+paragraph" style=3D"margin-top:0in;margin-bottom:0in;mso-list:l0 level1 lfo=
+2">
+<b><u><span style=3D"font-size:11.0pt">Subsequent and multiple site cleans =
+during repair works:</span></u></b><span class=3D"xapple-converted-space"><=
+span style=3D"font-size:11.0pt">&nbsp;</span></span><span style=3D"font-siz=
+e:11.0pt">this is a constant process of keeping
+ the site tidy.</span><span style=3D"font-size:11.0pt;font-family:&quot;Cal=
+ibri&quot;,sans-serif"><o:p></o:p></span></li><li class=3D"xmsolistparagrap=
+h" style=3D"margin-top:0in;margin-bottom:0in;mso-list:l0 level1 lfo2">
+<b><u><span style=3D"font-size:11.0pt">Final professional clean:</span></u>=
+</b><span class=3D"xapple-converted-space"><span style=3D"font-size:11.0pt"=
+>&nbsp;</span></span><span style=3D"font-size:11.0pt">this is completed bef=
+ore the home is re-occupied.</span><span style=3D"font-size:11.0pt;font-fam=
+ily:&quot;Calibri&quot;,sans-serif"><o:p></o:p></span></li></ol>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">&nbsp;</span><span =
+style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif"><o:p>=
+</o:p></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">My apologies =E2=80=
+=93 I was not clear enough to explain that the cleaning process is not sing=
+ular and final =E2=80=93 it is part of an ongoing process as described abov=
+e.</span><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sa=
+ns-serif"><o:p></o:p></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">&nbsp;</span><span =
+style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif"><o:p>=
+</o:p></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">Please let me know =
+when we can issue instructions for Asset Managers to continue with the next=
+ steps in the process provided.</span><span style=3D"font-size:11.0pt;font-=
+family:&quot;Calibri&quot;,sans-serif"><o:p></o:p></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">Best Regards,</span=
+><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif=
+"><o:p></o:p></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">Grant.<span class=
+=3D"xapple-converted-space">&nbsp;</span></span><span style=3D"font-size:11=
+.0pt;font-family:&quot;Calibri&quot;,sans-serif"><o:p></o:p></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">&nbsp;&nbsp;&nbsp;<=
+/span><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-=
+serif"><o:p></o:p></span></p>
+</div>
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" style=3D"border-collapse:collapse">
+<tbody>
+<tr style=3D"height:126.75pt">
+<td width=3D"243" style=3D"width:182.25pt;padding:0in 5.4pt 0in 5.4pt;heigh=
+t:126.75pt">
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</blockquote>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal"><img border=3D"0" width=3D"396" height=3D"300" style=
+=3D"width:4.125in;height:3.125in" id=3D"Picture_x0020_2" src=3D"cid:image00=
+1.png@01DBF4FC.D9B6E6A0"><o:p></o:p></p>
+</div>
+<div>
+<div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<div>
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" style=3D"border-collapse:collapse">
+<tbody>
+<tr style=3D"height:126.75pt">
+<td width=3D"243" style=3D"width:182.25pt;padding:0in 5.4pt 0in 5.4pt;heigh=
+t:126.75pt">
+</td>
+<td width=3D"356" style=3D"width:267.0pt;padding:0in 5.4pt 0in 5.4pt;height=
+:126.75pt">
+<div>
+<p class=3D"MsoNormal" style=3D"line-height:16.5pt"><b><span style=3D"font-=
+size:10.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:#001272">Grant=
+ Metson</span></b><span style=3D"font-size:11.0pt;font-family:&quot;Calibri=
+&quot;,sans-serif"><o:p></o:p></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"line-height:16.5pt"><span style=3D"font-siz=
+e:10.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:#002060;backgroun=
+d:white">Regional Manager - House Assessing</span><span style=3D"font-size:=
+11.0pt;font-family:&quot;Calibri&quot;,sans-serif"><o:p></o:p></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"line-height:16.5pt"><span style=3D"font-siz=
+e:10.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:#001272">Phone 02=
+1 744 288</span><span style=3D"font-size:10.0pt"><br>
+</span><span style=3D"font-size:10.0pt;font-family:&quot;Verdana&quot;,sans=
+-serif;color:#001272">Level 5, 136 Fanshawe Street,</span><span style=3D"fo=
+nt-size:10.0pt"><br>
+</span><span style=3D"font-size:10.0pt;font-family:&quot;Verdana&quot;,sans=
+-serif;color:#001272">PO Box 90347,&nbsp;Auckland&nbsp;1142</span><span sty=
+le=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif"><o:p></o=
+:p></span></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif">&nbsp;<o:p></o:p></span></p>
+</div>
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" width=3D"599" style=3D"width:449.25pt;border-collapse:collapse">
+<tbody>
+<tr style=3D"height:58.5pt">
+<td width=3D"71" style=3D"width:53.25pt;padding:0in 5.4pt 0in 5.4pt;height:=
+58.5pt"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</blockquote>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal"><img border=3D"0" width=3D"54" height=3D"57" style=
+=3D"width:.5625in;height:.5937in" id=3D"Picture_x0020_1" src=3D"cid:image00=
+2.png@01DBF4FC.D9B6E6A0"><o:p></o:p></p>
+</div>
+<div>
+<div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<div>
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" width=3D"599" style=3D"width:449.25pt;border-collapse:collapse">
+<tbody>
+<tr style=3D"height:58.5pt">
+<td width=3D"71" style=3D"width:53.25pt;padding:0in 5.4pt 0in 5.4pt;height:=
+58.5pt"></td>
+<td width=3D"364" style=3D"width:272.8pt;padding:0in 5.4pt 0in 5.4pt;height=
+:58.5pt">
+<div>
+<p class=3D"MsoNormal" style=3D"line-height:12.65pt"><b><span lang=3D"EN-NZ=
+" style=3D"font-size:7.0pt;font-family:&quot;Verdana&quot;,sans-serif;color=
+:#001272">Fair Insurance Code</span></b><span lang=3D"EN-NZ" style=3D"font-=
+size:7.0pt;font-family:&quot;Times New Roman&quot;,serif"><br>
+</span><span lang=3D"EN-NZ" style=3D"font-size:7.0pt;font-family:&quot;Verd=
+ana&quot;,sans-serif;color:#001272">Tower is a member of the Insurance Coun=
+cil of New Zealand (ICNZ).</span><span lang=3D"EN-NZ" style=3D"font-size:7.=
+0pt;font-family:&quot;Times New Roman&quot;,serif"><br>
+</span><span lang=3D"EN-NZ" style=3D"font-size:7.0pt;font-family:&quot;Verd=
+ana&quot;,sans-serif;color:#001272">We abide by the&nbsp;</span><span lang=
+=3D"EN-NZ" style=3D"font-family:&quot;Times New Roman&quot;,serif"><a href=
+=3D"https://urldefense.com/v3/__https:/www.icnz.org.nz/fair-insurance-code/=
+__;!!NPvfczxIteVBjg!GovXJEi5ANUpSV4fuixpja__fSF8DMHZAZ5JKlrUAyX2CyAe4lOFVpQ=
+fXB_zyB-WMBlx_yx5vdQ6QK5aqFDXCL7xKSU$"><span style=3D"font-size:7.0pt;font-=
+family:&quot;Verdana&quot;,sans-serif">ICNZ
+ Fair Insurance Code</span> [icnz.org.nz]</a></span><span lang=3D"EN-NZ" st=
+yle=3D"font-size:7.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:#00=
+1272">.&nbsp;</span><span style=3D"font-size:11.0pt;font-family:&quot;Calib=
+ri&quot;,sans-serif"><o:p></o:p></span></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif">&nbsp;<o:p></o:p></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif">&nbsp;<o:p></o:p></span></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<div class=3D"MsoNormal" align=3D"center" style=3D"text-align:center">
+<hr size=3D"2" width=3D"100%" align=3D"center">
+</div>
+<p class=3D"MsoNormal"><span style=3D"font-size:7.5pt;font-family:&quot;Ari=
+al&quot;,sans-serif;color:gray"><br>
+The information contained in this email message is confidential and may be =
+legally privileged. If you are not the intended recipient, please note that=
+ any use, dissemination, distribution, or reproduction of this message in a=
+ny form whatsoever, is strictly
+ prohibited. If you received this email in error, please notify me by retur=
+n email, delete your copy, and accept my apologies for any inconvenience ca=
+used. Please note that your receipt of this email from a Tower email addres=
+s does not constitute our consent
+ for you to send any other electronic information to Tower by return, unles=
+s specifically stated otherwise.<br>
+<br>
+</span><o:p></o:p></p>
+</div>
+</blockquote>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+</div>
+<br>
+<hr>
+<font face=3D"Arial" color=3D"Gray" size=3D"1"><br>
+The information contained in this email message is confidential and may be =
+legally privileged. If you are not the intended recipient, please note that=
+ any use, dissemination, distribution, or reproduction of this message in a=
+ny form whatsoever, is strictly
+ prohibited. If you received this email in error, please notify me by retur=
+n email, delete your copy, and accept my apologies for any inconvenience ca=
+used. Please note that your receipt of this email from a Tower email addres=
+s does not constitute our consent
+ for you to send any other electronic information to Tower by return, unles=
+s specifically stated otherwise.<br>
+</font>
+</body>
+</html>
+
+--_000_ME0P282MB44035381B0C1F6A746303809D754AME0P282MB4403AUSP_--
+
+--_005_ME0P282MB44035381B0C1F6A746303809D754AME0P282MB4403AUSP_
+Content-Transfer-Encoding: base64
+Content-Disposition: inline;
+	size=6482;
+	modification-date="Mon, 14 Jul 2025 08:21:18 GMT";
+	filename=image001.png;
+	creation-date="Mon, 14 Jul 2025 08:21:18 GMT"
+Content-Type: image/png;
+	name=image001.png
+X-Apple-Content-Length: 8758
+Content-Id: <image001.png@01DBF4FC.D9B6E6A0>
+
+
+--_005_ME0P282MB44035381B0C1F6A746303809D754AME0P282MB4403AUSP_
+Content-Transfer-Encoding: base64
+Content-Disposition: inline;
+	size=4575;
+	modification-date="Mon, 14 Jul 2025 08:21:18 GMT";
+	filename=image002.png;
+	creation-date="Mon, 14 Jul 2025 08:21:18 GMT"
+Content-Type: image/png;
+	name=image002.png
+X-Apple-Content-Length: 6181
+Content-Id: <image002.png@01DBF4FC.D9B6E6A0>
+
+
+--_005_ME0P282MB44035381B0C1F6A746303809D754AME0P282MB4403AUSP_--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>conversation-id</key>
+	<integer>61797</integer>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1752481292</integer>
+	<key>flags</key>
+	<integer>8590133249</integer>
+	<key>remote-id</key>
+	<string>65688</string>
+</dict>
+</plist>

@@ -1,0 +1,1082 @@
+47563     
+Return-path: <bounces@bounces.qemailserver.com>
+Original-recipient: rfc822;raffaellanz@icloud.com
+Received: from p00-icloudmta-smtpin-us-west-3a-100-percent-5 by p136-mailgateway-smtp-c65bd74bd-8zw5m (mailgateway 2534B87)
+	with SMTP id 7cd39211-2048-459d-b194-b392be3094e9 
+	for <raffaellanz@icloud.com>; Fri, 5 Sep 2025 00:38:03 GMT
+X-Apple-MoveToFolder: INBOX 
+X-Apple-Action: MOVE_TO_FOLDER/INBOX
+X-Apple-UUID: 7cd39211-2048-459d-b194-b392be3094e9
+Received: from smtp-249-40.syd1.qemailserver.com (smtp-249-40.syd1.qemailserver.com [98.97.249.40])
+	by p00-icloudmta-smtpin-us-west-3a-100-percent-5 (Postfix) with ESMTPS id 3C574C000A8
+	for <raffaellanz@icloud.com>; Fri,  5 Sep 2025 00:38:00 +0000 (UTC)
+X-ICL-Info: GAtbRFYDBVFFTVJHSwQEUFUKE0oQVV8PERgKG1hDXxJIQF5ZQQcYUEFASENIEFMGSBsJAhZTUxE1GwkCFlNTEVsIAxoZWVoREAsQEgoeVQ0YWQATRURZFRALSBQXHlgYVQsFSgpRUAQUHAobGV5MIhwaChgNVBgBGhRGHx1cWV8GFBIHVQICW1hNVlkLSVJTWwgDGhlZWhEQCxASCh5VDRhZFgMKDUUPAQlLRUwJG1ZFVxUOHAEYExAUBx4UQ1MQAxwUWRtfW0IRHVsDF0dTEFsaCVkWShYPHB1bS0kGDlVAQVVCSwkYU0ZBVE9PHgdVQE5WREoGAVpFQFE3EkdbT0BOBEJPVlUGTU1LHRUFXgpL
+X-ICL-Score: 3.33304403422
+Authentication-Results: bimi.icloud.com; bimi=none
+X-ARC-Info: policy=fail; arc=none
+Authentication-Results: arc.icloud.com; arc=none
+Authentication-Results: dmarc.icloud.com; dmarc=pass header.from=tower.co.nz
+X-DMARC-Policy: v=DMARC1; p=reject; rua=mailto:dmarc_rua@emaildefense.proofpoint.com,mailto:dmarc_agg@vali.email,mailto:dmarc-reports@tower.co.nz; ruf=mailto:dmarc-reports@tower.co.nz,mailto:dmarc_ruf@emaildefense.proofpoint.com; fo=1; ri=3600
+X-DMARC-Info: pass=pass; dmarc-policy=reject; s=r0; d=r1; pdomain=tower.co.nz
+Authentication-Results: dkim-verifier.icloud.com; dkim=pass header.d=tower.co.nz header.i=@tower.co.nz header.b=U86inIxv
+Authentication-Results: spf.icloud.com; spf=pass (spf.icloud.com: domain of bounces@bounces.qemailserver.com designates 98.97.249.40 as permitted sender) smtp.mailfrom=bounces@bounces.qemailserver.com
+Received-SPF: pass (spf.icloud.com: domain of bounces@bounces.qemailserver.com designates 98.97.249.40 as permitted sender) receiver=spf.icloud.com; client-ip=98.97.249.40; helo=smtp-249-40.syd1.qemailserver.com; envelope-from=bounces@bounces.qemailserver.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=simple/relaxed; t=1757032678;
+	s=qualtrics; d=tower.co.nz;
+	h=List-ID:List-Unsubscribe-Post:List-Unsubscribe:Content-Type:MIME-Version:Subject:Message-ID:To:Reply-To:Sender:From:Date;
+	bh=f0M1iraQGAFi4wCpbIG16AIzH7qbG0TsxSJvxD6pyp4=;
+	b=U86inIxvtUb80p69KKx4xCwnULNFbrNydStGMWZkHn/XZid3enM0fXml0hyxDAqZ
+	W2OUgccjR67SjS5EZ5MwsAjxDQ6eEEW7VNCDu/k53Qgk02EWD9KmZxvk5sHAdLzkxi9
+	5BIvr1u/rNh3iHOHHSmOYf0vURV3Gr9j5rOHT5Qg=
+Date: Thu, 4 Sep 2025 18:37:58 -0600 (MDT)
+From: Tower <noreply@tower.co.nz>
+Sender: Tower <noreply@tower.co.nz>
+Reply-To: Tower <noreply@tower.co.nz>
+To: Maria Del Prete <raffaellanz@icloud.com>
+Message-ID: <1687583539.138287.1757032678097@jwm-57b57fcd84-jm5hh>
+Subject: We'd love your feedback
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_138284_809919823.1757032678095"
+X-QUMID: UR_eyxtDnRVzxTVKFo-EMD_huKwxJoANtOnX0U-CGC_fbVos6PdctXqb16-SV_2f8yoJdtiPwYO7c
+List-Unsubscribe: <https://syd1.qualtrics.com/subscription/manage/unsubscribe?recipientId=CGC_fbVos6PdctXqb16&distributionId=EMD_huKwxJoANtOnX0U&BT=dG93ZXJpbnN1cmFuY2U>,<mailto:CGC_fbVos6PdctXqb16.null@unsubscribe.qemailserver.com?subject=qunsub_CGC_fbVos6PdctXqb16.null.towerinsurance.EMD_huKwxJoANtOnX0U.SV_2f8yoJdtiPwYO7c.UR_eyxtDnRVzxTVKFo.CG_1KfexNND1gxiOQb.https%3A%2F%2Ftowerinsurance.qualtrics.com%2FCP%2FRegister.php>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+List-ID: <c74ee658a6cf1046643429a129f4a4bbfeeacfbf.tower.co.nz>
+X-MANTSH: 1TFkXBxISEQpZRBdif2hgBX9tbWFeYBEKWU0XYF9EQREKWUkXGnEaEBp3BgcSEnE
+ YGxAbHB13BhoGGhEKWV4XbGx5EQpDThcYck9ecx8aHUFGG0EefVNYGGl+Yh1LfUNcW0FkUxkSS
+ BEKWFwXGQQaBB8eBRsaGgQdGwQbHBoEExgQGx4aHxoRCl5ZF0wdE31vEQpNXBcHHhkRCkxaF2h
+ ia117EQpNThdpaxEKTEYXTWsRCkNaFxMSBBMdBBgeEwQeGhEKQl4XGxEKQkYXZx5oGENDQhhzb
+ VMRCkJHF2dfY0duEk8Fa00YEQpCXBcbEQpeThcbEQpCSxdgbR8Yc3p5bHpPUhEKQkkXYG0fGHN
+ 6eWx6T1IRCkJFF2cBW0ABU3lAXGNwEQpCThdgbR8Yc3p5bHpPUhEKQkwXZB1fH3BaGUN9QmMRC
+ kJsF25EbVlBf0xwcBJoEQpCQBdlAXp6QGdzU1wYexEKQlgXYkZpTEkTW0lYemURCk1eFwcbEQp
+ aWBcbEQpwaBdufhhEfm4SUEVHaxAHGRoRCnBoF2lJEhltf3l5GgUdEAcYBB8RCnBoF2ljHnt6S
+ WtZcktBEAcZGhEKcGgXZlxLXENDGVNJXB8QBxkaEQpwaBdteGVOGxNZZnJdExAHGRoRCnBoF2t
+ dbVtYWBtpH01SEAcZGhEKcGgXY2ccH31dRVBEWB8QBxkaEQpwaBdraBplYk5Mc29IUBAHGRoRC
+ nB/F2hsTUdJTFt6ZU1kEAcYGREKcF8XbRhDUkhZREN5ZX0QBxkaEQpwfRdpHW8ZHkZ4bGltYRA
+ HGRoRCnB9F3peYxJCZXxDRx0dEAcZGhEKcH0Xbx9YHHpsYklcHhsQBxkaEQpwfRdkTxJPeV9uG
+ X59ZBAHGRoRCnB9F2R6YkRbQ29wZlJOEAcZGhEKcH8XaRMaTW1ZTB9zaRkQBx4aEQpwXxdsRmB
+ EW29CRgFbQBAHGRoRCnB9F2UBXUlsc35LZlluEAcZGhEKcF8Xb2RlbmRaT35EQGAQGhEKcH0Xb
+ XwYblNZHGJHR3MQBxkaEQpwXxdnYBltHnBiRx5aRhAHGRoRCnB9F2JGQ0l5XFlAGB57EAcZGhE
+ KcF8XYWZ8GEVzYG8YGH4QBxkaEQpwfRdvcGNJRRhBeE1rTxAHGRoRCnB9F2FMXxN8G2xuR0FME
+ AcZGhEKcH0XZBtmHkd5QV5dRloQBxkaEQpwfRdlf34TbmxNXEhYXBAHGRoRCnB9F2hAcx5NHRh
+ 9XG1QEAcZGhEKcH0XbVltY01TR2x/UhoQBxkaEQpwfRdgcGRjW0VmGU1lfRAHGRoRCnBsF2QfG
+ hN/RFNvTngYEAceEhEKcEwXY1JME0ViUlMTYEMQBxkaEQptfhcHGxEKWE0XSxE=
+X-Proofpoint-GUID: 2XetY507kl1k4Wyr2CTH7aWivqkNy38b
+X-Proofpoint-ORIG-GUID: 2XetY507kl1k4Wyr2CTH7aWivqkNy38b
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTA1MDAwMiBTYWx0ZWRfXwtZDd/KMM69/
+ OYJ1NT7tjWG0Lxp7ZQ3qw9QeGyTRWgC8xvSbqQWJKFwH5xvesdoy61BMKFt2u4oxXMFhZr/k7GT
+ P9n3FH9pHWki5MBuFQsvufX1M4+ykXZUHmtXZ68BkHb8sOXKm9DBHgek7WKbdOZPjph38gsrMcG
+ mB1Z/Zfl8q1bCJgSxdkKq1i8Lfife5eu5TfIiwwudXuLQ0qUxbai2cI+8eE7LOj89cqob/+nwtI
+ j+tCUHIDwYAfxQLvGe+8KE1Gw1czepaNzKgYs7+QTGcXOKDUSPLL9TLh+QdNn+Q8tvX9cnPXE=
+X-JNJ: AAAAAAABDk3ZXhheRdvcjUGMS+fFabnHfwDnh1MyQLHhy0tzhuXjPGPDpjr2+jzY8OBzaI/34oAFBEFesAYfRYQp3kn8BdkNVDFNuSmNPxZeND8u7E1N/4FevUU5oQIfh7+7txs8/LUQLUtotbwLtHzXi6tsEEd+hVzfH/h1ZU0Xqm87vhpb0DZPIxDpevyKf9gqPJBa63+HuDhLlafBHEcbukXg0ZR6yr84CrGNtLDgXeB3WV9duk/Apre4P1NKVMZ/3sdiifaxBENirM6qNov+JHhreBdIe7GDxt4UpTFDORnIVVa1xM1G+gBchKfUx0xdpQMySUZ4msOHPCziyP+GhCNVGJuqqMVsXb2hEv0lNhUD2+TH90fvmyEXRAmK+T5SQS+D7JhK5w0evoCUZ/3hXOQd2xYzVSwQ+XyI1kBoNMOwDbbm5hrevXBwpE3cBkgg5pkRrjQ9rRK1CnbsBP/QAbBgnCuD+1gYDAZuDVckm+PVxjOcM7HEH16+yawZBUch4N5gM6MiCoaPDcXSNyRfAUXEbYa8k/Fkxbg/CY5DtFDB2sy+igD+CFrong73ZiKK/ny2fbTNnpMU2/YiNpKPpKULGAgARkE19g==
+
+------=_Part_138284_809919823.1757032678095
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_138285_1030246852.1757032678095"
+
+------=_Part_138285_1030246852.1757032678095
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Hi Maria Del Prete You recently made a Personal Motor claim and we'd like t=
+o
+hear about your experience.
+
+As a forward thinking insurer, we're always looking for ways to do things
+better.
+
+Our survey should only take a couple of minutes and we sincerely thank you
+for your time. Overall, how satisfied are you with your recent claims
+experience? Very dissatisfied
+<https://towerinsurance.qualtrics.com/jfe/form/SV_2f8yoJdtiPwYO7c?Q_DL=3Dhu=
+KwxJoANtOnX0U_2f8yoJdtiPwYO7c_CGC_fbVos6PdctXqb16&Q_CHL=3Demail&Q_PopulateR=
+esponse=3D%7B%22QID37%22:%221%22%7D&Q_PopulateValidate=3D1>
+Dissatisfied
+<https://towerinsurance.qualtrics.com/jfe/form/SV_2f8yoJdtiPwYO7c?Q_DL=3Dhu=
+KwxJoANtOnX0U_2f8yoJdtiPwYO7c_CGC_fbVos6PdctXqb16&Q_CHL=3Demail&Q_PopulateR=
+esponse=3D%7B%22QID37%22:%224%22%7D&Q_PopulateValidate=3D1>
+Neither satisfied nor dissatisfied
+<https://towerinsurance.qualtrics.com/jfe/form/SV_2f8yoJdtiPwYO7c?Q_DL=3Dhu=
+KwxJoANtOnX0U_2f8yoJdtiPwYO7c_CGC_fbVos6PdctXqb16&Q_CHL=3Demail&Q_PopulateR=
+esponse=3D%7B%22QID37%22:%225%22%7D&Q_PopulateValidate=3D1>
+Satisfied
+<https://towerinsurance.qualtrics.com/jfe/form/SV_2f8yoJdtiPwYO7c?Q_DL=3Dhu=
+KwxJoANtOnX0U_2f8yoJdtiPwYO7c_CGC_fbVos6PdctXqb16&Q_CHL=3Demail&Q_PopulateR=
+esponse=3D%7B%22QID37%22:%226%22%7D&Q_PopulateValidate=3D1>
+Very satisfied
+<https://towerinsurance.qualtrics.com/jfe/form/SV_2f8yoJdtiPwYO7c?Q_DL=3Dhu=
+KwxJoANtOnX0U_2f8yoJdtiPwYO7c_CGC_fbVos6PdctXqb16&Q_CHL=3Demail&Q_PopulateR=
+esponse=3D%7B%22QID37%22:%227%22%7D&Q_PopulateValidate=3D1>
+Thanks
+
+The Tower Team Important information: Please do not reply to this email. Th=
+is
+address is not monitored, and replies cannot be responded to or read. If yo=
+u
+have a query or need help, pleaseget in touch
+<https://www.tower.co.nz/contact-us/>. If you provide any personal informat=
+ion,
+it will be collected, used, and stored in accordance with the NZ Privacy Ac=
+t
+2020 and Tower's privacy policy, which is availablehere.
+<https://www.tower.co.nz/terms-and-conditions/#privacy> If you would like t=
+o
+unsubscribe from future Tower survey emails, pleaseclick here
+<https://towerinsurance.qualtrics.com/subscription/manage/confirmation?reci=
+pientId=3DCGC_fbVos6PdctXqb16&distributionId=3DEMD_huKwxJoANtOnX0U&BT=3DdG9=
+3ZXJpbnN1cmFuY2U>
+. =C2=A9 Tower Limited 2025
+------=_Part_138285_1030246852.1757032678095
+Content-Type: multipart/related; 
+	boundary="----=_Part_138286_1468029437.1757032678095"
+
+------=_Part_138286_1468029437.1757032678095
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<html><head><meta name=3D"viewport" content=3D"width=3Ddevice-width, initia=
+l-scale=3D1.0"><!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+<title key=3D"1"></title>
+<style type=3D"text/css">/* cyrillic-ext */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: italic;
+        font-weight: 400;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptsg8zYS_SKggPNyC=
+g4QIFqL_KWxWMT.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A64=
+0-A69F, U+FE2E-FE2F;
+    }
+    /* cyrillic */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: italic;
+        font-weight: 400;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptsg8zYS_SKggPNyC=
+g4SYFqL_KWxWMT.woff2) format('woff2');
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+    /* vietnamese */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: italic;
+        font-weight: 400;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptsg8zYS_SKggPNyC=
+g4QoFqL_KWxWMT.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, =
+U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+    }
+    /* latin-ext */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: italic;
+        font-weight: 400;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptsg8zYS_SKggPNyC=
+g4Q4FqL_KWxWMT.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20A=
+B, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* latin */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: italic;
+        font-weight: 400;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptsg8zYS_SKggPNyC=
+g4TYFqL_KWxQ.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C=
+6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2=
+212, U+2215, U+FEFF, U+FFFD;
+    }
+    /* cyrillic-ext */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: italic;
+        font-weight: 700;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptsg8zYS_SKggPNyC=
+g4QIFqL_KWxWMT.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A64=
+0-A69F, U+FE2E-FE2F;
+    }
+    /* cyrillic */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: italic;
+        font-weight: 700;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptsg8zYS_SKggPNyC=
+g4SYFqL_KWxWMT.woff2) format('woff2');
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+    /* vietnamese */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: italic;
+        font-weight: 700;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptsg8zYS_SKggPNyC=
+g4QoFqL_KWxWMT.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, =
+U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+    }
+    /* latin-ext */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: italic;
+        font-weight: 700;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptsg8zYS_SKggPNyC=
+g4Q4FqL_KWxWMT.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20A=
+B, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* latin */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: italic;
+        font-weight: 700;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptsg8zYS_SKggPNyC=
+g4TYFqL_KWxQ.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C=
+6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2=
+212, U+2215, U+FEFF, U+FFFD;
+    }
+    /* cyrillic-ext */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 400;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptug8zYS_SKggPNyC=
+AIT4ttDfCmxA.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A64=
+0-A69F, U+FE2E-FE2F;
+    }
+    /* cyrillic */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 400;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptug8zYS_SKggPNyC=
+kIT4ttDfCmxA.woff2) format('woff2');
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+    /* vietnamese */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 400;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptug8zYS_SKggPNyC=
+IIT4ttDfCmxA.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, =
+U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+    }
+    /* latin-ext */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 400;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptug8zYS_SKggPNyC=
+MIT4ttDfCmxA.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20A=
+B, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* latin */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 400;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptug8zYS_SKggPNyC=
+0IT4ttDfA.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C=
+6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2=
+212, U+2215, U+FEFF, U+FFFD;
+    }
+    /* cyrillic-ext */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 700;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptug8zYS_SKggPNyC=
+AIT4ttDfCmxA.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A64=
+0-A69F, U+FE2E-FE2F;
+    }
+    /* cyrillic */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 700;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptug8zYS_SKggPNyC=
+kIT4ttDfCmxA.woff2) format('woff2');
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+    /* vietnamese */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 700;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptug8zYS_SKggPNyC=
+IIT4ttDfCmxA.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, =
+U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+    }
+    /* latin-ext */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 700;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptug8zYS_SKggPNyC=
+MIT4ttDfCmxA.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20A=
+B, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* latin */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 700;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptug8zYS_SKggPNyC=
+0IT4ttDfA.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C=
+6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2=
+212, U+2215, U+FEFF, U+FFFD;
+    }
+</style>
+<style type=3D"text/css">/* cyrillic-ext */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: italic;
+        font-weight: 500;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Pt_g8zYS_SKggPNyC=
+gSQamb1W0lwk4S4VrMDr4fJh1Zyc61YBlG.woff) format('woff');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A64=
+0-A69F, U+FE2E-FE2F;
+    }
+    /* cyrillic */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: italic;
+        font-weight: 500;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Pt_g8zYS_SKggPNyC=
+gSQamb1W0lwk4S4VrMDrcfJh1Zyc61YBlG.woff) format('woff');
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+    /* vietnamese */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: italic;
+        font-weight: 500;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Pt_g8zYS_SKggPNyC=
+gSQamb1W0lwk4S4VrMDrwfJh1Zyc61YBlG.woff) format('woff');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, =
+U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+    }
+    /* latin-ext */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: italic;
+        font-weight: 500;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Pt_g8zYS_SKggPNyC=
+gSQamb1W0lwk4S4VrMDr0fJh1Zyc61YBlG.woff) format('woff');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20A=
+B, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* latin */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: italic;
+        font-weight: 500;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Pt_g8zYS_SKggPNyC=
+gSQamb1W0lwk4S4VrMDrMfJh1Zyc61YA.woff) format('woff');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C=
+6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2=
+212, U+2215, U+FEFF, U+FFFD;
+    }
+    /* cyrillic-ext */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 500;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4i=
+EgvnHyvveLxVvoorCFPrcVIT9d0c-dYA.woff) format('woff');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A64=
+0-A69F, U+FE2E-FE2F;
+    }
+    /* cyrillic */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 500;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4i=
+EgvnHyvveLxVvoorCMPrcVIT9d0c-dYA.woff) format('woff');
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+    /* vietnamese */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 500;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4i=
+EgvnHyvveLxVvoorCHPrcVIT9d0c-dYA.woff) format('woff');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, =
+U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+    }
+    /* latin-ext */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 500;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4i=
+EgvnHyvveLxVvoorCGPrcVIT9d0c-dYA.woff) format('woff');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20A=
+B, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* latin */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 500;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4i=
+EgvnHyvveLxVvoorCIPrcVIT9d0c8.woff) format('woff');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C=
+6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2=
+212, U+2215, U+FEFF, U+FFFD;
+    }
+</style>
+<style type=3D"text/css">/*body tag will be style if changed by an ESP*/
+    html,  body, p, li, blockquote {width: 100% !important;-webkit-text-siz=
+e-adjust:none; margin:0;padding:0;-ms-text-size-adjust:100%;}
+    /* Stops email clients resizing small text. */
+    * {-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;}
+    /*text on yahoo mail*/
+    .yshortcuts { color: #707070;}
+    /*link in yahoo mail should be same as global links*/
+    .yshortcuts a span { color: #CF1E48;}  =20
+    .yshortcuts a {border-bottom: none !important;}  =20
+    /*global links*/
+ =20
+    /*Emails wrapped in this class for hotmail and Outlook.com*/
+    .ExternalClass{width: 100% !important;-webkit-text-size-adjust:none; ma=
+rgin:0;padding:0;-ms-text-size-adjust:100%;}
+    /* Fixes webkit padding issue. Fix for Yahoo mail table alignment bug. =
+Applies table-layout to the first 2 tables then removes for anything nested=
+ deeper. */
+    table {border-spacing: 0 !important;  table-layout: fixed;margin: 0 aut=
+o !important;}
+    table table table {table-layout: auto;}
+    /* Uses a better rendering method when resizing images in IE. */
+    img {-ms-interpolation-mode: bicubic;}
+
+    /*class to display table structure visually in DW*/
+    .container{width:700px;}
+    /*Make width of emails wider in Samsung*/
+    #MessageViewBody, #MessageWebViewDiv{width: 100% !important;}
+    /* Another work-around for iOS meddling in triggered links. */
+    a[x-apple-data-detectors] {color: inherit !important;}=20
+    /* Global decleration for tel and sms links */
+    a[href^=3D"tel"], a[href^=3D"sms"] {text-decoration: none;color: black;=
+ /* or whatever your want */pointer-events: none;cursor: default;}
+    .mobile_link a[href^=3D"tel"], .mobile_link a[href^=3D"sms"] =20
+   =20
+    /* Smartphones */
+    @media only screen and (max-width:480px) {
+        /*Make body margin 0 - targetting Android*/
+        body{margin:0 !important;}
+        /*Make everything with class full width*/
+        .hundred, .container{width:100% !important;max-width:100% !importan=
+t;}
+        /*hide in mobile*/
+        .desktop { display:none !important;}
+        /*images inside banner class will resize proportionatly*/
+        .banner img{width:100% !important; height:auto !important}
+        /*show mobile contents in mobile if hidden in desktop*/
+        .mobile{display:block !important; width:100% !important; max-height=
+:inherit !important; overflow:visible !important;}
+        /*remove padding completely*/
+        .zero{padding:0px !important;}
+        /*columns to rows*/
+        .Colms th{display:inline-block; width:100%;}
+         tr.buttons td a {padding: 5px !important;}
+=09=09tr td:nth-child(21) a {padding: 5px 0px !important;}
+    }
+    /*not smart phones*/
+    @media only screen and (max-width:701px){
+        /*make container size 700px wide
+        .container{width:700px;}*/
+    }
+=09
+=09table td {border-collapse: collapse; }
+=09
+=09div#footer{
+font-size:10px !important;
+}  div#footer{
+font-size:10px !important;
+}  a {
+    color: #001272!important;
+}
+
+.ii a[href] {
+color: #001272 !important;
+}
+</style>
+<style type=3D"text/css">/** Hotmail header color reset: Hotmail replaces y=
+our header color styles with a green color on H2, H3, H4, H5, and H6 tags. =
+In this example, the color is reset to black for a non-linked header, blue =
+for a linked header, red for an active header (limited support), and purple=
+ for a visited header (limited support).  Replace with your choice of color=
+. The !important is really what is overriding Hotmail's styling. Hotmail al=
+so sets the H1 and H2 tags to the same size.
+
+=20
+   =20
+    @media only screen and (min-device-width: 768px) and (max-device-width:=
+ 1024px) {
+        /* targetting tablets, smaller screens, etc */
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+        /* Put your iPhone 4g styles in here */
+    }
+    /* Following Android targeting from:
+    http://developer.android.com/guide/webapps/targeting.html
+    http://pugetworks.com/2011/04/css-media-queries-for-targeting-different=
+-mobile-devices/  */
+    @media only screen and (-webkit-device-pixel-ratio:.75){
+        /* Put CSS for low density (ldpi) Android layouts in here */
+    }
+    @media only screen and (-webkit-device-pixel-ratio:1){
+        /* Put CSS for medium density (mdpi) Android layouts in here */
+    }
+    @media only screen and (-webkit-device-pixel-ratio:1.5){
+        /* Put CSS for high density (hdpi) Android layouts in here */
+    }
+</style>
+<style type=3D"text/css">/* Desktop default */
+     .selectors {
+    width: 100px !important;
+    min-height: 80px !important;
+   =20
+    color: #f2f2f2 !important;
+    text-align: center !important;
+   =20
+    font-weight: bold !important;
+    border-radius: 8px !important;
+    text-decoration: none !important;
+    box-sizing: border-box !important;
+    vertical-align: middle !important;
+  }
+
+  .selectors a {
+  =20
+    align-items: center !important;
+    justify-content: center !important;
+    height: 100% !important;
+    line-height: 1.2 !important;
+    padding: 10px !important;
+  }
+
+  @media only screen and (max-width: 480px) {
+
+
+   .selectors {
+      width: 45% !important;
+      min-height: 80px !important;
+    }
+=09
+=09
+  }
+</style>
+<!--=20
+1. keep png the right size
+2. border collapse for all tables in Outlook
+3. give all tables and td a font family starting with Arial because Outlook=
+ does not read web fonts and Stops Outlook from adding extra spacing to tab=
+les.
+--><!--[if gte mso 9]>
+    <xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:Pixe=
+lsPerInch></o:OfficeDocumentSettings></xml>
+    <style>
+        table{border-collapse:collapse; mso-table-lspace:0pt; mso-table-rsp=
+ace:0pt;}
+        table, table td{font-family:Arial, Helvetica, 'sans-serif' !importa=
+nt;mso-table-lspace: 0pt !important;mso-table-rspace: 0pt !important;}
+  =20
+
+
+
+div#footer{
+font-size:10px !important;
+}  a {
+    color: #001272!important;
+}
+
+.ii a[href] {
+color: #001272 !important;
+}
+
+
+
+   </style>
+<![endif]--><!--[if mso]>
+<style>
+=20
+table td {border-collapse: collapse !important;
+border-spacing: 0 !important;
+=09}
+=09
+=20
+
+div#footer{
+font-size:10px !important;
+}  a {
+    color: #001272!important;
+}
+
+.ii a[href] {
+color: #001272 !important;
+}
+</style>
+<![endif]-->
+<style type=3D"text/css">@media screen and (max-width: 600px) {
+      .container {
+        width: 100% !important;
+        padding: 20px !important;
+      }
+      .content {
+        font-size: 16px !important;
+      }
+      .choice-table {
+        width: 100% !important;
+        table-layout: auto !important;
+      }
+      .choice-cell {
+        display: block !important;
+        width: 100% !important;
+        margin-bottom: 10px !important;
+        text-align: center !important;
+      }
+      .choice-cell a {
+        display: block !important;
+        width: 100% !important;
+        font-size: 16px !important;
+        padding: 14px 0 !important;
+      }
+    }
+</style>
+</head><body><div class=3D"layout-grid-cell-content layout-grid-cell-conten=
+t-mso" data-content-item-id=3D"c328d6b7-3441-4e61-802a-a094539d794c" style=
+=3D"height:100%;            width: 600px;
+overflow-wrap:anywhere;overflow:hidden;">
+<div>&nbsp;</div>
+</div>
+
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" class=3D"layout=
+-table" key=3D"3" style=3D"table-layout:fixed;height:auto;width:100% !impor=
+tant;background-color:#eeeeee;">
+=09<colgroup class=3D"displayNone" key=3D"1">
+=09=09<col class=3D"align-center-column" key=3D"0">
+=09=09<col key=3D"1" width=3D"100px">
+=09=09<col key=3D"2" width=3D"100px">
+=09=09<col key=3D"3" width=3D"100px">
+=09=09<col key=3D"4" width=3D"100px">
+=09=09<col key=3D"5" width=3D"100px">
+=09=09<col key=3D"6" width=3D"100px">
+=09=09<col class=3D"align-center-column" key=3D"7">
+=09</colgroup>
+=09<tbody class=3D"source target" key=3D"2">
+=09=09<tr class=3D"layout-grid-row displayBlock " data-content-item-id=3D"c=
+328d6b7-3441-4e61-802a-a094539d794c" style=3D"height:100%;">
+=09=09=09<td class=3D"layout-grid-section-cell displayNone" key=3D"before">=
+&nbsp;</td>
+=09=09=09<!--[if gte mso 9][!tonline]>
+                        <td class=3D"layout-grid-cell target source" colSpa=
+n=3D"6" width=3D"600" valign=3D"top" style=3D"width:600px; height:100%;vert=
+ical-align:top;padding-top:0px;padding-left:0px;padding-right:0px;         =
+   background-color:#001272;">
+                        <![endif]--><!--[if !gte mso 9]>
+                        <td class=3D"layout-grid-cell displayBlock target s=
+ource" colSpan=3D"6" valign=3D"top" style=3D"width:600px; height:100%;verti=
+cal-align:top;padding-top:0px;padding-left:0px;padding-right:0px;          =
+   background-color:#001272;" data-content-item-id=3D"c328d6b7-3441-4e61-80=
+2a-a094539d794c">
+                        <!-- <![endif] hidden -->
+=09=09</tr>
+=09</tbody>
+</table>
+
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" data-content-item-i=
+d=3D"c328d6b7-3441-4e61-802a-a094539d794c" style=3D"width:100%;border-spaci=
+ng:0!important;box-sizing:border-box;">
+=09<tbody>
+=09=09<tr>
+=09=09=09<td>
+=09=09=09<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"w=
+idth:100%;border-spacing:0!important;background-color:transparent;">
+=09=09=09=09<tbody>
+=09=09=09=09=09<tr>
+=09=09=09=09=09=09<td>
+=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellpadding=3D"2" ce=
+llspacing=3D"0" style=3D"max-width:830px;" width=3D"100%">
+=09=09=09=09=09=09=09<tbody>
+=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09<td align=3D"center" style=3D"background-color: =
+rgb(255, 255, 255);">
+=09=09=09=09=09=09=09=09=09<div style=3D"text-align: center;"><img src=3D"h=
+ttps://towerinsurance.qualtrics.com/CP/Graphic.php?IM=3DIM_qfnUMrMfElYJxXT"=
+ style=3D"width: 600px; height: 300px;"></div>
+=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09<td style=3D"text-align: left; padding-left:23px=
+; padding-bottom:10px; padding-top:12px; padding-right:23px;"><span style=
+=3D"font-size:16px;"><span style=3D"font-family:'raleway' , sans-serif;">Hi=
+ Maria Del Prete</span></span></td>
+=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09<td style=3D"text-align: left; padding-left:23px=
+; padding-bottom:10px; padding-top:12px; padding-right:23px;"><span style=
+=3D"font-size:16px;"><span style=3D"font-family:'raleway' , sans-serif;">Yo=
+u recently made a Personal Motor claim and we'd like to hear about your exp=
+erience.&nbsp;<br>
+=09=09=09=09=09=09=09=09=09<br>
+=09=09=09=09=09=09=09=09=09As a forward thinking insurer, we're always look=
+ing for ways to do things better.&nbsp;<br>
+=09=09=09=09=09=09=09=09=09<br>
+=09=09=09=09=09=09=09=09=09Our survey should only take a couple of minutes =
+and we sincerely thank you for your time.&nbsp;</span></span></td>
+=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09<!-- Non-Outlook Clients --><!--[if !mso]><!-- --><=
+!-- Survey Question -->
+=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09<td align=3D"center" style=3D"padding-bottom: 40=
+px;">
+=09=09=09=09=09=09=09=09=09<table cellpadding=3D"0" cellspacing=3D"0" style=
+=3D"max-width: 500px; border: 1px solid #E5E5E5; border-radius: 4px; backgr=
+ound-color: #ffffff;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09<tbody>
+=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09<td style=3D"padding: 16px; font-size: =
+16px; text-align: center;  "><span color:=3D"">Overall, how satisfied are y=
+ou with your recent claims experience?</span></td>
+=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09<td align=3D"center" style=3D"padding: =
+0 10px 16px;">
+=09=09=09=09=09=09=09=09=09=09=09=09<table cellpadding=3D"0" cellspacing=3D=
+"5" class=3D"choice-table" style=3D"text-align: center; table-layout: fixed=
+;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09<tbody>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td align=3D"center" valign=3D=
+"middle" style=3D"background:#FFD700; border-radius:9px; font-size:14px; fo=
+nt-family:Arial,sans-serif; color:#001272; height:60px;" width=3D"20%"><a h=
+ref=3D"https://towerinsurance.qualtrics.com/jfe/form/SV_2f8yoJdtiPwYO7c?Q_D=
+L=3DhuKwxJoANtOnX0U_2f8yoJdtiPwYO7c_CGC_fbVos6PdctXqb16&amp;Q_CHL=3Demail&a=
+mp;Q_PopulateResponse=3D%7B%22QID37%22:%221%22%7D&amp;Q_PopulateValidate=3D=
+1" style=3D"color:#001272; text-decoration:none; display:block; width:100%;=
+ height:100%;">Very dissatisfied</a></td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td style=3D"width:4px;">&nbsp=
+;</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td align=3D"center" valign=3D=
+"middle" style=3D"background:#FFD700; border-radius:9px; font-size:14px; fo=
+nt-family:Arial,sans-serif; color:#001272; height:60px;" width=3D"20%"><a h=
+ref=3D"https://towerinsurance.qualtrics.com/jfe/form/SV_2f8yoJdtiPwYO7c?Q_D=
+L=3DhuKwxJoANtOnX0U_2f8yoJdtiPwYO7c_CGC_fbVos6PdctXqb16&amp;Q_CHL=3Demail&a=
+mp;Q_PopulateResponse=3D%7B%22QID37%22:%224%22%7D&amp;Q_PopulateValidate=3D=
+1" style=3D"color:#001272; text-decoration:none; display:block; width:100%;=
+ height:100%;">Dissatisfied</a></td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td style=3D"width:4px;">&nbsp=
+;</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td align=3D"center" valign=3D=
+"middle" style=3D"background:#FFD700; border-radius:9px; font-size:14px; fo=
+nt-family:Arial,sans-serif; color:#001272; height:60px;" width=3D"20%"><a h=
+ref=3D"https://towerinsurance.qualtrics.com/jfe/form/SV_2f8yoJdtiPwYO7c?Q_D=
+L=3DhuKwxJoANtOnX0U_2f8yoJdtiPwYO7c_CGC_fbVos6PdctXqb16&amp;Q_CHL=3Demail&a=
+mp;Q_PopulateResponse=3D%7B%22QID37%22:%225%22%7D&amp;Q_PopulateValidate=3D=
+1" style=3D"color:#001272; text-decoration:none; display:block; width:100%;=
+ height:100%;">Neither satisfied nor dissatisfied</a></td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td style=3D"width:4px;">&nbsp=
+;</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td align=3D"center" valign=3D=
+"middle" style=3D"background:#FFD700; border-radius:9px; font-size:14px; fo=
+nt-family:Arial,sans-serif; color:#001272; height:60px;" width=3D"20%"><a h=
+ref=3D"https://towerinsurance.qualtrics.com/jfe/form/SV_2f8yoJdtiPwYO7c?Q_D=
+L=3DhuKwxJoANtOnX0U_2f8yoJdtiPwYO7c_CGC_fbVos6PdctXqb16&amp;Q_CHL=3Demail&a=
+mp;Q_PopulateResponse=3D%7B%22QID37%22:%226%22%7D&amp;Q_PopulateValidate=3D=
+1" style=3D"color:#001272; text-decoration:none; display:block; width:100%;=
+ height:100%;">Satisfied</a></td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td style=3D"width:4px;">&nbsp=
+;</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td align=3D"center" valign=3D=
+"middle" style=3D"background:#FFD700; border-radius:9px; font-size:14px; fo=
+nt-family:Arial,sans-serif; color:#001272; height:60px;" width=3D"20%"><a h=
+ref=3D"https://towerinsurance.qualtrics.com/jfe/form/SV_2f8yoJdtiPwYO7c?Q_D=
+L=3DhuKwxJoANtOnX0U_2f8yoJdtiPwYO7c_CGC_fbVos6PdctXqb16&amp;Q_CHL=3Demail&a=
+mp;Q_PopulateResponse=3D%7B%22QID37%22:%227%22%7D&amp;Q_PopulateValidate=3D=
+1" style=3D"color:#001272; text-decoration:none; display:block; width:100%;=
+ height:100%;">Very satisfied</a></td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09</tbody>
+=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09</tbody>
+=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09<!-- Signoff --><!--<![endif]--><!--[if mso]>
+          <tr>
+            <td align=3D"center" style=3D"padding-bottom: 40px;">
+              <table width=3D"500" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"border:1px solid #E5E5E5; border-radius:9px; background:#ffffff;">
+                <tr>
+                  <td style=3D"padding:16px; font-size:16px; font-family:Ar=
+ial, sans-serif; color:#555555; text-align:center;">
+                    Thinking about the process as a whole, how satisfied ar=
+e you with how everything went?
+                  </td>
+                </tr>
+                <tr>
+                  <td align=3D"center" style=3D"padding: 0 10px 16px;">
+                    <table cellpadding=3D"0" cellspacing=3D"5" width=3D"100=
+%">
+                      <tr>
+                        <td width=3D"20%" align=3D"center" valign=3D"middle=
+" style=3D"background:#FFD700; border-radius:9px; font-size:14px; font-fami=
+ly:Arial,sans-serif; color:#001272; height:60px;">
+                          <a href=3D"https://towerinsurance.qualtrics.com/j=
+fe/form/SV_2f8yoJdtiPwYO7c?Q_DL=3DhuKwxJoANtOnX0U_2f8yoJdtiPwYO7c_CGC_fbVos=
+6PdctXqb16&Q_CHL=3Demail&Q_PopulateResponse=3D%7B%22QID37%22:%221%22%7D&Q_P=
+opulateValidate=3D1" style=3D"color:#001272; text-decoration:none; display:=
+block; width:100%; height:100%;">Very dissatisfied</a>
+                        </td>
+=09=09=09=09=09=09
+=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td style=3D"width:4px;">&nbsp=
+;</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09
+                        <td width=3D"20%" align=3D"center" valign=3D"middle=
+" style=3D"background:#FFD700; border-radius:9px; font-size:14px; font-fami=
+ly:Arial,sans-serif; color:#001272; height:60px;">
+                          <a href=3D"https://towerinsurance.qualtrics.com/j=
+fe/form/SV_2f8yoJdtiPwYO7c?Q_DL=3DhuKwxJoANtOnX0U_2f8yoJdtiPwYO7c_CGC_fbVos=
+6PdctXqb16&Q_CHL=3Demail&Q_PopulateResponse=3D%7B%22QID37%22:%224%22%7D&Q_P=
+opulateValidate=3D1" style=3D"color:#001272; text-decoration:none; display:=
+block; width:100%; height:100%;">Dissatisfied</a>
+                        </td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td style=3D"width:4px;">&nbsp=
+;</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+                        <td width=3D"20%" align=3D"center" valign=3D"middle=
+" style=3D"background:#FFD700; border-radius:9px; font-size:14px; font-fami=
+ly:Arial,sans-serif; color:#001272; height:60px;">
+                          <a href=3D"https://towerinsurance.qualtrics.com/j=
+fe/form/SV_2f8yoJdtiPwYO7c?Q_DL=3DhuKwxJoANtOnX0U_2f8yoJdtiPwYO7c_CGC_fbVos=
+6PdctXqb16&Q_CHL=3Demail&Q_PopulateResponse=3D%7B%22QID37%22:%225%22%7D&Q_P=
+opulateValidate=3D1" style=3D"color:#001272; text-decoration:none; display:=
+block; width:100%; height:100%;">Neither satisfied nor dissatisfied</a>
+                        </td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td style=3D"width:4px;">&nbsp=
+;</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+                        <td width=3D"20%" align=3D"center" valign=3D"middle=
+" style=3D"background:#FFD700; border-radius:9px; font-size:14px; font-fami=
+ly:Arial,sans-serif; color:#001272; height:60px;">
+                          <a href=3D"https://towerinsurance.qualtrics.com/j=
+fe/form/SV_2f8yoJdtiPwYO7c?Q_DL=3DhuKwxJoANtOnX0U_2f8yoJdtiPwYO7c_CGC_fbVos=
+6PdctXqb16&Q_CHL=3Demail&Q_PopulateResponse=3D%7B%22QID37%22:%226%22%7D&Q_P=
+opulateValidate=3D1" style=3D"color:#001272; text-decoration:none; display:=
+block; width:100%; height:100%;">Satisfied</a>
+                        </td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td style=3D"width:4px;">&nbsp=
+;</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+                        <td width=3D"20%" align=3D"center" valign=3D"middle=
+" style=3D"background:#FFD700; border-radius:9px; font-size:14px; font-fami=
+ly:Arial,sans-serif; color:#001272; height:60px;">
+                          <a href=3D"https://towerinsurance.qualtrics.com/j=
+fe/form/SV_2f8yoJdtiPwYO7c?Q_DL=3DhuKwxJoANtOnX0U_2f8yoJdtiPwYO7c_CGC_fbVos=
+6PdctXqb16&Q_CHL=3Demail&Q_PopulateResponse=3D%7B%22QID37%22:%227%22%7D&Q_P=
+opulateValidate=3D1" style=3D"color:#001272; text-decoration:none; display:=
+block; width:100%; height:100%;">Very satisfied</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <![endif]--><!-- Signoff -->
+=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09<td style=3D"text-align: left; padding-left:23px=
+; padding-bottom:10px; padding-top:12px; padding-right:23px;"><span style=
+=3D"font-size:16px;"><span style=3D"font-family:'raleway' , sans-serif;">Th=
+anks<br>
+=09=09=09=09=09=09=09=09=09<br>
+=09=09=09=09=09=09=09=09=09The Tower Team&nbsp;</span></span></td>
+=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09<td style=3D"text-align: left; padding-left:23px=
+; padding-bottom:10px; padding-top:12px; padding-right:23px; background-col=
+or:#F5F5F5;"><!--{C}%3C!%2D%2D%5Bif%20gte%20mso%209%5D%5B!tonline%5D%3E%0A%=
+20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%=
+20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%=
+20style%3D%22height%3A100%25%3Bword-break%3A%20break-word%3Bmso-line-height=
+-rule%3A%20exactly%3Bfont-family%3ARaleway%2C%20sans-serif!important%3Bfont=
+-size%3A16px%3Bfont-weight%3A500%3Bcolor%3A%20%23212121%3Bbackground-color%=
+3A%23F5F5F5%3Bline-height%3A%20150%25%3B%22%20class%3D%22gg0l4hb%22%3E%0A%2=
+0%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2=
+0%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C!%5Be=
+ndif%5D%2D%2D%3E--><!--{C}%3C!%2D%2D%5Bif%20!gte%20mso%209%5D%3E%0A%20%20%2=
+0%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2=
+0%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3=
+Cdiv%20data-content-item-id%3D%22c328d6b7-3441-4e61-802a-a094539d794c%22%20=
+style%3D%22height%3A100%25%3Bword-break%3A%20break-word%3Bmso-line-height-r=
+ule%3A%20exactly%3Bfont-family%3ARaleway%2C%20sans-serif!important%3Bfont-s=
+ize%3A16px%3Bfont-weight%3A500%3Bcolor%3A%20%23212121%3Bbackground-color%3A=
+%23F5F5F5%3Bline-height%3A1.5%3B%22%20class%3D%22gg0l4hb%22%3E%3C!%2D%2D%20=
+%3C!%5Bendif%5D%20hidden%20%2D%2D%3E-->
+=09=09=09=09=09=09=09=09=09<pre style=3D"color:#212121;font-family:'raleway=
+' , sans-serif;font-size:12px;font-weight:500"><span style=3D"font-size:13p=
+x;"><strong>Important information:
+</strong></span>
+</pre>
+
+=09=09=09=09=09=09=09=09=09<pre style=3D"color:#212121;font-family:'raleway=
+' , sans-serif;font-size:12px;font-weight:500"><span style=3D"font-size:13p=
+x;">Please do not reply to this email. This address is not monitored, and r=
+eplies cannot be responded to or read. If you have a query or need help, pl=
+ease <a data-key=3D"d04f90f0-831c-4035-bb56-4c67c2e31348:68cfd4b1-875f-4067=
+-8d79-f0752e37e52d" data-mktcloud-name=3D"Text Link 216952494 get in touch"=
+ data-mktcloud-xt=3D"SPNOTRACK" href=3D"https://www.tower.co.nz/contact-us/=
+" rel=3D"noopener noreferrer" style=3D"color:#007acc;text-decoration:underl=
+ine" target=3D"_blank">get in touch</a>.
+</span>
+</pre>
+
+=09=09=09=09=09=09=09=09=09<pre style=3D"color:#212121;font-family:'raleway=
+' , sans-serif;font-size:12px;font-weight:500"><span style=3D"font-size:13p=
+x;">If you provide any personal information, it will be collected, used, an=
+d stored in accordance with the NZ Privacy Act 2020 and Tower's privacy pol=
+icy, which is available <a data-key=3D"13d4b9c3-a141-4067-bcf0-edeed2f2c1ec=
+:73f53c79-7259-4aeb-918a-ddafc6186186" data-mktcloud-name=3D"Privacy_Policy=
+_Footer" data-mktcloud-xt=3D"SPCLICK" href=3D"https://www.tower.co.nz/terms=
+-and-conditions/#privacy" rel=3D"noopener noreferrer" style=3D"color:#007ac=
+c;text-decoration:underline" target=3D"_blank"><u>here.
+</u></a></span>
+</pre>
+
+=09=09=09=09=09=09=09=09=09<pre style=3D"color:#212121;font-family:'raleway=
+' , sans-serif;font-size:12px;font-weight:500"><span style=3D"font-size:13p=
+x;">If you would like to unsubscribe from future Tower survey emails, pleas=
+e <a href=3D"https://towerinsurance.qualtrics.com/subscription/manage/confi=
+rmation?recipientId=3DCGC_fbVos6PdctXqb16&amp;distributionId=3DEMD_huKwxJoA=
+NtOnX0U&amp;BT=3DdG93ZXJpbnN1cmFuY2U">click here</a>.
+</span>
+</pre>
+
+=09=09=09=09=09=09=09=09=09<pre style=3D"color:#212121;font-family:'raleway=
+' , sans-serif;font-size:12px;font-weight:500"><span style=3D"font-size:13p=
+x;">=C2=A9 Tower Limited 2025</span></pre>
+=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09</tbody>
+=09=09=09=09=09=09</table>
+=09=09=09=09=09=09</td>
+=09=09=09=09=09</tr>
+=09=09=09=09=09<tr>
+=09=09=09=09=09=09<td>
+=09=09=09=09=09=09<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" s=
+tyle=3D"width:100%; max-width:1105px;  border-spacing:0!important;backgroun=
+d-color:transparent;">
+=09=09=09=09=09=09=09<tbody>
+=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09<td>
+=09=09=09=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellpadding=
+=3D"13" cellspacing=3D"0" style=3D"border-spacing:0px !important;box-sizing=
+:border-box;width:100%;">
+=09=09=09=09=09=09=09=09=09=09<tbody>
+=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09</tbody>
+=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09</tbody>
+=09=09=09=09=09=09</table>
+=09=09=09=09=09=09</td>
+=09=09=09=09=09</tr>
+=09=09=09=09=09<tr>
+=09=09=09=09=09</tr>
+=09=09=09=09</tbody>
+=09=09=09</table>
+=09=09=09</td>
+=09=09</tr>
+=09</tbody>
+</table>
+
+<div class=3D"layout-grid-cell-content layout-grid-cell-content-mso" data-c=
+ontent-item-id=3D"c328d6b7-3441-4e61-802a-a094539d794c" style=3D"height:100=
+%;            width: 600px;
+overflow-wrap:anywhere;overflow:hidden;">&nbsp;</div>
+<img width=3D"1" height=3D"1" alt=3D"" src=3D"https://towerinsurance.qualtr=
+ics.com/subscription/watermark.gif?UID=3DUR_eyxtDnRVzxTVKFo&amp;EMD=3DEMD_h=
+uKwxJoANtOnX0U&amp;CGC=3DCGC_fbVos6PdctXqb16&amp;SV=3DSV_2f8yoJdtiPwYO7c"><=
+/body></html>
+------=_Part_138286_1468029437.1757032678095--
+
+------=_Part_138285_1030246852.1757032678095--
+
+------=_Part_138284_809919823.1757032678095--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>conversation-id</key>
+	<integer>57942</integer>
+	<key>date-last-viewed</key>
+	<integer>1758945500</integer>
+	<key>date-received</key>
+	<integer>1757032683</integer>
+	<key>flags</key>
+	<integer>8590195841</integer>
+	<key>remote-id</key>
+	<string>69564</string>
+</dict>
+</plist>

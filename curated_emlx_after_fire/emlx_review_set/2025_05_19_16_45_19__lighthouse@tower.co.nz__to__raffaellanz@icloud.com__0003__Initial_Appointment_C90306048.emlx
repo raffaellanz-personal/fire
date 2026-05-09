@@ -1,0 +1,400 @@
+27203     
+Return-path: <lighthouse@tower.co.nz>
+Original-recipient: rfc822;raffaellanz@icloud.com
+Received: from p00-icloudmta-smtpin-us-west-2a-60-percent-10 by p136-mailgateway-smtp-6c76448dfc-zlnnn (mailgateway 2516B137)
+	with SMTP id c526a71b-e10d-4832-baef-574102ff1a38 
+	for <raffaellanz@icloud.com>; Mon, 19 May 2025 04:45:30 GMT
+X-Apple-MoveToFolder: INBOX 
+X-Apple-Action: MOVE_TO_FOLDER/INBOX
+X-Apple-UUID: c526a71b-e10d-4832-baef-574102ff1a38
+Received: from out1202.nz.smxemail.com (out1202.nz.smxemail.com [203.84.135.34])
+	by p00-icloudmta-smtpin-us-west-2a-60-percent-10.p00-icloudmta-smtpin-vip.icloud-mail-production.svc.kube.us-west-2a.k8s.cloud.apple.com (Postfix) with ESMTPS id 5CD33C00102
+	for <raffaellanz@icloud.com>; Mon, 19 May 2025 04:45:29 +0000 (UTC)
+X-ICL-Info: GAtbRFYDBVFFSlVFSwQEUFUKE0oWX1gHVQoPB0UCBlFbQVJZSQMDTEZNRhIcDVoLEhESHxdFRQc1DQkAHUIYARpXCA1YVlJfARYREgoeVQ1bFxxXClMLEBQfABYdXFoDGwMmHhtcWRcRVwUYFRBeBxkWWxgNRAdQRUtIGQIeRQ8NHAsWEVwYARoURgcMQgsNAA1XRUgCGAwPVxUaAFVbAxwVSBQXXRYGEUQIDVZDWxoQFAceFB5VDRhCEhgPVURMFhZIGQIQWwsRRFpASgABV0VMVFlNAARMRE5SQE4CD1tHSlFET3BhKztUNCE1BwUmMzIrNTUO
+X-ICL-Score: 3.33303323422
+Authentication-Results: bimi.icloud.com; bimi=none
+X-ARC-Info: policy=fail; arc=none
+Authentication-Results: arc.icloud.com; arc=none
+Authentication-Results: dmarc.icloud.com; dmarc=pass header.from=tower.co.nz
+X-DMARC-Policy: v=DMARC1; p=reject; rua=mailto:dmarc_rua@emaildefense.proofpoint.com,mailto:dmarc_agg@vali.email,mailto:dmarc-reports@tower.co.nz; ruf=mailto:dmarc-reports@tower.co.nz,mailto:dmarc_ruf@emaildefense.proofpoint.com; fo=1; ri=3600
+X-DMARC-Info: pass=pass; dmarc-policy=reject; s=r1; d=r1; pdomain=tower.co.nz
+Authentication-Results: dkim-verifier.icloud.com;
+	dkim=pass (1024-bit key) header.d=nz.smxemail.com header.i=@nz.smxemail.com header.b=qqPGeSlc
+Authentication-Results: dkim-verifier.icloud.com;
+	dkim=pass (1024-bit key) header.d=tower.co.nz header.i=@tower.co.nz header.b=Mw6gvxKh
+Authentication-Results: spf.icloud.com; spf=pass (spf.icloud.com: domain of lighthouse@tower.co.nz designates 203.84.135.34 as permitted sender) smtp.mailfrom=lighthouse@tower.co.nz
+Received-SPF: pass (spf.icloud.com: domain of lighthouse@tower.co.nz designates 203.84.135.34 as permitted sender) receiver=spf.icloud.com; client-ip=203.84.135.34; helo=out1202.nz.smxemail.com; envelope-from=lighthouse@tower.co.nz
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nz.smxemail.com;
+	s=alpha; t=1747629924;
+	bh=NSTm84PE5CbGwAcAjL6IaHi9EP032nX1OOSVZV97/gM=;
+	h=Date:From:reply-to:To:Message-ID:Subject;
+	b=qqPGeSlcfuxuGo3Oo0dguS3fU9ShFkxb4NrOSgvg4X2uGWB5iNnUjRxfNt52JwryQ
+	 uFT5CpwuMOul3p/E2s9HZ6/Vl06B+njyouSSUFWYg/N7GEYT8LFX67UrXgEFwNI/YR
+	 OLg8uPgh489g1tEtVT2A8+5+jzgHHVVPYHZNRVLQ=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tower.co.nz;
+	s=tower20190411; t=1747629924;
+	bh=NSTm84PE5CbGwAcAjL6IaHi9EP032nX1OOSVZV97/gM=;
+	h=Date:From:reply-to:To:Message-ID:Subject;
+	b=Mw6gvxKhaS4UtEAWGjMiFxoEgpEjhNxbq/5oB7nWj0lrg+PzZdghSqNghYLUYhwMd
+	 PQ8uN/dkrEjK7rHWriY6dP1KTBl6WSs+9EvNZcQpUuSj4zAx0B3uJ0C2DgqKF4kh/y
+	 acBjGlPogKg+yr/uUQkLzdGWXVelY/b+a910Rx8U=
+SMX-Results: classifications=clean;dmarc=none;spf=pass
+SMX-S1C: gggruggvucftvghtrhhoucdtuddrgeefvddrtddtgdefvddtgeejucetufdoteggodetrfdotffvuc
+	frrhhofhhilhgvmecuuffoigeuuhhsihhnvghsshenuceurghilhhouhhtmecufedttdenucenucfj
+	ughrpeffhfhrvffkufggtgfosegrtdersgertdejnecuhfhrohhmpehlihhghhhthhhouhhsvgesth
+	hofigvrhdrtghordhniienucggtffrrghtthgvrhhnpeelhfffudehveekkeffhffgfedtfeeuhfev
+	hfffieehhffffefgheetuddvieejheenucffohhmrghinhepthhofigvrhdrtghordhniidpihgtnh
+	iirdhorhhgrdhniienucfkphepuddtfedrudehuddrudektddrvddtkeenucevlhhushhtvghrufhi
+	iigvpedtnecurfgrrhgrmhepihhnvghtpedutdefrdduhedurddukedtrddvtdekpdhmrghilhhfrh
+	homheplhhighhhthhhohhushgvsehtohifvghrrdgtohdrnhiipdhnsggprhgtphhtthhopedupdhr
+	tghpthhtoheprhgrfhhfrggvlhhlrghniiesihgtlhhouhgurdgtohhmpdhmohguvgepshhmthhpoh
+	huthdpshhpfhepphgrshhspdhhvghlohephgfkpfdqtfggofejfeffhffmofeuofdpoffvtefjohhs
+	thepmhhtrggruhegtdeipdetuhhthhgpuhhsvghrpehlihhghhhthhhouhhsvghsmhhtphesthhofi
+	gvrhdrtghordhniidprhgvvhfkrfepuddtfedqudehuddqudektddqvddtkedruhhnrghsshhighhn
+	vggurdgutghithdrnhii
+SMX-S1V: clean
+SMX-S1S: 0
+Received: from WIN-RVM73DFKMBM ([103.151.180.208]) by auth.nz.smxemail.com
+	with ESMTP (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384
+	(256/256 bits)) id 682AB763-B1C3070C@mtaau406.omr;
+	Mon, 19 May 2025 04:45:24 +0000
+Date: Mon, 19 May 2025 16:45:19 +1200 (NZST)
+From: lighthouse@tower.co.nz
+reply-to: lighthouse@tower.co.nz
+To: raffaellanz@icloud.com
+Message-ID: <72075052.502.1747629923737@WIN-RVM73DFKMBM>
+Subject: Initial Appointment C90306048
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="----=_Part_501_1096646416.1747629919150"
+X-Mailer: 360Works FileMaker Email Plugin (5.04)
+X-MANTSH: 1TFkXHB0RCllEF2xnTVhBaRsaEm5lEQpZTRdkRURPEQpZSRcacRoQGncGHh1xGx8
+ bEB8adwYYGgYaEQpZXhdobnkRCkNOFxpzY2YaXnBkexlgW1AYfm5nTxlfTgdof2taUGcea2xlE
+ QpYXBcZBBoEHxsFGxoaBB0aBBsTEgQbHhAbHhofGhEKXlkXTHNsXWwRCk1cFx4dHBEKTFoXaGl
+ NTWsRCkxGF01rEQpDWhcYGhkEEh4EGxkfBBkeEQpCXhcbEQpCRRdoEn1jEkxYT2RZRxEKQk4XY
+ G0fGHN6eWx6T1IRCkJMF2gSfWMSTFhPZFlHEQpCbBdoEn1jEkxYT2RZRxEKQkAXYn9Oe1peclx
+ PSB8RCkJYF2JGaUxJE1tJWHplEQpaWBceEQpwZxdhAXoTfR1+QERITxAZGhEKcGgXZhl+U11ia
+ AF5TxgQGRoRCnBoF2REbR9Pf0xvfmUbEBkaEQpwaBdkem8eWXpdGnJwGRAaEQpwaBdnZXJZfkQ
+ fYk9LehAZGhEKcGgXbhJPc3wZbVhDXG0QGRoRCnBoF2EYSRxyc0dQfXBsEBkaEQpwaBd6S01PH
+ 0UYTgFlYBAZGhEKcGgXbEVsaGB6UnscHX8QGRoRCnB/F3p8YhlwbExAUGtyEB8YEQpwfRd6fGI
+ ZcGxMQFBrchAfGBEKcH8XekxBYHBAaW1iEh0QGRoRCnBfF2BPRWt4cE9reH9pEBkaEQpwfRdgY
+ U9GXRx7ZHAcYxAZGhEKcH8XYXpkH3scXmIBeUUQHRIRCnBfF21uYmsSQ1tlWmhMEBwaEQpwfRd
+ oW3AZbWh7BQVpSRAcGhEKcH0XaFtwGW1oewUFaUkQHBoRCnB9F2hwaXkeRBwYBVJBEBIfEQpwQ
+ xdkaRpGGExcaXllWRAZGhEKbX4XGhEKWE0XSxE=
+X-Authority-Info: v=2.4 cv=Xvf6OUF9 c=1 sm=1 tr=0 ts=682ab76a cx=c_apl:c_pps
+ a=4xcUQG2UqEeVcL5BCbtoNA==:117 a=8dxm2nHc/IgEDYRpfoDu8g==:17
+ a=dt9VzEwgFbYA:10 a=2Iqlg5t0Vp4A:10 a=l1tq7d5Q5_kA:10 a=wjt_4Ju4AAAA:8
+ a=V3Kb6STkcIYSqiOaYGkA:9 a=QEXdDO2ut3YA:10 a=tM4T2yHOAAAA:8 a=ncoInikHAAAA:8
+ a=thmouzq952-MNmajwRIA:9 a=9kJWNzZBH2qR6qQh:21 a=_W_S_7VecoQA:10
+ a=lqcHg5cX4UMA:10 a=ya5i7YzpaYYA:10 a=4eAZi9gcwPACaDhptOAy:22
+ a=PGPr8rGFp29VcYdeeOs4:22 a=0Qj_F6LqUrUuXH9VxGNT:22 a=DTb76duVi4ttTNyyOtkS:22
+X-Proofpoint-GUID: 0YIL0tZNQ3Jqz2TDMe3ud-BUApzM4AFO
+X-Proofpoint-ORIG-GUID: 0YIL0tZNQ3Jqz2TDMe3ud-BUApzM4AFO
+
+------=_Part_501_1096646416.1747629919150
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+
+
+______________________________________________________________________________
+
+This email has been filtered by SMX.
+For more information visit http://smxemail.com
+______________________________________________________________________________
+
+
+
+
+------=_Part_501_1096646416.1747629919150
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<HTML><BODY><!---//Claim IDC90306048---><p><span style=3D"color: rgb(0, 18,=
+ 114);">Chris Cornwall from TOWER Insurance will visit you 1:20 PM 20/05/20=
+25. Please text/call Chris on 021 734 732 if you need more information. Tow=
+er Insurance takes Health and Safety seriously. If there are any Health and=
+ Safety risks or hazards please advise &lt;&gt; prior to the site visit.</s=
+pan></p><p><br></p><p><span style=3D"color: rgb(0, 18, 114);">Best regards<=
+/span></p><p><br></p><p><strong style=3D"color: rgb(0, 18, 114);">Chris Cor=
+nwall</strong></p><p><span style=3D"color: rgb(0, 18, 114);">Structural Ass=
+essor | TOWER</span></p><p><strong style=3D"color: rgb(0, 18, 114);">DDI</s=
+trong><span style=3D"color: rgb(0, 18, 114);"> 021 734 732</span></p><p><st=
+rong style=3D"color: rgb(0, 18, 114);">M</strong><span style=3D"color: rgb(=
+0, 18, 114);"> 021 734 732</span></p><p><a href=3D"mailto:" rel=3D"noopener=
+ noreferrer" target=3D"_blank" style=3D"color: rgb(0, 18, 114);">lighthouse=
+@tower.co.nz</a><span style=3D"color: rgb(0, 18, 114);"> | </span><a href=
+=3D"http://www.tower.co.nz/" rel=3D"noopener noreferrer" target=3D"_blank" =
+style=3D"color: rgb(0, 18, 114);">tower.co.nz</a></p><p><img src=3D"data:im=
+age/jpeg;base64,/9j/4AAQSkZJRgABAQEAkACQAAD/2wBDAAoHBwkHBgoJCAkLCwoMDxkQDw4=
+ODx4WFxIZJCAmJSMgIyIoLTkwKCo2KyIjMkQyNjs9QEBAJjBGS0U+Sjk/QD3/2wBDAQsLCw8NDx=
+0QEB09KSMpPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09P=
+T3/wAARCABXAMIDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QA=
+tRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2Jyggk=
+KFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4=
+iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6=
+erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQD=
+BAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRo=
+mJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZ=
+aXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+=
+Pn6/9oADAMBAAIRAxEAPwD2aiikzQAtFNJwKpzapBCSAS7DstY1sRSoq9SVioxctkXqKxm1pz9y=
+ID6mpItZDMBKm0eo5rijnGElLlUjR0KiV7GrRTEcOoZSCD0NOr0k01dGItFFFMAooooAKKKKACi=
+iigAooooAKKKKACiiigAooooAKKKKAEzUFzdR2yFnPPZR1NF1craxF269APU1z8srzSF5DljXjZ=
+pmiwi5Iayf4G9Gj7R3exLc3styTuO1Oyiq9FLXxdavUrS5qjuz0oxUVZCUUZqe3s5rkjapC92NF=
+GjUrS5YK7CUlFXZp6Oxa1IPQNxWgKht7dbeIInQd/Wpq/RMHSlSoRhPdI8mbUpNoWiiiukgKKKS=
+gBaKKKACiikoAWiiigAoopKAFooooAKKKKACiiigDn9SnM10VB+VOB/WqlSXKlLmQMMHcaIIGuJ=
+RGnU9/SvzrE+0xGJkurZ60LQgiPqcd6jv7yx0iDztWvoLKPGQJG+dh7L1NdJa2MdsAQNz92NcB8=
+W9Rg0SLTbqOxsZ7yWQqTc26ybo1HTJ6ckV9Fl3DsZSXt9X2OSri39ku+H/AB74Y1bVzZQSur5Cx=
+SXA2iZicYUf413YGOBwBXnnw71bw/4ojLLothaarakOyxwrjHZlPX/CvRK+h+rUsO+SnHlOTnlP=
+Vu5lat4n0fQZY4tV1CC1eQbkWQ43D1rP/wCFi+FD/wAx20/76P8AhWvfaLp2qOj6hY21yyDCmWM=
+MQPbNeV/GjR9O0vTtLbT7G3tmeVwxhjC7htHXFdFKEZyUWTJtK53v/CxfCn/QdtP++j/hW7Y39t=
+qdlHd2UyzW8oyki9GFc/4f8L6HN4d02SXSLF5Hto2ZmgUkkqMk8VxnxP8AEMtlNa+EtB22qyBRK=
+IflxuPyoMdPU0Kmpy5Yheyuzvbzxx4b065a3u9Zs45l+8u/OPyrR0zWdP1mHzdNvYLqPuYnBx9R=
+2rI8P+BtF0LS47dbC3mmKYmmljDNIT1zn+VcF8QNJ/4QLWLHxD4bUWglcpNCn3CeuMehojCM3yx=
+eoNtanpeo+KNG0i+js9Q1CC3uZQCkbnkgnA/WtRnCqWPQDNeS/EuCPxR4I0vxRZx4aMDzMdQrcH=
+8mH613XgXW/wC3/CNjduwaUJ5cv+8vBpSp2gpAnd2LuleJ9H1u5kt9M1CG5miG50QnKjOOfxrTk=
+dY0Z3IVVGST0ArwfRNYtdD+MMslmxWwnuntz6YY4/8AQq9N+Jesto/g+4WAn7TeEW0QHXLdf0qp=
+0eWSS6gpXRsw+JNJuNJl1SK/hewhJDzg/KuOtZ3/AAsXwp/0HbT/AL6P+FZGs6Oug/Bm5sFUBor=
+Mb8d2JBP61kfCDQtM1LwlNNfafa3MgunUPLEGOMLxk0KnHlcuzC7vY7K38feGLq4jgg1q1kllYI=
+iBjlieg6Ve1fxHpOgeUNWvobXzs+X5h+9jr/MU2LwvocEqSxaRYpIh3KywKCD6g4rzX479dG+kv=
+/stTThGc1FA20rndf8ACxPChOP7ds8n/aP+FblnqFpqMRlsrqG4jBxuicMM/hWJZeEdAutGthNo=
+1i3mQJuPkgE5UdxzXlenxN4V+Mi6foZc25uliaINkFGHzA+u3JPPpVRpRnfl3QczR7wKWkpawKC=
+iiigDO1DT/tH7yP8A1g6j1qnYSfYp2FwrJu4yR0rcxTSobqM/WvMq5ZB11iKbtL8Gaqs+Xlewxb=
+iFlyJEx9a8m+OkqMuiqrKWzK2Ae3HNesm2h/55J/3zXjPxxAXXNKVQABbNwP8Aer2MDz+2XPYwq=
+W5dDL+D1y0HjpIwyhZoHVge+OQB+VfQFfM/w/uRa+O9IkZSwM4TA/2gR/WvpeujHK1S5NLYK8p+=
+O3/IM0j/AK7Sf+givVq86+MGgapr1hpqaVZSXTxSuXCY+UEDHWsMO0qibKlsdl4a/wCRY0v/AK9=
+Iv/QRXjnxGRrf4sW80w2Ru9u4YnjAIBP6V7NoMElt4f0+CdCksdtGjqeoIUZFYnjrwPB4x09QHE=
+F/ACYJu3+63tTo1FCo29gkro6oHPI6GvOvjXdRx+EYIGzvmuVK/gCTUula74z0W1Ww1Xw1LqDQJ=
+tS5tpl+fHTdmqEvhLX/AB7rcF94oiXTtNt/9VZqwZz6g/XuadOKhPmk9EJu6savgPQjdfCuLT74=
+EpeRyEAjlVYnHX864Pwd4mk8GWXiPSrxik8SsYEJ/wCWo+XA/Q17pFEkEKRRIERFCqoHAA6V5j4=
+m+Hk+pfEuzv4YCdOnKy3TjGFZe344FVTqRk5Kez1Bpq1jA8Y+DX0n4faLqMa/6VbndcsByTId2T=
+9Dx+NbFnqw+IPi3w5Evz22n2wurr0EvTH5gV6Nr+kx614fvdOcDE8JRfY44P54rkfhN4Tu/Dul3=
+k+p25gvLiTbsbGQi9PzPNCqp023utvmLl1Nv4if8iBrH/XD+orzn4beCYvEfh2W7fVtStCtw0fl=
+20u1TgDnGOvNem+N7K41HwZqlpZwtNcSw7UjXqxyK4DwVP4t8H6PJYL4SuLkPMZd5lC4yAMY59K=
+KcmqTSetxy+I9A8M+Fk8MpcLHqF9e+cQSbqTftx6V598d+ui/SX/2Wulh8YeLJJ40k8FzojOAzm=
+4HyjPJ6Vl/GDw7q2v/ANlf2VYy3XlCTzNmPlztx1+lKk3GqnJhLWNkOXwr45l0RTb+LlKtADHCI=
+Ahxt4XcOR6ZrM+D0+mNql5b3Niya9EpL3MshcuM4bAP3TkjPrXqunRvFplrG6lXSFFYHsQory3V=
+fC+teH/ihHreiadNdWUkglkEOBgNw6/1FOE+ZSi9AatZnrYpaRTkA4Iz60tcpYUUUUAFFFFACV8=
+/fGC/hu/HckcbhjbwJE3OQG5J/mK+gaqNpOnu7O9jaszHJYwqST+VbUKvspc1rkyjzKx8taXeCx=
+1azufMKeTMjllPIAIzX1ZDMlxCksTBo3UMrA5BBqv/AGNpv/QPtP8Avwv+FWo40hjVI0VEUYCqM=
+AD6VWIr+2adrChHlH0lLRXOWJS0UUAJRS0UAJRilooASilooASilooASilooASilooASloooAKK=
+KKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD//=
+Z"><a href=3D"https://www.icnz.org.nz/fair-insurance-code/" rel=3D"noopener=
+ noreferrer" target=3D"_blank"><img src=3D"data:image/png;base64,iVBORw0KGg=
+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
+r+D5tQ5DbKckjEAAAAAElFTkSuQmCC"></a></p><p><br></p><p><strong style=3D"colo=
+r: rgb(0, 18, 114); font-size: 11px;">Fair Insurance Code</strong></p><p><s=
+pan style=3D"color: rgb(0, 18, 114); font-size: 11px;">=EF=BB=BFTower is a =
+member of the Insurance Council of New Zealand (ICNZ). We abide but the </s=
+pan><a href=3D"https://www.icnz.org.nz/fair-insurance-code/" rel=3D"noopene=
+r noreferrer" target=3D"_blank" style=3D"color: rgb(0, 18, 114); font-size:=
+ 11px;">ICNZ Fair Insurance Code</a><span style=3D"color: rgb(0, 18, 114); =
+font-size: 11px;">.</span></p><p><span style=3D"color: rgb(136, 136, 136); =
+font-size: 11px;">Please only reply to this email by clicking the "Reply" b=
+utton. Do not reply to a different TOWER email address.</span></p><p><br></=
+p><p><span style=3D"color: rgb(136, 136, 136); font-size: 11px;">The inform=
+ation contained in this email message is confidential and may be legally pr=
+ivileged. If you are not the intended recipient, please note that any use, =
+dissemination, distribution, or reproduction of this message in any form wh=
+atsoever, is strictly prohibited. If you received this email in error, plea=
+se notify me by return email, delete your copy, and accept my apologies for=
+ any inconvenience caused. Please note that your receipt of this email from=
+ TOWER's email address does not constitute TOWER's consent for you to send =
+any other electronic information to TOWER by return, unless specifically st=
+ated otherwise.</span><span style=3D"color: rgb(68, 68, 68); font-size: 11p=
+x;">=EF=BB=BF</span></p><div>
+<div style=3D"border-top: solid 1px black; border-bottom: solid 1px black;
+ padding: 10px 0; margin: 20px 0; font-size: 9pt;
+ font-family: Verdana, Arial, Helvetica, sans-serif;">This email has been
+ filtered by SMX. For more information visit
+ <a href=3D"http://smxemail.com/">smxemail.com</a></div>
+</div>
+
+<div>
+
+</div>
+
+</BODY></HTML>
+------=_Part_501_1096646416.1747629919150--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>conversation-id</key>
+	<integer>65353</integer>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1747629930</integer>
+	<key>flags</key>
+	<integer>8590195713</integer>
+	<key>remote-id</key>
+	<string>61731</string>
+</dict>
+</plist>

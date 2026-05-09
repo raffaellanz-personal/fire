@@ -1,0 +1,279 @@
+18332     
+Return-path: <Lance.ORiley@tower.co.nz>
+Original-recipient: rfc822;raffaellanz@icloud.com
+Received: from p00-icloudmta-smtpin-us-central-1n-100-percent-28 by p136-mailgateway-smtp-d5b4c44dd-2mdwj (mailgateway 2612B123)
+	with SMTP id a065f478-af68-4944-8ccd-f8a1cfd9aa16 
+	for <raffaellanz@icloud.com>; Fri, 27 Mar 2026 02:04:25 GMT
+X-Apple-MoveToFolder: INBOX 
+X-Apple-Action: MOVE_TO_FOLDER/INBOX
+X-Apple-UUID: a065f478-af68-4944-8ccd-f8a1cfd9aa16
+Received: from mx08-0055a601.pphosted.com (mx08-0055a601.pphosted.com [185.183.31.4])
+	by p00-icloudmta-smtpin-us-central-1n-100-percent-28 (Postfix) with ESMTPS id 23766C000B6
+	for <raffaellanz@icloud.com>; Fri, 27 Mar 2026 02:04:18 +0000 (UTC)
+X-ICL-Info: GAtbRVYDBVFFSlVHSgQCUFUKE0oWX1gHVQoPB0UBDldbSF5EVgMHTEFZAxNFfFcMFhxIOCpZWgcMORIYD1VETBYWSBkCEFAGSA0JAB1CGAEaVwgNWEJVXwcYABEZVVoOFBccNxFTWg0AHUgUF10WChAVCUoVSAZaWElWQk1RAFJEVxYHEF9FFhAdSBQXXRYSAQtbGgAADk9FSVNCGQYGU1sJFh8XQ0IHEVcFGBUQUgZIDQkAHUIYARpXCA1YXV8GSEUrMiFgBFpHNCRGTAYFUzA8IE88dAdaR0xUQToCDiFFPFQzTgUBIzU0Iy4oAg5QODtXQ04DGCMgKjZFQAIYMic2Ilk3ZWIuOjYtWTt/e1w=
+X-ICL-Score: 2.33303302442
+Authentication-Results: bimi.icloud.com; bimi=none
+X-ARC-Info: policy=fail; arc=fail; id=mx.microsoft.com 1; r1=-20; r2=-18
+Authentication-Results: arc.icloud.com; arc=fail
+Authentication-Results: dmarc.icloud.com; dmarc=pass header.from=tower.co.nz
+X-DMARC-Policy: v=DMARC1; p=reject; rua=mailto:dmarc_rua@emaildefense.proofpoint.com,mailto:dmarc_agg@vali.email,mailto:dmarc-reports@tower.co.nz; ruf=mailto:dmarc-reports@tower.co.nz,mailto:dmarc_ruf@emaildefense.proofpoint.com; fo=1; ri=3600
+X-DMARC-Info: pass=pass; dmarc-policy=reject; s=r1; d=r1; pdomain=tower.co.nz
+Authentication-Results: dkim-verifier.icloud.com; dkim=pass header.d=tower.co.nz header.i=@tower.co.nz header.b=jdoptg73
+Authentication-Results: dkim-verifier.icloud.com; dkim=fail reason="body hash did not verify" header.d=tower.co.nz header.i=@tower.co.nz header.b=gaT0LgAe
+Received-SPF: pass (spf.icloud.com: domain of Lance.ORiley@tower.co.nz designates 185.183.31.4 as permitted sender) receiver=spf.icloud.com; client-ip=185.183.31.4; helo=mx08-0055a601.pphosted.com; envelope-from=Lance.ORiley@tower.co.nz
+Authentication-Results: spf.icloud.com; spf=pass (spf.icloud.com: domain of Lance.ORiley@tower.co.nz designates 185.183.31.4 as permitted sender) smtp.mailfrom=Lance.ORiley@tower.co.nz
+Received: from pps.filterd (m0210312.ppops.net [127.0.0.1])
+	by mx08-0055a601.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 62QHxwHx2842544;
+	Fri, 27 Mar 2026 15:04:17 +1300
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tower.co.nz; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=towerpp; bh=9SI3PAAkJ9n640vDT24qO1XLWP
+	1fQCagLbZGjpwj6Y8=; b=jdoptg73iy/2FIPRTg7NbWgj8PlxcJxfnGVkXz2E1j
+	KOAXPGwq1GCR1JUhkrZhUspULsqAmpAiUEVqBz2ff4zpU531bI/oUDv00lTjfjP+
+	tzT0weMD7tu1ozNS1UCSkQTFtMcf9hNYC9QdJ3MruteBhV+jMQ2k5uhrBkdNWKgz
+	z2ocrWoJpb+yeNC3QjCYEEukxbmW33WSgsIPjVHaUS1jLYoUzSDytw3ZReCWRgm/
+	0hVJ8u9Oy8rg6qGUbJQoLrit//kJLKPljSSHnaPbYmslLxd7Fkw8lLp7LXPfwjY/
+	Rr6i9YmSNoWSNFG3kyOUfx4UAuF4dR4iPhUqD/HvcwKw==
+Received: from sy8pr01cu002.outbound.protection.outlook.com (mail-australiaeastazon11020079.outbound.protection.outlook.com [52.101.150.79])
+	by mx08-0055a601.pphosted.com (PPS) with ESMTPS id 4d2sgjjjjj-1
+	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT);
+	Fri, 27 Mar 2026 15:04:14 +1300 (NZD)
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=lbqYUIpC/bFvi1M4uvSZcS87t3XtRknEMxb8PlOFsbpfpSotT1zsROR6YesPELNEpLElc05uqcRyERdMLo0rCn8+O1yhw+v2zM1GzSLUfGo03v2AXGprLfcOUxxa5fhJN+jfInLN4cPG2lDCS7eixZ9YIWhN+8eFGPpifMht9HK1PrQVL+z7DCQt82uipDrpzZf4IiYF701SMaBQUJdW6qMm5d//ZA+Gk31fA5ZsvVYZMLj5ZkfOAL27opeA3gw+5YlafBg+pveRvw+bIysz7lmxscu4mxrRMC7qRFc3zGOteIRQ1flr/HD07W3DtD6p0ZKNY5b+AVohR+O2/Em1SA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=5549RfXUP4serf9VRVjIfkBtSjraylliRlXaBpKav50=;
+ b=NFXWkluOfW6dPWhf4EqxUnGQXkLucI/SmPouYO1MmH7gZZu1SNCf10MceNdIraKMJeIBlwr8j2oltwce4UU20/wfUf1/lKE5UyGLBwjcG4mF9vHn0Etda5WQN9FQGwqc/BbCEnkPfb+0MBNefvl1xiX0Y+xkEUypxGGZkXeOLyBCg8S9kXeBByGFwxxn79DqaNTvSEGqSshI8Akf1s5LI6FhFgPz3Etfns3eXYwMGudl2B4eYW61h1dqBt/GgxSzXqeni2jBGLUhs/0hQYqYte17CSUIGHgC70qQ0lCGsS9nisWAUk0TlEWiCD7b3IXD597etPJ1DI+6O6dC9W3Nig==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=tower.co.nz; dmarc=pass action=none header.from=tower.co.nz;
+ dkim=pass header.d=tower.co.nz; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tower.co.nz;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=5549RfXUP4serf9VRVjIfkBtSjraylliRlXaBpKav50=;
+ b=gaT0LgAeiUlWvgWLPZyaJSuq+yyesoLEeFXo2t1B5U+xFy4s+7K/24t9Mdcd7c+9vZZvxu7MhXNrkpUiCGP4ZwCjvTxd1RX5s2OTniUk4CtYXbvhAQieUbAzpTvsxy0MfzlbgCLeF+BNN8ZPPHtBHAjmXbq1ODMahAsundXbypY=
+Received: from MEYP282MB1463.AUSP282.PROD.OUTLOOK.COM (2603:10c6:220:c1::15)
+ by SY7P282MB5168.AUSP282.PROD.OUTLOOK.COM (2603:10c6:10:2ab::7) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9745.23; Fri, 27 Mar
+ 2026 02:04:05 +0000
+Received: from MEYP282MB1463.AUSP282.PROD.OUTLOOK.COM
+ ([fe80::d524:8e23:3e1a:5be0]) by MEYP282MB1463.AUSP282.PROD.OUTLOOK.COM
+ ([fe80::d524:8e23:3e1a:5be0%5]) with mapi id 15.20.9745.023; Fri, 27 Mar 2026
+ 02:04:05 +0000
+From: Lance O'Riley <Lance.ORiley@tower.co.nz>
+To: Raffaella del Prete <raffaellanz@icloud.com>, Claims <Claims@tower.co.nz>
+CC: Richard Hargreaves <richard.hargreaves@wynnwilliams.co.nz>
+Subject: RE: Claim: C90306256: Overdue Payments - Action Required ASAP
+Thread-Topic: Claim: C90306256: Overdue Payments - Action Required ASAP
+Thread-Index: AQHcsSpMqNBA8tU1PEytm6PsZ6wbl7Wp5MewgABT4QCAF3IrAIAADrng
+Date: Fri, 27 Mar 2026 02:04:05 +0000
+Message-ID:
+ <MEYP282MB14631EEF8DD182526B28C0E2D657A@MEYP282MB1463.AUSP282.PROD.OUTLOOK.COM>
+References: <5B800E0F-C04B-41BA-9406-519808B0361B@icloud.com>
+ <SYYP282MB08462DFE1E60FF60B7332EAFAD4BA@SYYP282MB0846.AUSP282.PROD.OUTLOOK.COM>
+ <31A48A98-C465-486E-AFA9-9ED51AB694D5@icloud.com>
+ <SY6P282MB3256254957C8BA3C9031D3A9BF07A@SY6P282MB3256.AUSP282.PROD.OUTLOOK.COM>
+ <SY6P282MB3256EB923E11410290B00658BF07A@SY6P282MB3256.AUSP282.PROD.OUTLOOK.COM>
+ <86D59233-B42D-4B4C-82FC-2822EE11A5D0@icloud.com>
+ <A5AA6907-77FD-4871-B157-C7A3EA9D961A@icloud.com>
+ <B0986BC6-B3DF-4BED-B532-61A3B1461B44@icloud.com>
+ <MEYP282MB14631EC6DFFBDD334DBFDA33D644A@MEYP282MB1463.AUSP282.PROD.OUTLOOK.COM>
+ <C8518713-AF22-404E-9129-C0DEB933B6F6@icloud.com>
+ <MEYP282MB1463A6BD86B957781F03FE10D657A@MEYP282MB1463.AUSP282.PROD.OUTLOOK.COM>
+In-Reply-To:
+ <MEYP282MB1463A6BD86B957781F03FE10D657A@MEYP282MB1463.AUSP282.PROD.OUTLOOK.COM>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: yes
+X-MS-TNEF-Correlator:
+msip_labels:
+ MSIP_Label_b473d1de-6c91-4122-90ca-30dd6cc17832_Enabled=True;MSIP_Label_b473d1de-6c91-4122-90ca-30dd6cc17832_SiteId=ff85220d-ac35-48f0-b12a-0ca11f170147;MSIP_Label_b473d1de-6c91-4122-90ca-30dd6cc17832_SetDate=2026-03-27T02:03:55.0000000Z;MSIP_Label_b473d1de-6c91-4122-90ca-30dd6cc17832_Name=Sensitive
+ -
+ External;MSIP_Label_b473d1de-6c91-4122-90ca-30dd6cc17832_ContentBits=3;MSIP_Label_b473d1de-6c91-4122-90ca-30dd6cc17832_Method=Privileged
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: MEYP282MB1463:EE_|SY7P282MB5168:EE_
+x-ms-office365-filtering-correlation-id: 77095445-f36a-4845-bd48-08de8ba51fdd
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam:
+ BCL:0;ARA:13230040|1800799024|366016|6049299003|376014|38070700021|4053099003|4013099003|13003099007|19033499003|22082099003|56012099003|18002099003|8096899003|3613699012;
+x-microsoft-antispam-message-info:
+ nFG1IS52koBZYH/YBXpChUzZzN6uyeParBBzkDmyx8/vOde28WINlIJ4viqrug13+r6DOi7mTCJ3fLRdm9G0AQriSwQLv25BybcWTn8nhK9tyTNVLAFun1Q4CfRsdGZD3BjFEUgK0N3iNr7EAShnaLNaFVF0vSJUoBryHLaCXGqXSPkIf8nd29a9PwqW8g+TzzGjUZXnOFGKCn5AdoytrP2sSrQOJjJaqezM++QD/IyoaTt/rqVKg9dvX7Vee2JmIL+LdDjjEZ+J/n6LkFiMBTOp2VGIlLPcJDEnVgW9OIoJcXI2EHNCpqlAcHU+bDSXCAcBJwUWjqHf1UAlejIX/7CJ8coFQ6PXlQQWsoUNBVLdo7IIKuJ2EyUT0uK0mpDb/69Egtw487oOUkj+rAzD8Bq8NeNYIuJWyAjqZpT94UZ/ouRDEONSHfv32pb8zQhtzD3mrmEtqZjrkb8s7IjLDcq69XplwEHXsuhJRmuB32VBDMQMNosGlCeeSD/D3KOp+vg4mkWgRad5M+tupwVQuBn95p1yTzxGwPrFT/BvGcTQbiWznTTQXaeQKpS+PjC+9oiTTrZr3xvapEJsdp+9Xd6mfT8lIiIVuXOAYL5q92z5vQwWwECG/s//m7QaBxfqTZcw5S2C//UgwW7kPOKV4dzE0Kx06xgnAGYTgRIoO1h4sfgRhVCu57C1bKpznqpFEhJa2w6vsOXYemaWD05N+tiwTccPHd7ctASoB7acznDvWe4ldEoxvaiJrJTZsOzqzIroz7ugsVHmNohssScB4Q==
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:MEYP282MB1463.AUSP282.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(6049299003)(376014)(38070700021)(4053099003)(4013099003)(13003099007)(19033499003)(22082099003)(56012099003)(18002099003)(8096899003)(3613699012);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0:
+ =?utf-8?B?RUk5TjhpNEtucmhuaU9GS1VTenJWUWhRd0xrWHJybFNNSzYwWG9UaTFlSlVp?=
+ =?utf-8?B?My9UN3JQeTVKb1BBV1JZV1ZJWHVEVmIxaC9LbHVaTE5kL2NmUjZSYkVtNHNw?=
+ =?utf-8?B?QmEwSm0xOGllM0dxLzFxOHBVbzdIcUUxUXJJZGlER0JLcGVSU29wcjQ2dXli?=
+ =?utf-8?B?TytYZDJ2eldydE0xeEVyS1M3c2xrL0NVeWcycVVuWXA0bk04RitEU2FzVmVQ?=
+ =?utf-8?B?OVBadWY1dnVINjhPb0RldlVqa1R1TVFQUjlBZnQ5ZmtmOXFmclJocFVqa1dL?=
+ =?utf-8?B?TjMyRTdRQ2pUdFE3aHNvdXlERWxhcVZwbjBwRWJqSFZnMGxIZTB2R3JKRnlY?=
+ =?utf-8?B?b016RWhIZlJNcUlwTW92YVFwM1k5cGtrNDRiZjFqd2lKQk5JOG5QcFMxOFdG?=
+ =?utf-8?B?RmFqNEpOZy9WMFo2YUJ2VGpteXl2dFhGN1ZaU094RWRWL2lQdVBSYnZHL1VS?=
+ =?utf-8?B?ZGdlbm96OUVUd2U0c2gyNGlqVFpRTEMzalVId3RwQ0VCT1Y4SFNyTEp3QW1a?=
+ =?utf-8?B?QXhoVDVQVk5CWU12ZGluNlQveUtiRUNBQWJqcU9LbHZBblFFY05yUURTbk5R?=
+ =?utf-8?B?NzJMQ3RCeG5GcEdwdktrZ3VBSmpJVEExdTV4TmtsL3BobXJSQXlXelpmMkhD?=
+ =?utf-8?B?WjBwWkladXphQWM1R0lFYUdPdWdFNE41NVlIRHFXdDhRTktSSXNFZTBzN1M5?=
+ =?utf-8?B?d29DVVd1RkxTWUZyZlM2MzFxSTJmR1ZBMFJmYlZUNEpiRzBCQy95aUZCKzVR?=
+ =?utf-8?B?Z1ArSitWemt3QnhXb2ZlNTN4VktMUnh0c1Y5enlxRW9mYk94QmxhMm51L2pL?=
+ =?utf-8?B?eW1Bamx5WG1kVmMrSjlyS2RzVE92NWlhWU56S3BibkZOR0djcFNrVFJLT2p0?=
+ =?utf-8?B?MzhHcEhuTlJWUHplOGsrSUw0Qit4Ry9DaytKTlk5RGxXY2lxc0MzRzVpbE0v?=
+ =?utf-8?B?WFBaNityeHdNRmdkWGJZNTl6V1hDNUl5SHltQlMxZUliTHFKcmxPVFkzbWlQ?=
+ =?utf-8?B?MmE0b3YwMHoyT1gweFBjZ0JjaFVXT2IxWW12Sko3c2JYUE1NSnVYZ3pFZW8r?=
+ =?utf-8?B?elJjOEZ5c0VFb0RybGpEVzFnTDIrMy9RS3ppT1krRDJ5WXRhem1qSFlVYVM1?=
+ =?utf-8?B?ejIxSXlNNmFpbXBmOC9HbmIwU2MxZm9ndThGeWVyWHlEbEQzVEJJZ3RIcDhs?=
+ =?utf-8?B?U3Nla0NsS01hL3ZNN2RHN1JiSDRwSW83UFo4ZTI5NnMwa2IwRG85QU0xdy9p?=
+ =?utf-8?B?MWg3YTh6NXdBNUJQVDY2VE5IUHlrS0ZkN3djd1BiakhWMGFpL1l6cCtxSk44?=
+ =?utf-8?B?RlovWDFGQ05GZGVlYmZBME5HRVY4VmdHUnJhdStxYlZjdllpTW10UDdEOFpK?=
+ =?utf-8?B?cHlUTitXTWMra0NMc1ViQjlvdzJFb3BWOVA5S3MzMzFINk9ieElDdTJoVSsy?=
+ =?utf-8?B?MnRWQy9VenV6cmhZRUZyK3FsbklwVjlNQm1mSm5RTlFSL0dHV1dCN1lQUUlU?=
+ =?utf-8?B?dTJVT3Y0TWxZSnN6Ty9vOWtEc1M4bExyckRiSmxHVEJXU2lKMU10aWhmT0hz?=
+ =?utf-8?B?d3RtcFBnaUtDZzNrMEViNGl2MGo4c3ZUOHF3U2hUVm9nTGRMQS8rMkN2Q1gw?=
+ =?utf-8?B?N3J3bEordGt5NlJWanhYb2tncS9GdFdPbFpSaU1oRmlRbjBMVE9xd2YwMGtE?=
+ =?utf-8?B?czNqSzN6TnZRR0Jnb1p4RjQ5NS83dXlUWWZYdlJPcTJCZFYvdFhQbG1oUEZk?=
+ =?utf-8?B?MFhBTXRxa09WWGNRMldQSlBvNmhVdEp3Z3VETkVuSmhPYjRPbHF0SDJ5bzdP?=
+ =?utf-8?B?b2JBTHliSTQ2Unl0QmVEN0hoeEozMVRvY0RXR3JMVGhhYjdYU3ZwN1Z3UC9R?=
+ =?utf-8?B?S1ZNWnlaV3l2VUEvMWJNcEJjaUVROGFTT0N1MWNIWHdhM2YvN3JEMkFHeURx?=
+ =?utf-8?B?NzRqMUZ5SEduZCtLWHZzaVVNRVNRNUwrNVhVRkh3NkQ1M1JFbDl5UE9nQ3J3?=
+ =?utf-8?B?WHZpcnFBdzlJSTQ5M0ZMTHNpRFk4V3phc1BCNFh0Y2hrKzN0VTJrNXEzM2Jv?=
+ =?utf-8?B?WmdBSzQzY2xxdHA1YlJOMlAyMHFSODVpc3I5N0VTSmxyUnVyd0tNU2E3SlVM?=
+ =?utf-8?B?TXVGU25yM1I3K2hzZjBwRVVFZzZBQi9pRzdvWGJzU0tTcitoRnF1YVZ2V3U0?=
+ =?utf-8?B?Z1F4MnIySnd6T0NJVGxFVW5Da0ZHUTRVdHFVVmw2Z3JLeENTUjRoRU9Qd1F1?=
+ =?utf-8?B?djFlK3dTcXp0V1hzdFV1eUkzdFJzTlROaktWSjEzV3RqVVh1RkRPMjFoQWl6?=
+ =?utf-8?B?QWVsalBIV0czSHQ4RHBhbllTRnV6SWJFejh4WnlBdDl6SnNCSzhXdz09?=
+Content-Type: multipart/related;
+	boundary="_006_MEYP282MB14631EEF8DD182526B28C0E2D657AMEYP282MB1463AUSP_";
+	type="multipart/alternative"
+MIME-Version: 1.0
+X-Exchange-RoutingPolicyChecked:
+	ecYeAjVaZirw/4qe3uqIFk7r2Z4NCbsJHxk0aq66AYt/FwE8aGuCE/YwLMDIs9gkmj8UoF/tAkS1QCcoHtZckGDmwZg3IZPaNkKwUfFTpr5H8PMKe2D8aNHAmFr0UQCqcoGvZaUv0F/o4b5FRh8WddsTAo+KV2u/df89Vt50Oss1LM/A0t9TRIXg0a2VToH3KPcAGCCa1azDsAXG3EUfYYBj55/V6YkbsbPKyCbgT/Xftu/HQS8n7HaGo/i9vF9hebwDzMAOwMqRuYmQRUMz7os9mSqjYDZpfAyqaJ14Qvmk4tm3x1DTGspkhDgrgiqqClLmT52yEIv5NhmWwNOGfg==
+X-OriginatorOrg: tower.co.nz
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: MEYP282MB1463.AUSP282.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-Network-Message-Id: 77095445-f36a-4845-bd48-08de8ba51fdd
+X-MS-Exchange-CrossTenant-originalarrivaltime: 27 Mar 2026 02:04:05.2811
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: ff85220d-ac35-48f0-b12a-0ca11f170147
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 0h4BZQ2lDKcxChuKTP/t55oaIg37w4qCAKrHq5yBzn1nmg2P9BEp4/WBzks64sR/4uOaJ3y/lLL2LLLEQxQRWLqcFuZNx18FMDaicFuPBz8=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SY7P282MB5168
+X-MANTSH: 1TFkXGxoaHxEKWUQXbm9ARnNmZR4FT3sRCllNF25PRkNcT1gRCl9ZFx4dHxEKX00
+ XZEVETxEKWUkXHR9xGwYbHxp3BhISBh4SQhkTBhoGGR4GGBoacRsaGhAadwYaBhoGGRoGGgYaB
+ hpxGhAadwYaEQpZXhdsbHkRCkNOF0gSEkh8XlIHGGtwXB5zX3JIbmVTXXgSE31LWGhjG05YEQp
+ YXBcZBBoEHx0FGxoaBBIYBB4YBBgdEBseGh8aEQpeWRdNAR5FBREKTVwXHBIRCkxaF2hha0FrE
+ QpMRhdva2trbE1rEQpDWhcbEh8EGxIZBBkbBB4RCkJeFxsRCkReFxgRCkRJFxsRCkJcFxsRCl5
+ OFxsRCkJLF2BtHxhzenlsek9SEQpCSRdgbR8Yc3p5bHpPUhEKQkUXegVGHl0ecERTbWwRCkJOF
+ 2BtHxhzenlsek9SEQpCTBdiUAVcYW1+E2dzQREKQmwXaUx6Q0FPHUVwYhgRCkJAF2RdT35sW2E
+ ce19nEQpCWBdiRmlMSRNbSVh6ZREKTV4XGxEKWlgXGBEKcGcXaGl+E3N9TExmYn4QGRoRCnBoF
+ 2NhExJTXhJ6R2B4EBkaEQpwaBdrXx1ffm1MXEcSGhAZGhEKcGgXY0NDQEhfRkVoHEMQGRoRCnB
+ oF2BzZEYSeQVaUEFfEBkaEQpwaBdsa2lsbRpZbH8ZHhAZGhEKcGgXZBhLbWFLQHJLAWcQGRoRC
+ nBoF2tGfkdcXkVLQhIfEBkaEQpwaBdjem4eT1p8SxluHBAZGhEKcH8XYXpkH3scXmIBeUUQEh8
+ RCnBfF21uYmsSQ1tlWmhMEBkaEQpwfRdoW3AZbWh7BQVpSRAZGhEKcGcXZXNGWkxjHmFhcG4QG
+ RoRCnBnF21acAVeSGVcRmt5EBkaEQpwZxdkTmR5e2tzTl9HXRAZGhEKcH8XYWZvWxpnZEJIHVs
+ QHh8RCnBfF2dASX0SfGJjQE4BEB4SEQpwfRdkeH9zelN5eEYfHhAZGhEKcGcXekZ9aH5kH0tZb
+ 0IQGRoRCnB/F3pMQWBwQGltYhIdEBwaEQpwXxdgT0VreHBPa3h/aRAZGhEKcH0XYGFPRl0ce2R
+ wHGMQGRoRCnB9F29EX1BGZlscH35gEBkaEQpwfRdvRF9QRmZbHB9+YBAZGhEKcH0Xb0RfUEZmW
+ xwffmAQGRoRCnB9F2BhT0ZdHHtkcBxjEBkaEQpwfRdvRF9QRmZbHB9+YBAZGhEKcH0Xb0RfUEZ
+ mWxwffmAQGRoRCnB9F29EX1BGZlscH35gEBkaEQpwZxdjbX9ScERHb3loUxAZGhEKcH0XYGFPR
+ l0ce2RwHGMQGRoRCnB9F2QbfmtoSwVtcH1MEBkaEQpwfxdpExpNbVlMH3NpGRATGhEKcF8XYBp
+ uWRx/GEduUGcQHhIRCnB9F28ab0QBXExCbFgFEB4SEQpwfRdkG35raEsFbXB9TBAZGhEKcH0XY
+ GFPRl0ce2RwHGMQGRoRCnB9F2ViRl96QkhmYVxMEBkaEQpwfRdlYkZfekJIZmFcTBAZGhEKcH0
+ XbxpvRAFcTEJsWAUQHhIRCnB9F2ViRl96QkhmYVxMEBkaEQpwbBdnWEIdHmkTE3x8axAZGhEKc
+ EwXbFxYBX18WWZ5exgQGRoRCnBDF28BfXB+eEVGZ0MSEBkaEQptfhcbEQpYTRdLEQ==
+X-Proofpoint-ORIG-GUID: b88bVtx-2AZv4YuXbDOywR89WarBI1dr
+X-Proofpoint-GUID: b88bVtx-2AZv4YuXbDOywR89WarBI1dr
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzI3MDAxNCBTYWx0ZWRfXzWMyPca5JffB
+ 6I8raErw6aWcoyuGD3bpP1jyUpg3puv2uDzSfMsb09+8+QXBf8HkOqbX72Il2QKs2vvqgl/PHAG
+ Q3wmF0Hps/+IJHuZ1nhjtV0RY/2/2Ba5tAyDLOq7CNFBFHabMvOBf7y6vUQqrnbg4hdH5t25Lxt
+ prY8lqjSw50QjdxKQvtJKys6wfpEPpc14M7WS3eDEdop2DzySEnzsQ4P5D0WsAU+PQXgS5LVu5m
+ wCMsXNhFSrO+Y8bAYxLRQq1k8Pbpc6pxwu/8w06WsT0YZol4PWIPBt2hRhtdwi8GWe5Xf3RFUYP
+ wNmcdYe2bzHMSPruYkgKY1JZQowjLpnOIXoK/01Qw==
+X-JNJ: AAAAAAAB6G1zrjek8ns/zhPu3x2sY15/MohvE85rRW+mO6H98pecUX+fGfL4MDtw26RiFJT8+qLfXyhOpR57Ab97yf2phZ5UtaITTUyGJQuV65/JSWIrTYSCqxWrEuKhrm8KQ/eqNWcFlMOf4GIbHy5/Huaj9hjgk4sa2KfwlcJCyXchHA/Z8rP/mB3IoZLVPmWf3++eYcbkWkFQzgqlIMjlGU1iNby2DaMaiFdzSrV52SNGuxp5AgSnyS/Z3TzdYuLl5Fy0mJJSyPucKUR0CNEq4xKIYAuuCrP99rUrfSL2ZwN/6BeJMKengBHbGfY3yx8QCxrBAfPbOtGE3LxSaqgnyHppLmUfB3KFmKWVtVdOAodRn85OLu8efzA2mOXJiKvQjX63kpETkaaC56EmC3bKZgqj1bH5jq8gh6Kjuej8f5sc0VKan3fUIxuhLabvemQxFJ/jFpdSrptQt1F4WgMJ0Bf6lv7gfrPLNvwfcD/TRd+TZzmRnQH1LwsdwSRTBgub3X6UX4Jxz3U1kHUgotx0gjLLvZXSUeAiROkixyFDmwkjbPewevx5L9TvWWCTUePbkJQDx0b6z+g30Lghvk9Tf8C/FQjvjtasUVOACq8l6D0ubDeG6Qs/YX/PNrzpVNTTu/8nf0aEEiAbCq3J5zT0cJ6e696Q5dGRKavPclJxJSsKKa8ZA7nyGIfbMfu6RPCPVF5/nN84PrgV5PDcbS79hPnv0OQaIVsi8HMm34wq6V73+1rB4cMh6VBsDzqCBIhlJUbudKDLwA/YN5mX4MeUu8U=
+
+
+--_006_MEYP282MB14631EEF8DD182526B28C0E2D657AMEYP282MB1463AUSP_
+Content-Type: multipart/alternative;
+	boundary=_000_MEYP282MB14631EEF8DD182526B28C0E2D657AMEYP282MB1463AUSP_
+
+
+--_000_MEYP282MB14631EEF8DD182526B28C0E2D657AMEYP282MB1463AUSP_
+X-Apple-Content-Length: 26160
+Content-Type: text/plain;
+	charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+
+--_000_MEYP282MB14631EEF8DD182526B28C0E2D657AMEYP282MB1463AUSP_
+X-Apple-Content-Length: 110547
+Content-Type: text/html;
+	charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+
+--_000_MEYP282MB14631EEF8DD182526B28C0E2D657AMEYP282MB1463AUSP_--
+
+--_006_MEYP282MB14631EEF8DD182526B28C0E2D657AMEYP282MB1463AUSP_
+Content-Transfer-Encoding: base64
+Content-Disposition: INLINE;
+	size=26475;
+	modification-date="Fri, 27 Mar 2026 02:04:04 GMT";
+	filename=image001.jpg;
+	creation-date="Fri, 27 Mar 2026 02:04:04 GMT"
+Content-Type: image/jpeg;
+	name=image001.jpg
+X-Apple-Content-Length: 36230
+Content-Description: image001.jpg
+Content-Id: <image001.jpg@01DCBDFA.F167AF10>
+
+
+--_006_MEYP282MB14631EEF8DD182526B28C0E2D657AMEYP282MB1463AUSP_
+Content-Transfer-Encoding: base64
+Content-Disposition: INLINE;
+	size=4575;
+	modification-date="Fri, 27 Mar 2026 02:04:04 GMT";
+	filename=image002.png;
+	creation-date="Fri, 27 Mar 2026 02:04:04 GMT"
+Content-Type: image/png;
+	name=image002.png
+X-Apple-Content-Length: 6262
+Content-Description: image002.png
+Content-Id: <image002.png@01DCBDFA.F167AF10>
+
+
+--_006_MEYP282MB14631EEF8DD182526B28C0E2D657AMEYP282MB1463AUSP_
+Content-Transfer-Encoding: base64
+Content-Disposition: INLINE;
+	size=101334;
+	modification-date="Fri, 27 Mar 2026 02:04:04 GMT";
+	filename=image003.jpg;
+	creation-date="Fri, 27 Mar 2026 02:04:04 GMT"
+Content-Type: image/jpeg;
+	name=image003.jpg
+X-Apple-Content-Length: 138668
+Content-Description: image003.jpg
+Content-Id: <image003.jpg@01DCBDFA.F167AF10>
+
+
+--_006_MEYP282MB14631EEF8DD182526B28C0E2D657AMEYP282MB1463AUSP_--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>conversation-id</key>
+	<integer>126265</integer>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1774577065</integer>
+	<key>flags</key>
+	<integer>25770003585</integer>
+	<key>remote-id</key>
+	<string>87977</string>
+</dict>
+</plist>

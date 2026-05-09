@@ -1,0 +1,2920 @@
+113021    
+Return-path: <Claims@tower.co.nz>
+Original-recipient: rfc822;raffaellanz@icloud.com
+Received: from p00-icloudmta-smtpin-us-central-1n-100-percent-36 by p136-mailgateway-smtp-76d54d6d6d-bjc4g (mailgateway 2540B139)
+	with SMTP id 78a7bed9-b5ac-470a-bb37-e0e83bb22629 
+	for <raffaellanz@icloud.com>; Sun, 12 Oct 2025 20:22:44 GMT
+X-Apple-MoveToFolder: INBOX 
+X-Apple-Action: MOVE_TO_FOLDER/INBOX
+X-Apple-UUID: 78a7bed9-b5ac-470a-bb37-e0e83bb22629
+Received: from mx08-0055a601.pphosted.com (mx08-0055a601.pphosted.com [185.183.31.4])
+	by p00-icloudmta-smtpin-us-central-1n-100-percent-36 (Postfix) with ESMTPS id DAA69C000A2
+	for <raffaellanz@icloud.com>; Sun, 12 Oct 2025 20:22:36 +0000 (UTC)
+X-ICL-Info: GAtbRVYDBVFFSlVHSgQCUFUKE0oWX1gHVQoPB0UBDldbSF5EVgMHTEFZAxNFc1oDHBQVNwxfQQcHVwUYVl5MQhMdWwMXR1MQWxoJWRZKFhAWRBQWHlZXBxkVBxkCcF8BGRYTE1ZTWQ9VEQMbFw1bGkVBS0dIBQMDQ0lXWQhAXg0GDQMTVlNZD1UJEgVFXU5STVRWR00FV1RFSEgHCFhZEQEcAlkbX1tCER1bAxdHUxBbGglZFkoWDxwdW0sraQAyR0FUOjoDBFdDQV82OgEAU0JBJTJKBgVaRU1XRU1ycCcxOCYkIQZmUE1LKzVLAgNUWzgzJCgCDlBbKTQ4PB55NyE1KTgzHnUtOEc=
+X-ICL-Score: 2.33303302442
+Authentication-Results: bimi.icloud.com; bimi=none
+X-ARC-Info: policy=fail; arc=fail; id=mx.microsoft.com 1; r1=-20; r2=-18
+Authentication-Results: arc.icloud.com; arc=fail
+Authentication-Results: dmarc.icloud.com; dmarc=pass header.from=tower.co.nz
+X-DMARC-Policy: v=DMARC1; p=reject; rua=mailto:dmarc_rua@emaildefense.proofpoint.com,mailto:dmarc_agg@vali.email,mailto:dmarc-reports@tower.co.nz; ruf=mailto:dmarc-reports@tower.co.nz,mailto:dmarc_ruf@emaildefense.proofpoint.com; fo=1; ri=3600
+X-DMARC-Info: pass=pass; dmarc-policy=reject; s=r1; d=r1; pdomain=tower.co.nz
+Authentication-Results: dkim-verifier.icloud.com; dkim=pass header.d=tower.co.nz header.i=@tower.co.nz header.b=RmcEb8Ww
+Authentication-Results: dkim-verifier.icloud.com; dkim=fail reason="body hash did not verify" header.d=tower.co.nz header.i=@tower.co.nz header.b=Lqaq49O7
+Authentication-Results: spf.icloud.com; spf=pass (spf.icloud.com: domain of Claims@tower.co.nz designates 185.183.31.4 as permitted sender) smtp.mailfrom=Claims@tower.co.nz
+Received-SPF: pass (spf.icloud.com: domain of Claims@tower.co.nz designates 185.183.31.4 as permitted sender) receiver=spf.icloud.com; client-ip=185.183.31.4; helo=mx08-0055a601.pphosted.com; envelope-from=Claims@tower.co.nz
+Received: from pps.filterd (m0210312.ppops.net [127.0.0.1])
+	by mx08-0055a601.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 59CIdeOt4087989
+	for <raffaellanz@icloud.com>; Mon, 13 Oct 2025 09:22:35 +1300
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tower.co.nz; h=
+	content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=towerpp; bh=8qUs8U2F0jMIt/1dtliZZJIwuU
+	sxpucN+9SPk1LUTQk=; b=RmcEb8Ww5Gwc5rhvLUCz5i7b1Or/beiTfzTbKezZGh
+	ZiPaAAB1gpfOvlhX4iolFnPKQl+HWdYJKkf8aC+N6ufrXNIDUdrRwCqeCWrvLceX
+	E2Uh3VMYPJkXIIVTva+pgfpygb7fX07hpt2f02rLeSfVaLfjGsiav4Oe5BMIEdef
+	9wIA3nJ89/YK/Mc3PUVxVLVt3x6WGl4yuFsvGLUyIa2yy6dCA88n2mYPh8iFCJ+5
+	ChVB5uczdYJwCFZkDMOHAqZG4vU5AFFwGZmVR7LHh0xSh6nBQ+tNR7n45MmNmvIn
+	XqvkKoTh1/gf10+LcJ0/bHLyFBvByxCBKx4cjmAs77vA==
+Received: from meupr01cu001.outbound.protection.outlook.com (mail-australiasoutheastazon11020127.outbound.protection.outlook.com [52.101.152.127])
+	by mx08-0055a601.pphosted.com (PPS) with ESMTPS id 49qxsh8bxa-1
+	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT)
+	for <raffaellanz@icloud.com>; Mon, 13 Oct 2025 09:22:33 +1300 (NZD)
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=ZBbaBJt4XPtL6vSdEZn70kJFgjFc2RIWcQjBl+hCYRWM5G7WRXObxldFR+vHafVSs1OLxXo8ae74CfOn9NzMKavTy3JToRrhpqOp7qeb+iKiimn8Um/ATgRsaUMi2itJk1lw0UVotBCPwviqaNY/31DMRvCGN9ftzX4SWC1ECO1zldMV1HG0o/Qso0EPQHfma2sUN8GhEpbxlOl0Hlm3bW7WLfBZJKTCAaYNVeDR9IkOQZwFoeJraQOTbk/WXyDfMosUYrb/F7g+VGmnM+uj3+BSjEyYUb19NDv0PfneCZhc+egHOwHG5QgjeOq04gTtAsPetMmsNbckVL35KpkSAg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=w6NdVZgfxPPMb2DveSZIDQl2o0TwiCZVtDp0CHHRJCw=;
+ b=nLRmKwY/W/o+PXXqnxpNyxVcPeQlj5r3oT0/8Mi0cY3IgTlvr/NOqPel3xz4hImhCO93kcJsszu1khBf0vrjCQA/is/62hcINM0feddATHmUOCp20X7rz76xibx3+gHKV9tPy2K4RtjJy2mh3Rv0ETzRGw1oJH90rxyivHrU4XoZvRlPtg7sdDUuNwi7Xhclj7yXThjanO8Lm5TqKOgaDl3q5kc4DBbijJgdQI3Rz4hqmAeRxEaLGehUgWvcE/4gddyvF9wLxFUGYQmAUi4yWbbia4/Gxgyow6Bf3VncuzzSSIL2hZgl0aI10NoqTMqaPLHaE2dQLY1Tmnm+kyuztQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=tower.co.nz; dmarc=pass action=none header.from=tower.co.nz;
+ dkim=pass header.d=tower.co.nz; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tower.co.nz;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=w6NdVZgfxPPMb2DveSZIDQl2o0TwiCZVtDp0CHHRJCw=;
+ b=Lqaq49O7zB5UElY3oQPrs8d9yHLrTzeIFvWb/r3qfA3cJM+qTfALmB39g3CjKdFZL+iHfkoEmOCKfnTggctwyQqsVLH++N9uNDgz5RH+Q9OCtvMzQU76OJ1rkJ67QhFyvMRPc8OeJ+FEBXrgnTAoRfSf4uQlJsZIkG8/hbUKJto=
+Received: from SY6P282MB3256.AUSP282.PROD.OUTLOOK.COM (2603:10c6:10:163::20)
+ by ME4P282MB0965.AUSP282.PROD.OUTLOOK.COM (2603:10c6:220:9b::7) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9203.12; Sun, 12 Oct
+ 2025 20:22:26 +0000
+Received: from SY6P282MB3256.AUSP282.PROD.OUTLOOK.COM
+ ([fe80::c892:e8fc:e0b9:65f8]) by SY6P282MB3256.AUSP282.PROD.OUTLOOK.COM
+ ([fe80::c892:e8fc:e0b9:65f8%7]) with mapi id 15.20.9203.009; Sun, 12 Oct 2025
+ 20:22:26 +0000
+From: Claims <Claims@tower.co.nz>
+To: Raffaella del Prete <raffaellanz@icloud.com>
+Subject: RE: REFUND Request : Contents Tower Claim: C90306256
+Thread-Topic: REFUND Request : Contents Tower Claim: C90306256
+Thread-Index: AQHcGU4OTg5mFNS9MUKIJHp6cDNEKbR+10eQgAAl3zCAOnnfAIAFweEQ
+Date: Sun, 12 Oct 2025 20:22:26 +0000
+Message-ID:
+ <SY6P282MB325689AB16178CE263804125BFEDA@SY6P282MB3256.AUSP282.PROD.OUTLOOK.COM>
+References: <5B800E0F-C04B-41BA-9406-519808B0361B@icloud.com>
+ <SYYP282MB08462DFE1E60FF60B7332EAFAD4BA@SYYP282MB0846.AUSP282.PROD.OUTLOOK.COM>
+ <31A48A98-C465-486E-AFA9-9ED51AB694D5@icloud.com>
+ <SY6P282MB3256254957C8BA3C9031D3A9BF07A@SY6P282MB3256.AUSP282.PROD.OUTLOOK.COM>
+ <SY6P282MB3256EB923E11410290B00658BF07A@SY6P282MB3256.AUSP282.PROD.OUTLOOK.COM>
+ <86D59233-B42D-4B4C-82FC-2822EE11A5D0@icloud.com>
+In-Reply-To: <86D59233-B42D-4B4C-82FC-2822EE11A5D0@icloud.com>
+Accept-Language: en-NZ, en-US
+Content-Language: en-US
+X-MS-Has-Attach: yes
+X-MS-TNEF-Correlator:
+msip_labels:
+ MSIP_Label_20c4a984-2032-481d-a198-97bb26dab3ea_ActionId=5c26f044-9484-44bd-a840-6a8f2308bcc8;MSIP_Label_20c4a984-2032-481d-a198-97bb26dab3ea_ContentBits=0;MSIP_Label_20c4a984-2032-481d-a198-97bb26dab3ea_Enabled=true;MSIP_Label_20c4a984-2032-481d-a198-97bb26dab3ea_Method=Privileged;MSIP_Label_20c4a984-2032-481d-a198-97bb26dab3ea_Name=Standard;MSIP_Label_20c4a984-2032-481d-a198-97bb26dab3ea_SetDate=2025-10-12T20:22:25Z;MSIP_Label_20c4a984-2032-481d-a198-97bb26dab3ea_SiteId=ff85220d-ac35-48f0-b12a-0ca11f170147;MSIP_Label_20c4a984-2032-481d-a198-97bb26dab3ea_Tag=10,
+ 0, 1, 1;
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: SY6P282MB3256:EE_|ME4P282MB0965:EE_
+x-ms-office365-filtering-correlation-id: b9209d51-0bae-4adb-8945-08de09cd0f32
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam:
+ BCL:0;ARA:13230040|376014|10070799003|366016|1800799024|4053099003|4013099003|13003099007|38070700021|8096899003|7053199007;
+x-microsoft-antispam-message-info:
+ =?utf-8?B?ZlMxaFQ3K1lPYUFKcFhzam5SYmJwMmRwbXJrZGYyd2xJRHhKMXBPWWJ0VkxZ?=
+ =?utf-8?B?THNWSGc5VFN1WHVnSWU4akZRQnUzUWZRVmNtV1diOTRoSzRMN0RTbldTTHVL?=
+ =?utf-8?B?ZWM4RjdYL1YwWVFjaFd5WHJlWEJtMnZVWmdMRGI5blI3d2ZIdkV1WjkvRU4x?=
+ =?utf-8?B?MTFabkx2NzlnT2htNGJja2cvczZWRFQ4WGFJRDJzWUdPSVNPekhxUG5zdWND?=
+ =?utf-8?B?YjFpN1I3Z3NpSDF3R3FDK05TTVJsS1NRVys5QmhYTVFGWVFQYkxUbWtlMU9N?=
+ =?utf-8?B?VHh1WlArUWZuVDlsZ0NJN1V4elBtbGpKZklWZVJWWnB0SUtzekMvemJteXpO?=
+ =?utf-8?B?YStuZGlCODRGd3pVcURNbWtVY3k4aUZCRGdheFp5NVlnQUUrNWsrMktPZ1lD?=
+ =?utf-8?B?RU9OMkxEaXJPaFFxSDRpamdMTWZhSklOR3VLQ0VhNkVyZG5laWtYWVFrcXNp?=
+ =?utf-8?B?cnhZY0Z1WWhNU3ZkQXFZUlBTdjdoemxGdlZ5RGVkWjNGR2ZxOExJUkZ2dGcr?=
+ =?utf-8?B?ZXZDMUw4bnlFN1hKZ1o3cWdHNmxtUVNSeUhrenFXUW8venZacG0vWGJQMTlF?=
+ =?utf-8?B?ZFFVbVI5YlNCYXJ3dXJsRkMwZnJQbUhQNlJLV214ZzNBSVhLcHBhOTc2eUZQ?=
+ =?utf-8?B?SldSMklnTzFUY3hSNCtJVm1OM3dMRmhxRXRtRitnU0xGY2tJTzJpSlBhVjJm?=
+ =?utf-8?B?QjNaVU11dmgvSE1tRFVKL2U5cEVPaUdMOUc0NGRjS2I5ZTJDR3RyWjF6dVo3?=
+ =?utf-8?B?L0cvbnNnUVBjQ1VGYjRTM0x4YTBKSTlzdGNkU2RwNVNuUnRwNStHYUtFdkN0?=
+ =?utf-8?B?WmNDTVhUL2JGQVBzRzU0bGFNSFZKdlhJbFlNbDNHTEt6QTdPVitCSlNtVlZs?=
+ =?utf-8?B?Q09JdDRvdythOU9RVUZmOHB5TWFKbjBWdjFnK0NOYUhRWHp1eSsyT2NMOG9q?=
+ =?utf-8?B?aTZxY25xeDloanRzVXBJRCtCeGVQVzQ0Z0NCTDdYZFhtajhIL09aWm1KOEFX?=
+ =?utf-8?B?djZnL2xOWlNkS3Rvc0RtOGd6VmlZb09HcFU0N2hjY08yM1NobXZiejNGcnk5?=
+ =?utf-8?B?c2VzUURabFFvZ05FcHIvalZEVENwYjhZQkV1NXQ5N2FKK1FDK28xYnlHOEpU?=
+ =?utf-8?B?U1lESnpicVpCUXFEUk1CVGg1bFNFMC9qTDl0aDBWNkRlY3BlZHdaMWxKZjUv?=
+ =?utf-8?B?TGVNdmVXcElPSEVIZTlGSHM2VEhtbjh2d09XdkZoTUtDTk11V05qOTZOUnZR?=
+ =?utf-8?B?azhHQzNWRGRKd2NOc0dDZ2ZoVTJPY2tYcmtFS3NJQUZRTTM3RkFhUzNyY3R6?=
+ =?utf-8?B?MlZoQmliTWVaUkdQY1dhbG1xOVlsUkVaYWpad1FnOWVwZE5sTU1FazhxWFdh?=
+ =?utf-8?B?R3dLQk5HaVF1dUF1TzB0Vi9RanI0STNjSTVZSXk2dFRGTktmV2JHYjdncE9h?=
+ =?utf-8?B?T2d2OXI4NjNLRlZXZmwxdU83YVBQcUQza0F2cUtrbmpNUjFNNEpEUHZwWHVj?=
+ =?utf-8?B?ZlRRTHRobXplUXJiYkszTGhWS0lHYXFCZ3dRNkxkSFFld2RlTTliY0FxdG44?=
+ =?utf-8?B?L3RQVVptSEJTTFZHYTMyY2ZGMXFHdFlBaDVNaDAxcUdGTHlKbGpUeDkxTUU0?=
+ =?utf-8?B?UEFkMFBYNzFKUDd1N2NpUnRBYmg2bkxEUlhNZkZOZmllVW5ucVlxR1RBVnRB?=
+ =?utf-8?B?Ri9FS1RsRUpYVWNuU2hMT2pDK21zTzZXTGgweklJT0RXQzNsakZVZzVBRWFi?=
+ =?utf-8?B?a0JwdXp5YnAwM1E0aEp1NjZUTjNwZkVaTFV0d0puZlFibk9zazVURDQ1bEVH?=
+ =?utf-8?B?cGFsNC9wVDJOZlJad2ZxS3JsbGJmcVVzUENtQUF6bVh3MXJLZnNHNzFFbWc5?=
+ =?utf-8?B?Y1Q0MmdaOW82TisyMXZNTStNbkdqQklTbU84V0ovdThFZ1p5L2FHZ1kvSC9M?=
+ =?utf-8?B?OTVKbjY4RlVtRU84UG52d3FXQnNiNU1xWDNvZGQwYkJVVlVJcFFTeWhwZ3lV?=
+ =?utf-8?B?b2RWam5TM0ZBPT0=?=
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SY6P282MB3256.AUSP282.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(376014)(10070799003)(366016)(1800799024)(4053099003)(4013099003)(13003099007)(38070700021)(8096899003)(7053199007);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0:
+ =?utf-8?B?VW5hc2oyTGl4cThYU1BtM291emRPNHhoNHYyK1MrS0RlMkxIOEY2ZWFET2Zk?=
+ =?utf-8?B?ZDZxd0Zpay96cCtzMnhrNjNlaVpQZ0NGYlRnVTdRcFJkbGlGMW1WVG9JcmMy?=
+ =?utf-8?B?MWFWR1dxaU9PWnVOK0tSM3Q3VEN1eU55ZEFSSWVGWkw3bG85MUhBSjIyS0s0?=
+ =?utf-8?B?QzU2NThrRmErYm5zS1psVG1TUVJMSDlHdjh6MDBpWVdabmtCVC8va0ZRNzdl?=
+ =?utf-8?B?QWFnZ3RMdjR1TmpYUXZpS1ZxeVV6ZFBWQm9DY3RmYTZzMi95Um9kVWVkL3cr?=
+ =?utf-8?B?WFc2azdkV0lHMnFJclZ0L1JQb3dwR2RHSGt5S3VvL2tUOVJVWVRlQ1BQbk9h?=
+ =?utf-8?B?VlpuOFV5RGRsTVNIbXgyK25lT1VPYUlCbkJUd1pyU3YrcnFVSmNINGJxbjcw?=
+ =?utf-8?B?N01BUU9KSkNhaE1aZXI4MzV3OW1wSm5aNXlrdG1jTTIyaFQwYmZOb1JYS0xI?=
+ =?utf-8?B?S1RuV0grU242SVg1TkJYSVhNb01jKzdvVmFQL2FQakhVZXYrbXJQTStJdW1v?=
+ =?utf-8?B?cWlLV2tubGZxK3FoazBydFgySlhxYzM0U2hKVFNwT2dXUXB3NzlCMjB0WHhS?=
+ =?utf-8?B?THY5MDFudm5TRGFWazhFd2ZKanl1WWY2bGpiUlcwUTJhUzdpMXlDYmV3aXdY?=
+ =?utf-8?B?SzAxQWY0bDNlKzliN0pjYXJFMjRDN3JVejEvTDFlUmF6Q3ArbmZwTHJseFlL?=
+ =?utf-8?B?bVB1UmhueVZ2OWNvTExSUjJ3RXVZZ0JOY1N1R3gwYU5ZSlVnNVY5K1VqalA0?=
+ =?utf-8?B?QmNlaUVNZnY1eEMwVlF2alB5T1RxMGpsTk5hSnpJZnRVNTdpT1prVFloQkkv?=
+ =?utf-8?B?L0FOdk9QQXBrUEVnMDFJYkc3UGt4WTVsUi9sSXhWR1NuYWxTeGRtWmdMZlhB?=
+ =?utf-8?B?RFphcnNycHpxMEd2cUxDL3M1ekNwMFNFQ1QxeTJOMXo5U2J1UkxDR2pwYU1p?=
+ =?utf-8?B?ajBENnJucnQxNGlVcVpYVWp6VVE2MytRcU41RW1sR2syREd3alVQUytQZGdE?=
+ =?utf-8?B?WCtvYjNTWFVFRUxwU2s5RDJsemJnYVNGcU5mQjRXYjNkSGZtc2ZtNnpkQVlS?=
+ =?utf-8?B?L1JEQ2NoRllmWkhCY2tkRkpKRzdBNmJOMnlqS3NSTDluT0ZjQWw1MGtxaUxZ?=
+ =?utf-8?B?VnlCOU9aUHRZTEIrdVhNUmVtTnd1eU5kUWVPcTVDcDJLZ0J4OUREdkNCL2V3?=
+ =?utf-8?B?QnhlWFVacytiMzB6Q3VieDR0c1UwN2w2azFLNUdQWHg2UXp2MDF4ZEZmMHNr?=
+ =?utf-8?B?cVd6ZmtTYzJHWHdsek9TY1daZEFoZ3IweDhiaStoZGpHNGE1NkY4Y3lZb2FI?=
+ =?utf-8?B?dnBIeFVQZllPZGp0T2Z1eG9Bc3lEcEI1SjFvZS92RnlXd1Z3eE5PNzF3VklM?=
+ =?utf-8?B?UG10M3R1NW03MjVuSTJNMEd0ajJQNmc1NEJSZ2ZsR1g2UWtmWG5NK2pMVW9B?=
+ =?utf-8?B?VzFXajRmSStqMUtUS25lMy8wUFdsVEhqV2FjWk1XWUdORytkdy80Zno5V1FQ?=
+ =?utf-8?B?R1Y5YXZzWUJwRm1xQkRnUVNKSThNU29La2hnQkRFK05jVEZzN0V4b0xBYncv?=
+ =?utf-8?B?ZzR5TjFKcFNyc21aUWlrdnR3V2dYNFN5b0Y2MGRaWEkyY0wwenVYdkhIZnFF?=
+ =?utf-8?B?NWdORU5iZCsrR1FPMUNQcDlTaldWZ1FlR3EzenVBWGwwYXpJOGNBRVh2MzZZ?=
+ =?utf-8?B?aTB4dUt4WTk0R3lnTFJaS0F0TkYvT05iQ0RmRFVCdXFtS2Fxa1kwdXVjSnBu?=
+ =?utf-8?B?SWxRM2V4M29EWm9BR2xha1UzbzliakdnUGN3Y3ZkRVJ4bDVCcjE2UWQxSzQx?=
+ =?utf-8?B?Vkh2Mjhqek5NQzJBVWNyaGs4SXUyblFLWnRVUHJSVmNqMTZGR0o0VHVINFNY?=
+ =?utf-8?B?a1FtcXozT1R5OFF3VmFXNnZReXJEWWVLYTRrOWdJemo4M1RUSXdQa0NqUDNw?=
+ =?utf-8?B?RGg3Q054ZkJNcnNFYklXSFBmaEZreVBJaFkxMy9uNU9FUStxcGVGc2ljemlx?=
+ =?utf-8?B?Z3RzTTNHU3YvM3JDTytSM3pSdHFWYVhGd3ZvVjhmSndCL1dtRiszc3l1UkVi?=
+ =?utf-8?B?UGs2bDJVVHdTMG1NeU0vdVZyMmljUzNYUWtPSFgrZ3FiOUJwc2tKRXZ4dk5q?=
+ =?utf-8?B?TTlvWDBIczJCYUdKY3JFVml4bE9uSGJ6WDBTOEFqOUJZNkVpTUhoQm1kTHda?=
+ =?utf-8?Q?y5aUOvXQOYkoVcvh4ha/lu1NhPGE8CgdKyWG3jvr1HUM?=
+Content-Type: multipart/related;
+	boundary="_009_SY6P282MB325689AB16178CE263804125BFEDASY6P282MB3256AUSP_";
+	type="multipart/alternative"
+MIME-Version: 1.0
+X-OriginatorOrg: tower.co.nz
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: SY6P282MB3256.AUSP282.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-Network-Message-Id: b9209d51-0bae-4adb-8945-08de09cd0f32
+X-MS-Exchange-CrossTenant-originalarrivaltime: 12 Oct 2025 20:22:26.0542
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: ff85220d-ac35-48f0-b12a-0ca11f170147
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: gwvl7+98kkjrgbjDJ9EQADk0SmThrZGEQk02867jWoklu0akRVXTDyZRZQr6QP/yeD/L2vCMZWTijIa/SxtoRA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: ME4P282MB0965
+X-MANTSH: 1TFkXGxoaHxEKWUQXYFpEYHlbSGNjeX4RCllNF25PRkNcT1gRCl9ZFxkYEQpfTRd
+ kRURPEQpZSRcacRoQGncGGxhxHBwQHxp3BhgaBhoRClleF2xseREKQ04XTWhIfnpDbHhZTRJoR
+ WJEZEZ+YlplRxkZWUV1S09OaVMRClhcFxkEGgQfHgUbGhoEHRoEGxMSBBseEBseGh8aEQpeWRd
+ NY0hhWxEKTVwXGxIcEQpMWhdoa2tNaxEKTEYXb2tra2JNaxEKQ1oXGxIfBBsSGQQZGwQeEQpCX
+ hcbEQpCXBcbEQpeThcbEQpCSxdgbR8Yc3p5bHpPUhEKQkkXYG0fGHN6eWx6T1IRCkJFF3p9BUV
+ QfFJ9QF8SEQpCThdgbR8Yc3p5bHpPUhEKQkwXYUZOH3p9H2xyAUYRCkJsF2FgBW9rQk1eTGttE
+ QpCQBd6bB1mZElteWhuHREKQlgXYkZpTEkTW0lYemURCk1eFxsRClpYFxgRCnBnF21acAVeSGV
+ cRmt5EBkaEQpwaBdoREFve1sdbnBMfRAZGhEKcGgXYXNQfGBiY3x+WlgQGRoRCnBoF2dGXht6S
+ 0hCRlpZEBkaEQpwaBduWGRGfFpwYG1iWxAZGhEKcGgXYW5Cfm1iaVJeZB4QGRoRCnBoF21vH1B
+ ieV9IXHNHEBkaEQpwaBdlSF0BSBpFG1l6fRAZGhEKcGgXZ2N9chsFH0hEa2EQGRoRCnB/F3pMQ
+ WBwQGltYhIdEB4SEQpwXxdgT0VreHBPa3h/aRAZGhEKcH0XYGFPRl0ce2RwHGMQGRoRCnB/F2F
+ 6ZB97HF5iAXlFEBkdEQpwXxdtbmJrEkNbZVpoTBAaEQpwfRdoW3AZbWh7BQVpSRAaEQpwfRdoW
+ 3AZbWh7BQVpSRAaEQpwZxd6Rn1ofmQfS1lvQhAZGhEKcGcXaXp7G0d5SGhBYW4QGRoRCnB9F2B
+ hT0ZdHHtkcBxjEBkaEQpwZxdoWF5/b319Rll7TxAZGhEKcH8XYWZvWxpnZEJIHVsQGB8RCnBfF
+ 2dASX0SfGJjQE4BEBkZEQpwfRdjcmdLXG5oHWRfTRAZGhEKcH0XY3JnS1xuaB1kX00QGRoRCnB
+ 9F2NyZ0tcbmgdZF9NEBkaEQpwfRdgYU9GXRx7ZHAcYxAZGhEKcH0XY3JnS1xuaB1kX00QGRoRC
+ nB9F2NyZ0tcbmgdZF9NEBkaEQpwfRdjcmdLXG5oHWRfTRAZGhEKcGcXZGxGf0V/fVgYaVAQGRo
+ RCnB9F2BhT0ZdHHtkcBxjEBkaEQpwfRdkG35raEsFbXB9TBAZGhEKcH8XaRMaTW1ZTB9zaRkQH
+ hIRCnBfF2AablkcfxhHblBnEB4SEQpwfRdvGm9EAVxMQmxYBRAeEhEKcH0XZBt+a2hLBW1wfUw
+ QGRoRCnB9F2BhT0ZdHHtkcBxjEBkaEQpwfRdlYkZfekJIZmFcTBAZGhEKcH0XZWJGX3pCSGZhX
+ EwQGRoRCnB9F28ab0QBXExCbFgFEB4SEQpwfRdlYkZfekJIZmFcTBAZGhEKcGwXY2FTa2NyGXl
+ 6eR4QHxkRCnBMF2xcWAV9fFlmeXsYEBkaEQpwQxdiAXNwfntFGkVgRhAeGhEKbX4XGxEKWE0XS
+ xE=
+X-Proofpoint-ORIG-GUID: gBbTPiFRsg8BoHnNlTHpOm33so_aedCy
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDEyMDEwOCBTYWx0ZWRfX6pSWXbb6+Z/Y
+ HBYEpDUg5HQs3REowdg0zzVqX+mBepzMxBDMo8h9x/wxGFxiUpGYXnAmr0NmNIUpZr0jzJrDs5/
+ K3cX2PbukqhJOGt4SWviUwhbtRqsv0DQwNBkz8KR9jJzotxevzaa2fL4LChpHi/38IVUBC67BX4
+ k9xDaWihLIfyh4xOGlyidLu2tx8QrqjPsL5D263Y9C2A0NTbrR1Bct/bQaOojpqQ0mrULuILGMH
+ 0dtOdYm7fxvy+kmJe02nHPULGZMlpbJ3CPSHgUYm6Dn+RTHV6zb/LwwJQaE/+wtrcnMK9U3GoUm
+ wVBMzN9VFaKIPLaYPTT
+X-Proofpoint-GUID: gBbTPiFRsg8BoHnNlTHpOm33so_aedCy
+X-JNJ: AAAAAAABGmZvECI+oVrP/vh4WDdemwzqzuKcxoYyNXB4BdtZJhxyrRPd8ea3UvEMWVymbSrmSoE5VWpy81e1m9Id23gLxmPj5h5CDL4z9JTWEtxg5fZfedDalivndU3tzLTeVy/Zz/ExvkqRMyv+Df3hr3b+7hSTElNkTmMhtDwJTdqIRyOfCbKcCsiuQGrFsgIWmEw4jmxXzDH+ZlpPvrX5oo1ooe/JK7o+u8/fZ4+cbeHuxWB4RVl4v7Z2tg2o/RnnFu8K0zGDN7dQGsBNYlmRG/KmyuWIF7Tgq15tYyx4eRCQTyc4J39iQbLQTM0ejjLzlnuc7yc7b9iR5xR02vEvgQMHNb9b/ShfjEho2N5xD/kNPaCAJqnFRCklenUTo35KKO5PwNbGGmZGUGAQxhI6KffmsFtSu/x2pfGn5vhKsxcU5ZkBLXw1pgmhbKVFpA6+rtIPJ1B+iDP0Otem9wBZ18awF7GMckh5Jbem2uI/6zl8//NeR3j7iXduthdL5KiOzaTnYfC7JsEY8+dPDzL1156TIISRo1iT2Za8YTcYKgjUf14lvLus0azL6J3Q+xPpxscWXUOJ5vuu7cByUP7n2Ko+UIb0/od52lGOQSDrMBbgJsouzwHEtYwNj6CR8mNWCgUfJQL5DHHMnQN2gLBfiApg6IAzuX8EwhMSjIQ=
+
+
+--_009_SY6P282MB325689AB16178CE263804125BFEDASY6P282MB3256AUSP_
+Content-Type: multipart/alternative;
+	boundary=_000_SY6P282MB325689AB16178CE263804125BFEDASY6P282MB3256AUSP_
+
+
+--_000_SY6P282MB325689AB16178CE263804125BFEDASY6P282MB3256AUSP_
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=utf-8
+
+Hi Raffaella,
+
+Thank you for sending me the documents.
+
+We do not cover water rates as utilities of the home are not covered under =
+the policy wording.
+
+I will review the vet documents and the $5,000 and come back to you.
+
+Kind regards,
+
+Zach
+
+Zach P
+Claims Management Consultant | Tower
+DDI +64 9 960 4527| 0800 808 808 ext: 59210
+Level 5, 136 Fanshawe Street, PO Box 90347, Auckland 1142
+claims@tower.co.nz<mailto:claims@tower.co.nz> | tower.co.nz<http://www.towe=
+r.co.nz/>
+[Logo, company name  Description automatically generated]  [Financial Insur=
+ance Code] <https://www.icnz.org.nz/fair-insurance-code/>
+Fair Insurance Code
+Tower is a member of the Insurance Council of New Zealand (ICNZ). We abide =
+by the ICNZ Fair Insurance Code<https://www.icnz.org.nz/fair-insurance-code=
+/>.
+
+From: Raffaella del Prete <raffaellanz@icloud.com>
+Sent: Thursday, October 9, 2025 5:26 PM
+To: Claims <Claims@tower.co.nz>; Zach Pion <Zach.Pion@tower.co.nz>
+Subject: Re: REFUND Request : Contents Tower Claim: C90306256
+
+Hi Zach, Could you please refund: 5,000 for the rental from 29/08 to 2nd of=
+ October (see rent summary attached), =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=
+=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =
+=E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=
+=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=
+=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =
+=E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=
+=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=
+=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =
+=E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=
+=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=
+=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =
+=E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=
+=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=
+=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =
+=E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=
+=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=
+=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =
+=E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D
+
+Hi Zach,
+
+Could you please refund:
+
+
+  *   5,000 for the rental from 29/08 to 2nd of October (see rent summary a=
+ttached),
+
+
+  *   298.74 for the Water rates for the rented accommodation
+
+  *   395.85 for the vets (please find attached the Vets notes and the tran=
+saction record on my bank account
+  *
+[cid:image003.png@01DC3C22.E375E020]
+
+  *
+
+  *
+
+
+Thanks and regards,
+Raffaella
+
+
+On 2 Sep 2025, at 11:28=E2=80=AFAM, Claims <Claims@tower.co.nz<mailto:Claim=
+s@tower.co.nz>> wrote:
+
+
+Good afternoon, Raffaella.
+
+
+
+It was good talking to you today.
+
+
+
+To recap our conversation.
+
+  *   You will receive the contents settlement in three to five days
+  *   You will receive the stress benefit payment of $2,000 in the same tim=
+e period.
+  *   You are to send us your vet fee and report for the cats being hurt fr=
+om the claimed event.
+  *   I will update you on a monthly basis at the beginning of each month.
+  *   You would like your claim file from the date of loss to today to be s=
+ent to you. I will get this actioned for you.
+  *   You will send me privacy requests for new information we have on file=
+ including new claim notes from today onwards.
+
+
+
+Kind regards,
+
+
+
+Zach
+
+
+
+Zach Pion
+Complex Claims Management Consultant | Tower
+DDI +64 9 960 4527| 0800 808 808 ext: 59210
+Level 5, 136 Fanshawe Street, PO Box 90347, Auckland 1142
+zach.pion@tower.co.nz<mailto:zach.pion@tower.co.nz> | tower.co.nz<http://ww=
+w.tower.co.nz/>
+[cid:image001.jpg@01DC3C22.E375E020]
+
+  [icnz.org.nz]<https://urldefense.com/v3/__https:/www.icnz.org.nz/fair-ins=
+urance-code/__;!!NPvfczxIteVBjg!GhakoSXuw9EgflqNLfwiAL30eLfzBdOSxUaYDs2c3dU=
+lTAzeak01fpZss6LRsYrNfuWWdDjHj6aFvEV3UtfJwzWXbg$>
+[cid:image002.png@01DC3C22.E375E020]
+
+[icnz.org.nz]<https://urldefense.com/v3/__https:/www.icnz.org.nz/fair-insur=
+ance-code/__;!!NPvfczxIteVBjg!GhakoSXuw9EgflqNLfwiAL30eLfzBdOSxUaYDs2c3dUlT=
+Azeak01fpZss6LRsYrNfuWWdDjHj6aFvEV3UtfJwzWXbg$>
+
+Fair Insurance Code
+Tower is a member of the Insurance Council of New Zealand (ICNZ). We abide =
+by the ICNZ Fair Insurance Code [icnz.org.nz]<https://urldefense.com/v3/__h=
+ttps:/www.icnz.org.nz/fair-insurance-code/__;!!NPvfczxIteVBjg!GhakoSXuw9Egf=
+lqNLfwiAL30eLfzBdOSxUaYDs2c3dUlTAzeak01fpZss6LRsYrNfuWWdDjHj6aFvEV3UtfJwzWX=
+bg$>.
+
+
+
+From: Claims
+Sent: Tuesday, September 2, 2025 9:21 AM
+To: Raffaella del Prete <raffaellanz@icloud.com<mailto:raffaellanz@icloud.c=
+om>>
+Subject: RE: REFUND Request : Contents Tower Claim: C90306256
+
+
+
+Good morning, Raffaella.
+
+
+
+I hope you are well this morning.
+
+
+
+You will receive the $9,000 temporary accommodation payment in 3 to 5 worki=
+ng days.
+
+
+
+The remaining amount under the temporary accommodation benefit is $13,820.62
+
+
+
+Is there a time I can contact you this week by phone to finalize your conte=
+nts claim? the loss schedule provided by Asset Restore to date exceeds your=
+ sum insured, which means that the contents is a total loss as the total va=
+lue of the contents damaged or destroyed is greater then the sum insured. I=
+ work until 1:30 so let me know when this week suits you.
+
+
+
+I have confirmation that your privacy request and the information you reque=
+sted was emailed to you on the 25/07/25. If you can check this date and let=
+ me know if you have it.
+
+
+
+Regarding updates, I am more then happy to update you on the first of each =
+month, would you prefer monthly contacts from me instead of fortnightly?
+
+
+
+Regarding further claim files, we can send you assessor reports as we recei=
+ve these from the assessor. It would be less prudent for us to resend you t=
+he entire claim file each month and not efficient for us due to the time it=
+ takes to action these we may end up getting assessor reports during this p=
+rocess which means that report may not be added to that privacy request.
+
+
+
+Future assessor reports should be the only documents we have that you are n=
+ot given by the assessor as this would come from us.
+
+
+
+Kind regards,
+
+
+
+Zach
+
+Complex Claims Management Consultant | Tower
+DDI +64 9 960 4527| 0800 808 808 ext: 59210
+Level 5, 136 Fanshawe Street, PO Box 90347, Auckland 1142
+zach.pion@tower.co.nz<mailto:zach.pion@tower.co.nz> | tower.co.nz<http://ww=
+w.tower.co.nz/>
+
+  [icnz.org.nz]<https://urldefense.com/v3/__https:/www.icnz.org.nz/fair-ins=
+urance-code/__;!!NPvfczxIteVBjg!GhakoSXuw9EgflqNLfwiAL30eLfzBdOSxUaYDs2c3dU=
+lTAzeak01fpZss6LRsYrNfuWWdDjHj6aFvEV3UtfJwzWXbg$>
+
+[icnz.org.nz]<https://urldefense.com/v3/__https:/www.icnz.org.nz/fair-insur=
+ance-code/__;!!NPvfczxIteVBjg!GhakoSXuw9EgflqNLfwiAL30eLfzBdOSxUaYDs2c3dUlT=
+Azeak01fpZss6LRsYrNfuWWdDjHj6aFvEV3UtfJwzWXbg$>
+
+Fair Insurance Code
+Tower is a member of the Insurance Council of New Zealand (ICNZ). We abide =
+by the ICNZ Fair Insurance Code [icnz.org.nz]<https://urldefense.com/v3/__h=
+ttps:/www.icnz.org.nz/fair-insurance-code/__;!!NPvfczxIteVBjg!GhakoSXuw9Egf=
+lqNLfwiAL30eLfzBdOSxUaYDs2c3dUlTAzeak01fpZss6LRsYrNfuWWdDjHj6aFvEV3UtfJwzWX=
+bg$>.
+
+
+
+From: Raffaella del Prete <raffaellanz@icloud.com<mailto:raffaellanz@icloud=
+.com>>
+Sent: Saturday, August 30, 2025 1:33 PM
+To: Claims <Claims@tower.co.nz<mailto:Claims@tower.co.nz>>; Zach Pion <Zach=
+.Pion@tower.co.nz<mailto:Zach.Pion@tower.co.nz>>
+Subject: REFUND Request : Contents Tower Claim: C90306256
+
+
+
+Hi Zach, Could you please refund the rental from 27/06 to 28/08 for a total=
+ of 9,000 NZD please. Please find attached details from rental agency. Best=
+ regards, Raffaella On 11 Jul 2025, at 4:=E2=80=8A16 PM, Claims <Claims@=E2=
+=80=8Atower.=E2=80=8Aco.=E2=80=8Anz> wrote: Good
+
+Hi Zach,
+
+
+
+Could you  please refund the rental from 27/06 to 28/08 for a total of 9,00=
+0 NZD please.
+
+
+
+Please find attached details from rental agency.
+
+
+
+Best regards,
+
+Raffaella
+
+
+[cid:image004.png@01DC3C22.E375E020]
+
+
+
+On 11 Jul 2025, at 4:16=E2=80=AFPM, Claims <Claims@tower.co.nz<mailto:Claim=
+s@tower.co.nz>> wrote:
+
+
+
+Good afternoon Raffaella
+
+
+
+Apologies for the delay in responding to your email and thank you for your =
+patience.
+
+
+
+Just letting you know that I=E2=80=99ve processed the settlement to your no=
+minated account, as confirmed by you, covering the temporary accommodation =
+and cleaning costs to date.
+
+
+
+I will appear in your account as two separate payments one for the temporar=
+y accommodation and the other for cleaning costs.
+
+
+
+Please reply to this email for any further costs incurred for either the Co=
+ntents or the Temporary Accommodation as both will be paid under this Conte=
+nts claim as is the higher of the two benefits for Temporary Accom
+
+
+
+Please reply to this email with details of any further costs incurred relat=
+ing to either the Contents or Temporary Accommodation. Both will be paid un=
+der this Contents claim, as it provides the higher of the two benefits for =
+Temporary Accommodation.
+
+Let me know if you have any questions or need assistance with submitting fu=
+rther expenses.
+
+
+
+Feel free to reach out if you have any questions or require further details.
+
+
+
+Kind Regards
+
+
+
+
+
+Sasha C
+Claims Consultant | Tower
+DDI: 09 369 0583
+PO Box 90347, Auckland 1142
+claims@tower.co.nz<mailto:claims@tower.co.nz> | tower.co.nz<http://www.towe=
+r.co.nz/>
+
+
+[cid:image005.jpg@01DC3C22.E375E020]
+
+
+[cid:image006.png@01DC3C22.E375E020]
+
+[icnz.org.nz]<https://urldefense.com/v3/__https:/www.icnz.org.nz/fair-insur=
+ance-code/__;!!NPvfczxIteVBjg!ByRdf0gMtWnSo4D_TLRmC-N5qUn7ZafcDQoyljl761YTF=
+WKvNPlTO4UaLF4B9nWY1R4f5YByip-8v7ZRHwfH2dySwA$>
+
+
+
+
+
+Tower Limited holds a transitional Financial Advice Provider license by the=
+ Financial Markets Authority.
+
+Our staff are Tower Nominated Representatives and may provide financial adv=
+ice on insurance products provided by Tower.
+
+Tower Insurance is a member of the Insurance and Financial Services Ombudsm=
+an Scheme.
+
+Please click here<https://www.tower.co.nz/about-us/publicly-available-discl=
+osure/> for our publicly available disclosure document.
+
+
+
+Fair Insurance Code
+Tower is a member of the Insurance Council of New Zealand (ICNZ). We abide =
+by the ICNZ Fair Insurance Code [icnz.org.nz]<https://urldefense.com/v3/__h=
+ttps:/www.icnz.org.nz/fair-insurance-code/__;!!NPvfczxIteVBjg!ByRdf0gMtWnSo=
+4D_TLRmC-N5qUn7ZafcDQoyljl761YTFWKvNPlTO4UaLF4B9nWY1R4f5YByip-8v7ZRHwfH2dyS=
+wA$>.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Classification: Sensitive
+
+From: Raffaella del Prete <raffaellanz@icloud.com<mailto:raffaellanz@icloud=
+.com>>
+Sent: Friday, July 4, 2025 9:08 PM
+To: Claims <Claims@tower.co.nz<mailto:Claims@tower.co.nz>>
+Subject: Re: Tower Claim: #C90306048
+
+
+
+=EF=BB=BF Hi Sasha, Thank you very much for the good detailed overview and =
+summary, much appreciated. Confirming that I am happy for the payments as o=
+utlined below into my bank account: Maria Del Prete, 02-0272-0350952-000 sh=
+ould be the bank account
+
+=EF=BB=BF
+
+Hi Sasha,
+
+
+
+Thank you very much for the good detailed overview and summary, much apprec=
+iated.
+
+
+
+Confirming that I am happy for the payments as outlined below into my bank =
+account: Maria Del Prete, 02-0272-0350952-000 should be the bank account on=
+ file.
+
+
+
+Thanks again and regards,
+
+Raffaella
+
+
+
+Sent from my iPad
+
+
+
+On 3 Jul 2025, at 11:27=E2=80=AFAM, Claims <Claims@tower.co.nz<mailto:Claim=
+s@tower.co.nz>> wrote:
+
+=EF=BB=BF
+
+Good Morning Raffaella
+
+
+
+Thank you for your emails and apologies for the delay in responding to you.
+
+
+
+Firstly, to acknowledge the Privacy request has been received and passed on=
+to our Privacy Team.
+
+
+
+Also acknowledging that you wish all correspondence to be via email.
+
+
+
+I am aware that you have met on site at your property yesterday with Grant =
+Metson and that as proposed Tower will send you the documented process.
+
+
+
+In addition to this I have reviewed the information with regards to the exp=
+enses and can confirm the following will be paid under your Temporary Accom=
+modation Benefit (limit of $30,000.00 which is the higher of the two policy=
+ benefits)
+
+
+
+$1,452.00            6 nights Esplanade Hotel
+
+$5,000.00           Rent @ $1,000.00 per week
+
+$727.38               Moving costs to temp accommodation
+
+
+
+$7,179.38           Total of Temporary Accommodation benefit used to date.
+
+
+
+The other two payments as follows will be under your Contents claim as part=
+ of your sum insured.
+
+
+
+$340                     cleaning of clothes
+
+$454.25               cleaning of sofa
+
+
+
+
+
+With regards to your query if Stress Benefit applies, unfortunately it only=
+ applies if the property and/or Contents is a Total Loss as per following p=
+olicy wording, if the contents are deemed a total loss then we will proacti=
+vely let you know of any changes to your eligibility for this benefit.
+
+
+
+House
+
+Stress benefit lump sum payment
+
+We=E2=80=99ll pay you a lump sum for the stress caused to you if your entir=
+e house is destroyed.
+
+We pay this benefit in addition to your sum insured.
+
+Limit
+
+We=E2=80=99ll pay a maximum of $1,000 for each event as soon as we=E2=80=99=
+ve accepted your house claim
+
+
+
+Contents
+
+Stress benefit lump sum payment
+
+We=E2=80=99ll pay you a lump sum for the stress caused to you if all your c=
+ontents are destroyed.
+
+This benefit is in addition to your contents sum insured.
+
+Limit
+
+We=E2=80=99ll pay a maximum of $2,000 for each event as soon as we have acc=
+epted your contents
+
+claim.
+
+
+
+Please advise if you are happy for these payments to be made to your nomina=
+ted account on file where the premiums are deducted from or wish to supply =
+an alternative account.
+
+
+
+Just reach out if you have any further questions as always, I am happy to a=
+ssist.
+
+
+
+Kind Regards
+
+
+
+
+
+
+
+Sasha C
+Claims Consultant | Tower
+DDI: 09 369 0583
+PO Box 90347, Auckland 1142
+claims@tower.co.nz<mailto:claims@tower.co.nz> | tower.co.nz<http://www.towe=
+r.co.nz/>
+
+
+
+<image001.jpg>
+
+
+
+<image002.png><https://urldefense.com/v3/__https:/www.icnz.org.nz/fair-insu=
+rance-code/__;!!NPvfczxIteVBjg!EgmqDMsrwV65TA_UxzSvE6rzidVo4GM6-CkLzOj3hHPY=
+ZqwKghP09Tn41_0gQbiI57dbvGAKL5xhU61pZsbMjHQ$>
+
+[icnz.org.nz]<https://urldefense.com/v3/__https:/www.icnz.org.nz/fair-insur=
+ance-code/__;!!NPvfczxIteVBjg!EgmqDMsrwV65TA_UxzSvE6rzidVo4GM6-CkLzOj3hHPYZ=
+qwKghP09Tn41_0gQbiI57dbvGAKL5xhU61pZsbMjHQ$>
+
+
+
+
+
+Tower Limited holds a transitional Financial Advice Provider license by the=
+ Financial Markets Authority.
+
+Our staff are Tower Nominated Representatives and may provide financial adv=
+ice on insurance products provided by Tower.
+
+Tower Insurance is a member of the Insurance and Financial Services Ombudsm=
+an Scheme.
+
+Please click here<https://www.tower.co.nz/about-us/publicly-available-discl=
+osure/> for our publicly available disclosure document.
+
+
+
+Fair Insurance Code
+Tower is a member of the Insurance Council of New Zealand (ICNZ). We abide =
+by the ICNZ Fair Insurance Code [icnz.org.nz]<https://urldefense.com/v3/__h=
+ttps:/www.icnz.org.nz/fair-insurance-code/__;!!NPvfczxIteVBjg!EgmqDMsrwV65T=
+A_UxzSvE6rzidVo4GM6-CkLzOj3hHPYZqwKghP09Tn41_0gQbiI57dbvGAKL5xhU61pZsbMjHQ$=
+>.
+
+
+
+
+
+
+
+
+
+________________________________
+
+The information contained in this email message is confidential and may be =
+legally privileged. If you are not the intended recipient, please note that=
+ any use, dissemination, distribution, or reproduction of this message in a=
+ny form whatsoever, is strictly prohibited. If you received this email in e=
+rror, please notify me by return email, delete your copy, and accept my apo=
+logies for any inconvenience caused. Please note that your receipt of this =
+email from a Tower email address does not constitute our consent for you to=
+ send any other electronic information to Tower by return, unless specifica=
+lly stated otherwise.
+
+Classification: Sensitive
+
+
+
+________________________________
+
+The information contained in this email message is confidential and may be =
+legally privileged. If you are not the intended recipient, please note that=
+ any use, dissemination, distribution, or reproduction of this message in a=
+ny form whatsoever, is strictly prohibited. If you received this email in e=
+rror, please notify me by return email, delete your copy, and accept my apo=
+logies for any inconvenience caused. Please note that your receipt of this =
+email from a Tower email address does not constitute our consent for you to=
+ send any other electronic information to Tower by return, unless specifica=
+lly stated otherwise.
+
+
+
+________________________________
+
+The information contained in this email message is confidential and may be =
+legally privileged. If you are not the intended recipient, please note that=
+ any use, dissemination, distribution, or reproduction of this message in a=
+ny form whatsoever, is strictly prohibited. If you received this email in e=
+rror, please notify me by return email, delete your copy, and accept my apo=
+logies for any inconvenience caused. Please note that your receipt of this =
+email from a Tower email address does not constitute our consent for you to=
+ send any other electronic information to Tower by return, unless specifica=
+lly stated otherwise.
+
+
+________________________________
+
+The information contained in this email message is confidential and may be =
+legally privileged. If you are not the intended recipient, please note that=
+ any use, dissemination, distribution, or reproduction of this message in a=
+ny form whatsoever, is strictly prohibited. If you received this email in e=
+rror, please notify me by return email, delete your copy, and accept my apo=
+logies for any inconvenience caused. Please note that your receipt of this =
+email from a Tower email address does not constitute our consent for you to=
+ send any other electronic information to Tower by return, unless specifica=
+lly stated otherwise.
+
+--_000_SY6P282MB325689AB16178CE263804125BFEDASY6P282MB3256AUSP_
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=utf-8
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micr=
+osoft-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" xmlns=3D"http:=
+//www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<meta name=3D"Generator" content=3D"Microsoft Word 15 (filtered medium)">
+<!--[if !mso]><style>v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style><![endif]--><style><!--
+/* Font Definitions */
+@font-face
+	{font-family:Helvetica;
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:Aptos;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:blue;
+	text-decoration:underline;}
+p.xmsonormal, li.xmsonormal, div.xmsonormal
+	{mso-style-name:x_msonormal;
+	margin:0in;
+	font-size:10.0pt;
+	font-family:"Aptos",sans-serif;}
+p.xmsolistparagraph, li.xmsolistparagraph, div.xmsolistparagraph
+	{mso-style-name:x_msolistparagraph;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	font-size:10.0pt;
+	font-family:"Aptos",sans-serif;}
+span.xapple-converted-space
+	{mso-style-name:x_apple-converted-space;}
+span.xmsohyperlink
+	{mso-style-name:x_msohyperlink;}
+span.EmailStyle26
+	{mso-style-type:personal-reply;
+	font-family:"Aptos",sans-serif;
+	color:windowtext;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:10.0pt;
+	mso-ligatures:none;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+/* List Definitions */
+@list l0
+	{mso-list-id:814488905;
+	mso-list-template-ids:1029309992;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1
+	{mso-list-id:1155757165;
+	mso-list-template-ids:-1172939132;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l1:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l2
+	{mso-list-id:1494639035;
+	mso-list-template-ids:581345864;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l2:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l2:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l2:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l2:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l2:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l2:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l2:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l2:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l3
+	{mso-list-id:1668484231;
+	mso-list-template-ids:-1770897664;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l3:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l3:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l3:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l3:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l3:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l3:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l3:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l3:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4
+	{mso-list-id:1823933271;
+	mso-list-template-ids:-1501791142;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l4:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l4:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l4:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l4:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l4:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l4:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l4:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l5
+	{mso-list-id:2075002917;
+	mso-list-template-ids:1057374742;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l5:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l5:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l5:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l5:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l5:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l5:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l5:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l5:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]-->
+</head>
+<body lang=3D"EN-US" link=3D"blue" vlink=3D"purple" style=3D"word-wrap:brea=
+k-word">
+<div class=3D"WordSection1">
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">Hi Raffaella,<o:p><=
+/o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt"><o:p>&nbsp;</o:p></=
+span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">Thank you for sendi=
+ng me the documents.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt"><o:p>&nbsp;</o:p></=
+span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">We do not cover wat=
+er rates as utilities of the home are not covered under the policy wording.=
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt"><o:p>&nbsp;</o:p></=
+span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">I will review the v=
+et documents and the $5,000 and come back to you.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt"><o:p>&nbsp;</o:p></=
+span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">Kind regards,<o:p><=
+/o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt"><o:p>&nbsp;</o:p></=
+span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">Zach <o:p></o:p></s=
+pan></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt"><o:p>&nbsp;</o:p></=
+span></p>
+<div>
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto"><b><span style=3D"font-size:10.0pt;font-family:&quot;Verdana&quot;=
+,sans-serif;color:#001272;mso-ligatures:standardcontextual">Zach P<br>
+</span></b><span style=3D"font-size:9.0pt;font-family:&quot;Verdana&quot;,s=
+ans-serif;color:#001272;mso-ligatures:standardcontextual">Claims Management=
+ Consultant | Tower</span><span style=3D"font-size:10.0pt;font-family:&quot=
+;Verdana&quot;,sans-serif;color:#001272;mso-ligatures:standardcontextual"><=
+br>
+<b>DDI&nbsp;</b>+64 9 960 4527|&nbsp;0800 808 808 ext: 59210 <br>
+Level 5, 136 Fanshawe Street, PO Box 90347,&nbsp;Auckland&nbsp;1142<br>
+</span><span style=3D"font-size:10.0pt;font-family:&quot;Verdana&quot;,sans=
+-serif;mso-ligatures:standardcontextual;mso-fareast-language:EN-NZ"><a href=
+=3D"mailto:claims@tower.co.nz">claims@tower.co.nz</a><span style=3D"color:#=
+001272">&nbsp;|&nbsp;</span></span><span style=3D"mso-ligatures:standardcon=
+textual"><a href=3D"http://www.tower.co.nz/"><span style=3D"font-size:10.0p=
+t;font-family:&quot;Verdana&quot;,sans-serif;color:#001272">tower.co.nz</sp=
+an></a></span><span style=3D"font-size:11.0pt;mso-ligatures:standardcontext=
+ual"><o:p></o:p></span></p>
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto"><span style=3D"font-size:8.0pt;font-family:&quot;Verdana&quot;,san=
+s-serif;color:#001272"><img border=3D"0" width=3D"129" height=3D"58" style=
+=3D"width:1.3437in;height:.6041in" id=3D"Picture_x0020_879599645" src=3D"ci=
+d:image001.jpg@01DC3C22.E375E020" alt=3D"Logo, company name
+
+Description automatically generated">&nbsp;</span><span style=3D"mso-ligatu=
+res:standardcontextual"><a href=3D"https://www.icnz.org.nz/fair-insurance-c=
+ode/"><span style=3D"font-size:8.0pt;font-family:&quot;Verdana&quot;,sans-s=
+erif;color:#001272;text-decoration:none">
+</span><span style=3D"font-size:8.0pt;font-family:&quot;Verdana&quot;,sans-=
+serif;color:#001272;mso-ligatures:none;text-decoration:none"><img border=3D=
+"0" width=3D"56" height=3D"55" style=3D"width:.5833in;height:.5729in" id=3D=
+"Picture_x0020_1524960467" src=3D"cid:image002.png@01DC3C22.E375E020" alt=
+=3D"Financial Insurance Code"></span></a><o:p></o:p></span></p>
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto"><b><span style=3D"font-size:8.0pt;font-family:&quot;Verdana&quot;,=
+sans-serif;color:#001272;mso-ligatures:standardcontextual">Fair Insurance C=
+ode</span></b><span style=3D"font-size:8.0pt;font-family:&quot;Verdana&quot=
+;,sans-serif;color:#001272;mso-ligatures:standardcontextual"><br>
+Tower is a member of the Insurance Council of New Zealand (ICNZ). We abide =
+by the&nbsp;</span><span style=3D"mso-ligatures:standardcontextual"><a href=
+=3D"https://www.icnz.org.nz/fair-insurance-code/" target=3D"_blank" title=
+=3D"Fair Insurance Code link"><span style=3D"font-size:8.0pt;font-family:&q=
+uot;Verdana&quot;,sans-serif;color:#001272">ICNZ
+ Fair Insurance Code</span></a></span><span style=3D"font-size:8.0pt;font-f=
+amily:&quot;Verdana&quot;,sans-serif;color:#001272;mso-ligatures:standardco=
+ntextual">.</span><span style=3D"mso-ligatures:standardcontextual"><o:p></o=
+:p></span></p>
+</div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt"><o:p>&nbsp;</o:p></=
+span></p>
+<div>
+<div style=3D"border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;font-family:&quot=
+;Calibri&quot;,sans-serif">From:</span></b><span style=3D"font-size:11.0pt;=
+font-family:&quot;Calibri&quot;,sans-serif"> Raffaella del Prete &lt;raffae=
+llanz@icloud.com&gt;
+<br>
+<b>Sent:</b> Thursday, October 9, 2025 5:26 PM<br>
+<b>To:</b> Claims &lt;Claims@tower.co.nz&gt;; Zach Pion &lt;Zach.Pion@tower=
+.co.nz&gt;<br>
+<b>Subject:</b> Re: REFUND Request : Contents Tower Claim: C90306256<o:p></=
+o:p></span></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<div>
+<div>
+<p class=3D"MsoNormal" style=3D"mso-line-height-alt:.75pt"><span style=3D"f=
+ont-size:1.0pt;color:white">Hi Zach, Could you please refund: 5,000 for the=
+ rental from 29/08 to 2nd of October (see rent summary attached), =E2=80=8D=
+ =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=
+=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=
+=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =
+=E2=80=8D
+ =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=
+=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=
+=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =
+=E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=
+=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=
+=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =
+=E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=
+=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=
+=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =
+=E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=
+=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=
+=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =
+=E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=
+=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=8D =E2=80=
+=8D<o:p></o:p></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"mso-line-height-alt:.75pt"><span style=3D"f=
+ont-size:1.0pt;color:white"><o:p></o:p></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Hi Zach,<o:p></o:p></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Could you please refund:<o:p></o:p></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+<div>
+<ul type=3D"disc">
+<li class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-=
+alt:auto;mso-list:l5 level1 lfo1">
+5,000 for the rental from 29/08 to 2nd of October (see rent summary attache=
+d),&nbsp;<o:p></o:p></li></ul>
+</div>
+<div>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+</div>
+<div>
+<div>
+<ul type=3D"disc">
+<li class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-=
+alt:auto;mso-list:l0 level1 lfo2">
+298.74 for the Water rates for the rented accommodation<o:p></o:p></li></ul>
+</div>
+</div>
+<div>
+<div>
+<div>
+<ul type=3D"disc">
+<li class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-=
+alt:auto;mso-list:l4 level1 lfo3">
+395.85 for the vets (please find attached the Vets notes and the transactio=
+n record on my bank account<o:p></o:p></li><li class=3D"MsoNormal" style=3D=
+"mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;mso-list:l4 level1 lfo3=
+">
+<o:p>&nbsp;</o:p></li></ul>
+</div>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal"><img border=3D"0" width=3D"1206" height=3D"2622" sty=
+le=3D"width:12.5625in;height:27.3125in" id=3D"Picture_x0020_6" src=3D"cid:i=
+mage003.png@01DC3C22.E375E020"><o:p></o:p></p>
+</div>
+<div>
+<div>
+<div>
+<ul type=3D"disc">
+<li class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-=
+alt:auto;mso-list:l1 level1 lfo4">
+<o:p>&nbsp;</o:p></li></ul>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<ul type=3D"disc">
+<li class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-=
+alt:auto;mso-list:l2 level1 lfo5">
+<o:p>&nbsp;</o:p></li></ul>
+<div>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Thanks and regards,<o:p></o:p></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Raffaella<o:p></o:p></p>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal"><br>
+<br>
+<o:p></o:p></p>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<p class=3D"MsoNormal">On 2 Sep 2025, at 11:28<span style=3D"font-family:&q=
+uot;Arial&quot;,sans-serif">=E2=80=AF</span>AM, Claims &lt;<a href=3D"mailt=
+o:Claims@tower.co.nz">Claims@tower.co.nz</a>&gt; wrote:<o:p></o:p></p>
+</div>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<div>
+<div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt">Good afternoon, Ra=
+ffaella.</span><o:p></o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt">&nbsp;</span><o:p>=
+</o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt">It was good talkin=
+g to you today.</span><o:p></o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt">&nbsp;</span><o:p>=
+</o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt">To recap our conve=
+rsation.</span><o:p></o:p></p>
+<ul style=3D"margin-top:0in" type=3D"disc">
+<li class=3D"xmsolistparagraph" style=3D"margin-left:0in;mso-list:l3 level1=
+ lfo6"><span style=3D"font-size:11.0pt">You will receive the contents settl=
+ement in three to five days</span><o:p></o:p></li><li class=3D"xmsolistpara=
+graph" style=3D"margin-left:0in;mso-list:l3 level1 lfo6"><span style=3D"fon=
+t-size:11.0pt">You will receive the stress benefit payment of $2,000 in the=
+ same time period.</span><o:p></o:p></li><li class=3D"xmsolistparagraph" st=
+yle=3D"margin-left:0in;mso-list:l3 level1 lfo6"><span style=3D"font-size:11=
+.0pt">You are to send us your vet fee and report for the cats being hurt fr=
+om the claimed event.</span><o:p></o:p></li><li class=3D"xmsolistparagraph"=
+ style=3D"margin-left:0in;mso-list:l3 level1 lfo6"><span style=3D"font-size=
+:11.0pt">I will update you on a monthly basis at the beginning of each mont=
+h.</span><o:p></o:p></li><li class=3D"xmsolistparagraph" style=3D"margin-le=
+ft:0in;mso-list:l3 level1 lfo6"><span style=3D"font-size:11.0pt">You would =
+like your claim file from the date of loss to today to be sent to you. I wi=
+ll get this actioned for you.</span><o:p></o:p></li><li class=3D"xmsolistpa=
+ragraph" style=3D"margin-left:0in;mso-list:l3 level1 lfo6"><span style=3D"f=
+ont-size:11.0pt">You will send me privacy requests for new information we h=
+ave on file including new claim notes from today onwards.
+</span><o:p></o:p></li></ul>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt">&nbsp;</span><o:p>=
+</o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt">Kind regards,</spa=
+n><o:p></o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt">&nbsp;</span><o:p>=
+</o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt">Zach </span><o:p><=
+/o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt">&nbsp;</span><o:p>=
+</o:p></p>
+<div>
+<p class=3D"xmsonormal"><b><span style=3D"font-family:&quot;Verdana&quot;,s=
+ans-serif;color:#001272">Zach Pion<br>
+</span></b><span style=3D"font-size:9.0pt;font-family:&quot;Verdana&quot;,s=
+ans-serif;color:#001272">Complex Claims Management Consultant | Tower</span=
+><span style=3D"font-family:&quot;Verdana&quot;,sans-serif;color:#001272"><=
+br>
+<b>DDI&nbsp;</b>+64 9 960 4527|&nbsp;0800 808 808 ext: 59210 <br>
+Level 5, 136 Fanshawe Street, PO Box 90347,&nbsp;Auckland&nbsp;1142<br>
+</span><span style=3D"font-family:&quot;Verdana&quot;,sans-serif"><a href=
+=3D"mailto:zach.pion@tower.co.nz">zach.pion@tower.co.nz</a><span style=3D"c=
+olor:#001272">&nbsp;|&nbsp;</span></span><span style=3D"font-size:12.0pt"><=
+a href=3D"http://www.tower.co.nz/"><span style=3D"font-size:10.0pt;font-fam=
+ily:&quot;Verdana&quot;,sans-serif;color:#001272">tower.co.nz</span></a></s=
+pan><o:p></o:p></p>
+</div>
+</div>
+</div>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal"><img border=3D"0" width=3D"161" height=3D"73" style=
+=3D"width:1.677in;height:.7604in" id=3D"Picture_x0020_5" src=3D"cid:image00=
+1.jpg@01DC3C22.E375E020"><o:p></o:p></p>
+</div>
+<div>
+<div>
+<div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<div>
+<div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:8.0pt;font-family:&quot;Ve=
+rdana&quot;,sans-serif;color:#001272">&nbsp;</span><span style=3D"font-size=
+:12.0pt"><a href=3D"https://urldefense.com/v3/__https:/www.icnz.org.nz/fair=
+-insurance-code/__;!!NPvfczxIteVBjg!GhakoSXuw9EgflqNLfwiAL30eLfzBdOSxUaYDs2=
+c3dUlTAzeak01fpZss6LRsYrNfuWWdDjHj6aFvEV3UtfJwzWXbg$"><span style=3D"font-s=
+ize:8.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:#001272">
+</span>[icnz.org.nz]</a></span><o:p></o:p></p>
+</div>
+</div>
+</div>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal"><img border=3D"0" width=3D"70" height=3D"69" style=
+=3D"width:.7291in;height:.7187in" id=3D"Picture_x0020_4" src=3D"cid:image00=
+2.png@01DC3C22.E375E020"><o:p></o:p></p>
+</div>
+<div>
+<div>
+<div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<div>
+<div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt"><a href=3D"https:/=
+/urldefense.com/v3/__https:/www.icnz.org.nz/fair-insurance-code/__;!!NPvfcz=
+xIteVBjg!GhakoSXuw9EgflqNLfwiAL30eLfzBdOSxUaYDs2c3dUlTAzeak01fpZss6LRsYrNfu=
+WWdDjHj6aFvEV3UtfJwzWXbg$">[icnz.org.nz]</a></span><o:p></o:p></p>
+<p class=3D"xmsonormal"><b><span style=3D"font-size:8.0pt;font-family:&quot=
+;Verdana&quot;,sans-serif;color:#001272">Fair Insurance Code</span></b><spa=
+n style=3D"font-size:8.0pt;font-family:&quot;Verdana&quot;,sans-serif;color=
+:#001272"><br>
+Tower is a member of the Insurance Council of New Zealand (ICNZ). We abide =
+by the&nbsp;</span><span style=3D"font-size:12.0pt"><a href=3D"https://urld=
+efense.com/v3/__https:/www.icnz.org.nz/fair-insurance-code/__;!!NPvfczxIteV=
+Bjg!GhakoSXuw9EgflqNLfwiAL30eLfzBdOSxUaYDs2c3dUlTAzeak01fpZss6LRsYrNfuWWdDj=
+Hj6aFvEV3UtfJwzWXbg$" target=3D"_blank" title=3D"Fair Insurance Code link">=
+<span style=3D"font-size:8.0pt;font-family:&quot;Verdana&quot;,sans-serif;c=
+olor:#001272">ICNZ
+ Fair Insurance Code</span> [icnz.org.nz]</a></span><span style=3D"font-siz=
+e:8.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:#001272">.</span><=
+o:p></o:p></p>
+</div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt">&nbsp;</span><o:p>=
+</o:p></p>
+<div>
+<div style=3D"border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"xmsonormal"><b><span style=3D"font-size:11.0pt;font-family:&quo=
+t;Calibri&quot;,sans-serif">From:</span></b><span style=3D"font-size:11.0pt=
+;font-family:&quot;Calibri&quot;,sans-serif"> Claims
+<br>
+<b>Sent:</b> Tuesday, September 2, 2025 9:21 AM<br>
+<b>To:</b> Raffaella del Prete &lt;<a href=3D"mailto:raffaellanz@icloud.com=
+">raffaellanz@icloud.com</a>&gt;<br>
+<b>Subject:</b> RE: REFUND Request : Contents Tower Claim: C90306256</span>=
+<o:p></o:p></p>
+</div>
+</div>
+<p class=3D"xmsonormal">&nbsp;<o:p></o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt">Good morning, Raff=
+aella.</span><o:p></o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt">&nbsp;</span><o:p>=
+</o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt">I hope you are wel=
+l this morning.</span><o:p></o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt">&nbsp;</span><o:p>=
+</o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt">You will receive t=
+he $9,000 temporary accommodation payment in 3 to 5 working days.</span><o:=
+p></o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt">&nbsp;</span><o:p>=
+</o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt">The remaining amou=
+nt under the temporary accommodation benefit is $13,820.62</span><o:p></o:p=
+></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt">&nbsp;</span><o:p>=
+</o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt">Is there a time I =
+can contact you this week by phone to finalize your contents claim? the los=
+s schedule provided by Asset Restore to date exceeds your sum insured, whic=
+h means that the contents is a total
+ loss as the total value of the contents damaged or destroyed is greater th=
+en the sum insured. I work until 1:30 so let me know when this week suits y=
+ou.</span><o:p></o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt">&nbsp;</span><o:p>=
+</o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt">I have confirmatio=
+n that your privacy request and the information you requested was emailed t=
+o you on the 25/07/25. If you can check this date and let me know if you ha=
+ve it.</span><o:p></o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt">&nbsp;</span><o:p>=
+</o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt">Regarding updates,=
+ I am more then happy to update you on the first of each month, would you p=
+refer monthly contacts from me instead of fortnightly?</span><o:p></o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt">&nbsp;</span><o:p>=
+</o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt">Regarding further =
+claim files, we can send you assessor reports as we receive these from the =
+assessor. It would be less prudent for us to resend you the entire claim fi=
+le each month and not efficient for
+ us due to the time it takes to action these we may end up getting assessor=
+ reports during this process which means that report may not be added to th=
+at privacy request.
+</span><o:p></o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt">&nbsp;</span><o:p>=
+</o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt">Future assessor re=
+ports should be the only documents we have that you are not given by the as=
+sessor as this would come from us.</span><span style=3D"font-size:9.0pt;fon=
+t-family:&quot;Verdana&quot;,sans-serif;color:#001272">
+</span><o:p></o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:9.0pt;font-family:&quot;Ve=
+rdana&quot;,sans-serif;color:#001272">&nbsp;</span><o:p></o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:9.0pt;font-family:&quot;Ve=
+rdana&quot;,sans-serif;color:#001272">Kind regards,</span><o:p></o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:9.0pt;font-family:&quot;Ve=
+rdana&quot;,sans-serif;color:#001272">&nbsp;</span><o:p></o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:9.0pt;font-family:&quot;Ve=
+rdana&quot;,sans-serif;color:#001272">Zach
+</span><o:p></o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:9.0pt;font-family:&quot;Ve=
+rdana&quot;,sans-serif;color:#001272">Complex Claims Management Consultant =
+| Tower</span><span style=3D"font-family:&quot;Verdana&quot;,sans-serif;col=
+or:#001272"><br>
+<b>DDI&nbsp;</b>+64 9 960 4527|&nbsp;0800 808 808 ext: 59210 <br>
+Level 5, 136 Fanshawe Street, PO Box 90347,&nbsp;Auckland&nbsp;1142<br>
+</span><span style=3D"font-family:&quot;Verdana&quot;,sans-serif"><a href=
+=3D"mailto:zach.pion@tower.co.nz">zach.pion@tower.co.nz</a><span style=3D"c=
+olor:#001272">&nbsp;|&nbsp;</span></span><span style=3D"font-size:12.0pt"><=
+a href=3D"http://www.tower.co.nz/"><span style=3D"font-size:10.0pt;font-fam=
+ily:&quot;Verdana&quot;,sans-serif;color:#001272">tower.co.nz</span></a></s=
+pan><o:p></o:p></p>
+</div>
+</div>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:8.0pt;font-family:&quot;Ve=
+rdana&quot;,sans-serif;color:#001272">&nbsp;</span><span style=3D"font-size=
+:12.0pt"><a href=3D"https://urldefense.com/v3/__https:/www.icnz.org.nz/fair=
+-insurance-code/__;!!NPvfczxIteVBjg!GhakoSXuw9EgflqNLfwiAL30eLfzBdOSxUaYDs2=
+c3dUlTAzeak01fpZss6LRsYrNfuWWdDjHj6aFvEV3UtfJwzWXbg$"><span style=3D"font-s=
+ize:8.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:#001272">
+</span>[icnz.org.nz]</a></span><o:p></o:p></p>
+</div>
+</div>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt"><a href=3D"https:/=
+/urldefense.com/v3/__https:/www.icnz.org.nz/fair-insurance-code/__;!!NPvfcz=
+xIteVBjg!GhakoSXuw9EgflqNLfwiAL30eLfzBdOSxUaYDs2c3dUlTAzeak01fpZss6LRsYrNfu=
+WWdDjHj6aFvEV3UtfJwzWXbg$">[icnz.org.nz]</a></span><o:p></o:p></p>
+<p class=3D"xmsonormal"><b><span style=3D"font-size:8.0pt;font-family:&quot=
+;Verdana&quot;,sans-serif;color:#001272">Fair Insurance Code</span></b><spa=
+n style=3D"font-size:8.0pt;font-family:&quot;Verdana&quot;,sans-serif;color=
+:#001272"><br>
+Tower is a member of the Insurance Council of New Zealand (ICNZ). We abide =
+by the&nbsp;</span><span style=3D"font-size:12.0pt"><a href=3D"https://urld=
+efense.com/v3/__https:/www.icnz.org.nz/fair-insurance-code/__;!!NPvfczxIteV=
+Bjg!GhakoSXuw9EgflqNLfwiAL30eLfzBdOSxUaYDs2c3dUlTAzeak01fpZss6LRsYrNfuWWdDj=
+Hj6aFvEV3UtfJwzWXbg$" target=3D"_blank" title=3D"Fair Insurance Code link">=
+<span style=3D"font-size:8.0pt;font-family:&quot;Verdana&quot;,sans-serif;c=
+olor:#001272">ICNZ
+ Fair Insurance Code</span> [icnz.org.nz]</a></span><span style=3D"font-siz=
+e:8.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:#001272">.</span><=
+o:p></o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt">&nbsp;</span><o:p>=
+</o:p></p>
+<div style=3D"border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"xmsonormal"><b><span style=3D"font-size:11.0pt;font-family:&quo=
+t;Calibri&quot;,sans-serif">From:</span></b><span style=3D"font-size:11.0pt=
+;font-family:&quot;Calibri&quot;,sans-serif"> Raffaella del Prete &lt;<a hr=
+ef=3D"mailto:raffaellanz@icloud.com">raffaellanz@icloud.com</a>&gt;
+<br>
+<b>Sent:</b> Saturday, August 30, 2025 1:33 PM<br>
+<b>To:</b> Claims &lt;<a href=3D"mailto:Claims@tower.co.nz">Claims@tower.co=
+.nz</a>&gt;; Zach Pion &lt;<a href=3D"mailto:Zach.Pion@tower.co.nz">Zach.Pi=
+on@tower.co.nz</a>&gt;<br>
+<b>Subject:</b> REFUND Request : Contents Tower Claim: C90306256</span><o:p=
+></o:p></p>
+</div>
+<p class=3D"xmsonormal">&nbsp;<o:p></o:p></p>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:1.0pt;color:white">Hi Zach=
+, Could you please refund the rental from 27/06 to 28/08 for a total of 9,0=
+00 NZD please. Please find attached details from rental agency. Best regard=
+s, Raffaella On 11 Jul 2025, at 4:</span><span style=3D"font-size:1.0pt;fon=
+t-family:&quot;Arial&quot;,sans-serif;color:white">=E2=80=8A</span><span st=
+yle=3D"font-size:1.0pt;color:white">16
+ PM, Claims &lt;Claims@</span><span style=3D"font-size:1.0pt;font-family:&q=
+uot;Arial&quot;,sans-serif;color:white">=E2=80=8A</span><span style=3D"font=
+-size:1.0pt;color:white">tower.</span><span style=3D"font-size:1.0pt;font-f=
+amily:&quot;Arial&quot;,sans-serif;color:white">=E2=80=8A</span><span style=
+=3D"font-size:1.0pt;color:white">co.</span><span style=3D"font-size:1.0pt;f=
+ont-family:&quot;Arial&quot;,sans-serif;color:white">=E2=80=8A</span><span =
+style=3D"font-size:1.0pt;color:white">nz&gt;
+ wrote: Good</span><o:p></o:p></p>
+</div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt">Hi Zach,</span><o:=
+p></o:p></p>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt">&nbsp;</span><o:p>=
+</o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt">Could you &nbsp;pl=
+ease refund the rental from 27/06 to 28/08 for a total of 9,000 NZD please.=
+</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt">&nbsp;</span><o:p>=
+</o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt">Please find attach=
+ed details from rental agency.</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt">&nbsp;</span><o:p>=
+</o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt">Best regards,</spa=
+n><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt">Raffaella</span><o=
+:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt">&nbsp;</span><o:p>=
+</o:p></p>
+</div>
+</div>
+</div>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal"><img border=3D"0" width=3D"1234" height=3D"1719" sty=
+le=3D"width:12.8541in;height:17.9062in" id=3D"Picture_x0020_3" src=3D"cid:i=
+mage004.png@01DC3C22.E375E020"><o:p></o:p></p>
+</div>
+<div>
+<div>
+<div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"xmsonormal" style=3D"margin-bottom:12.0pt"><span style=3D"font-=
+size:12.0pt">&nbsp;</span><o:p></o:p></p>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt">On 11 Jul 2025, at=
+ 4:16</span><span style=3D"font-size:12.0pt;font-family:&quot;Arial&quot;,s=
+ans-serif">=E2=80=AF</span><span style=3D"font-size:12.0pt">PM, Claims &lt;=
+<a href=3D"mailto:Claims@tower.co.nz">Claims@tower.co.nz</a>&gt; wrote:</sp=
+an><o:p></o:p></p>
+</div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt">&nbsp;</span><o:p>=
+</o:p></p>
+<div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">Good afternoon Raffaella</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">Apologies for the delay in responding to your emai=
+l and thank you for your patience.</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">Just letting you know that I=E2=80=99ve processed =
+the settlement to your nominated account, as confirmed by you, covering the=
+ temporary accommodation and cleaning costs to date.</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">I will appear in your account as two separate paym=
+ents one for the temporary accommodation and the other for cleaning costs.<=
+/span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">Please reply to this email for any further costs i=
+ncurred for either the Contents or the Temporary Accommodation as both will=
+ be paid under this Contents claim as is the higher
+ of the two benefits for Temporary Accom</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">Please reply to this email with details of any fur=
+ther costs incurred relating to either the Contents or Temporary Accommodat=
+ion. Both will be paid under this Contents claim,
+ as it provides the higher of the two benefits for Temporary Accommodation.=
+</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">Let me know if you have any questions or need assi=
+stance with submitting further expenses.</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">Feel free to reach out if you have any questions o=
+r require further details.</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">Kind Regards</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><b><span lang=3D"EN-NZ" style=3D"font-size:11.0pt;f=
+ont-family:&quot;Calibri&quot;,sans-serif">&nbsp;</span></b><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><b><span style=3D"font-size:11.0pt;font-family:&quo=
+t;Calibri&quot;,sans-serif;color:#001272">Sasha C<br>
+</span></b><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,=
+sans-serif;color:#001272">Claims Consultant | Tower<br>
+<b>DDI:<span class=3D"xapple-converted-space">&nbsp;</span></b>09 369 0583<=
+br>
+PO Box 90347,&nbsp;Auckland&nbsp;1142<br>
+</span><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans=
+-serif"><a href=3D"mailto:claims@tower.co.nz">claims@tower.co.nz</a><span s=
+tyle=3D"color:#001272">&nbsp;|&nbsp;</span></span><span lang=3D"EN-NZ" styl=
+e=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif"><a href=
+=3D"http://www.tower.co.nz/"><span lang=3D"EN-US" style=3D"color:#001272">t=
+ower.co.nz</span></a></span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span lang=3D"EN-NZ" style=3D"font-size:8.0pt;font-=
+family:&quot;Verdana&quot;,sans-serif;color:#001272">&nbsp;</span><o:p></o:=
+p></p>
+</div>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal"><img border=3D"0" width=3D"129" height=3D"58" style=
+=3D"width:1.3437in;height:.6041in" id=3D"Picture_x0020_2" src=3D"cid:image0=
+05.jpg@01DC3C22.E375E020"><o:p></o:p></p>
+</div>
+<div>
+<div>
+<div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<div>
+<div>
+<div>
+<div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:8.0pt;font-family:&quot;Ve=
+rdana&quot;,sans-serif;color:#001272">&nbsp;</span><o:p></o:p></p>
+</div>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal"><img border=3D"0" width=3D"56" height=3D"55" style=
+=3D"width:.5833in;height:.5729in" id=3D"Picture_x0020_1" src=3D"cid:image00=
+6.png@01DC3C22.E375E020"><o:p></o:p></p>
+</div>
+<div>
+<div>
+<div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<div>
+<div>
+<div>
+<div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif"><a href=3D"https://urldefense.com/v3/__https:/www.=
+icnz.org.nz/fair-insurance-code/__;!!NPvfczxIteVBjg!ByRdf0gMtWnSo4D_TLRmC-N=
+5qUn7ZafcDQoyljl761YTFWKvNPlTO4UaLF4B9nWY1R4f5YByip-8v7ZRHwfH2dySwA$">[icnz=
+.org.nz]</a></span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:8.0pt;font-family:&quot;Ve=
+rdana&quot;,sans-serif;color:#001272">&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span lang=3D"EN-NZ" style=3D"font-size:8.0pt;font-=
+family:&quot;Verdana&quot;,sans-serif;color:#001272">&nbsp;</span><o:p></o:=
+p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span lang=3D"EN-NZ" style=3D"font-size:8.0pt;font-=
+family:&quot;Verdana&quot;,sans-serif;color:#001272">Tower&nbsp;Limited&nbs=
+p;holds a transitional Financial Advice Provider&nbsp;license&nbsp;by the F=
+inancial Markets Authority.</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span lang=3D"EN-NZ" style=3D"font-size:8.0pt;font-=
+family:&quot;Verdana&quot;,sans-serif;color:#001272">Our staff are&nbsp;Tow=
+er Nominated Representatives&nbsp;and may provide financial advice on insur=
+ance products provided&nbsp;by Tower.</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span lang=3D"EN-NZ" style=3D"font-size:8.0pt;font-=
+family:&quot;Verdana&quot;,sans-serif;color:#001272">Tower Insurance is a m=
+ember of the Insurance and Financial Services Ombudsman Scheme.</span><o:p>=
+</o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span lang=3D"EN-NZ" style=3D"font-size:8.0pt;font-=
+family:&quot;Verdana&quot;,sans-serif;color:#001272">Please<span class=3D"x=
+apple-converted-space">&nbsp;</span></span><span lang=3D"EN-NZ" style=3D"fo=
+nt-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif"><a href=3D"https=
+://www.tower.co.nz/about-us/publicly-available-disclosure/"><span style=3D"=
+font-size:8.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:#001272">c=
+lick
+ here</span></a></span><span class=3D"xapple-converted-space"><span lang=3D=
+"EN-NZ" style=3D"font-size:8.0pt;font-family:&quot;Verdana&quot;,sans-serif=
+;color:#001272">&nbsp;</span></span><span lang=3D"EN-NZ" style=3D"font-size=
+:8.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:#001272">for
+ our&nbsp;publicly available disclosure document.&nbsp;</span><o:p></o:p></=
+p>
+</div>
+<div>
+<p class=3D"xmsonormal"><b><span lang=3D"EN-NZ" style=3D"font-size:8.0pt;fo=
+nt-family:&quot;Verdana&quot;,sans-serif;color:#001272">&nbsp;</span></b><o=
+:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><b><span lang=3D"EN-NZ" style=3D"font-size:8.0pt;fo=
+nt-family:&quot;Verdana&quot;,sans-serif;color:#001272">Fair Insurance Code=
+</span></b><span lang=3D"EN-NZ" style=3D"font-size:8.0pt;font-family:&quot;=
+Verdana&quot;,sans-serif;color:#001272"><br>
+Tower is a member of the Insurance Council of New Zealand (ICNZ). We abide =
+by the&nbsp;</span><span lang=3D"EN-NZ" style=3D"font-size:11.0pt;font-fami=
+ly:&quot;Calibri&quot;,sans-serif"><a href=3D"https://urldefense.com/v3/__h=
+ttps:/www.icnz.org.nz/fair-insurance-code/__;!!NPvfczxIteVBjg!ByRdf0gMtWnSo=
+4D_TLRmC-N5qUn7ZafcDQoyljl761YTFWKvNPlTO4UaLF4B9nWY1R4f5YByip-8v7ZRHwfH2dyS=
+wA$" target=3D"_blank" title=3D"Fair Insurance Code link"><span style=3D"fo=
+nt-size:8.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:#001272">ICNZ
+ Fair Insurance Code</span> [icnz.org.nz]</a></span><span lang=3D"EN-NZ" st=
+yle=3D"font-size:8.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:#00=
+1272">.</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span lang=3D"EN-NZ" style=3D"font-size:8.0pt;font-=
+family:&quot;Verdana&quot;,sans-serif;color:#001272">&nbsp;</span><o:p></o:=
+p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><b><span style=3D"font-family:&quot;Verdana&quot;,s=
+ans-serif;color:#001272">&nbsp;</span></b><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+</div>
+<p class=3D"xmsonormal"><span style=3D"font-size:9.0pt;font-family:&quot;He=
+lvetica&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+<p align=3D"center" style=3D"margin:5.0pt;text-align:center"><span style=3D=
+"font-size:10.0pt;font-family:&quot;Calibri&quot;,sans-serif">Classificatio=
+n: Sensitive</span><o:p></o:p></p>
+<div style=3D"border:none;border-top:solid windowtext 1.0pt;padding:3.0pt 0=
+in 0in 0in;border-color:currentcolor currentcolor">
+<div>
+<p class=3D"xmsonormal"><b><span style=3D"font-size:11.0pt;font-family:&quo=
+t;Calibri&quot;,sans-serif">From:</span></b><span class=3D"xapple-converted=
+-space"><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,san=
+s-serif">&nbsp;</span></span><span style=3D"font-size:11.0pt;font-family:&q=
+uot;Calibri&quot;,sans-serif">Raffaella
+ del Prete &lt;<a href=3D"mailto:raffaellanz@icloud.com">raffaellanz@icloud=
+.com</a>&gt;<br>
+<b>Sent:</b><span class=3D"xapple-converted-space">&nbsp;</span>Friday, Jul=
+y 4, 2025 9:08 PM<br>
+<b>To:</b><span class=3D"xapple-converted-space">&nbsp;</span>Claims &lt;<a=
+ href=3D"mailto:Claims@tower.co.nz">Claims@tower.co.nz</a>&gt;<br>
+<b>Subject:</b><span class=3D"xapple-converted-space">&nbsp;</span>Re: Towe=
+r Claim: #C90306048<span class=3D"xapple-converted-space">&nbsp;</span></sp=
+an><o:p></o:p></p>
+</div>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:1.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;color:white">=EF=BB=BF Hi Sasha, Thank you very much=
+ for the good detailed overview and summary, much appreciated. Confirming t=
+hat I am happy for the payments as outlined below into
+ my bank account: Maria Del Prete, 02-0272-0350952-000 should be the bank a=
+ccount</span><o:p></o:p></p>
+</div>
+</div>
+<div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">=EF=BB=BF</span><o:p></o:p></p>
+</div>
+<div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">Hi Sasha,</span><o:p></o:p></p>
+</div>
+<div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+</div>
+</div>
+<div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">Thank you very much for the good detailed overview=
+ and summary, much appreciated.</span><o:p></o:p></p>
+</div>
+</div>
+<div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+</div>
+</div>
+<div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">Confirming that I am happy for the payments as out=
+lined below into my bank account: Maria Del Prete, 02-0272-0350952-000 shou=
+ld be the bank account on file.</span><o:p></o:p></p>
+</div>
+</div>
+<div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+</div>
+</div>
+<div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">Thanks again and regards,</span><o:p></o:p></p>
+</div>
+</div>
+<div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">Raffaella</span><o:p></o:p></p>
+</div>
+</div>
+<div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">Sent from my iPad</span><o:p></o:p></p>
+</div>
+</div>
+<div>
+<div>
+<p class=3D"xmsonormal" style=3D"margin-bottom:12.0pt"><o:p>&nbsp;</o:p></p>
+</div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<p class=3D"xmsonormal" style=3D"margin-bottom:12.0pt"><span style=3D"font-=
+size:12.0pt;font-family:&quot;Calibri&quot;,sans-serif">On 3 Jul 2025, at 1=
+1:27=E2=80=AFAM, Claims &lt;<a href=3D"mailto:Claims@tower.co.nz">Claims@to=
+wer.co.nz</a>&gt; wrote:</span><o:p></o:p></p>
+</blockquote>
+</div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">=EF=BB=BF<span class=3D"xapple-converted-space">&n=
+bsp;</span></span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">Good Morning Raffaella</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">Thank you for your emails and apologies for the de=
+lay in responding to you.</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">Firstly, to acknowledge the Privacy request has be=
+en received and passed onto our Privacy Team.</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">Also acknowledging that you wish all correspondenc=
+e to be via email.</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">I am aware that you have met on site at your prope=
+rty yesterday with Grant Metson and that as proposed Tower will send you th=
+e documented process.</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">In addition to this I have reviewed the informatio=
+n with regards to the expenses and can confirm the following will be paid u=
+nder your Temporary Accommodation Benefit (limit
+ of $30,000.00 which is the higher of the two policy benefits)<span class=
+=3D"xapple-converted-space">&nbsp;</span></span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">$1,452.00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp=
+;&nbsp;&nbsp;&nbsp;&nbsp; 6 nights Esplanade Hotel</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">$5,000.00 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp; Rent @ $1,000.00 per week</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">$727.38 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Moving costs to temp accommodation</sp=
+an><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><b><span style=3D"font-size:11.0pt;font-family:&quo=
+t;Calibri&quot;,sans-serif">$7,179.38&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
+bsp;&nbsp;&nbsp;&nbsp; Total of Temporary Accommodation benefit used to dat=
+e.</span></b><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">The other two payments as follows will be under yo=
+ur Contents claim as part of your sum insured.</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">$340&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =
+cleaning of clothes</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">$454.25&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cleaning of sofa</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">With regards to your query if Stress Benefit appli=
+es, unfortunately it only applies if the property and/or Contents is a Tota=
+l Loss as per following policy wording,<span class=3D"xapple-converted-spac=
+e">&nbsp;</span></span><span style=3D"font-size:12.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif">if
+ the contents are deemed a total loss then we will proactively let you know=
+ of any changes to your eligibility for this benefit.&nbsp;&nbsp;</span><o:=
+p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><b><span style=3D"font-size:11.0pt;font-family:&quo=
+t;Calibri&quot;,sans-serif">House<span class=3D"xapple-converted-space">&nb=
+sp;</span></span></b><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><i><span style=3D"font-size:11.0pt;font-family:&quo=
+t;Calibri&quot;,sans-serif">Stress benefit lump sum payment</span></i><o:p>=
+</o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><i><span style=3D"font-size:11.0pt;font-family:&quo=
+t;Calibri&quot;,sans-serif">We=E2=80=99ll pay you a lump sum for the stress=
+ caused to you if your entire house is destroyed.</span></i><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><i><span style=3D"font-size:11.0pt;font-family:&quo=
+t;Calibri&quot;,sans-serif">We pay this benefit in addition to your sum ins=
+ured.</span></i><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><i><span style=3D"font-size:11.0pt;font-family:&quo=
+t;Calibri&quot;,sans-serif">Limit</span></i><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><i><span style=3D"font-size:11.0pt;font-family:&quo=
+t;Calibri&quot;,sans-serif">We=E2=80=99ll pay a maximum of $1,000 for each =
+event as soon as we=E2=80=99ve accepted your house claim</span></i><o:p></o=
+:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><b><span style=3D"font-size:11.0pt;font-family:&quo=
+t;Calibri&quot;,sans-serif">Contents<span class=3D"xapple-converted-space">=
+&nbsp;</span></span></b><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><i><span style=3D"font-size:11.0pt;font-family:&quo=
+t;Calibri&quot;,sans-serif">Stress benefit lump sum payment</span></i><o:p>=
+</o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><i><span style=3D"font-size:11.0pt;font-family:&quo=
+t;Calibri&quot;,sans-serif">We=E2=80=99ll pay you a lump sum for the stress=
+ caused to you if all your contents are destroyed.</span></i><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><i><span style=3D"font-size:11.0pt;font-family:&quo=
+t;Calibri&quot;,sans-serif">This benefit is in addition to your contents su=
+m insured.</span></i><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><i><span style=3D"font-size:11.0pt;font-family:&quo=
+t;Calibri&quot;,sans-serif">Limit</span></i><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><i><span style=3D"font-size:11.0pt;font-family:&quo=
+t;Calibri&quot;,sans-serif">We=E2=80=99ll pay a maximum of $2,000 for each =
+event as soon as we have accepted your contents</span></i><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><i><span style=3D"font-size:11.0pt;font-family:&quo=
+t;Calibri&quot;,sans-serif">claim.</span></i><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><b><span style=3D"font-size:11.0pt;font-family:&quo=
+t;Calibri&quot;,sans-serif">Please advise if you are happy for these paymen=
+ts to be made to your nominated account on file where the premiums are dedu=
+cted from or wish to supply an alternative account.</span></b><o:p></o:p></=
+p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">Just reach out if you have any further questions a=
+s always, I am happy to assist.</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">Kind Regards</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:11.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><b><span lang=3D"EN-NZ" style=3D"font-size:11.0pt;f=
+ont-family:&quot;Calibri&quot;,sans-serif">&nbsp;</span></b><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><b><span style=3D"font-size:11.0pt;font-family:&quo=
+t;Calibri&quot;,sans-serif;color:#001272">Sasha C<br>
+</span></b><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,=
+sans-serif;color:#001272">Claims Consultant | Tower<br>
+<b>DDI:<span class=3D"xapple-converted-space">&nbsp;</span></b>09 369 0583<=
+br>
+PO Box 90347,&nbsp;Auckland&nbsp;1142<br>
+</span><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans=
+-serif"><a href=3D"mailto:claims@tower.co.nz">claims@tower.co.nz</a><span s=
+tyle=3D"color:#001272">&nbsp;|&nbsp;</span></span><span lang=3D"EN-NZ" styl=
+e=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif"><a href=
+=3D"http://www.tower.co.nz/"><span lang=3D"EN-US" style=3D"color:#001272">t=
+ower.co.nz</span></a></span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span lang=3D"EN-NZ" style=3D"font-size:8.0pt;font-=
+family:&quot;Verdana&quot;,sans-serif;color:#001272">&nbsp;</span><o:p></o:=
+p></p>
+</div>
+<div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt">&lt;image001.jpg&g=
+t;</span><o:p></o:p></p>
+</div>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:8.0pt;font-family:&quot;Ve=
+rdana&quot;,sans-serif;color:#001272">&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<div>
+<p class=3D"xmsonormal"><span lang=3D"EN-NZ" style=3D"font-size:8.0pt;font-=
+family:&quot;Verdana&quot;,sans-serif;color:#001272"><a href=3D"https://url=
+defense.com/v3/__https:/www.icnz.org.nz/fair-insurance-code/__;!!NPvfczxIte=
+VBjg!EgmqDMsrwV65TA_UxzSvE6rzidVo4GM6-CkLzOj3hHPYZqwKghP09Tn41_0gQbiI57dbvG=
+AKL5xhU61pZsbMjHQ$"><span style=3D"color:windowtext">&lt;image002.png&gt;</=
+span></a></span><o:p></o:p></p>
+</div>
+</div>
+<div>
+<p class=3D"xmsonormal"><span class=3D"xmsohyperlink"><u><span style=3D"fon=
+t-size:12.0pt;color:blue"><a href=3D"https://urldefense.com/v3/__https:/www=
+.icnz.org.nz/fair-insurance-code/__;!!NPvfczxIteVBjg!EgmqDMsrwV65TA_UxzSvE6=
+rzidVo4GM6-CkLzOj3hHPYZqwKghP09Tn41_0gQbiI57dbvGAKL5xhU61pZsbMjHQ$">[icnz.o=
+rg.nz]</a></span></u></span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:8.0pt;font-family:&quot;Ve=
+rdana&quot;,sans-serif;color:#001272">&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span lang=3D"EN-NZ" style=3D"font-size:8.0pt;font-=
+family:&quot;Verdana&quot;,sans-serif;color:#001272">&nbsp;</span><o:p></o:=
+p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span lang=3D"EN-NZ" style=3D"font-size:8.0pt;font-=
+family:&quot;Verdana&quot;,sans-serif;color:#001272">Tower&nbsp;Limited&nbs=
+p;holds a transitional Financial Advice Provider&nbsp;license&nbsp;by the F=
+inancial Markets Authority.</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span lang=3D"EN-NZ" style=3D"font-size:8.0pt;font-=
+family:&quot;Verdana&quot;,sans-serif;color:#001272">Our staff are&nbsp;Tow=
+er Nominated Representatives&nbsp;and may provide financial advice on insur=
+ance products provided&nbsp;by Tower.</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span lang=3D"EN-NZ" style=3D"font-size:8.0pt;font-=
+family:&quot;Verdana&quot;,sans-serif;color:#001272">Tower Insurance is a m=
+ember of the Insurance and Financial Services Ombudsman Scheme.</span><o:p>=
+</o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span lang=3D"EN-NZ" style=3D"font-size:8.0pt;font-=
+family:&quot;Verdana&quot;,sans-serif;color:#001272">Please<span class=3D"x=
+apple-converted-space">&nbsp;</span></span><span lang=3D"EN-NZ" style=3D"fo=
+nt-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif"><a href=3D"https=
+://www.tower.co.nz/about-us/publicly-available-disclosure/"><span style=3D"=
+font-size:8.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:#001272">c=
+lick
+ here</span></a></span><span class=3D"xapple-converted-space"><span lang=3D=
+"EN-NZ" style=3D"font-size:8.0pt;font-family:&quot;Verdana&quot;,sans-serif=
+;color:#001272">&nbsp;</span></span><span lang=3D"EN-NZ" style=3D"font-size=
+:8.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:#001272">for
+ our&nbsp;publicly available disclosure document.&nbsp;</span><o:p></o:p></=
+p>
+</div>
+<div>
+<p class=3D"xmsonormal"><b><span lang=3D"EN-NZ" style=3D"font-size:8.0pt;fo=
+nt-family:&quot;Verdana&quot;,sans-serif;color:#001272">&nbsp;</span></b><o=
+:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><b><span lang=3D"EN-NZ" style=3D"font-size:8.0pt;fo=
+nt-family:&quot;Verdana&quot;,sans-serif;color:#001272">Fair Insurance Code=
+</span></b><span lang=3D"EN-NZ" style=3D"font-size:8.0pt;font-family:&quot;=
+Verdana&quot;,sans-serif;color:#001272"><br>
+Tower is a member of the Insurance Council of New Zealand (ICNZ). We abide =
+by the&nbsp;</span><span lang=3D"EN-NZ" style=3D"font-size:11.0pt;font-fami=
+ly:&quot;Calibri&quot;,sans-serif"><a href=3D"https://urldefense.com/v3/__h=
+ttps:/www.icnz.org.nz/fair-insurance-code/__;!!NPvfczxIteVBjg!EgmqDMsrwV65T=
+A_UxzSvE6rzidVo4GM6-CkLzOj3hHPYZqwKghP09Tn41_0gQbiI57dbvGAKL5xhU61pZsbMjHQ$=
+" target=3D"_blank" title=3D"Fair Insurance Code link"><span style=3D"font-=
+size:8.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:#001272">ICNZ
+ Fair Insurance Code</span><span class=3D"xapple-converted-space">&nbsp;</s=
+pan>[icnz.org.nz]</a></span><span lang=3D"EN-NZ" style=3D"font-size:8.0pt;f=
+ont-family:&quot;Verdana&quot;,sans-serif;color:#001272">.</span><o:p></o:p=
+></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span lang=3D"EN-NZ" style=3D"font-size:8.0pt;font-=
+family:&quot;Verdana&quot;,sans-serif;color:#001272">&nbsp;</span><o:p></o:=
+p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><b><span style=3D"font-family:&quot;Verdana&quot;,s=
+ans-serif;color:#001272">&nbsp;</span></b><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt;font-family:&quot;C=
+alibri&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt">&nbsp;</span><o:p>=
+</o:p></p>
+</div>
+<div class=3D"MsoNormal" align=3D"center" style=3D"text-align:center">
+<hr size=3D"2" width=3D"100%" align=3D"center">
+</div>
+<p class=3D"xmsonormal" style=3D"margin-bottom:12.0pt"><span style=3D"font-=
+size:7.5pt;font-family:&quot;Arial&quot;,sans-serif;color:gray"><br>
+The information contained in this email message is confidential and may be =
+legally privileged. If you are not the intended recipient, please note that=
+ any use, dissemination, distribution, or reproduction of this message in a=
+ny form whatsoever, is strictly
+ prohibited. If you received this email in error, please notify me by retur=
+n email, delete your copy, and accept my apologies for any inconvenience ca=
+used. Please note that your receipt of this email from a Tower email addres=
+s does not constitute our consent
+ for you to send any other electronic information to Tower by return, unles=
+s specifically stated otherwise.</span><o:p></o:p></p>
+<p align=3D"center" style=3D"margin:5.0pt;text-align:center"><span style=3D=
+"font-size:10.0pt;font-family:&quot;Calibri&quot;,sans-serif">Classificatio=
+n: Sensitive</span><o:p></o:p></p>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt">&nbsp;</span><o:p>=
+</o:p></p>
+<div class=3D"MsoNormal" align=3D"center" style=3D"text-align:center">
+<hr size=3D"2" width=3D"100%" align=3D"center">
+</div>
+<p class=3D"xmsonormal"><span style=3D"font-size:7.5pt;font-family:&quot;Ar=
+ial&quot;,sans-serif;color:gray"><br>
+The information contained in this email message is confidential and may be =
+legally privileged. If you are not the intended recipient, please note that=
+ any use, dissemination, distribution, or reproduction of this message in a=
+ny form whatsoever, is strictly
+ prohibited. If you received this email in error, please notify me by retur=
+n email, delete your copy, and accept my apologies for any inconvenience ca=
+used. Please note that your receipt of this email from a Tower email addres=
+s does not constitute our consent
+ for you to send any other electronic information to Tower by return, unles=
+s specifically stated otherwise.</span><o:p></o:p></p>
+</div>
+</blockquote>
+</div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt">&nbsp;</span><o:p>=
+</o:p></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<div class=3D"MsoNormal" align=3D"center" style=3D"text-align:center">
+<hr size=3D"2" width=3D"100%" align=3D"center">
+</div>
+<p class=3D"MsoNormal"><span style=3D"font-size:7.5pt;font-family:&quot;Ari=
+al&quot;,sans-serif;color:gray"><br>
+The information contained in this email message is confidential and may be =
+legally privileged. If you are not the intended recipient, please note that=
+ any use, dissemination, distribution, or reproduction of this message in a=
+ny form whatsoever, is strictly
+ prohibited. If you received this email in error, please notify me by retur=
+n email, delete your copy, and accept my apologies for any inconvenience ca=
+used. Please note that your receipt of this email from a Tower email addres=
+s does not constitute our consent
+ for you to send any other electronic information to Tower by return, unles=
+s specifically stated otherwise.</span><o:p></o:p></p>
+</div>
+</div>
+</blockquote>
+</div>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+</div>
+</div>
+<br>
+<hr>
+<font face=3D"Arial" color=3D"Gray" size=3D"1"><br>
+The information contained in this email message is confidential and may be =
+legally privileged. If you are not the intended recipient, please note that=
+ any use, dissemination, distribution, or reproduction of this message in a=
+ny form whatsoever, is strictly
+ prohibited. If you received this email in error, please notify me by retur=
+n email, delete your copy, and accept my apologies for any inconvenience ca=
+used. Please note that your receipt of this email from a Tower email addres=
+s does not constitute our consent
+ for you to send any other electronic information to Tower by return, unles=
+s specifically stated otherwise.<br>
+</font>
+</body>
+</html>
+
+--_000_SY6P282MB325689AB16178CE263804125BFEDASY6P282MB3256AUSP_--
+
+--_009_SY6P282MB325689AB16178CE263804125BFEDASY6P282MB3256AUSP_
+Content-Transfer-Encoding: base64
+Content-Disposition: inline;
+	size=2334;
+	modification-date="Sun, 12 Oct 2025 20:22:24 GMT";
+	filename=image001.jpg;
+	creation-date="Sun, 12 Oct 2025 20:22:24 GMT"
+Content-Type: image/jpeg;
+	name=image001.jpg
+X-Apple-Content-Length: 3153
+Content-Id: <image001.jpg@01DC3C22.E375E020>
+
+
+--_009_SY6P282MB325689AB16178CE263804125BFEDASY6P282MB3256AUSP_
+Content-Transfer-Encoding: base64
+Content-Disposition: inline;
+	size=7106;
+	modification-date="Sun, 12 Oct 2025 20:22:25 GMT";
+	filename=image002.png;
+	creation-date="Sun, 12 Oct 2025 20:22:24 GMT"
+Content-Type: image/png;
+	name=image002.png
+X-Apple-Content-Length: 9601
+Content-Id: <image002.png@01DC3C22.E375E020>
+
+
+--_009_SY6P282MB325689AB16178CE263804125BFEDASY6P282MB3256AUSP_
+Content-Transfer-Encoding: base64
+Content-Disposition: inline;
+	size=200191;
+	modification-date="Sun, 12 Oct 2025 20:22:25 GMT";
+	filename=image003.png;
+	creation-date="Sun, 12 Oct 2025 20:22:25 GMT"
+Content-Type: image/png;
+	name=image003.png
+X-Apple-Content-Length: 270437
+Content-Id: <image003.png@01DC3C22.E375E020>
+
+
+--_009_SY6P282MB325689AB16178CE263804125BFEDASY6P282MB3256AUSP_
+Content-Transfer-Encoding: base64
+Content-Disposition: inline;
+	size=453236;
+	modification-date="Sun, 12 Oct 2025 20:22:25 GMT";
+	filename=image004.png;
+	creation-date="Sun, 12 Oct 2025 20:22:25 GMT"
+Content-Type: image/png;
+	name=image004.png
+X-Apple-Content-Length: 612268
+Content-Id: <image004.png@01DC3C22.E375E020>
+
+
+--_009_SY6P282MB325689AB16178CE263804125BFEDASY6P282MB3256AUSP_
+Content-Transfer-Encoding: base64
+Content-Disposition: inline;
+	size=1999;
+	modification-date="Sun, 12 Oct 2025 20:22:25 GMT";
+	filename=image005.jpg;
+	creation-date="Sun, 12 Oct 2025 20:22:25 GMT"
+Content-Type: image/jpeg;
+	name=image005.jpg
+X-Apple-Content-Length: 2704
+Content-Id: <image005.jpg@01DC3C22.E375E020>
+
+
+--_009_SY6P282MB325689AB16178CE263804125BFEDASY6P282MB3256AUSP_
+Content-Transfer-Encoding: base64
+Content-Disposition: inline;
+	size=5135;
+	modification-date="Sun, 12 Oct 2025 20:22:25 GMT";
+	filename=image006.png;
+	creation-date="Sun, 12 Oct 2025 20:22:25 GMT"
+Content-Type: image/png;
+	name=image006.png
+X-Apple-Content-Length: 6939
+Content-Id: <image006.png@01DC3C22.E375E020>
+
+
+--_009_SY6P282MB325689AB16178CE263804125BFEDASY6P282MB3256AUSP_--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>conversation-id</key>
+	<integer>48511</integer>
+	<key>date-last-viewed</key>
+	<integer>1760321818</integer>
+	<key>date-received</key>
+	<integer>1760300564</integer>
+	<key>flags</key>
+	<integer>8590137473</integer>
+	<key>remote-id</key>
+	<string>72408</string>
+</dict>
+</plist>

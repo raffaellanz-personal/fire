@@ -1,0 +1,3332 @@
+165144    
+Return-path: <v-ccjmmo_baflhkl_doahdakn_doahdako_a@bounce.e.tower.co.nz>
+Original-recipient: rfc822;raffaellanz@icloud.com
+Received: from p00-icloudmta-smtpin-us-west-1a-100-percent-39 by p136-mailgateway-smtp-7c6c6d476c-b5q62 (mailgateway 2536B107)
+	with SMTP id af1ea947-f351-4876-b50e-01b9e83ddad2 
+	for <raffaellanz@icloud.com>; Tue, 23 Sep 2025 19:44:56 GMT
+X-Apple-MoveToFolder: INBOX 
+X-Apple-Action: MOVE_TO_FOLDER/INBOX
+X-Apple-UUID: af1ea947-f351-4876-b50e-01b9e83ddad2
+Received: from mail10316.e.tower.co.nz (mail10316.e.tower.co.nz [129.33.138.247])
+	by p00-icloudmta-smtpin-us-west-1a-100-percent-39 (Postfix) with ESMTPS id 64933C000F1
+	for <raffaellanz@icloud.com>; Tue, 23 Sep 2025 19:44:51 +0000 (UTC)
+X-ICL-Info: GAtbRVYDBVFFSlVFSgQEUFUKE0oWX1gHVQoPB0UBBFtbSlVZSQMOTEdNUVcdVAsUWBoFHRVdWT0XGAAbEFtaPREWBx8cUV0MKh0JFhBUVwkaJgc3Gl9DDBYcSBJWRFkVEAtIFBceWBhVHwJKG19bDwAXDxQZRF8NGwpIAxdHUxBbGglZFkoWEBZEFBYeVlcHGRUHGQJwXwEZFhMTVlNZD1URAxsXDVsDHBVXR0sBAEwQVxIYD1VETBYWSBkCEEYWB0QLFhFcB1JGSFBZHR5CDQIcFFkbXxgMD1kCE0VTWQ8YDAgeG1FCCxoXFVkMX0EHB1cFGFZeTEIYEAJKRAYHUkxAVEFBCBhQTEpRQUsJB1VAQVBCTgYOWkJLUVkyUUADOBgPG1ZRRhI1GwEVSx1VA1gYFRJKHkYQGh1IFg9DRhBL
+X-ICL-Score: 2.33303322422
+Authentication-Results: bimi.icloud.com; bimi=none
+X-ARC-Info: policy=fail; arc=none; r1=-20; r2=0
+Authentication-Results: arc.icloud.com; arc=none
+Authentication-Results: dmarc.icloud.com; dmarc=pass header.from=communications.tower.co.nz
+X-DMARC-Policy: v=DMARC1; p=reject; rua=mailto:dmarc_rua@emaildefense.proofpoint.com,mailto:dmarc_agg@vali.email,mailto:dmarc-reports@tower.co.nz; ruf=mailto:dmarc-reports@tower.co.nz,mailto:dmarc_ruf@emaildefense.proofpoint.com; fo=1; ri=3600
+X-DMARC-Info: pass=pass; dmarc-policy=reject; s=r1; d=r1; pdomain=tower.co.nz
+Authentication-Results: dkim-verifier.icloud.com; dkim=pass header.d=communications.tower.co.nz header.i=info@communications.tower.co.nz header.b=aw47PWeo
+Authentication-Results: spf.icloud.com; spf=pass (spf.icloud.com: domain of v-ccjmmo_baflhkl_doahdakn_doahdako_a@bounce.e.tower.co.nz designates 129.33.138.247 as permitted sender) smtp.mailfrom=v-ccjmmo_baflhkl_doahdakn_doahdako_a@bounce.e.tower.co.nz
+Received-SPF: pass (spf.icloud.com: domain of v-ccjmmo_baflhkl_doahdakn_doahdako_a@bounce.e.tower.co.nz designates 129.33.138.247 as permitted sender) receiver=spf.icloud.com; client-ip=129.33.138.247; helo=mail10316.e.tower.co.nz; envelope-from=v-ccjmmo_baflhkl_doahdakn_doahdako_a@bounce.e.tower.co.nz
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=spop1024; d=communications.tower.co.nz;
+ h=Date:From:Reply-To:To:Message-ID:Subject:MIME-Version:Content-Type:
+ X-CSA-Complaints:List-Unsubscribe-Post:List-Unsubscribe;
+ i=info@communications.tower.co.nz;
+ bh=SzxT74IummSr6ISDhc6RUPFeBnlXF63aoztIZ/ihJI0=;
+ b=aw47PWeoP6Pye/J02yyYEjXpziuZW/+Ye7WqW5H6J34fdkI/gnv77rCwuiKwwn3QrKisl35cHl2K
+   cD0ByI/MXlj+T7qXYYSTfEvDXBQUNyotuNhAHcM5G9Keg4+fRhJ7K007JfkHJ8y2DuO731rlfs9U
+   sI7wsz0WcUGA4D+TkVY=
+Received: by bgb3-ca-ase2.prod.awspr id hqbsb03ain0r for <raffaellanz@icloud.com>; Tue, 23 Sep 2025 19:44:48 +0000 (envelope-from <v-ccjmmo_baflhkl_doahdakn_doahdako_a@bounce.e.tower.co.nz>)
+Date: Tue, 23 Sep 2025 19:44:48 +0000 (UTC)
+From: Tower <info@communications.tower.co.nz>
+Reply-To: reply@communications.tower.co.nz
+To: raffaellanz@icloud.com
+Message-ID: <610992698.29376391758656688727.JavaMail.app@bgb3-ca-ase2.prod.awspr>
+Subject: My Tower just got smarter
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_182160_1032961546.1758656687338"
+x-mid: 2268366
+X-CSA-Complaints: csa-complaints@eco.de
+x-rpcampaign: sp2268366
+x-job: 2268366
+x-orgId: 10200
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+List-Unsubscribe: <https://links.e.tower.co.nz/luoo/v1/eXp5cTZCbFBmZ25JRHM2Qmd5K1VneEs5MDVyZmZRS0ZFMVp6RHpDWlhJWjJQY1ZpQ2tWZWR4QnlBYjdtTWkrSDJJVzYrRGZvb2hRWXE2YXBSRXFob0E9PQS2>, <mailto:v-ccjmmo_baflhkl_doahdakn_doahdako_a@bounce.e.tower.co.nz?subject=Unsubscribe>
+X-MANTSH: 1TFkXGx4aEQpZRBdrb3pkX1JZbmVvQhEKWU0XZEVETxEKWUkXGnEaEBp3BhsYGnE
+ ZGxAbdwYYGgYaEQpZXhdsbHkRCkNOF0tGQhxoentNX0RcZGgfUE1aekV8fltmWFl8UkNycxh4E
+ QpYXBcZBBoEHx4FGxgdBBoEGgQbEBseGh8aEQpeWRdNaWAbexEKTVwXGR8dEQpMWhdpb21dTV0
+ RCkxGF2NNaxEKQ1oXGxgTBBkZBBsZEgQYHh0RCkJeFxsRCkJGF20dXk5wHnBBc0R6EQpCRxdkc
+ 11sBUkYT2QZGBEKQlwXGxEKQksXYG0fGHN6eWx6T1IRCkJJF2N5Glx4U19aBUBtEQpCRRd6bHN
+ HZXN6a3t8RREKQk4XY3kaXHhTX1oFQG0RCkJMF2V+Wh14SGlNGhsSEQpCbBduRG1ZQX9McHASa
+ BEKQkAXZX9EbXpufhJzHGYRCkJYF2JGaUxJE1tJWHplEQpwZxd6eWhTeGxjXk4beRAeEhEKcGg
+ XY2sZTkd7Tht+fnkQGRoRCnBoF2JCXBtibWd5e2liEBoRCnBoF25gaGRkTm9tXm1FEBoRCnBoF
+ 2x4ZElHfXoFAUVIEAceBBwRCnBoF2xpRx9tfFAbRUFSEAcYHBEKcGgXZn5JUhoFElhMZVgQHhI
+ RCnBoF2IFZUAcH01HaFpbEAcfBBwRCnBoF2Yfe0lGcHpPaUFJEB4SEQpwfxdpExpNbVlMH3NpG
+ RAfHhEKcF8XemdnaAVsH3NZQGkQHhIRCnB9F2VQWkR5HlB8aBkfEBoRCnBfF2cFR3xoG2t8WGl
+ uEBkaEQpwfRdteWxEWBlFY2toZBAaEQpwfxduf3NjTX9wb0ZZTBAHHQQdEQpwXxdlaFJkbX9uB
+ VATXRAeEhEKcH0XYAFfTh9/bx1Hf20QHhIRCnBsF2QfGhN/RFNvTngYEBwaEQptfhcaEQpYTRd
+ LEQ==
+X-Proofpoint-GUID: alh6BPQgunvNB5zgpPoVTqLrsVxiXY2R
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTIzMDE4MCBTYWx0ZWRfX2v+21voWH8kQ
+ eOTo39WHHBZK47YPgXbDdzmXcKcbgyraZkdM80KSX+6cOK7CbYd3ZZ9dNi8lQX3oABb16Yu7VZ6
+ TzY5cVR5OGltD7alfw3UMfkZYSWpwoG+MW5Jp8VZAwTbRnDoV0fwCwJc0QJ5FkRq2zwXRpAWf9L
+ G3TS+nW2uF09rMODFOmwXUhav0+mFY6IsCEhRYhCxbsiZLCuypg7emnKDQr21gQRYVpCahVyxox
+ qv6HI7vCaqYr1KNpnLeThEHveiCpYwbsISIkruR9d6WzdrCacUPfbOniMmst/kmrt8tbvqOnI=
+X-Proofpoint-ORIG-GUID: alh6BPQgunvNB5zgpPoVTqLrsVxiXY2R
+X-JNJ: AAAAAAABwIEMDsG+QKBWA6N8Pbupc0CWiAMt8MnjGp+g/MhUspz0d0ETks7/+TTRQ8EdOPVyPoFqGx7X5KVcbfIL3cMIkTrWLau4n2AsIz65knI04qPZlNggGw3Cjyl6RVLSM6ldsKCZXJvebKDIEyip0uWRxNFAQFJgksOICSPqod41UIiYkd/nWaiXvaDu12KHbdfuZ3czkJArNM1zLfDw9rI9hufwW5QqNyiJ5+EgaStSa5MiB8ri+MXMimxnr2oI/jAQ6vgm6BqUtCoQHbvl8tHa4cnu/8uQdUVwf95+qNO/zAwS9yKc6XV1Un6Tuhtx4lrhsYiSzqyl0F2lrcuN4/Tkw/ozyoLkW4Quyv/HGdheE2KkH2CQl1+9hHCH1/aSjjCYtU41ldIfNB6XkOd4T6zm8LDcydf7qsaxTEmV9zand9SFniTus/JmRspgaqNzy1RJkndnTS6fLNhfa6EOxgFlQL1i7pOKQudDcRONV6q55iGRZyD/CfthyXJzIDriLoLLP4jJWI57HCeOyH3fsyWuRhJwn4tGV5FBMP4B4GuMa+Zu/kWI60P7u3KLYoL5CziI9O6xL4IEGEcO60bvxK8ny+VB/xYEfRV8qs6mYffgO3YeHLEPpJ/FKWltlUloNRKMolvrP7sB
+
+
+------=_Part_182160_1032961546.1758656687338
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=utf-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/htm=
+l4/strict.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microso=
+ft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+<head></head>
+<head>
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1.0"/>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+    <title key=3D"1">My Tower just got smarter</title>
+    <!--[if gte mso 9]><!-->
+    <style>
+        @media screen and (max-width: 480px) {
+            table.layout-table { height:unset !important; }
+            .layout-grid-cell { height: auto !important; width: 100% !impor=
+tant; }
+            tr { display: table-row !important; display: grid !important; }
+            colgroup.displayNone, tr.displayNone, td.displayNone, div.displ=
+ayNone {display:none !important;}
+            .w100per {width: 100% !important;}
+            .image-group-cell {width: initial !important}
+        }
+    </style>
+    <!-- <![endif] hidden -->  =20
+    <style key=3D"2" type=3D"text/css">
+        .layout-table a:link{color:blue;text-decoration:underline;}.layout-=
+table a:visited{color:purple;text-decoration:underline;}.layout-table a:lin=
+k:active{color:red}.layout-table a:visited:active{color:purple}.layout-tabl=
+e address{display:block;font-style:italic}.layout-table area{}.layout-table=
+ article{display:block}.layout-table aside{display:block}.layout-table b{fo=
+nt-weight:700}.layout-table bdo{unicode-bidi:bidi-override}.layout-table bl=
+ockquote{display:block;margin:1em 40px}.layout-table body{margin:8px}.layou=
+t-table body:focus{outline:none}.layout-table caption{display:table-caption=
+;text-align:center}.layout-table cite{font-style:italic}.layout-table code{=
+font-family:monospace}.layout-table col{display:table-column}.layout-table =
+colgroup{display:table-column-group}.layout-table datalist{}.layout-table d=
+d{display:block;margin-left:40px}.layout-table del{text-decoration:line-thr=
+ough}.layout-table details{display:block}.layout-table dfn{font-style:itali=
+c}.layout-table div{display:block; margin: 0}.layout-table dl{display:block=
+;margin:1em 0}.layout-table dt{display:block}.layout-table em{font-style:it=
+alic}.layout-table embed:focus{outline:none}.layout-table fieldset{display:=
+block;margin-left:2px;margin-right:2px;border:2px groove;padding:.35em .75e=
+m .625em}.layout-table figcaption{display:block}.layout-table figure{displa=
+y:block;margin:1em 40px}.layout-table footer{display:block}.layout-table fo=
+rm{display:block;margin-top:0}.layout-table h1{display:block;font-weight:40=
+0;margin:0 0}.layout-table h2{display:block;font-weight:400;margin:0 0}.lay=
+out-table h3{display:block;font-weight:400;margin:0 0}.layout-table h4{disp=
+lay:block;font-weight:400;margin:0 0}.layout-table h5{display:block;font-we=
+ight:400;margin:0 0}.layout-table h6{display:block;font-weight:400;margin:0=
+ 0}.layout-table head{}.layout-table header{display:block}.layout-table hr{=
+display:block;border-style:inset;border-width:1px;margin:.5em auto}.layout-=
+table html{display:block}.layout-table html:focus{outline:none}.layout-tabl=
+e i{font-style:italic}.layout-table iframe:focus{outline:none}.layout-table=
+ iframe[seamless]{display:block}.layout-table img{display:inline-block; max=
+-width: 100%;}.layout-table ins{text-decoration:underline}.layout-table kbd=
+{font-family:monospace}.layout-table label{cursor:default}.layout-table leg=
+end{display:block;padding-left:2px;padding-right:2px;border:none}.layout-ta=
+ble li{display:list-item}.layout-table link{}.layout-table map{display:inli=
+ne}.layout-table menu{display:block;list-style-type:disc;padding-left:40px;=
+margin:1em 0}.layout-table nav{display:block}.layout-table object:focus{out=
+line:none}.layout-table ol{display:block;list-style-type:decimal;padding-le=
+ft:40px;}.layout-table output{display:inline}.layout-table p{display:block;=
+margin:0 0}.layout-table param{}.layout-table pre{display:block;font-family=
+:monospace;white-space:pre-wrap;margin:0 0}.layout-table q{display:inline}.=
+layout-table q::before{content:open-quote}.layout-table q::after{content:cl=
+ose-quote}.layout-table rt{line-height:normal}.layout-table s{text-decorati=
+on:line-through}.layout-table samp{font-family:monospace}.layout-table scri=
+pt{}.layout-table section{display:block}.layout-table small{}.layout-table =
+strike{text-decoration:line-through}.layout-table strong{font-weight:700}.l=
+ayout-table style{}.layout-table sub{vertical-align:sub;}.layout-table summ=
+ary{display:block}.layout-table sup{vertical-align:super;}.layout-table tab=
+le{display:table;border-collapse:separate;border-spacing:2px;border-color:g=
+ray}.layout-table tbody{display:table-row-group;vertical-align:middle;borde=
+r-color:inherit}.layout-table td{display:table-cell;vertical-align:inherit}=
+.layout-table tfoot{display:table-footer-group;vertical-align:middle;border=
+-color:inherit}.layout-table th{display:table-cell;vertical-align:inherit;f=
+ont-weight:700;text-align:center}.layout-table thead{display:table-header-g=
+roup;vertical-align:middle;border-color:inherit}.layout-table title{}.layou=
+t-table tr{display:table-row;vertical-align:inherit;border-color:inherit}.l=
+ayout-table u{text-decoration:underline}.layout-table ul{display:block;list=
+-style-type:disc;padding-left:40px;margin:1em 0 1px em 0}.layout-table var{=
+font-style:italic}
+        .layout-table .noBorderSpacing{border-spacing:0 !important;}
+        div, p, a, li, td {-webkit-text-size-adjust:none; -ms-text-size-adj=
+ust:none;}
+        #outlook a {padding:0;}
+        .ReadMsgBody {width:100%;}
+        .ExternalClass {width:100%;}
+        .ExternalClass * {line-height:110%;}
+        .align-center-column {width: 50%;}
+        @media screen and (max-width: 480px) {
+            table.layout-table { height:unset !important; }
+            .layout-grid-cell { height: auto !important; width: 100% !impor=
+tant; box-sizing: border-box;}
+            .layout-grid-cell-padding-left {padding-left: 0px !important;}
+            .layout-grid-cell-padding-right {padding-right: 0px !important;=
+}
+            tr { display: table-row !important; display: grid !important; }
+            colgroup.displayNone, tr.displayNone, td.displayNone, div.displ=
+ayNone {display:none !important;}
+            .w100per {width: 100% !important;}
+            .image-group-cell {width: initial !important}
+        }
+        @media screen and (max-width: 480px) {
+            .hide-on-mobile{display:none !important;}
+            table.hide-on-mobile{display:none !important;}
+            tr.hide-on-mobile{display:none !important;}
+            .layout-grid-cell-content-mso {width: auto !important;}
+            .layout-table .hide-on-desktop{display:block !important;}
+            .layout-table table.hide-on-desktop{display:table !important;}
+            .layout-table tr.hide-on-desktop{display:table-row !important;}
+            .layout-table tr.hide-on-desktop.displayBlock{display:grid !imp=
+ortant;}=20
+        }
+        @media screen and (min-width: 480px) {
+            .hide-on-mobile{display:block !important;}
+            table.hide-on-mobile{display:table !important;}
+            tr.hide-on-mobile{display:table-row !important;}
+            .layout-table .hide-on-desktop{display:none !important;}
+            .layout-table table.hide-on-desktop{display:none !important;}
+            .layout-table tr.hide-on-desktop{display:none !important;}
+            .content-editor .layout-table .hide-on-desktop{display:block !i=
+mportant;}
+            .content-editor .layout-table table.hide-on-desktop{display:tab=
+le !important;}
+            .content-editor .layout-table tr.hide-on-desktop{display:table-=
+row !important;}
+        }
+    </style>
+            <style type=3D"text/css">=20
+    /* cyrillic-ext */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: italic;
+        font-weight: 400;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptsg8zYS_SKggPNyC=
+g4QIFqL_KWxWMT.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A64=
+0-A69F, U+FE2E-FE2F;
+    }
+    /* cyrillic */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: italic;
+        font-weight: 400;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptsg8zYS_SKggPNyC=
+g4SYFqL_KWxWMT.woff2) format('woff2');
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+    /* vietnamese */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: italic;
+        font-weight: 400;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptsg8zYS_SKggPNyC=
+g4QoFqL_KWxWMT.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, =
+U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+    }
+    /* latin-ext */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: italic;
+        font-weight: 400;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptsg8zYS_SKggPNyC=
+g4Q4FqL_KWxWMT.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20A=
+B, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* latin */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: italic;
+        font-weight: 400;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptsg8zYS_SKggPNyC=
+g4TYFqL_KWxQ.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C=
+6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2=
+212, U+2215, U+FEFF, U+FFFD;
+    }
+    /* cyrillic-ext */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: italic;
+        font-weight: 700;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptsg8zYS_SKggPNyC=
+g4QIFqL_KWxWMT.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A64=
+0-A69F, U+FE2E-FE2F;
+    }
+    /* cyrillic */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: italic;
+        font-weight: 700;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptsg8zYS_SKggPNyC=
+g4SYFqL_KWxWMT.woff2) format('woff2');
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+    /* vietnamese */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: italic;
+        font-weight: 700;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptsg8zYS_SKggPNyC=
+g4QoFqL_KWxWMT.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, =
+U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+    }
+    /* latin-ext */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: italic;
+        font-weight: 700;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptsg8zYS_SKggPNyC=
+g4Q4FqL_KWxWMT.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20A=
+B, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* latin */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: italic;
+        font-weight: 700;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptsg8zYS_SKggPNyC=
+g4TYFqL_KWxQ.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C=
+6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2=
+212, U+2215, U+FEFF, U+FFFD;
+    }
+    /* cyrillic-ext */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 400;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptug8zYS_SKggPNyC=
+AIT4ttDfCmxA.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A64=
+0-A69F, U+FE2E-FE2F;
+    }
+    /* cyrillic */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 400;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptug8zYS_SKggPNyC=
+kIT4ttDfCmxA.woff2) format('woff2');
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+    /* vietnamese */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 400;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptug8zYS_SKggPNyC=
+IIT4ttDfCmxA.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, =
+U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+    }
+    /* latin-ext */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 400;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptug8zYS_SKggPNyC=
+MIT4ttDfCmxA.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20A=
+B, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* latin */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 400;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptug8zYS_SKggPNyC=
+0IT4ttDfA.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C=
+6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2=
+212, U+2215, U+FEFF, U+FFFD;
+    }
+    /* cyrillic-ext */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 700;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptug8zYS_SKggPNyC=
+AIT4ttDfCmxA.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A64=
+0-A69F, U+FE2E-FE2F;
+    }
+    /* cyrillic */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 700;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptug8zYS_SKggPNyC=
+kIT4ttDfCmxA.woff2) format('woff2');
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+    /* vietnamese */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 700;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptug8zYS_SKggPNyC=
+IIT4ttDfCmxA.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, =
+U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+    }
+    /* latin-ext */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 700;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptug8zYS_SKggPNyC=
+MIT4ttDfCmxA.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20A=
+B, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* latin */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 700;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptug8zYS_SKggPNyC=
+0IT4ttDfA.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C=
+6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2=
+212, U+2215, U+FEFF, U+FFFD;
+    } </style>
+            <style type=3D"text/css">=20
+    /* cyrillic-ext */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: italic;
+        font-weight: 500;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Pt_g8zYS_SKggPNyC=
+gSQamb1W0lwk4S4VrMDr4fJh1Zyc61YBlG.woff) format('woff');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A64=
+0-A69F, U+FE2E-FE2F;
+    }
+    /* cyrillic */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: italic;
+        font-weight: 500;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Pt_g8zYS_SKggPNyC=
+gSQamb1W0lwk4S4VrMDrcfJh1Zyc61YBlG.woff) format('woff');
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+    /* vietnamese */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: italic;
+        font-weight: 500;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Pt_g8zYS_SKggPNyC=
+gSQamb1W0lwk4S4VrMDrwfJh1Zyc61YBlG.woff) format('woff');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, =
+U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+    }
+    /* latin-ext */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: italic;
+        font-weight: 500;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Pt_g8zYS_SKggPNyC=
+gSQamb1W0lwk4S4VrMDr0fJh1Zyc61YBlG.woff) format('woff');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20A=
+B, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* latin */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: italic;
+        font-weight: 500;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Pt_g8zYS_SKggPNyC=
+gSQamb1W0lwk4S4VrMDrMfJh1Zyc61YA.woff) format('woff');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C=
+6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2=
+212, U+2215, U+FEFF, U+FFFD;
+    }
+    /* cyrillic-ext */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 500;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4i=
+EgvnHyvveLxVvoorCFPrcVIT9d0c-dYA.woff) format('woff');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A64=
+0-A69F, U+FE2E-FE2F;
+    }
+    /* cyrillic */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 500;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4i=
+EgvnHyvveLxVvoorCMPrcVIT9d0c-dYA.woff) format('woff');
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+    /* vietnamese */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 500;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4i=
+EgvnHyvveLxVvoorCHPrcVIT9d0c-dYA.woff) format('woff');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, =
+U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+    }
+    /* latin-ext */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 500;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4i=
+EgvnHyvveLxVvoorCGPrcVIT9d0c-dYA.woff) format('woff');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20A=
+B, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* latin */
+    @font-face {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 500;
+        font-display: block;
+        src: url(https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4i=
+EgvnHyvveLxVvoorCIPrcVIT9d0c8.woff) format('woff');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C=
+6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2=
+212, U+2215, U+FEFF, U+FFFD;
+    } </style>
+    <!--[if gte mso 9]>
+    <style key=3D"3" type=3D"text/css">
+            .gg0l4hb {font-family: sans-serif;}
+            .lj9wp4 {font-family: raleway:400;}
+            .bk7yp4 {font-family: raleway:500;}
+            .ktr83o {font-family: sans-serif;}
+            .z1851v {font-family: sans-serif:400;}
+            .gj951v {font-family: sans-serif:500;}
+    </style>
+    <![endif]-->
+    <!--[if gte mso 9]>
+        <style type=3D"text/css">
+            .layout-body .hide-on-desktop,
+            .layout-body .hide-on-desktop table,
+            .layout-body .hide-on-desktop td,
+            .layout-body .hide-on-desktop tr,
+            .layout-body .hide-on-desktop a,
+            .layout-body .hide-on-desktop span,
+            .layout-body .hide-on-desktop p,
+            .layout-body .hide-on-desktop div {background-color: transparen=
+t !important;display: none !important;max-height: 0 !important;line-height:=
+ 0 !important;mso-hide:all !important; margin: 0 !important; padding: 0 !im=
+portant; height: 0 !important;}
+        </style>
+    <![endif]-->
+    <!--[if gt mso 14]>
+    <style type=3D"text/css" media=3D"all">
+    /* Outlook 2013 weird horizontal lines fix */
+    tr {line-height: 0px; border-collapse: collapse;}
+    </style>
+    <![endif]-->
+</head>
+<body class=3D"layout-body"  style=3D"background-color:#eeeeee;">
+<div id=3D"mktcloud-preheader" key=3D"preheader" style=3D"display:none;max-=
+height:0px;overflow:hidden;"><p id=3D"mktcloud-preheader-text">New features=
+. Less fuss.</p><div style=3D"display:none;max-height:0px;overflow:hidden;"=
+>&nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zw=
+nj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;=
+&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nb=
+sp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; =
+&nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwn=
+j; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&=
+zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbs=
+p;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &=
+nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj=
+; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&z=
+wnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp=
+;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &n=
+bsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj;=
+ &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zw=
+nj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;=
+&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nb=
+sp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; =
+&nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwn=
+j; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&zwnj; &nbsp;&=
+zwnj;</div></div><CENTER><FONT SIZE=3D"1" COLOR=3D"#000000" FACE=3D"ARIAL">=
+If you are unable to see the message below, <A href=3D"https://links.e.towe=
+r.co.nz/servlet/MailView?ms=3DMjI2ODM2NgS2&r=3DMTcxNTE5MTUS1&j=3DMTA0MDY1OD=
+YwNQS2&mt=3D2&rj=3DMTA0MDY1ODYwNgS2&rt=3D0">click here to view</A>.</FONT><=
+font face=3D"ARIAL" color=3D"#808080" size=3D"2"><br></font></CENTER>
+<table class=3D"layout-table" key=3D"3" align=3D"center" style=3D"table-lay=
+out:fixed;height:auto;width:100% !important;background-color:#eeeeee;" cell=
+spacing=3D"0" cellpadding=3D"0">
+    <colgroup class=3D"displayNone" key=3D"1">
+        <col class=3D"align-center-column" key=3D"0">
+        <col width=3D"100px" key=3D"1">
+        <col width=3D"100px" key=3D"2">
+        <col width=3D"100px" key=3D"3">
+        <col width=3D"100px" key=3D"4">
+        <col width=3D"100px" key=3D"5">
+        <col width=3D"100px" key=3D"6">
+        <col class=3D"align-center-column" key=3D"7">
+    </colgroup>
+   =20
+           =20
+                <tr class=3D"layout-grid-row displayBlock hide-on-mobile"  =
+style=3D"height:100%;" data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc=
+66c0942b">
+                    <td class=3D"layout-grid-section-cell displayNone" key=
+=3D"before"></td>
+                        <!--[if gte mso 9][!tonline]>
+                        <td class=3D"layout-grid-cell target source" colSpa=
+n=3D"2" width=3D"200" valign=3D"top" style=3D"width:200px; height:100%;vert=
+ical-align:top;padding-top:0px;padding-left:0px;            background-colo=
+r:#FFFFFF;">
+                        <![endif]-->
+                        <!--[if !gte mso 9]><!-->
+                        <td class=3D"layout-grid-cell displayBlock target s=
+ource" colSpan=3D"2" valign=3D"top" style=3D"width:200px; height:100%;verti=
+cal-align:top;padding-top:0px;padding-left:0px;             background-colo=
+r:#FFFFFF;" data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b">
+                        <!-- <![endif] hidden -->   =20
+                           =20
+                                <div class=3D"layout-grid-cell-content layo=
+ut-grid-cell-content-mso" style=3D"height:100%;                width:200px;
+overflow-wrap:anywhere;overflow:hidden;" data-content-item-id=3D"2f224148-3=
+538-42d6-b9ca-9fbc66c0942b">
+                                    <div>
+
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"  data-content-item-=
+id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" style=3D"width:100%;border-spac=
+ing:0 !important;box-sizing:border-box;">
+   =20
+        <tr>
+            <td>
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"  st=
+yle=3D"width:100%;border-spacing:0 !important;background-color:transparent;=
+">
+                   =20
+                        <tr>
+                            <td>
+                                <table border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0"   style=3D"width:100%;border-spacing:0 !important;padding-top:=
+16px;padding-bottom:26px;box-sizing:border-box;">
+                                   =20
+                                        <tr>
+                                            <td  align=3D"center">         =
+       <a name=3D"Tower Logo Desktop" href=3D"https://links.e.tower.co.nz/e=
+ls/v2/9ptN2meQP/RjRmUGlyZm4ySTBJemc3OElMMlEzckNiMndrTS9OYy9DbTRWWnJKZkJ0U0t=
+TZU1XVlpUQjBXeHR6bmpUNkJjRWthVG82dmluejJpOXRUNkxmckYxcEk3NjRzUmpGN3ZSR3pGeE=
+VwT2JyejVaVll4blN5UkJLY0J5SVlJREI4VmUS1/WmNqU29Pa2syUlBFd1BLSzFkeU13amJIbEt=
+tN1VaR2dCSnFRZ3FOSUdwdlRkd0JvQnZENUNBc0orRVdrcnExMAS2" target=3D"_blank"   =
+>
+                                                <img data-content-item-id=
+=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" src=3D"https://content-ap-1.stati=
+c.content-cms.com/s3/3c2dbab7-d006-49fd-8645-4bc53283acef/a9aabafb-aec2-4a5=
+7-ae80-51d9a777fe70.png" alt=3D"Tower"  border=3D"0" style=3D"width:100%;di=
+splay:block;max-width:128px !important;" width=3D"128"/>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                   =20
+                                </table>
+                            </td>
+                        </tr>
+                   =20
+                </table>
+            </td>
+        </tr>
+   =20
+</table>
+
+</div>
+
+                                </div>
+                        </td>
+                        <!--[if gte mso 9][!tonline]>
+                        <td class=3D"layout-grid-cell target source" colSpa=
+n=3D"4" width=3D"401" valign=3D"top" style=3D"width:px; height:100%;vertica=
+l-align:top;padding-top:0px;padding-right:0px;            background-color:=
+#FFFFFF;">
+                        <![endif]-->
+                        <!--[if !gte mso 9]><!-->
+                        <td class=3D"layout-grid-cell displayBlock target s=
+ource" colSpan=3D"4" valign=3D"top" style=3D"width:px; height:100%;vertical=
+-align:top;padding-top:0px;padding-right:0px;             background-color:=
+#FFFFFF;" data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b">
+                        <!-- <![endif] hidden -->   =20
+                           =20
+                                <div class=3D"layout-grid-cell-content layo=
+ut-grid-cell-content-mso" style=3D"height:100%;                    width:40=
+0px;
+overflow-wrap:anywhere;overflow:hidden;" data-content-item-id=3D"2f224148-3=
+538-42d6-b9ca-9fbc66c0942b">
+                                    <div>
+<table data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0"  style=3D"width:100%;border-spac=
+ing:0 !important;padding-top:0px; padding-bottom:0px;box-sizing:border-box;=
+">
+   =20
+        <tr>
+            <td>
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"  st=
+yle=3D"width:100%;border-spacing:0 !important;background-color:transparent;=
+">
+                   =20
+                        <tr>
+                            <td>                                <table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:100%;border-spa=
+cing:0 !important;height:100%;">
+                                   =20
+                                        <tr>
+                                            <td style=3D"padding-right:35px=
+;padding-top:36px;padding-bottom:0px;padding-left:0px;">
+                                                <!--[if gte mso 9][!tonline=
+]>
+                                                <div style=3D"height:100%;w=
+ord-break: break-word;mso-line-height-rule: exactly;font-family:Raleway, sa=
+ns-serif!important;font-size:16px;font-weight:500;color: #212121;background=
+-color:transparent;line-height: 100%;" class=3D"gg0l4hb">
+                                                <![endif]-->
+                                                    <!--[if !gte mso 9]><!-=
+->
+                                                    <div data-content-item-=
+id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" style=3D"height:100%;word-break=
+: break-word;mso-line-height-rule: exactly;font-family:Raleway, sans-serif!=
+important;font-size:16px;font-weight:500;color: #212121;background-color:tr=
+ansparent;line-height:1;" class=3D"gg0l4hb"><!-- <![endif] hidden --><p sty=
+le=3D"text-align:right"><span style=3D"font-size:12px">CUSTOMER NUMBER | <s=
+trong>K40550635422</strong></span></p></div>
+                                            </td>
+                                        </tr>
+                                   =20
+                                </table>
+                            </td>
+                        </tr>
+                   =20
+                </table>
+            </td>
+        </tr>
+   =20
+</table>
+
+</div>
+
+                                </div>
+                        </td>
+                    <td class=3D"layout-grid-section-cell displayNone" key=
+=3D"after"></td>
+                </tr>
+           =20
+           =20
+                <tr class=3D"layout-grid-row displayBlock "  style=3D"heigh=
+t:100%;" data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b">
+                    <td class=3D"layout-grid-section-cell displayNone" key=
+=3D"before"></td>
+                        <!--[if gte mso 9][!tonline]>
+                        <td class=3D"layout-grid-cell target source" colSpa=
+n=3D"6" width=3D"600" valign=3D"top" style=3D"width:600px; height:100%;vert=
+ical-align:top;padding-left:0px;padding-right:0px;            background-co=
+lor:#FFFFFF;">
+                        <![endif]-->
+                        <!--[if !gte mso 9]><!-->
+                        <td class=3D"layout-grid-cell displayBlock target s=
+ource" colSpan=3D"6" valign=3D"top" style=3D"width:600px; height:100%;verti=
+cal-align:top;padding-left:0px;padding-right:0px;             background-co=
+lor:#FFFFFF;" data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b"=
+>
+                        <!-- <![endif] hidden -->   =20
+                           =20
+                                <div class=3D"layout-grid-cell-content layo=
+ut-grid-cell-content-mso" style=3D"            width: 600px;
+overflow-wrap:anywhere;overflow:hidden;" data-content-item-id=3D"2f224148-3=
+538-42d6-b9ca-9fbc66c0942b">
+                                    <div>
+
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"hide-on-de=
+sktop " data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" style=
+=3D"width:100%;border-spacing:0 !important;padding-left:35px;padding-right:=
+35px;box-sizing:border-box;">
+   =20
+        <tr>
+            <td>
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cla=
+ss=3D"hide-on-desktop" style=3D"width:100%;border-spacing:0 !important;back=
+ground-color:transparent;">
+                   =20
+                        <tr>
+                            <td>
+                                <table border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" class=3D"hide-on-desktop"  style=3D"width:100%;border-spacing:=
+0 !important;padding-top:16px;padding-bottom:15px;box-sizing:border-box;">
+                                   =20
+                                        <tr>
+                                            <td  align=3D"left">           =
+     <a name=3D"Tower Logo Mobile" href=3D"https://links.e.tower.co.nz/els/=
+v2/xPtjPYNHy/RjRmUGlyZm4ySTBJemc3OElMMlEzckNiMndrTS9OYy9DbTRWWnJKZkJ0U0tTZU=
+1XVlpUQjBXeHR6bmpUNkJjRWthVG82dmluejJpOXRUNkxmckYxcEk3NjRzUmpGN3ZSR3pGeEVwT=
+2JyejVaVll4blN5UkJLY0J5SVlJREI4VmUS1/WmNqU29Pa2syUlBFd1BLSzFkeU13amJIbEttN1=
+VaR2dCSnFRZ3FOSUdwdlRkd0JvQnZENUNBc0orRVdrcnExMAS2" target=3D"_blank"   >
+                                                <img data-content-item-id=
+=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" src=3D"https://content-ap-1.stati=
+c.content-cms.com/s3/3c2dbab7-d006-49fd-8645-4bc53283acef/a9aabafb-aec2-4a5=
+7-ae80-51d9a777fe70.png" alt=3D"Tower"  border=3D"0" style=3D"width:100%;di=
+splay:block;max-width:128px !important;" width=3D"128"/>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                   =20
+                                </table>
+                            </td>
+                        </tr>
+                   =20
+                </table>
+            </td>
+        </tr>
+   =20
+</table>
+
+</div>
+
+                                </div>
+                           =20
+                                <div class=3D"layout-grid-cell-content layo=
+ut-grid-cell-content-mso" style=3D"            width: 600px;
+overflow-wrap:anywhere;overflow:hidden;" data-content-item-id=3D"2f224148-3=
+538-42d6-b9ca-9fbc66c0942b">
+                                    <div>
+<table data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"hide-on-desktop" style=
+=3D"width:100%;border-spacing:0 !important;padding-top:0px; padding-bottom:=
+0px;box-sizing:border-box;">
+   =20
+        <tr>
+            <td>
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"  st=
+yle=3D"width:100%;border-spacing:0 !important;background-color:transparent;=
+">
+                   =20
+                        <tr>
+                            <td>                                <table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:100%;border-spa=
+cing:0 !important;height:100%;">
+                                   =20
+                                        <tr>
+                                            <td style=3D"padding-right:35px=
+;padding-top:0px;padding-bottom:20px;padding-left:35px;">
+                                                <!--[if gte mso 9][!tonline=
+]>
+                                                <div style=3D"height:100%;w=
+ord-break: break-word;mso-line-height-rule: exactly;font-family:Raleway, sa=
+ns-serif!important;font-size:16px;font-weight:500;color: #212121;background=
+-color:transparent;line-height: 100%;" class=3D"gg0l4hb">
+                                                <![endif]-->
+                                                    <!--[if !gte mso 9]><!-=
+->
+                                                    <div data-content-item-=
+id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" style=3D"height:100%;word-break=
+: break-word;mso-line-height-rule: exactly;font-family:Raleway, sans-serif!=
+important;font-size:16px;font-weight:500;color: #212121;background-color:tr=
+ansparent;line-height:1;" class=3D"gg0l4hb"><!-- <![endif] hidden --><p><sp=
+an style=3D"font-size:12px">CUSTOMER NUMBER | <strong>K40550635422</strong>=
+</span></p></div>
+                                            </td>
+                                        </tr>
+                                   =20
+                                </table>
+                            </td>
+                        </tr>
+                   =20
+                </table>
+            </td>
+        </tr>
+   =20
+</table>
+
+</div>
+
+                                </div>
+                        </td>
+                    <td class=3D"layout-grid-section-cell displayNone" key=
+=3D"after"></td>
+                </tr>
+           =20
+           =20
+                <tr class=3D"layout-grid-row displayBlock "  style=3D"heigh=
+t:100%;" data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b">
+                    <td class=3D"layout-grid-section-cell displayNone" key=
+=3D"before"></td>
+                        <!--[if gte mso 9][!tonline]>
+                        <td class=3D"layout-grid-cell target source" colSpa=
+n=3D"6" width=3D"600" valign=3D"top" style=3D"width:600px; height:100%;vert=
+ical-align:top;padding-left:0px;padding-right:0px;            background-co=
+lor:#FFFFFF;">
+                        <![endif]-->
+                        <!--[if !gte mso 9]><!-->
+                        <td class=3D"layout-grid-cell displayBlock target s=
+ource" colSpan=3D"6" valign=3D"top" style=3D"width:600px; height:100%;verti=
+cal-align:top;padding-left:0px;padding-right:0px;             background-co=
+lor:#FFFFFF;" data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b"=
+>
+                        <!-- <![endif] hidden -->   =20
+                           =20
+                                <div class=3D"layout-grid-cell-content layo=
+ut-grid-cell-content-mso" style=3D"height:100%;            width: 600px;
+overflow-wrap:anywhere;overflow:hidden;" data-content-item-id=3D"2f224148-3=
+538-42d6-b9ca-9fbc66c0942b">
+                                    <div>
+
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"  data-content-item-=
+id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" style=3D"width:100%;border-spac=
+ing:0 !important;box-sizing:border-box;">
+   =20
+        <tr>
+            <td>
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"  st=
+yle=3D"width:100%;border-spacing:0 !important;background-color:transparent;=
+">
+                   =20
+                        <tr>
+                            <td>
+                                <table border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0"   style=3D"width:100%;border-spacing:0 !important;box-sizing:b=
+order-box;">
+                                   =20
+                                        <tr>
+                                            <td  align=3D"center">         =
+       <img data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" s=
+rc=3D"https://content-ap-1.static.content-cms.com/s3/3c2dbab7-d006-49fd-864=
+5-4bc53283acef/1c6c6f02-d4cb-4dc2-8094-7dd27368f274.png" border=3D"0" style=
+=3D"width:100%;display:block;max-width:600px !important;" width=3D"600"/>
+                                               =20
+                                            </td>
+                                        </tr>
+                                   =20
+                                </table>
+                            </td>
+                        </tr>
+                   =20
+                </table>
+            </td>
+        </tr>
+   =20
+</table>
+
+</div>
+
+                                </div>
+                        </td>
+                    <td class=3D"layout-grid-section-cell displayNone" key=
+=3D"after"></td>
+                </tr>
+           =20
+           =20
+                <tr class=3D"layout-grid-row displayBlock "  style=3D"heigh=
+t:100%;" data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b">
+                    <td class=3D"layout-grid-section-cell displayNone" key=
+=3D"before"></td>
+                        <!--[if gte mso 9][!tonline]>
+                        <td class=3D"layout-grid-cell target source" colSpa=
+n=3D"6" width=3D"600" valign=3D"top" style=3D"width:600px; height:100%;vert=
+ical-align:top;padding-left:0px;padding-right:0px;            background-co=
+lor:#FFFFFF;">
+                        <![endif]-->
+                        <!--[if !gte mso 9]><!-->
+                        <td class=3D"layout-grid-cell displayBlock target s=
+ource" colSpan=3D"6" valign=3D"top" style=3D"width:600px; height:100%;verti=
+cal-align:top;padding-left:0px;padding-right:0px;             background-co=
+lor:#FFFFFF;" data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b"=
+>
+                        <!-- <![endif] hidden -->   =20
+                           =20
+                                <div class=3D"layout-grid-cell-content layo=
+ut-grid-cell-content-mso" style=3D"            width: 600px;
+overflow-wrap:anywhere;overflow:hidden;" data-content-item-id=3D"2f224148-3=
+538-42d6-b9ca-9fbc66c0942b">
+                                    <div>
+<table data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0"  style=3D"width:100%;border-spac=
+ing:0 !important;padding-top:0px; padding-bottom:0px;box-sizing:border-box;=
+">
+   =20
+        <tr>
+            <td>
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"  st=
+yle=3D"width:100%;border-spacing:0 !important;background-color:transparent;=
+">
+                   =20
+                        <tr>
+                            <td>                                <table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:100%;border-spa=
+cing:0 !important;height:100%;">
+                                   =20
+                                        <tr>
+                                            <td style=3D"padding-right:35px=
+;padding-top:32px;padding-bottom:8px;padding-left:35px;">
+                                                <!--[if gte mso 9][!tonline=
+]>
+                                                <div style=3D"height:100%;w=
+ord-break: break-word;mso-line-height-rule: exactly;font-family:Raleway, sa=
+ns-serif!important;font-size:16px;font-weight:500;color: #212121;background=
+-color:transparent;line-height: 100%;" class=3D"gg0l4hb">
+                                                <![endif]-->
+                                                    <!--[if !gte mso 9]><!-=
+->
+                                                    <div data-content-item-=
+id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" style=3D"height:100%;word-break=
+: break-word;mso-line-height-rule: exactly;font-family:Raleway, sans-serif!=
+important;font-size:16px;font-weight:500;color: #212121;background-color:tr=
+ansparent;line-height:1;" class=3D"gg0l4hb"><!-- <![endif] hidden --><p>Hi =
+Maria,</p></div>
+                                            </td>
+                                        </tr>
+                                   =20
+                                </table>
+                            </td>
+                        </tr>
+                   =20
+                </table>
+            </td>
+        </tr>
+   =20
+</table>
+
+</div>
+
+                                </div>
+                           =20
+                                <div class=3D"layout-grid-cell-content layo=
+ut-grid-cell-content-mso" style=3D"            width: 600px;
+overflow-wrap:anywhere;overflow:hidden;" data-content-item-id=3D"2f224148-3=
+538-42d6-b9ca-9fbc66c0942b">
+                                    <div>
+<table data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0"  style=3D"width:100%;border-spac=
+ing:0 !important;padding-top:0px; padding-bottom:0px;box-sizing:border-box;=
+">
+   =20
+        <tr>
+            <td>
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"  st=
+yle=3D"width:100%;border-spacing:0 !important;background-color:transparent;=
+">
+                   =20
+                        <tr>
+                            <td>                                <table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:100%;border-spa=
+cing:0 !important;height:100%;">
+                                   =20
+                                        <tr>
+                                            <td style=3D"padding-right:35px=
+;padding-top:8px;padding-bottom:0px;padding-left:35px;">
+                                                <!--[if gte mso 9][!tonline=
+]>
+                                                <div style=3D"height:100%;w=
+ord-break: break-word;mso-line-height-rule: exactly;font-family:Raleway, sa=
+ns-serif!important;font-size:16px;font-weight:500;color: #212121;background=
+-color:transparent;line-height: 150%;" class=3D"gg0l4hb">
+                                                <![endif]-->
+                                                    <!--[if !gte mso 9]><!-=
+->
+                                                    <div data-content-item-=
+id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" style=3D"height:100%;word-break=
+: break-word;mso-line-height-rule: exactly;font-family:Raleway, sans-serif!=
+important;font-size:16px;font-weight:500;color: #212121;background-color:tr=
+ansparent;line-height:1.5;" class=3D"gg0l4hb"><!-- <![endif] hidden --><p>L=
+ove a quick win? Us too. So we=E2=80=99ve added some smart new features int=
+o <a style=3D"color:#007acc;text-decoration:underline" href=3D"https://link=
+s.e.tower.co.nz/els/v2/kZt69eRCR/RjRmUGlyZm4ySTBJemc3OElMMlEzckNiMndrTS9OYy=
+9DbTRWWnJKZkJ0U0tTZU1XVlpUQjBXeHR6bmpUNkJjRWthVG82dmluejJpOXRUNkxmckYxcEk3N=
+jRzUmpGN3ZSR3pGeEVwT2JyejVaVll4blN5UkJLY0J5SVlJREI4VmUS1/" name=3D"Text Lin=
+k 367128904 My Tower"  data-key=3D"d22b1d31-06ff-4de2-8f64-30a6bde50217:785=
+ca946-20e7-4e36-a9ab-65add275e1ea" target=3D"_blank" rel=3D"noopener norefe=
+rrer noopener noreferrer noopener noreferrer noopener noreferrer noopener n=
+oreferrer noopener noreferrer noopener noreferrer noopener noreferrer noope=
+ner noreferrer noopener noreferrer"><u>My Tower</u></a> to help make it eas=
+ier than ever to get the most out of your insurance.</p></div>
+                                            </td>
+                                        </tr>
+                                   =20
+                                </table>
+                            </td>
+                        </tr>
+                   =20
+                </table>
+            </td>
+        </tr>
+   =20
+</table>
+
+</div>
+
+                                </div>
+                        </td>
+                    <td class=3D"layout-grid-section-cell displayNone" key=
+=3D"after"></td>
+                </tr>
+           =20
+           =20
+                <tr class=3D"layout-grid-row displayBlock "  style=3D"heigh=
+t:100%;" data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b">
+                    <td class=3D"layout-grid-section-cell displayNone" key=
+=3D"before"></td>
+                        <!--[if gte mso 9][!tonline]>
+                        <td class=3D"layout-grid-cell target source" colSpa=
+n=3D"6" width=3D"600" valign=3D"top" style=3D"width:600px; height:100%;vert=
+ical-align:top;padding-left:0px;padding-right:0px;            background-co=
+lor:#FFFFFF;">
+                        <![endif]-->
+                        <!--[if !gte mso 9]><!-->
+                        <td class=3D"layout-grid-cell displayBlock target s=
+ource" colSpan=3D"6" valign=3D"top" style=3D"width:600px; height:100%;verti=
+cal-align:top;padding-left:0px;padding-right:0px;             background-co=
+lor:#FFFFFF;" data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b"=
+>
+                        <!-- <![endif] hidden -->   =20
+                           =20
+                                <div class=3D"layout-grid-cell-content layo=
+ut-grid-cell-content-mso" style=3D"            width: 600px;
+overflow-wrap:anywhere;overflow:hidden;" data-content-item-id=3D"2f224148-3=
+538-42d6-b9ca-9fbc66c0942b">
+                                    <div>
+
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"width:100%;min-width:100%;box-sizing:border-box;=
+border-spacing:0 !important;">
+ =20
+    <tr>
+      <td>
+        <table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" role=3D"presentation" style=3D"width:100%;min-width:100%;box-sizing:bor=
+der-box;border-spacing:0 !important;">
+         =20
+            <tr>
+              <td bgcolor=3D"transparent" style=3D"background:transparent;"=
+>
+                <table width=3D"100%" border=3D"0" cellpadding=3D"0" cellsp=
+acing=3D"0" role=3D"presentation" style=3D"width:100%;min-width:100%;box-si=
+zing:border-box;border-spacing:0 !important;padding-left:35px;padding-right=
+:35px;padding-top:16px;padding-bottom:0px;mso-padding-left-alt:0;mso-paddin=
+g-right-alt:0;">
+                 =20
+                    <tr>
+                      <td align=3D"left">
+                        <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"box-sizing:border-box;border-spacing:=
+0 !important;">
+                         =20
+                            <tr>
+                              <!--[if gte mso 9][!tonline]>
+                              <td style=3D"width:35px;"></td>
+                              <![endif]-->
+                              <!--[if !gte mso 9]><!--><!-- <![endif] hidde=
+n -->
+                              <!--[if gte mso 9][!tonline]>
+                              <td bgcolor=3D"#FED602" align=3D"center" styl=
+e=3D"padding-top:12px;padding-bottom:12px;padding-left:20px;padding-right:2=
+0px;color:#001272;border-top-left-radius:6px;border-top-right-radius:6px;bo=
+rder-bottom-left-radius:6px;border-bottom-right-radius:6px;">              =
+                  <a comment=3D"mso9" key=3D"button-2f224148-3538-42d6-b9ca=
+-9fbc66c0942b"  name=3D"My Tower_button" href=3D"https://links.e.tower.co.n=
+z/els/v2/aqtDagAsz/RjRmUGlyZm4ySTBJemc3OElMMlEzckNiMndrTS9OYy9DbTRWWnJKZkJ0=
+U0tTZU1XVlpUQjBXeHR6bmpUNkJjRWthVG82dmluejJpOXRUNkxmckYxcEk3NjRzUmpGN3ZSR3p=
+GeEVwT2JyejVaVll4blN5UkJLY0J5SVlJREI4VmUS1/" target=3D"_blank"  class=3D"gg=
+0l4hb" style=3D"display:block;text-align:center;text-decoration:none;cursor=
+:pointer;font-family:Raleway, sans-serif !important;font-size:18px;font-wei=
+ght:500;color:#001272;border-top-left-radius:6px;border-top-right-radius:6p=
+x;border-bottom-left-radius:6px;border-bottom-right-radius:6px;">
+                                  <span data-content-item-id=3D"2f224148-35=
+38-42d6-b9ca-9fbc66c0942b">
+                                    Log in to My Tower
+                                  </span>
+                                </a>
+                              </td>   =20
+                              <![endif]-->
+                              <!--[if !gte mso 9]><!-->
+                              <td bgcolor=3D"#FED602" align=3D"center" styl=
+e=3D"padding-top:12px;padding-bottom:12px;padding-left:20px;padding-right:2=
+0px;color:#001272;border-top-left-radius:6px;border-top-right-radius:6px;bo=
+rder-bottom-left-radius:6px;border-bottom-right-radius:6px;">              =
+                  <a key=3D"button-2f224148-3538-42d6-b9ca-9fbc66c0942b"  n=
+ame=3D"My Tower_button" href=3D"https://links.e.tower.co.nz/els/v2/aqtDagAs=
+z/RjRmUGlyZm4ySTBJemc3OElMMlEzckNiMndrTS9OYy9DbTRWWnJKZkJ0U0tTZU1XVlpUQjBXe=
+HR6bmpUNkJjRWthVG82dmluejJpOXRUNkxmckYxcEk3NjRzUmpGN3ZSR3pGeEVwT2JyejVaVll4=
+blN5UkJLY0J5SVlJREI4VmUS1/" target=3D"_blank"  class=3D"gg0l4hb" style=3D"d=
+isplay:block;text-align:center;text-decoration:none;cursor:pointer;font-fam=
+ily:Raleway, sans-serif !important;font-size:18px;font-weight:500;color:#00=
+1272;border-top-left-radius:6px;border-top-right-radius:6px;border-bottom-l=
+eft-radius:6px;border-bottom-right-radius:6px;">
+                                  <span data-content-item-id=3D"2f224148-35=
+38-42d6-b9ca-9fbc66c0942b">
+                                    Log in to My Tower
+                                  </span>
+                                </a>
+                              </td>   =20
+                              <!-- <![endif] hidden -->
+                              <!--[if gte mso 9][!tonline]>
+                              <td style=3D"width:35px;"></td>
+                              <![endif]-->
+                              <!--[if !gte mso 9]><!--><!-- <![endif] hidde=
+n -->
+                            </tr>
+                         =20
+                        </table>
+                      </td>
+                    </tr>
+                 =20
+                </table>
+              </td>
+            </tr>
+         =20
+        </table>
+      </td>
+    </tr>
+ =20
+</table>
+
+</div>
+
+                                </div>
+                           =20
+                                <div class=3D"layout-grid-cell-content layo=
+ut-grid-cell-content-mso" style=3D"            width: 600px;
+overflow-wrap:anywhere;overflow:hidden;" data-content-item-id=3D"2f224148-3=
+538-42d6-b9ca-9fbc66c0942b">
+                                    <div>
+<table data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0"  style=3D"width:100%;border-spac=
+ing:0 !important;padding-top:0px; padding-bottom:0px;box-sizing:border-box;=
+">
+   =20
+        <tr>
+            <td>
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"  st=
+yle=3D"width:100%;border-spacing:0 !important;background-color:transparent;=
+">
+                   =20
+                        <tr>
+                            <td>                                <table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:100%;border-spa=
+cing:0 !important;height:100%;">
+                                   =20
+                                        <tr>
+                                            <td style=3D"padding-right:35px=
+;padding-top:16px;padding-bottom:0px;padding-left:35px;">
+                                                <!--[if gte mso 9][!tonline=
+]>
+                                                <div style=3D"height:100%;w=
+ord-break: break-word;mso-line-height-rule: exactly;font-family:Raleway, sa=
+ns-serif!important;font-size:16px;font-weight:500;color: #212121;background=
+-color:transparent;line-height: 150%;" class=3D"gg0l4hb">
+                                                <![endif]-->
+                                                    <!--[if !gte mso 9]><!-=
+->
+                                                    <div data-content-item-=
+id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" style=3D"height:100%;word-break=
+: break-word;mso-line-height-rule: exactly;font-family:Raleway, sans-serif!=
+important;font-size:16px;font-weight:500;color: #212121;background-color:tr=
+ansparent;line-height:1.5;" class=3D"gg0l4hb"><!-- <![endif] hidden --><p>N=
+ot set up in My Tower yet? Not to worry, <a style=3D"color:#007acc;text-dec=
+oration:underline" href=3D"https://links.e.tower.co.nz/els/v2/KKt8GYVt9/RjR=
+mUGlyZm4ySTBJemc3OElMMlEzckNiMndrTS9OYy9DbTRWWnJKZkJ0U0tTZU1XVlpUQjBXeHR6bm=
+pUNkJjRWthVG82dmluejJpOXRUNkxmckYxcEk3NjRzUmpGN3ZSR3pGeEVwT2JyejVaVll4blN5U=
+kJLY0J5SVlJREI4VmUS1/" name=3D"Text Link 353392653 registering"  data-key=
+=3D"4a8fe935-b584-4ae6-80f5-7a9eca496401:5d7e6cfd-03e2-447a-933f-ffb66c4be9=
+69" target=3D"_blank" rel=3D"noopener noreferrer noopener noreferrer noopen=
+er noreferrer noopener noreferrer noopener noreferrer noopener noreferrer">=
+registering</a> is easy and only takes a couple of minutes.</p></div>
+                                            </td>
+                                        </tr>
+                                   =20
+                                </table>
+                            </td>
+                        </tr>
+                   =20
+                </table>
+            </td>
+        </tr>
+   =20
+</table>
+
+</div>
+
+                                </div>
+                           =20
+                                <div class=3D"layout-grid-cell-content layo=
+ut-grid-cell-content-mso" style=3D"            width: 600px;
+overflow-wrap:anywhere;overflow:hidden;" data-content-item-id=3D"2f224148-3=
+538-42d6-b9ca-9fbc66c0942b">
+                                    <div>
+<table data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0"  style=3D"width:100%;border-spac=
+ing:0 !important;padding-top:0px; padding-bottom:0px;box-sizing:border-box;=
+">
+   =20
+        <tr>
+            <td>
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"  st=
+yle=3D"width:100%;border-spacing:0 !important;background-color:transparent;=
+">
+                   =20
+                        <tr>
+                            <td>                                <table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:100%;border-spa=
+cing:0 !important;height:100%;">
+                                   =20
+                                        <tr>
+                                            <td style=3D"padding-right:35px=
+;padding-top:24px;padding-bottom:8px;padding-left:35px;">
+                                                <!--[if gte mso 9][!tonline=
+]>
+                                                <div style=3D"height:100%;w=
+ord-break: break-word;mso-line-height-rule: exactly;font-family:Raleway, sa=
+ns-serif!important;font-size:16px;font-weight:500;color: #212121;background=
+-color:transparent;line-height: 130%;" class=3D"gg0l4hb">
+                                                <![endif]-->
+                                                    <!--[if !gte mso 9]><!-=
+->
+                                                    <div data-content-item-=
+id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" style=3D"height:100%;word-break=
+: break-word;mso-line-height-rule: exactly;font-family:Raleway, sans-serif!=
+important;font-size:16px;font-weight:500;color: #212121;background-color:tr=
+ansparent;line-height:1.3;" class=3D"gg0l4hb"><!-- <![endif] hidden --><h2 =
+style=3D"color:#001272;font-family:'raleway' , sans-serif;font-size:24px;fo=
+nt-weight:400"><strong>Now available in My Tower</strong></h2></div>
+                                            </td>
+                                        </tr>
+                                   =20
+                                </table>
+                            </td>
+                        </tr>
+                   =20
+                </table>
+            </td>
+        </tr>
+   =20
+</table>
+
+</div>
+
+                                </div>
+                           =20
+                                <div class=3D"layout-grid-cell-content layo=
+ut-grid-cell-content-mso" style=3D"            width: 600px;
+overflow-wrap:anywhere;overflow:hidden;" data-content-item-id=3D"2f224148-3=
+538-42d6-b9ca-9fbc66c0942b">
+                                    <div>
+<table data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0"  style=3D"width:100%;border-spac=
+ing:0 !important;padding-top:0px; padding-bottom:0px;box-sizing:border-box;=
+">
+   =20
+        <tr>
+            <td>
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"  st=
+yle=3D"width:100%;border-spacing:0 !important;background-color:transparent;=
+">
+                   =20
+                        <tr>
+                            <td>                                <table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:100%;border-spa=
+cing:0 !important;height:100%;">
+                                   =20
+                                        <tr>
+                                            <td style=3D"padding-right:35px=
+;padding-top:0px;padding-bottom:8px;padding-left:35px;">
+                                                <!--[if gte mso 9][!tonline=
+]>
+                                                <div style=3D"height:100%;w=
+ord-break: break-word;mso-line-height-rule: exactly;font-family:Raleway, sa=
+ns-serif!important;font-size:16px;font-weight:500;color: #212121;background=
+-color:transparent;line-height: 150%;" class=3D"gg0l4hb">
+                                                <![endif]-->
+                                                    <!--[if !gte mso 9]><!-=
+->
+                                                    <div data-content-item-=
+id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" style=3D"height:100%;word-break=
+: break-word;mso-line-height-rule: exactly;font-family:Raleway, sans-serif!=
+important;font-size:16px;font-weight:500;color: #212121;background-color:tr=
+ansparent;line-height:1.5;" class=3D"gg0l4hb"><!-- <![endif] hidden --><p>W=
+hether you=E2=80=99re paying bills, making policy changes or keeping track =
+of a claim, it=E2=80=99s now easier than ever to sort your insurance online=
+. Over 90% of changes to your car cover can now be done in My Tower.</p></d=
+iv>
+                                            </td>
+                                        </tr>
+                                   =20
+                                </table>
+                            </td>
+                        </tr>
+                   =20
+                </table>
+            </td>
+        </tr>
+   =20
+</table>
+
+</div>
+
+                                </div>
+                           =20
+                                <div class=3D"layout-grid-cell-content layo=
+ut-grid-cell-content-mso" style=3D"            width: 600px;
+overflow-wrap:anywhere;overflow:hidden;" data-content-item-id=3D"2f224148-3=
+538-42d6-b9ca-9fbc66c0942b">
+                                    <div>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"   data-content-item=
+-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" style=3D"width:100%;border-spa=
+cing:0 !important;padding-top:0px; padding-bottom:0px;padding-left:35px;box=
+-sizing:border-box;">
+   =20
+        <tr>
+            <td>
+                <table class=3D"image-text-component" border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0"   style=3D"width:100%;border-spacing:0 !importa=
+nt;background-color:transparent">
+                   =20
+                        <tr>
+                            <td>                                <table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0"  style=3D"width:100%;border-sp=
+acing:0 !important;">
+                                   =20
+                                        <tr class=3D"display-grid">
+                                            <td data-content-item-id=3D"2f2=
+24148-3538-42d6-b9ca-9fbc66c0942b"  class=3D"displayBlock w100per" style=3D=
+"vertical-align:top;            width:116px;">
+                                                <table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0"  style=3D"width:100%;border-spacing:0 !importa=
+nt;">
+                                                   =20
+                                                        <tr>
+                                                            <td align=3D"le=
+ft"  style=3D"padding-right:35px;padding-top:16px;padding-bottom:0px;">
+                                                                    <img cl=
+ass=3D"complex-block-img" width=3D"81" border=3D"0" style=3D"width:100%;dis=
+play:block;max-width:81px !important;" data-content-item-id=3D"2f224148-353=
+8-42d6-b9ca-9fbc66c0942b"  src=3D"https://content-ap-1.static.content-cms.c=
+om/s3/3c2dbab7-d006-49fd-8645-4bc53283acef/4d16c45c-a03e-4069-9d30-705756b0=
+ff59.png"/>
+                                                               =20
+                                                            </td>
+                                                        </tr>
+                                                   =20
+                                                </table>                   =
+                         </td>
+                                            <td data-content-item-id=3D"2f2=
+24148-3538-42d6-b9ca-9fbc66c0942b"  class=3D"displayBlock w100per" style=3D=
+"vertical-align:top;">
+                                                <table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0"  style=3D"width:100%;border-spacing:0 !importa=
+nt;">
+                                                   =20
+                                                        <tr>
+                                                            <td>
+                                                                <table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0"  style=3D"width:100%;border-sp=
+acing:0 !important;height:100%;">
+                                                                   =20
+                                                                        <tr=
+>
+                                                                           =
+ <td style=3D"padding-right:35px;padding-top:16px;padding-bottom:16px;paddi=
+ng-left:0px;">
+                                                                           =
+     <!--[if gte mso 9][!tonline]>
+                                                                           =
+     <div style=3D"height:100%;word-break: break-word; mso-line-height-rule=
+:exactly;font-family:Raleway, sans-serif !important;font-size:16px;font-wei=
+ght:500;color:#212121;line-height:150%;" class=3D"gg0l4hb">
+                                                                           =
+     <![endif]-->
+                                                                           =
+     <!--[if !gte mso 9]><!-->
+                                                                           =
+     <div  data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" st=
+yle=3D"height:100%;word-break: break-word; mso-line-height-rule:exactly;fon=
+t-family:Raleway, sans-serif !important;font-size:16px;font-weight:500;colo=
+r:#212121;line-height:1.5;" class=3D"gg0l4hb"><!-- <![endif] hidden --><h4 =
+style=3D"color:#001272;font-family:'raleway' , sans-serif;font-size:16px;fo=
+nt-weight:400"><strong>Fine tune your car cover</strong></h4><p>Now you can=
+ switch cover, add or remove drivers, update your excess or switch between =
+Market Value and Agreed Value in My Tower.</p></div>
+                                                                           =
+ </td>
+                                                                        </t=
+r>
+                                                                   =20
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                   =20
+                                                </table>
+                                            </td>
+                                        </tr>
+                                   =20
+                                </table>
+                            </td>
+                        </tr>
+                   =20
+                </table>
+            </td>
+        </tr>
+   =20
+</table>
+
+</div>
+
+                                </div>
+                           =20
+                                <div class=3D"layout-grid-cell-content layo=
+ut-grid-cell-content-mso" style=3D"            width: 600px;
+overflow-wrap:anywhere;overflow:hidden;" data-content-item-id=3D"2f224148-3=
+538-42d6-b9ca-9fbc66c0942b">
+                                    <div>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"   data-content-item=
+-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" style=3D"width:100%;border-spa=
+cing:0 !important;padding-top:0px; padding-bottom:0px;padding-left:35px;box=
+-sizing:border-box;">
+   =20
+        <tr>
+            <td>
+                <table class=3D"image-text-component" border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0"   style=3D"width:100%;border-spacing:0 !importa=
+nt;background-color:transparent">
+                   =20
+                        <tr>
+                            <td>                                <table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0"  style=3D"width:100%;border-sp=
+acing:0 !important;">
+                                   =20
+                                        <tr class=3D"display-grid">
+                                            <td data-content-item-id=3D"2f2=
+24148-3538-42d6-b9ca-9fbc66c0942b"  class=3D"displayBlock w100per" style=3D=
+"vertical-align:top;            width:117px;">
+                                                <table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0"  style=3D"width:100%;border-spacing:0 !importa=
+nt;">
+                                                   =20
+                                                        <tr>
+                                                            <td align=3D"le=
+ft"  style=3D"padding-right:35px;padding-top:16px;padding-bottom:0px;">
+                                                                    <img cl=
+ass=3D"complex-block-img" width=3D"82" border=3D"0" style=3D"width:100%;dis=
+play:block;max-width:82px !important;" data-content-item-id=3D"2f224148-353=
+8-42d6-b9ca-9fbc66c0942b"  src=3D"https://content-ap-1.static.content-cms.c=
+om/s3/3c2dbab7-d006-49fd-8645-4bc53283acef/e8f08de5-9535-43b4-9262-44b1f470=
+c135.png"/>
+                                                               =20
+                                                            </td>
+                                                        </tr>
+                                                   =20
+                                                </table>                   =
+                         </td>
+                                            <td data-content-item-id=3D"2f2=
+24148-3538-42d6-b9ca-9fbc66c0942b"  class=3D"displayBlock w100per" style=3D=
+"vertical-align:top;">
+                                                <table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0"  style=3D"width:100%;border-spacing:0 !importa=
+nt;">
+                                                   =20
+                                                        <tr>
+                                                            <td>
+                                                                <table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0"  style=3D"width:100%;border-sp=
+acing:0 !important;height:100%;">
+                                                                   =20
+                                                                        <tr=
+>
+                                                                           =
+ <td style=3D"padding-right:35px;padding-top:16px;padding-bottom:16px;paddi=
+ng-left:0px;">
+                                                                           =
+     <!--[if gte mso 9][!tonline]>
+                                                                           =
+     <div style=3D"height:100%;word-break: break-word; mso-line-height-rule=
+:exactly;font-family:Raleway, sans-serif !important;font-size:16px;font-wei=
+ght:500;color:#212121;line-height:150%;" class=3D"gg0l4hb">
+                                                                           =
+     <![endif]-->
+                                                                           =
+     <!--[if !gte mso 9]><!-->
+                                                                           =
+     <div  data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" st=
+yle=3D"height:100%;word-break: break-word; mso-line-height-rule:exactly;fon=
+t-family:Raleway, sans-serif !important;font-size:16px;font-weight:500;colo=
+r:#212121;line-height:1.5;" class=3D"gg0l4hb"><!-- <![endif] hidden --><h4 =
+style=3D"color:#001272;font-family:'raleway' , sans-serif;font-size:16px;fo=
+nt-weight:400"><strong>Adjust your cover to suit you and your wallet</stron=
+g></h4><p>Customise your cover and see how it affects your premium. Change =
+where your car's usually parked, update add-ons like<strong> </strong><a st=
+yle=3D"color:#007acc;text-decoration:underline" href=3D"https://links.e.tow=
+er.co.nz/els/v2/_YtPm3Gf4/RjRmUGlyZm4ySTBJemc3OElMMlEzckNiMndrTS9OYy9DbTRWW=
+nJKZkJ0U0tTZU1XVlpUQjBXeHR6bmpUNkJjRWthVG82dmluejJpOXRUNkxmckYxcEk3NjRzUmpG=
+N3ZSR3pGeEVwT2JyejVaVll4blN5UkJLY0J5SVlJREI4VmUS1/WmNqU29Pa2syUlBFd1BLSzFke=
+U13amJIbEttN1VaR2dCSnFRZ3FOSUdwdlRkd0JvQnZENUNBc0orRVdrcnExMAS2" name=3D"Te=
+xt Link 607382369"  data-key=3D"a3d69947-d89b-47e9-ab00-08c23c12a864:7f6bb2=
+6d-12f9-45e8-9e00-19f07ac7d6fa" target=3D"_blank" rel=3D"noopener noreferre=
+r noopener noreferrer"><u>Roadwise</u></a>=C2=AE or rental cover and more.&=
+nbsp;</p></div>
+                                                                           =
+ </td>
+                                                                        </t=
+r>
+                                                                   =20
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                   =20
+                                                </table>
+                                            </td>
+                                        </tr>
+                                   =20
+                                </table>
+                            </td>
+                        </tr>
+                   =20
+                </table>
+            </td>
+        </tr>
+   =20
+</table>
+
+</div>
+
+                                </div>
+                           =20
+                                <div class=3D"layout-grid-cell-content layo=
+ut-grid-cell-content-mso" style=3D"            width: 600px;
+overflow-wrap:anywhere;overflow:hidden;" data-content-item-id=3D"2f224148-3=
+538-42d6-b9ca-9fbc66c0942b">
+                                    <div>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"   data-content-item=
+-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" style=3D"width:100%;border-spa=
+cing:0 !important;padding-top:0px; padding-bottom:0px;padding-left:35px;box=
+-sizing:border-box;">
+   =20
+        <tr>
+            <td>
+                <table class=3D"image-text-component" border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0"   style=3D"width:100%;border-spacing:0 !importa=
+nt;background-color:transparent">
+                   =20
+                        <tr>
+                            <td>                                <table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0"  style=3D"width:100%;border-sp=
+acing:0 !important;">
+                                   =20
+                                        <tr class=3D"display-grid">
+                                            <td data-content-item-id=3D"2f2=
+24148-3538-42d6-b9ca-9fbc66c0942b"  class=3D"displayBlock w100per" style=3D=
+"vertical-align:top;            width:115px;">
+                                                <table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0"  style=3D"width:100%;border-spacing:0 !importa=
+nt;">
+                                                   =20
+                                                        <tr>
+                                                            <td align=3D"le=
+ft"  style=3D"padding-right:35px;padding-top:16px;padding-bottom:0px;">
+                                                                    <img cl=
+ass=3D"complex-block-img" width=3D"80" border=3D"0" style=3D"width:100%;dis=
+play:block;max-width:80px !important;" data-content-item-id=3D"2f224148-353=
+8-42d6-b9ca-9fbc66c0942b"  src=3D"https://content-ap-1.static.content-cms.c=
+om/s3/3c2dbab7-d006-49fd-8645-4bc53283acef/ca4e2c05-70a9-4f82-a1c9-9ec6c7e7=
+ccaf.png"/>
+                                                               =20
+                                                            </td>
+                                                        </tr>
+                                                   =20
+                                                </table>                   =
+                         </td>
+                                            <td data-content-item-id=3D"2f2=
+24148-3538-42d6-b9ca-9fbc66c0942b"  class=3D"displayBlock w100per" style=3D=
+"vertical-align:top;">
+                                                <table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0"  style=3D"width:100%;border-spacing:0 !importa=
+nt;">
+                                                   =20
+                                                        <tr>
+                                                            <td>
+                                                                <table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0"  style=3D"width:100%;border-sp=
+acing:0 !important;height:100%;">
+                                                                   =20
+                                                                        <tr=
+>
+                                                                           =
+ <td style=3D"padding-right:35px;padding-top:16px;padding-bottom:16px;paddi=
+ng-left:0px;">
+                                                                           =
+     <!--[if gte mso 9][!tonline]>
+                                                                           =
+     <div style=3D"height:100%;word-break: break-word; mso-line-height-rule=
+:exactly;font-family:Raleway, sans-serif !important;font-size:16px;font-wei=
+ght:500;color:#212121;line-height:150%;" class=3D"gg0l4hb">
+                                                                           =
+     <![endif]-->
+                                                                           =
+     <!--[if !gte mso 9]><!-->
+                                                                           =
+     <div  data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" st=
+yle=3D"height:100%;word-break: break-word; mso-line-height-rule:exactly;fon=
+t-family:Raleway, sans-serif !important;font-size:16px;font-weight:500;colo=
+r:#212121;line-height:1.5;" class=3D"gg0l4hb"><!-- <![endif] hidden --><h4 =
+style=3D"color:#001272;font-family:'raleway' , sans-serif;font-size:16px;fo=
+nt-weight:400"><strong>Line up payments with payday</strong></h4><p>Want to=
+ match your payment dates to your pay day, or change how you pay? You can s=
+ort it all in My Tower.</p></div>
+                                                                           =
+ </td>
+                                                                        </t=
+r>
+                                                                   =20
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                   =20
+                                                </table>
+                                            </td>
+                                        </tr>
+                                   =20
+                                </table>
+                            </td>
+                        </tr>
+                   =20
+                </table>
+            </td>
+        </tr>
+   =20
+</table>
+
+</div>
+
+                                </div>
+                           =20
+                                <div class=3D"layout-grid-cell-content layo=
+ut-grid-cell-content-mso" style=3D"            width: 600px;
+overflow-wrap:anywhere;overflow:hidden;" data-content-item-id=3D"2f224148-3=
+538-42d6-b9ca-9fbc66c0942b">
+                                    <div>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"   data-content-item=
+-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" style=3D"width:100%;border-spa=
+cing:0 !important;padding-top:0px; padding-bottom:0px;padding-left:35px;box=
+-sizing:border-box;">
+   =20
+        <tr>
+            <td>
+                <table class=3D"image-text-component" border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0"   style=3D"width:100%;border-spacing:0 !importa=
+nt;background-color:transparent">
+                   =20
+                        <tr>
+                            <td>                                <table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0"  style=3D"width:100%;border-sp=
+acing:0 !important;">
+                                   =20
+                                        <tr class=3D"display-grid">
+                                            <td data-content-item-id=3D"2f2=
+24148-3538-42d6-b9ca-9fbc66c0942b"  class=3D"displayBlock w100per" style=3D=
+"vertical-align:top;            width:116px;">
+                                                <table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0"  style=3D"width:100%;border-spacing:0 !importa=
+nt;">
+                                                   =20
+                                                        <tr>
+                                                            <td align=3D"le=
+ft"  style=3D"padding-right:35px;padding-top:16px;padding-bottom:0px;">
+                                                                    <img cl=
+ass=3D"complex-block-img" width=3D"81" border=3D"0" style=3D"width:100%;dis=
+play:block;max-width:81px !important;" data-content-item-id=3D"2f224148-353=
+8-42d6-b9ca-9fbc66c0942b"  src=3D"https://content-ap-1.static.content-cms.c=
+om/s3/3c2dbab7-d006-49fd-8645-4bc53283acef/56bd8ac9-f7f6-4953-b4d6-fdbd17b4=
+bd66.png"/>
+                                                               =20
+                                                            </td>
+                                                        </tr>
+                                                   =20
+                                                </table>                   =
+                         </td>
+                                            <td data-content-item-id=3D"2f2=
+24148-3538-42d6-b9ca-9fbc66c0942b"  class=3D"displayBlock w100per" style=3D=
+"vertical-align:top;">
+                                                <table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0"  style=3D"width:100%;border-spacing:0 !importa=
+nt;">
+                                                   =20
+                                                        <tr>
+                                                            <td>
+                                                                <table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0"  style=3D"width:100%;border-sp=
+acing:0 !important;height:100%;">
+                                                                   =20
+                                                                        <tr=
+>
+                                                                           =
+ <td style=3D"padding-right:35px;padding-top:16px;padding-bottom:16px;paddi=
+ng-left:0px;">
+                                                                           =
+     <!--[if gte mso 9][!tonline]>
+                                                                           =
+     <div style=3D"height:100%;word-break: break-word; mso-line-height-rule=
+:exactly;font-family:Raleway, sans-serif !important;font-size:16px;font-wei=
+ght:500;color:#212121;line-height:150%;" class=3D"gg0l4hb">
+                                                                           =
+     <![endif]-->
+                                                                           =
+     <!--[if !gte mso 9]><!-->
+                                                                           =
+     <div  data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" st=
+yle=3D"height:100%;word-break: break-word; mso-line-height-rule:exactly;fon=
+t-family:Raleway, sans-serif !important;font-size:16px;font-weight:500;colo=
+r:#212121;line-height:1.5;" class=3D"gg0l4hb"><!-- <![endif] hidden --><h4 =
+style=3D"color:#001272;font-family:'raleway' , sans-serif;font-size:16px;fo=
+nt-weight:400"><strong>Get the paperwork you need, anytime</strong></h4><p>=
+Now you can get invoices, receipts, and payment summaries whenever you need=
+ them.&nbsp;</p></div>
+                                                                           =
+ </td>
+                                                                        </t=
+r>
+                                                                   =20
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                   =20
+                                                </table>
+                                            </td>
+                                        </tr>
+                                   =20
+                                </table>
+                            </td>
+                        </tr>
+                   =20
+                </table>
+            </td>
+        </tr>
+   =20
+</table>
+
+</div>
+
+                                </div>
+                           =20
+                                <div class=3D"layout-grid-cell-content layo=
+ut-grid-cell-content-mso" style=3D"            width: 600px;
+overflow-wrap:anywhere;overflow:hidden;" data-content-item-id=3D"2f224148-3=
+538-42d6-b9ca-9fbc66c0942b">
+                                    <div>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"   data-content-item=
+-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" style=3D"width:100%;border-spa=
+cing:0 !important;padding-top:0px; padding-bottom:0px;padding-left:35px;box=
+-sizing:border-box;">
+   =20
+        <tr>
+            <td>
+                <table class=3D"image-text-component" border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0"   style=3D"width:100%;border-spacing:0 !importa=
+nt;background-color:transparent">
+                   =20
+                        <tr>
+                            <td>                                <table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0"  style=3D"width:100%;border-sp=
+acing:0 !important;">
+                                   =20
+                                        <tr class=3D"display-grid">
+                                            <td data-content-item-id=3D"2f2=
+24148-3538-42d6-b9ca-9fbc66c0942b"  class=3D"displayBlock w100per" style=3D=
+"vertical-align:top;            width:117px;">
+                                                <table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0"  style=3D"width:100%;border-spacing:0 !importa=
+nt;">
+                                                   =20
+                                                        <tr>
+                                                            <td align=3D"le=
+ft"  style=3D"padding-right:35px;padding-top:16px;padding-bottom:0px;">
+                                                                    <img cl=
+ass=3D"complex-block-img" width=3D"82" border=3D"0" style=3D"width:100%;dis=
+play:block;max-width:82px !important;" data-content-item-id=3D"2f224148-353=
+8-42d6-b9ca-9fbc66c0942b"  src=3D"https://content-ap-1.static.content-cms.c=
+om/s3/3c2dbab7-d006-49fd-8645-4bc53283acef/ea84dd87-371c-4b2f-9b1b-da1a5d90=
+64c1.png"/>
+                                                               =20
+                                                            </td>
+                                                        </tr>
+                                                   =20
+                                                </table>                   =
+                         </td>
+                                            <td data-content-item-id=3D"2f2=
+24148-3538-42d6-b9ca-9fbc66c0942b"  class=3D"displayBlock w100per" style=3D=
+"vertical-align:top;">
+                                                <table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0"  style=3D"width:100%;border-spacing:0 !importa=
+nt;">
+                                                   =20
+                                                        <tr>
+                                                            <td>
+                                                                <table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0"  style=3D"width:100%;border-sp=
+acing:0 !important;height:100%;">
+                                                                   =20
+                                                                        <tr=
+>
+                                                                           =
+ <td style=3D"padding-right:35px;padding-top:16px;padding-bottom:16px;paddi=
+ng-left:0px;">
+                                                                           =
+     <!--[if gte mso 9][!tonline]>
+                                                                           =
+     <div style=3D"height:100%;word-break: break-word; mso-line-height-rule=
+:exactly;font-family:Raleway, sans-serif !important;font-size:16px;font-wei=
+ght:500;color:#212121;line-height:150%;" class=3D"gg0l4hb">
+                                                                           =
+     <![endif]-->
+                                                                           =
+     <!--[if !gte mso 9]><!-->
+                                                                           =
+     <div  data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" st=
+yle=3D"height:100%;word-break: break-word; mso-line-height-rule:exactly;fon=
+t-family:Raleway, sans-serif !important;font-size:16px;font-weight:500;colo=
+r:#212121;line-height:1.5;" class=3D"gg0l4hb"><!-- <![endif] hidden --><h4 =
+style=3D"color:#001272;font-family:'raleway' , sans-serif;font-size:16px;fo=
+nt-weight:400"><strong>Claims? Under control</strong></h4><p>Wondering what=
+ happens next? Keep track online as your claim gets processed and find your=
+ claim manager=E2=80=99s details if you need to get in touch.*</p></div>
+                                                                           =
+ </td>
+                                                                        </t=
+r>
+                                                                   =20
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                   =20
+                                                </table>
+                                            </td>
+                                        </tr>
+                                   =20
+                                </table>
+                            </td>
+                        </tr>
+                   =20
+                </table>
+            </td>
+        </tr>
+   =20
+</table>
+
+</div>
+
+                                </div>
+                           =20
+                                <div class=3D"layout-grid-cell-content layo=
+ut-grid-cell-content-mso" style=3D"            width: 600px;
+overflow-wrap:anywhere;overflow:hidden;" data-content-item-id=3D"2f224148-3=
+538-42d6-b9ca-9fbc66c0942b">
+                                    <div>
+
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"width:100%;min-width:100%;box-sizing:border-box;=
+border-spacing:0 !important;">
+ =20
+    <tr>
+      <td>
+        <table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" role=3D"presentation" style=3D"width:100%;min-width:100%;box-sizing:bor=
+der-box;border-spacing:0 !important;">
+         =20
+            <tr>
+              <td bgcolor=3D"transparent" style=3D"background:transparent;"=
+>
+                <table width=3D"100%" border=3D"0" cellpadding=3D"0" cellsp=
+acing=3D"0" role=3D"presentation" style=3D"width:100%;min-width:100%;box-si=
+zing:border-box;border-spacing:0 !important;padding-left:35px;padding-right=
+:35px;padding-top:8px;padding-bottom:32px;mso-padding-left-alt:0;mso-paddin=
+g-right-alt:0;">
+                 =20
+                    <tr>
+                      <td align=3D"left">
+                        <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"box-sizing:border-box;border-spacing:=
+0 !important;">
+                         =20
+                            <tr>
+                              <!--[if gte mso 9][!tonline]>
+                              <td style=3D"width:35px;"></td>
+                              <![endif]-->
+                              <!--[if !gte mso 9]><!--><!-- <![endif] hidde=
+n -->
+                              <!--[if gte mso 9][!tonline]>
+                              <td bgcolor=3D"#FED602" align=3D"center" styl=
+e=3D"padding-top:12px;padding-bottom:12px;padding-left:20px;padding-right:2=
+0px;color:#001272;border-top-left-radius:6px;border-top-right-radius:6px;bo=
+rder-bottom-left-radius:6px;border-bottom-right-radius:6px;">              =
+                  <a comment=3D"mso9" key=3D"button-2f224148-3538-42d6-b9ca=
+-9fbc66c0942b"  name=3D"My Tower" href=3D"https://links.e.tower.co.nz/els/v=
+2/V-t2qE6Qr/RjRmUGlyZm4ySTBJemc3OElMMlEzckNiMndrTS9OYy9DbTRWWnJKZkJ0U0tTZU1=
+XVlpUQjBXeHR6bmpUNkJjRWthVG82dmluejJpOXRUNkxmckYxcEk3NjRzUmpGN3ZSR3pGeEVwT2=
+JyejVaVll4blN5UkJLY0J5SVlJREI4VmUS1/" target=3D"_blank"  class=3D"gg0l4hb" =
+style=3D"display:block;text-align:center;text-decoration:none;cursor:pointe=
+r;font-family:Raleway, sans-serif !important;font-size:18px;font-weight:500=
+;color:#001272;border-top-left-radius:6px;border-top-right-radius:6px;borde=
+r-bottom-left-radius:6px;border-bottom-right-radius:6px;">
+                                  <span data-content-item-id=3D"2f224148-35=
+38-42d6-b9ca-9fbc66c0942b">
+                                    Register or log in now
+                                  </span>
+                                </a>
+                              </td>   =20
+                              <![endif]-->
+                              <!--[if !gte mso 9]><!-->
+                              <td bgcolor=3D"#FED602" align=3D"center" styl=
+e=3D"padding-top:12px;padding-bottom:12px;padding-left:20px;padding-right:2=
+0px;color:#001272;border-top-left-radius:6px;border-top-right-radius:6px;bo=
+rder-bottom-left-radius:6px;border-bottom-right-radius:6px;">              =
+                  <a key=3D"button-2f224148-3538-42d6-b9ca-9fbc66c0942b"  n=
+ame=3D"My Tower" href=3D"https://links.e.tower.co.nz/els/v2/V-t2qE6Qr/RjRmU=
+GlyZm4ySTBJemc3OElMMlEzckNiMndrTS9OYy9DbTRWWnJKZkJ0U0tTZU1XVlpUQjBXeHR6bmpU=
+NkJjRWthVG82dmluejJpOXRUNkxmckYxcEk3NjRzUmpGN3ZSR3pGeEVwT2JyejVaVll4blN5UkJ=
+LY0J5SVlJREI4VmUS1/" target=3D"_blank"  class=3D"gg0l4hb" style=3D"display:=
+block;text-align:center;text-decoration:none;cursor:pointer;font-family:Ral=
+eway, sans-serif !important;font-size:18px;font-weight:500;color:#001272;bo=
+rder-top-left-radius:6px;border-top-right-radius:6px;border-bottom-left-rad=
+ius:6px;border-bottom-right-radius:6px;">
+                                  <span data-content-item-id=3D"2f224148-35=
+38-42d6-b9ca-9fbc66c0942b">
+                                    Register or log in now
+                                  </span>
+                                </a>
+                              </td>   =20
+                              <!-- <![endif] hidden -->
+                              <!--[if gte mso 9][!tonline]>
+                              <td style=3D"width:35px;"></td>
+                              <![endif]-->
+                              <!--[if !gte mso 9]><!--><!-- <![endif] hidde=
+n -->
+                            </tr>
+                         =20
+                        </table>
+                      </td>
+                    </tr>
+                 =20
+                </table>
+              </td>
+            </tr>
+         =20
+        </table>
+      </td>
+    </tr>
+ =20
+</table>
+
+</div>
+
+                                </div>
+                           =20
+                                <div class=3D"layout-grid-cell-content layo=
+ut-grid-cell-content-mso" style=3D"            width: 600px;
+overflow-wrap:anywhere;overflow:hidden;" data-content-item-id=3D"2f224148-3=
+538-42d6-b9ca-9fbc66c0942b">
+                                    <div>
+
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"  data-content-item-=
+id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" style=3D"width:100%;border-spac=
+ing:0 !important;box-sizing:border-box;">
+   =20
+        <tr>
+            <td>
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"  st=
+yle=3D"width:100%;border-spacing:0 !important;background-color:transparent;=
+">
+                   =20
+                        <tr>
+                            <td>
+                                <table border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0"   style=3D"width:100%;border-spacing:0 !important;padding-left=
+:35px;padding-right:35px;box-sizing:border-box;">
+                                   =20
+                                        <tr>
+                                            <td  align=3D"center">         =
+       <img data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" s=
+rc=3D"https://content-ap-1.static.content-cms.com/s3/3c2dbab7-d006-49fd-864=
+5-4bc53283acef/2b680c9f-8fae-4eeb-ba54-cbdc71f1b14c.png" border=3D"0" style=
+=3D"width:100%;display:block;max-width:530px !important;" width=3D"530"/>
+                                               =20
+                                            </td>
+                                        </tr>
+                                   =20
+                                </table>
+                            </td>
+                        </tr>
+                   =20
+                </table>
+            </td>
+        </tr>
+   =20
+</table>
+
+</div>
+
+                                </div>
+                        </td>
+                    <td class=3D"layout-grid-section-cell displayNone" key=
+=3D"after"></td>
+                </tr>
+           =20
+           =20
+                <tr class=3D"layout-grid-row displayBlock "  style=3D"heigh=
+t:100%;" data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b">
+                    <td class=3D"layout-grid-section-cell displayNone" key=
+=3D"before"></td>
+                        <!--[if gte mso 9][!tonline]>
+                        <td class=3D"layout-grid-cell target source" colSpa=
+n=3D"6" width=3D"600" valign=3D"top" style=3D"width:600px; height:100%;vert=
+ical-align:top;padding-left:0px;padding-right:0px;            background-co=
+lor:#FFFFFF;">
+                        <![endif]-->
+                        <!--[if !gte mso 9]><!-->
+                        <td class=3D"layout-grid-cell displayBlock target s=
+ource" colSpan=3D"6" valign=3D"top" style=3D"width:600px; height:100%;verti=
+cal-align:top;padding-left:0px;padding-right:0px;             background-co=
+lor:#FFFFFF;" data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b"=
+>
+                        <!-- <![endif] hidden -->   =20
+                           =20
+                                <div class=3D"layout-grid-cell-content layo=
+ut-grid-cell-content-mso" style=3D"height:100%;            width: 600px;
+overflow-wrap:anywhere;overflow:hidden;" data-content-item-id=3D"2f224148-3=
+538-42d6-b9ca-9fbc66c0942b">
+                                    <div>
+<table data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0"  style=3D"width:100%;border-spac=
+ing:0 !important;padding-top:0px; padding-bottom:0px;box-sizing:border-box;=
+">
+   =20
+        <tr>
+            <td>
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"  st=
+yle=3D"width:100%;border-spacing:0 !important;background-color:transparent;=
+">
+                   =20
+                        <tr>
+                            <td>                                <table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:100%;border-spa=
+cing:0 !important;height:100%;">
+                                   =20
+                                        <tr>
+                                            <td style=3D"padding-right:35px=
+;padding-top:32px;padding-bottom:0px;padding-left:35px;">
+                                                <!--[if gte mso 9][!tonline=
+]>
+                                                <div style=3D"height:100%;w=
+ord-break: break-word;mso-line-height-rule: exactly;font-family:Raleway, sa=
+ns-serif!important;font-size:16px;font-weight:500;color: #212121;background=
+-color:transparent;line-height: 150%;" class=3D"gg0l4hb">
+                                                <![endif]-->
+                                                    <!--[if !gte mso 9]><!-=
+->
+                                                    <div data-content-item-=
+id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" style=3D"height:100%;word-break=
+: break-word;mso-line-height-rule: exactly;font-family:Raleway, sans-serif!=
+important;font-size:16px;font-weight:500;color: #212121;background-color:tr=
+ansparent;line-height:1.5;" class=3D"gg0l4hb"><!-- <![endif] hidden --><p><=
+strong>Over 150,000 customers are already using My Tower</strong> to get th=
+ings done =E2=80=93 quickly, easily, and the forward thinking way.&nbsp;</p=
+></div>
+                                            </td>
+                                        </tr>
+                                   =20
+                                </table>
+                            </td>
+                        </tr>
+                   =20
+                </table>
+            </td>
+        </tr>
+   =20
+</table>
+
+</div>
+
+                                </div>
+                        </td>
+                    <td class=3D"layout-grid-section-cell displayNone" key=
+=3D"after"></td>
+                </tr>
+           =20
+           =20
+                <tr class=3D"layout-grid-row displayBlock "  style=3D"heigh=
+t:100%;" data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b">
+                    <td class=3D"layout-grid-section-cell displayNone" key=
+=3D"before"></td>
+                        <!--[if gte mso 9][!tonline]>
+                        <td class=3D"layout-grid-cell target source" colSpa=
+n=3D"6" width=3D"600" valign=3D"top" style=3D"width:600px; height:100%;vert=
+ical-align:top;padding-left:0px;padding-right:0px;            background-co=
+lor:#FFFFFF;">
+                        <![endif]-->
+                        <!--[if !gte mso 9]><!-->
+                        <td class=3D"layout-grid-cell displayBlock target s=
+ource" colSpan=3D"6" valign=3D"top" style=3D"width:600px; height:100%;verti=
+cal-align:top;padding-left:0px;padding-right:0px;             background-co=
+lor:#FFFFFF;" data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b"=
+>
+                        <!-- <![endif] hidden -->   =20
+                           =20
+                                <div class=3D"layout-grid-cell-content layo=
+ut-grid-cell-content-mso" style=3D"            width: 600px;
+overflow-wrap:anywhere;overflow:hidden;" data-content-item-id=3D"2f224148-3=
+538-42d6-b9ca-9fbc66c0942b">
+                                    <div>
+<table data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0"  style=3D"width:100%;border-spac=
+ing:0 !important;padding-top:0px;padding-bottom:32px;box-sizing:border-box;=
+">
+   =20
+        <tr>
+            <td>
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"  st=
+yle=3D"width:100%;border-spacing:0 !important;background-color:transparent;=
+">
+                   =20
+                        <tr>
+                            <td>                                <table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:100%;border-spa=
+cing:0 !important;height:100%;">
+                                   =20
+                                        <tr>
+                                            <td style=3D"padding-right:35px=
+;padding-top:16px;padding-bottom:0px;padding-left:35px;">
+                                                <!--[if gte mso 9][!tonline=
+]>
+                                                <div style=3D"height:100%;w=
+ord-break: break-word;mso-line-height-rule: exactly;font-family:Raleway, sa=
+ns-serif!important;font-size:16px;font-weight:500;color: #212121;background=
+-color:transparent;line-height: 150%;" class=3D"gg0l4hb">
+                                                <![endif]-->
+                                                    <!--[if !gte mso 9]><!-=
+->
+                                                    <div data-content-item-=
+id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" style=3D"height:100%;word-break=
+: break-word;mso-line-height-rule: exactly;font-family:Raleway, sans-serif!=
+important;font-size:16px;font-weight:500;color: #212121;background-color:tr=
+ansparent;line-height:1.5;" class=3D"gg0l4hb"><!-- <![endif] hidden --><p>W=
+hether you're just getting started or already using it, now=E2=80=99s a gre=
+at time to see how <a style=3D"color:#007acc;text-decoration:underline" hre=
+f=3D"https://links.e.tower.co.nz/els/v2/yPtEjqDFK/RjRmUGlyZm4ySTBJemc3OElMM=
+lEzckNiMndrTS9OYy9DbTRWWnJKZkJ0U0tTZU1XVlpUQjBXeHR6bmpUNkJjRWthVG82dmluejJp=
+OXRUNkxmckYxcEk3NjRzUmpGN3ZSR3pGeEVwT2JyejVaVll4blN5UkJLY0J5SVlJREI4VmUS1/"=
+ name=3D"Text Link 767506668 My Tower"  data-key=3D"f7bcc6f6-b7cb-4bec-861f=
+-a068107dd77b:6bf4320b-6cb4-4afe-88e9-0fb45e2ad92d" target=3D"_blank" rel=
+=3D"noopener noreferrer noopener noreferrer noopener noreferrer noopener no=
+referrer noopener noreferrer noopener noreferrer noopener noreferrer noopen=
+er noreferrer noopener noreferrer noopener noreferrer noopener noreferrer n=
+oopener noreferrer noopener noreferrer noopener noreferrer noopener norefer=
+rer noopener noreferrer noopener noreferrer noopener noreferrer"><u>My Towe=
+r</u></a> can make life easier.</p><p>&nbsp;</p><p>Here for you,</p><p><str=
+ong>The Tower team</strong></p></div>
+                                            </td>
+                                        </tr>
+                                   =20
+                                </table>
+                            </td>
+                        </tr>
+                   =20
+                </table>
+            </td>
+        </tr>
+   =20
+</table>
+
+</div>
+
+                                </div>
+                           =20
+                                <div class=3D"layout-grid-cell-content layo=
+ut-grid-cell-content-mso" style=3D"            width: 600px;
+overflow-wrap:anywhere;overflow:hidden;" data-content-item-id=3D"2f224148-3=
+538-42d6-b9ca-9fbc66c0942b">
+                                    <div>
+
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"hide-on-de=
+sktop " data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" style=
+=3D"width:100%;border-spacing:0 !important;padding-left:35px;padding-right:=
+35px;box-sizing:border-box;">
+   =20
+        <tr>
+            <td>
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cla=
+ss=3D"hide-on-desktop" style=3D"width:100%;border-spacing:0 !important;back=
+ground-color:transparent;">
+                   =20
+                        <tr>
+                            <td>
+                                <table border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" class=3D"hide-on-desktop"  style=3D"width:100%;border-spacing:=
+0 !important;padding-top:16px;padding-bottom:15px;box-sizing:border-box;">
+                                   =20
+                                        <tr>
+                                            <td  align=3D"center">         =
+       <a name=3D"Tower Logo Mobile Footer" href=3D"https://links.e.tower.c=
+o.nz/els/v2/PPtkG-yf2/RjRmUGlyZm4ySTBJemc3OElMMlEzckNiMndrTS9OYy9DbTRWWnJKZ=
+kJ0U0tTZU1XVlpUQjBXeHR6bmpUNkJjRWthVG82dmluejJpOXRUNkxmckYxcEk3NjRzUmpGN3ZS=
+R3pGeEVwT2JyejVaVll4blN5UkJLY0J5SVlJREI4VmUS1/WmNqU29Pa2syUlBFd1BLSzFkeU13a=
+mJIbEttN1VaR2dCSnFRZ3FOSUdwdlRkd0JvQnZENUNBc0orRVdrcnExMAS2" target=3D"_bla=
+nk"   >
+                                                <img data-content-item-id=
+=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" src=3D"https://content-ap-1.stati=
+c.content-cms.com/s3/3c2dbab7-d006-49fd-8645-4bc53283acef/9a157451-4d65-4ce=
+2-b3b0-d0733724f8a3.png" alt=3D"Tower"  border=3D"0" style=3D"width:100%;di=
+splay:block;max-width:296px !important;" width=3D"296"/>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                   =20
+                                </table>
+                            </td>
+                        </tr>
+                   =20
+                </table>
+            </td>
+        </tr>
+   =20
+</table>
+
+</div>
+
+                                </div>
+                           =20
+                                <div class=3D"layout-grid-cell-content layo=
+ut-grid-cell-content-mso" style=3D"            width: 600px;
+overflow-wrap:anywhere;overflow:hidden;" data-content-item-id=3D"2f224148-3=
+538-42d6-b9ca-9fbc66c0942b">
+                                    <div>
+
+<table width=3D"100%" class=3D"hide-on-desktop" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" role=3D"presentation" style=3D"width:100%;min-width:1=
+00%;box-sizing:border-box;border-spacing:0 !important;">
+   =20
+      <tr>
+        <td bgcolor=3D"transparent"  style=3D"background:transparent">
+        <table width=3D"100%" class=3D"hide-on-desktop" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"width:100%;min=
+-width:100%;box-sizing:border-box;border-spacing:0 !important;padding-left:=
+35px;padding-right:35px;padding-top:0px;padding-bottom:0px;">
+         =20
+            <tr>
+              <td align=3D"center">                <!--[if gte mso 9][!tonl=
+ine]>
+          <table bgcolor=3D"transparent" style=3D"padding-top:8px;padding-b=
+ottom:8px;mso-padding-alt: 8px 0px 8px 0px;">=20
+           =20
+              <tr>
+                 <td>
+                  <table align=3D"center" width=3D"530" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" role=3D"presentation">
+                   =20
+                      <tr>
+                        <td data-content-item-id=3D"2f224148-3538-42d6-b9ca=
+-9fbc66c0942b" style=3D"margin-left:0;margin-right:0;opacity:1;border-width=
+:1px 0px 0px 0px;border-color:#c4c4c4;border-style:solid;;border-bottom:non=
+e;border-left:none;border-right:none;line-height:0">&nbsp;</td>=20
+                      </tr>
+                   =20
+                  </table>
+                      </td>
+                   </tr>
+                =20
+              </table>
+                  <![endif]-->
+                <!--[if !gte mso 9]><!-->
+                <hr data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c=
+0942b" align=3D"center"
+                width=3D"100%" style=3D"margin-left:0;margin-right:0;opacit=
+y:1;border-width:1px 0px 0px 0px;border-color:#c4c4c4;border-style:solid;">
+                <!-- <![endif] hidden -->
+              </td>
+            </tr>
+         =20
+        </table>
+      </td>
+    </tr>
+ =20
+</table>
+
+</div>
+
+                                </div>
+                           =20
+                                <div class=3D"layout-grid-cell-content layo=
+ut-grid-cell-content-mso" style=3D"            width: 600px;
+overflow-wrap:anywhere;overflow:hidden;" data-content-item-id=3D"2f224148-3=
+538-42d6-b9ca-9fbc66c0942b">
+                                    <div>
+<table data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"hide-on-desktop" style=
+=3D"width:100%;border-spacing:0 !important;padding-top:0px; padding-bottom:=
+0px;box-sizing:border-box;">
+   =20
+        <tr>
+            <td>
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"  st=
+yle=3D"width:100%;border-spacing:0 !important;background-color:transparent;=
+">
+                   =20
+                        <tr>
+                            <td>                                <table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:100%;border-spa=
+cing:0 !important;height:100%;">
+                                   =20
+                                        <tr>
+                                            <td style=3D"padding-right:35px=
+;padding-top:10px;padding-bottom:10px;padding-left:35px;">
+                                                <!--[if gte mso 9][!tonline=
+]>
+                                                <div style=3D"height:100%;w=
+ord-break: break-word;mso-line-height-rule: exactly;font-family:Raleway, sa=
+ns-serif!important;font-size:16px;font-weight:500;color: #212121;background=
+-color:transparent;line-height: 120%;" class=3D"gg0l4hb">
+                                                <![endif]-->
+                                                    <!--[if !gte mso 9]><!-=
+->
+                                                    <div data-content-item-=
+id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" style=3D"height:100%;word-break=
+: break-word;mso-line-height-rule: exactly;font-family:Raleway, sans-serif!=
+important;font-size:16px;font-weight:500;color: #212121;background-color:tr=
+ansparent;line-height:1.2;" class=3D"gg0l4hb"><!-- <![endif] hidden --><p s=
+tyle=3D"text-align:center"><a style=3D"color:rgb( 0 , 122 , 204 );text-deco=
+ration:underline" href=3D"https://links.e.tower.co.nz/els/v2/Wrte2P8TK/RjRm=
+UGlyZm4ySTBJemc3OElMMlEzckNiMndrTS9OYy9DbTRWWnJKZkJ0U0tTZU1XVlpUQjBXeHR6bmp=
+UNkJjRWthVG82dmluejJpOXRUNkxmckYxcEk3NjRzUmpGN3ZSR3pGeEVwT2JyejVaVll4blN5Uk=
+JLY0J5SVlJREI4VmUS1/WmNqU29Pa2syUlBFd1BLSzFkeU13amJIbEttN1VaR2dCSnFRZ3FOSUd=
+wdlRkd0JvQnZENUNBc0orRVdrcnExMAS2" name=3D"Privacy Statement Mobile"  data-=
+key=3D"d1ac5214-19ab-43fe-a01c-3d4b14a772c4:2d95dc18-aa1f-4f83-b594-7ebf70d=
+5b271" target=3D"_blank" rel=3D"noopener noreferrer noopener noreferrer noo=
+pener noreferrer noopener noreferrer noopener noreferrer noopener noreferre=
+r noopener noreferrer noopener noreferrer noopener noreferrer noopener nore=
+ferrer noopener noreferrer noopener noreferrer noopener noreferrer noopener=
+ noreferrer noopener noreferrer"><u>Privacy Statement</u></a></p></div>
+                                            </td>
+                                        </tr>
+                                   =20
+                                </table>
+                            </td>
+                        </tr>
+                   =20
+                </table>
+            </td>
+        </tr>
+   =20
+</table>
+
+</div>
+
+                                </div>
+                           =20
+                                <div class=3D"layout-grid-cell-content layo=
+ut-grid-cell-content-mso" style=3D"            width: 600px;
+overflow-wrap:anywhere;overflow:hidden;" data-content-item-id=3D"2f224148-3=
+538-42d6-b9ca-9fbc66c0942b">
+                                    <div>
+
+<table width=3D"100%" class=3D"hide-on-desktop" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" role=3D"presentation" style=3D"width:100%;min-width:1=
+00%;box-sizing:border-box;border-spacing:0 !important;">
+   =20
+      <tr>
+        <td bgcolor=3D"transparent"  style=3D"background:transparent">
+        <table width=3D"100%" class=3D"hide-on-desktop" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"width:100%;min=
+-width:100%;box-sizing:border-box;border-spacing:0 !important;padding-left:=
+35px;padding-right:35px;padding-top:8px;padding-bottom:0px;">
+         =20
+            <tr>
+              <td align=3D"center">                <!--[if gte mso 9][!tonl=
+ine]>
+          <table bgcolor=3D"transparent" style=3D"padding-top:8px;padding-b=
+ottom:8px;mso-padding-alt: 8px 0px 8px 0px;">=20
+           =20
+              <tr>
+                 <td>
+                  <table align=3D"center" width=3D"530" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" role=3D"presentation">
+                   =20
+                      <tr>
+                        <td data-content-item-id=3D"2f224148-3538-42d6-b9ca=
+-9fbc66c0942b" style=3D"margin-left:0;margin-right:0;opacity:1;border-width=
+:1px 0px 0px 0px;border-color:#c4c4c4;border-style:solid;;border-bottom:non=
+e;border-left:none;border-right:none;line-height:0">&nbsp;</td>=20
+                      </tr>
+                   =20
+                  </table>
+                      </td>
+                   </tr>
+                =20
+              </table>
+                  <![endif]-->
+                <!--[if !gte mso 9]><!-->
+                <hr data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c=
+0942b" align=3D"center"
+                width=3D"100%" style=3D"margin-left:0;margin-right:0;opacit=
+y:1;border-width:1px 0px 0px 0px;border-color:#c4c4c4;border-style:solid;">
+                <!-- <![endif] hidden -->
+              </td>
+            </tr>
+         =20
+        </table>
+      </td>
+    </tr>
+ =20
+</table>
+
+</div>
+
+                                </div>
+                           =20
+                                <div class=3D"layout-grid-cell-content layo=
+ut-grid-cell-content-mso" style=3D"            width: 600px;
+overflow-wrap:anywhere;overflow:hidden;" data-content-item-id=3D"2f224148-3=
+538-42d6-b9ca-9fbc66c0942b">
+                                    <div>
+
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"hide-on-de=
+sktop " data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" style=
+=3D"width:100%;border-spacing:0 !important;padding-top:40px;padding-left:35=
+px;padding-right:35px;box-sizing:border-box;">
+   =20
+        <tr>
+            <td>
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cla=
+ss=3D"hide-on-desktop" style=3D"width:100%;border-spacing:0 !important;back=
+ground-color:transparent;">
+                   =20
+                        <tr>
+                            <td>
+                                <table border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" class=3D"hide-on-desktop"  style=3D"width:100%;border-spacing:=
+0 !important;box-sizing:border-box;">
+                                   =20
+                                        <tr>
+                                            <td  align=3D"center">         =
+       <a name=3D"ICNZ Fair Insurance Code Image Mobile" href=3D"https://li=
+nks.e.tower.co.nz/els/v2/A3tz89rfj/RjRmUGlyZm4ySTBJemc3OElMMlEzckNiMndrTS9O=
+Yy9DbTRWWnJKZkJ0U0tTZU1XVlpUQjBXeHR6bmpUNkJjRWthVG82dmluejJpOXRUNkxmckYxcEk=
+3NjRzUmpGN3ZSR3pGeEVwT2JyejVaVll4blN5UkJLY0J5SVlJREI4VmUS1/" target=3D"_bla=
+nk"   >
+                                                <img data-content-item-id=
+=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" src=3D"https://content-ap-1.stati=
+c.content-cms.com/s3/3c2dbab7-d006-49fd-8645-4bc53283acef/da38f01e-df53-45c=
+3-aa36-a341e658f4ed.png" alt=3D"Member of the Fair Insurance Code"  border=
+=3D"0" style=3D"width:100%;display:block;max-width:110px !important;" width=
+=3D"110"/>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                   =20
+                                </table>
+                            </td>
+                        </tr>
+                   =20
+                </table>
+            </td>
+        </tr>
+   =20
+</table>
+
+</div>
+
+                                </div>
+                           =20
+                                <div class=3D"layout-grid-cell-content layo=
+ut-grid-cell-content-mso" style=3D"            width: 600px;
+overflow-wrap:anywhere;overflow:hidden;" data-content-item-id=3D"2f224148-3=
+538-42d6-b9ca-9fbc66c0942b">
+                                    <div>
+<table data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"hide-on-desktop" style=
+=3D"width:100%;border-spacing:0 !important;padding-top:25px;padding-bottom:=
+28px;padding-left:50px;padding-right:50px;box-sizing:border-box;">
+   =20
+        <tr>
+            <td>
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"  st=
+yle=3D"width:100%;border-spacing:0 !important;background-color:transparent;=
+">
+                   =20
+                        <tr>
+                            <td>                                <table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:100%;border-spa=
+cing:0 !important;height:100%;">
+                                   =20
+                                        <tr>
+                                            <td style=3D"padding-right:0px;=
+padding-top:0px;padding-bottom:0px;padding-left:0px;">
+                                                <!--[if gte mso 9][!tonline=
+]>
+                                                <div style=3D"height:100%;w=
+ord-break: break-word;mso-line-height-rule: exactly;font-family:Raleway, sa=
+ns-serif!important;font-size:16px;font-weight:500;color: #212121;background=
+-color:transparent;line-height: 120%;" class=3D"gg0l4hb">
+                                                <![endif]-->
+                                                    <!--[if !gte mso 9]><!-=
+->
+                                                    <div data-content-item-=
+id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" style=3D"height:100%;word-break=
+: break-word;mso-line-height-rule: exactly;font-family:Raleway, sans-serif!=
+important;font-size:16px;font-weight:500;color: #212121;background-color:tr=
+ansparent;line-height:1.2;" class=3D"gg0l4hb"><!-- <![endif] hidden --><pre=
+ style=3D"color:#212121;font-family:'raleway' , sans-serif;font-size:12px;f=
+ont-weight:500;text-align:center"><span style=3D"font-size:14px"><strong>Me=
+mber of the Fair Insurance Code</strong></span></pre><pre style=3D"color:#2=
+12121;font-family:'raleway' , sans-serif;font-size:12px;font-weight:500;tex=
+t-align:center"><br><span style=3D"font-size:14px">Tower is a member of the=
+ Insurance Council of New Zealand (ICNZ). We abide by the </span><a style=
+=3D"color:rgb( 0 , 122 , 204 );text-decoration:underline" href=3D"https://l=
+inks.e.tower.co.nz/els/v2/DRt9jgKFx/RjRmUGlyZm4ySTBJemc3OElMMlEzckNiMndrTS9=
+OYy9DbTRWWnJKZkJ0U0tTZU1XVlpUQjBXeHR6bmpUNkJjRWthVG82dmluejJpOXRUNkxmckYxcE=
+k3NjRzUmpGN3ZSR3pGeEVwT2JyejVaVll4blN5UkJLY0J5SVlJREI4VmUS1/" name=3D"ICNZ =
+Fair Insurance Code Text Desktop"  data-key=3D"cf23a8a4-deb9-4aa5-b9fa-b9a1=
+a6c31311:5a760a08-45c8-494d-81d6-1a7f42172d3c" target=3D"_blank" rel=3D"noo=
+pener noreferrer noopener noreferrer noopener noreferrer noopener noreferre=
+r noopener noreferrer noopener noreferrer noopener noreferrer noopener nore=
+ferrer noopener noreferrer noopener noreferrer noopener noreferrer noopener=
+ noreferrer noopener noreferrer noopener noreferrer noopener noreferrer noo=
+pener noreferrer noopener noreferrer noopener noreferrer noopener noreferre=
+r noopener noreferrer noopener noreferrer noopener noreferrer noopener nore=
+ferrer noopener noreferrer noopener noreferrer noopener noreferrer noopener=
+ noreferrer noopener noreferrer noopener noreferrer noopener noreferrer noo=
+pener noreferrer noopener noreferrer noopener noreferrer noopener noreferre=
+r noopener noreferrer noopener noreferrer noopener noreferrer noopener nore=
+ferrer noopener noreferrer noopener noreferrer noopener noreferrer noopener=
+ noreferrer noopener noreferrer noopener noreferrer noopener noreferrer noo=
+pener noreferrer noopener noreferrer noopener noreferrer noopener noreferre=
+r noopener noreferrer noopener noreferrer noopener noreferrer noopener nore=
+ferrer noopener noreferrer noopener noreferrer noopener noreferrer noopener=
+ noreferrer noopener noreferrer noopener noreferrer noopener noreferrer noo=
+pener noreferrer noopener noreferrer noopener noreferrer noopener noreferre=
+r noopener noreferrer noopener noreferrer noopener noreferrer noopener nore=
+ferrer noopener noreferrer noopener noreferrer noopener noreferrer noopener=
+ noreferrer noopener noreferrer noopener noreferrer noopener noreferrer noo=
+pener noreferrer noopener noreferrer noopener noreferrer noopener noreferre=
+r noopener noreferrer noopener noreferrer noopener noreferrer noopener nore=
+ferrer noopener noreferrer noopener noreferrer noopener noreferrer noopener=
+ noreferrer noopener noreferrer noopener noreferrer noopener noreferrer noo=
+pener noreferrer noopener noreferrer noopener noreferrer noopener noreferre=
+r noopener noreferrer noopener noreferrer noopener noreferrer noopener nore=
+ferrer noopener noreferrer noopener noreferrer noopener noreferrer noopener=
+ noreferrer noopener noreferrer noopener noreferrer noopener noreferrer noo=
+pener noreferrer noopener noreferrer noopener noreferrer noopener noreferre=
+r noopener noreferrer noopener noreferrer noopener noreferrer noopener nore=
+ferrer noopener noreferrer noopener noreferrer noopener noreferrer noopener=
+ noreferrer noopener noreferrer noopener noreferrer noopener noreferrer noo=
+pener noreferrer noopener noreferrer noopener noreferrer noopener noreferre=
+r noopener noreferrer noopener noreferrer noopener noreferrer noopener nore=
+ferrer noopener noreferrer noopener noreferrer noopener noreferrer noopener=
+ noreferrer noopener noreferrer noopener noreferrer noopener noreferrer noo=
+pener noreferrer noopener noreferrer noopener noreferrer noopener noreferre=
+r noopener noreferrer noopener noreferrer noopener noreferrer noopener nore=
+ferrer noopener noreferrer noopener noreferrer noopener noreferrer noopener=
+ noreferrer noopener noreferrer noopener noreferrer noopener noreferrer noo=
+pener noreferrer noopener noreferrer noopener noreferrer noopener noreferre=
+r noopener noreferrer noopener noreferrer noopener noreferrer noopener nore=
+ferrer noopener noreferrer noopener noreferrer noopener noreferrer noopener=
+ noreferrer noopener noreferrer noopener noreferrer noopener noreferrer noo=
+pener noreferrer noopener noreferrer noopener noreferrer noopener noreferre=
+r noopener noreferrer noopener noreferrer noopener noreferrer noopener nore=
+ferrer noopener noreferrer noopener noreferrer noopener noreferrer noopener=
+ noreferrer noopener noreferrer noopener noreferrer noopener noreferrer noo=
+pener noreferrer noopener noreferrer"><span style=3D"font-size:14px"><u>ICN=
+Z Fair Insurance Code</u></span></a><span style=3D"font-size:14px">.</span>=
+</pre></div>
+                                            </td>
+                                        </tr>
+                                   =20
+                                </table>
+                            </td>
+                        </tr>
+                   =20
+                </table>
+            </td>
+        </tr>
+   =20
+</table>
+
+</div>
+
+                                </div>
+                           =20
+                                <div class=3D"layout-grid-cell-content layo=
+ut-grid-cell-content-mso" style=3D"            width: 600px;
+overflow-wrap:anywhere;overflow:hidden;" data-content-item-id=3D"2f224148-3=
+538-42d6-b9ca-9fbc66c0942b">
+                                    <div>
+
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"hide-on-mo=
+bile" data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" style=
+=3D"width:100%;border-spacing:0 !important;padding-left:35px;padding-right:=
+35px;box-sizing:border-box;">
+   =20
+        <tr>
+            <td>
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"  st=
+yle=3D"width:100%;border-spacing:0 !important;background-color:transparent;=
+">
+                   =20
+                        <tr>
+                            <td>
+                                <table border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0"   style=3D"width:100%;border-spacing:0 !important;padding-top:=
+16px;padding-bottom:15px;box-sizing:border-box;">
+                                   =20
+                                        <tr>
+                                            <td  align=3D"left">           =
+     <a name=3D"Tower Logo Desktop Footer" href=3D"https://links.e.tower.co=
+.nz/els/v2/-mtVGKrC0/RjRmUGlyZm4ySTBJemc3OElMMlEzckNiMndrTS9OYy9DbTRWWnJKZk=
+J0U0tTZU1XVlpUQjBXeHR6bmpUNkJjRWthVG82dmluejJpOXRUNkxmckYxcEk3NjRzUmpGN3ZSR=
+3pGeEVwT2JyejVaVll4blN5UkJLY0J5SVlJREI4VmUS1/WmNqU29Pa2syUlBFd1BLSzFkeU13am=
+JIbEttN1VaR2dCSnFRZ3FOSUdwdlRkd0JvQnZENUNBc0orRVdrcnExMAS2" target=3D"_blan=
+k"   >
+                                                <img data-content-item-id=
+=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" src=3D"https://content-ap-1.stati=
+c.content-cms.com/s3/3c2dbab7-d006-49fd-8645-4bc53283acef/9a157451-4d65-4ce=
+2-b3b0-d0733724f8a3.png" alt=3D"Tower"  border=3D"0" style=3D"width:100%;di=
+splay:block;max-width:296px !important;" width=3D"296"/>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                   =20
+                                </table>
+                            </td>
+                        </tr>
+                   =20
+                </table>
+            </td>
+        </tr>
+   =20
+</table>
+
+</div>
+
+                                </div>
+                           =20
+                                <div class=3D"layout-grid-cell-content layo=
+ut-grid-cell-content-mso" style=3D"            width: 600px;
+overflow-wrap:anywhere;overflow:hidden;" data-content-item-id=3D"2f224148-3=
+538-42d6-b9ca-9fbc66c0942b">
+                                    <div>
+
+<table width=3D"100%" class=3D"hide-on-mobile" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" role=3D"presentation" style=3D"width:100%;min-width:10=
+0%;box-sizing:border-box;border-spacing:0 !important;">
+   =20
+      <tr>
+        <td bgcolor=3D"transparent"  style=3D"background:transparent">
+        <table width=3D"100%" class=3D"hide-on-mobile" border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"width:100%;min-=
+width:100%;box-sizing:border-box;border-spacing:0 !important;padding-left:3=
+5px;padding-right:35px;padding-top:0px;padding-bottom:10px;">
+         =20
+            <tr>
+              <td align=3D"center">                <!--[if gte mso 9][!tonl=
+ine]>
+          <table bgcolor=3D"transparent" style=3D"padding-top:8px;padding-b=
+ottom:8px;mso-padding-alt: 8px 0px 8px 0px;">=20
+           =20
+              <tr>
+                 <td>
+                  <table align=3D"center" width=3D"530" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" role=3D"presentation">
+                   =20
+                      <tr>
+                        <td data-content-item-id=3D"2f224148-3538-42d6-b9ca=
+-9fbc66c0942b" style=3D"margin-left:0;margin-right:0;opacity:1;border-width=
+:1px 0px 0px 0px;border-color:#c4c4c4;border-style:solid;;border-bottom:non=
+e;border-left:none;border-right:none;line-height:0">&nbsp;</td>=20
+                      </tr>
+                   =20
+                  </table>
+                      </td>
+                   </tr>
+                =20
+              </table>
+                  <![endif]-->
+                <!--[if !gte mso 9]><!-->
+                <hr data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c=
+0942b" align=3D"center"
+                width=3D"100%" style=3D"margin-left:0;margin-right:0;opacit=
+y:1;border-width:1px 0px 0px 0px;border-color:#c4c4c4;border-style:solid;">
+                <!-- <![endif] hidden -->
+              </td>
+            </tr>
+         =20
+        </table>
+      </td>
+    </tr>
+ =20
+</table>
+
+</div>
+
+                                </div>
+                        </td>
+                    <td class=3D"layout-grid-section-cell displayNone" key=
+=3D"after"></td>
+                </tr>
+           =20
+           =20
+                <tr class=3D"layout-grid-row displayBlock "  style=3D"heigh=
+t:100%;" data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b">
+                    <td class=3D"layout-grid-section-cell displayNone" key=
+=3D"before"></td>
+                        <!--[if gte mso 9][!tonline]>
+                        <td class=3D"layout-grid-cell target source" colSpa=
+n=3D"6" width=3D"600" valign=3D"top" style=3D"width:600px; height:100%;vert=
+ical-align:top;padding-left:0px;padding-right:0px;padding-bottom:0px;      =
+      background-color:#FFFFFF;">
+                        <![endif]-->
+                        <!--[if !gte mso 9]><!-->
+                        <td class=3D"layout-grid-cell displayBlock target s=
+ource" colSpan=3D"6" valign=3D"top" style=3D"width:600px; height:100%;verti=
+cal-align:top;padding-left:0px;padding-right:0px;padding-bottom:0px;       =
+      background-color:#FFFFFF;" data-content-item-id=3D"2f224148-3538-42d6=
+-b9ca-9fbc66c0942b">
+                        <!-- <![endif] hidden -->   =20
+                           =20
+                                <div class=3D"layout-grid-cell-content layo=
+ut-grid-cell-content-mso" style=3D"            width: 600px;
+overflow-wrap:anywhere;overflow:hidden;" data-content-item-id=3D"2f224148-3=
+538-42d6-b9ca-9fbc66c0942b">
+                                    <div>
+<table data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D" hide-on-mobile" style=
+=3D"width:100%;border-spacing:0 !important;padding-top:0px; padding-bottom:=
+0px;box-sizing:border-box;">
+   =20
+        <tr>
+            <td>
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"  st=
+yle=3D"width:100%;border-spacing:0 !important;background-color:transparent;=
+">
+                   =20
+                        <tr>
+                            <td>                                <table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:100%;border-spa=
+cing:0 !important;height:100%;">
+                                   =20
+                                        <tr>
+                                            <td style=3D"padding-right:45px=
+;padding-top:10px;padding-bottom:10px;padding-left:45px;">
+                                                <!--[if gte mso 9][!tonline=
+]>
+                                                <div style=3D"height:100%;w=
+ord-break: break-word;mso-line-height-rule: exactly;font-family:Raleway, sa=
+ns-serif!important;font-size:16px;font-weight:500;color: #212121;background=
+-color:transparent;line-height: 120%;" class=3D"gg0l4hb">
+                                                <![endif]-->
+                                                    <!--[if !gte mso 9]><!-=
+->
+                                                    <div data-content-item-=
+id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" style=3D"height:100%;word-break=
+: break-word;mso-line-height-rule: exactly;font-family:Raleway, sans-serif!=
+important;font-size:16px;font-weight:500;color: #212121;background-color:tr=
+ansparent;line-height:1.2;" class=3D"gg0l4hb"><!-- <![endif] hidden --><p><=
+a style=3D"color:rgb( 0 , 122 , 204 );text-decoration:underline" href=3D"ht=
+tps://links.e.tower.co.nz/els/v2/7vt8d~4t6/RjRmUGlyZm4ySTBJemc3OElMMlEzckNi=
+MndrTS9OYy9DbTRWWnJKZkJ0U0tTZU1XVlpUQjBXeHR6bmpUNkJjRWthVG82dmluejJpOXRUNkx=
+mckYxcEk3NjRzUmpGN3ZSR3pGeEVwT2JyejVaVll4blN5UkJLY0J5SVlJREI4VmUS1/WmNqU29P=
+a2syUlBFd1BLSzFkeU13amJIbEttN1VaR2dCSnFRZ3FOSUdwdlRkd0JvQnZENUNBc0orRVdrcnE=
+xMAS2" name=3D"Text Link 814228350"  data-key=3D"89139bc5-cd85-453d-b8ee-75=
+c8078da17c:976a8494-a042-40f0-a373-af3f5e8c872c" target=3D"_blank" rel=3D"n=
+oopener noreferrer noopener noreferrer noopener noreferrer"><u>Privacy Stat=
+ement</u></a></p></div>
+                                            </td>
+                                        </tr>
+                                   =20
+                                </table>
+                            </td>
+                        </tr>
+                   =20
+                </table>
+            </td>
+        </tr>
+   =20
+</table>
+
+</div>
+
+                                </div>
+                           =20
+                                <div class=3D"layout-grid-cell-content layo=
+ut-grid-cell-content-mso" style=3D"            width: 600px;
+overflow-wrap:anywhere;overflow:hidden;" data-content-item-id=3D"2f224148-3=
+538-42d6-b9ca-9fbc66c0942b">
+                                    <div>
+
+<table width=3D"100%" class=3D"hide-on-mobile" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" role=3D"presentation" style=3D"width:100%;min-width:10=
+0%;box-sizing:border-box;border-spacing:0 !important;">
+   =20
+      <tr>
+        <td bgcolor=3D"transparent"  style=3D"background:transparent">
+        <table width=3D"100%" class=3D"hide-on-mobile" border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"width:100%;min-=
+width:100%;box-sizing:border-box;border-spacing:0 !important;padding-left:3=
+5px;padding-right:35px;padding-top:10px;padding-bottom:0px;">
+         =20
+            <tr>
+              <td align=3D"center">                <!--[if gte mso 9][!tonl=
+ine]>
+          <table bgcolor=3D"transparent" style=3D"padding-top:8px;padding-b=
+ottom:8px;mso-padding-alt: 8px 0px 8px 0px;">=20
+           =20
+              <tr>
+                 <td>
+                  <table align=3D"center" width=3D"530" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" role=3D"presentation">
+                   =20
+                      <tr>
+                        <td data-content-item-id=3D"2f224148-3538-42d6-b9ca=
+-9fbc66c0942b" style=3D"margin-left:0;margin-right:0;opacity:1;border-width=
+:1px 0px 0px 0px;border-color:#c4c4c4;border-style:solid;;border-bottom:non=
+e;border-left:none;border-right:none;line-height:0">&nbsp;</td>=20
+                      </tr>
+                   =20
+                  </table>
+                      </td>
+                   </tr>
+                =20
+              </table>
+                  <![endif]-->
+                <!--[if !gte mso 9]><!-->
+                <hr data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c=
+0942b" align=3D"center"
+                width=3D"100%" style=3D"margin-left:0;margin-right:0;opacit=
+y:1;border-width:1px 0px 0px 0px;border-color:#c4c4c4;border-style:solid;">
+                <!-- <![endif] hidden -->
+              </td>
+            </tr>
+         =20
+        </table>
+      </td>
+    </tr>
+ =20
+</table>
+
+</div>
+
+                                </div>
+                           =20
+                                <div class=3D"layout-grid-cell-content layo=
+ut-grid-cell-content-mso" style=3D"            width: 600px;
+overflow-wrap:anywhere;overflow:hidden;" data-content-item-id=3D"2f224148-3=
+538-42d6-b9ca-9fbc66c0942b">
+                                    <div>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"  class=3D"hide-on-m=
+obile"  data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" style=
+=3D"width:100%;border-spacing:0 !important;padding-top:0px; padding-bottom:=
+0px;padding-left:35px;padding-right:35px;box-sizing:border-box;">
+   =20
+        <tr>
+            <td>
+                <table class=3D"image-text-component" border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0"   style=3D"width:100%;border-spacing:0 !importa=
+nt;background-color:transparent">
+                   =20
+                        <tr>
+                            <td>                                <table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0"  style=3D"width:100%;border-sp=
+acing:0 !important;">
+                                   =20
+                                        <tr class=3D"display-grid">
+                                            <td data-content-item-id=3D"2f2=
+24148-3538-42d6-b9ca-9fbc66c0942b"  class=3D"displayBlock w100per" style=3D=
+"vertical-align:top;            width:200px;">
+                                                <table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0"  style=3D"width:100%;border-spacing:0 !importa=
+nt;">
+                                                   =20
+                                                        <tr>
+                                                            <td align=3D"ce=
+nter"  style=3D"padding-left:45px;padding-right:45px;padding-top:30px;paddi=
+ng-bottom:0px;">
+                                                                <a  name=3D=
+"ICNZ Fair Insurance Code Image Desktop" href=3D"https://links.e.tower.co.n=
+z/els/v2/8At7xK3F0/RjRmUGlyZm4ySTBJemc3OElMMlEzckNiMndrTS9OYy9DbTRWWnJKZkJ0=
+U0tTZU1XVlpUQjBXeHR6bmpUNkJjRWthVG82dmluejJpOXRUNkxmckYxcEk3NjRzUmpGN3ZSR3p=
+GeEVwT2JyejVaVll4blN5UkJLY0J5SVlJREI4VmUS1/" target=3D"_blank" >
+                                                                    <img cl=
+ass=3D"complex-block-img" width=3D"110" border=3D"0" style=3D"width:100%;di=
+splay:block;max-width:110px !important;" data-content-item-id=3D"2f224148-3=
+538-42d6-b9ca-9fbc66c0942b"  src=3D"https://content-ap-1.static.content-cms=
+.com/s3/3c2dbab7-d006-49fd-8645-4bc53283acef/da38f01e-df53-45c3-aa36-a341e6=
+58f4ed.png" alt=3D"Member Fair Insurance Code" />
+                                                                </a>
+                                                               =20
+                                                            </td>
+                                                        </tr>
+                                                   =20
+                                                </table>                   =
+                         </td>
+                                            <td data-content-item-id=3D"2f2=
+24148-3538-42d6-b9ca-9fbc66c0942b"  class=3D"displayBlock w100per" style=3D=
+"vertical-align:top;">
+                                                <table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0"  style=3D"width:100%;border-spacing:0 !importa=
+nt;">
+                                                   =20
+                                                        <tr>
+                                                            <td>
+                                                                <table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0"  style=3D"width:100%;border-sp=
+acing:0 !important;height:100%;">
+                                                                   =20
+                                                                        <tr=
+>
+                                                                           =
+ <td style=3D"padding-right:0px;padding-top:32px;padding-bottom:32px;paddin=
+g-left:0px;">
+                                                                           =
+     <!--[if gte mso 9][!tonline]>
+                                                                           =
+     <div style=3D"height:100%;word-break: break-word; mso-line-height-rule=
+:exactly;font-family:Raleway, sans-serif !important;font-size:16px;font-wei=
+ght:500;color:#212121;line-height:140%;" class=3D"gg0l4hb">
+                                                                           =
+     <![endif]-->
+                                                                           =
+     <!--[if !gte mso 9]><!-->
+                                                                           =
+     <div  data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" st=
+yle=3D"height:100%;word-break: break-word; mso-line-height-rule:exactly;fon=
+t-family:Raleway, sans-serif !important;font-size:16px;font-weight:500;colo=
+r:#212121;line-height:1.4;" class=3D"gg0l4hb"><!-- <![endif] hidden --><pre=
+ style=3D"color:#212121;font-family:'raleway' , sans-serif;font-size:12px;f=
+ont-weight:500"><span style=3D"font-size:14px"><strong>Member of the Fair I=
+nsurance Code</strong></span></pre><pre style=3D"color:#212121;font-family:=
+'raleway' , sans-serif;font-size:12px;font-weight:500"><br><span style=3D"f=
+ont-size:14px">Tower is a member of the Insurance Council of New Zealand (I=
+CNZ). We abide by the </span><a style=3D"color:rgb( 0 , 122 , 204 );text-de=
+coration:underline" href=3D"https://links.e.tower.co.nz/els/v2/3vtq_g0Be/Rj=
+RmUGlyZm4ySTBJemc3OElMMlEzckNiMndrTS9OYy9DbTRWWnJKZkJ0U0tTZU1XVlpUQjBXeHR6b=
+mpUNkJjRWthVG82dmluejJpOXRUNkxmckYxcEk3NjRzUmpGN3ZSR3pGeEVwT2JyejVaVll4blN5=
+UkJLY0J5SVlJREI4VmUS1/" name=3D"ICNZ Fair Insurance Code"  data-key=3D"3dd3=
+aa9c-d66d-4dfc-982f-32acb7e4e721:194becba-391a-424e-b37e-d179e5adedb7" targ=
+et=3D"_blank" rel=3D"noopener noreferrer noopener noreferrer noopener noref=
+errer noopener noreferrer noopener noreferrer noopener noreferrer noopener =
+noreferrer noopener noreferrer noopener noreferrer noopener noreferrer noop=
+ener noreferrer noopener noreferrer noopener noreferrer noopener noreferrer=
+ noopener noreferrer noopener noreferrer noopener noreferrer noopener noref=
+errer noopener noreferrer noopener noreferrer noopener noreferrer noopener =
+noreferrer noopener noreferrer noopener noreferrer noopener noreferrer noop=
+ener noreferrer noopener noreferrer noopener noreferrer noopener noreferrer=
+ noopener noreferrer noopener noreferrer noopener noreferrer noopener noref=
+errer noopener noreferrer noopener noreferrer noopener noreferrer noopener =
+noreferrer noopener noreferrer noopener noreferrer noopener noreferrer noop=
+ener noreferrer noopener noreferrer noopener noreferrer noopener noreferrer=
+ noopener noreferrer noopener noreferrer noopener noreferrer noopener noref=
+errer noopener noreferrer noopener noreferrer noopener noreferrer noopener =
+noreferrer noopener noreferrer noopener noreferrer noopener noreferrer noop=
+ener noreferrer noopener noreferrer noopener noreferrer noopener noreferrer=
+ noopener noreferrer noopener noreferrer noopener noreferrer noopener noref=
+errer noopener noreferrer noopener noreferrer noopener noreferrer noopener =
+noreferrer noopener noreferrer noopener noreferrer noopener noreferrer noop=
+ener noreferrer noopener noreferrer noopener noreferrer noopener noreferrer=
+ noopener noreferrer noopener noreferrer noopener noreferrer noopener noref=
+errer noopener noreferrer noopener noreferrer noopener noreferrer noopener =
+noreferrer noopener noreferrer noopener noreferrer noopener noreferrer noop=
+ener noreferrer noopener noreferrer noopener noreferrer noopener noreferrer=
+ noopener noreferrer noopener noreferrer noopener noreferrer noopener noref=
+errer noopener noreferrer noopener noreferrer noopener noreferrer noopener =
+noreferrer noopener noreferrer noopener noreferrer noopener noreferrer noop=
+ener noreferrer noopener noreferrer noopener noreferrer noopener noreferrer=
+ noopener noreferrer noopener noreferrer noopener noreferrer noopener noref=
+errer noopener noreferrer noopener noreferrer noopener noreferrer noopener =
+noreferrer noopener noreferrer noopener noreferrer noopener noreferrer noop=
+ener noreferrer noopener noreferrer noopener noreferrer noopener noreferrer=
+ noopener noreferrer noopener noreferrer noopener noreferrer noopener noref=
+errer noopener noreferrer noopener noreferrer noopener noreferrer noopener =
+noreferrer noopener noreferrer noopener noreferrer noopener noreferrer noop=
+ener noreferrer noopener noreferrer noopener noreferrer noopener noreferrer=
+ noopener noreferrer noopener noreferrer noopener noreferrer noopener noref=
+errer noopener noreferrer noopener noreferrer noopener noreferrer noopener =
+noreferrer noopener noreferrer noopener noreferrer noopener noreferrer noop=
+ener noreferrer noopener noreferrer noopener noreferrer noopener noreferrer=
+ noopener noreferrer noopener noreferrer noopener noreferrer noopener noref=
+errer noopener noreferrer noopener noreferrer noopener noreferrer noopener =
+noreferrer noopener noreferrer noopener noreferrer noopener noreferrer noop=
+ener noreferrer noopener noreferrer noopener noreferrer noopener noreferrer=
+ noopener noreferrer noopener noreferrer noopener noreferrer noopener noref=
+errer noopener noreferrer noopener noreferrer noopener noreferrer noopener =
+noreferrer noopener noreferrer noopener noreferrer noopener noreferrer noop=
+ener noreferrer noopener noreferrer noopener noreferrer noopener noreferrer=
+"><span style=3D"font-size:14px"><u>ICNZ Fair Insurance Code</u></span></a>=
+<span style=3D"font-size:14px">.</span></pre></div>
+                                                                           =
+ </td>
+                                                                        </t=
+r>
+                                                                   =20
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                   =20
+                                                </table>
+                                            </td>
+                                        </tr>
+                                   =20
+                                </table>
+                            </td>
+                        </tr>
+                   =20
+                </table>
+            </td>
+        </tr>
+   =20
+</table>
+
+</div>
+
+                                </div>
+                           =20
+                                <div class=3D"layout-grid-cell-content layo=
+ut-grid-cell-content-mso" style=3D"            width: 600px;
+overflow-wrap:anywhere;overflow:hidden;" data-content-item-id=3D"2f224148-3=
+538-42d6-b9ca-9fbc66c0942b">
+                                    <div>
+<table data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0"  style=3D"width:100%;border-spac=
+ing:0 !important;padding-top:0px; padding-bottom:0px;box-sizing:border-box;=
+">
+   =20
+        <tr>
+            <td>
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"  st=
+yle=3D"width:100%;border-spacing:0 !important;background-color:#001272;">
+                   =20
+                        <tr>
+                            <td>                                <table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:100%;border-spa=
+cing:0 !important;height:100%;">
+                                   =20
+                                        <tr>
+                                            <td style=3D"padding-right:70px=
+;padding-top:32px;padding-bottom:32px;padding-left:70px;">
+                                                <!--[if gte mso 9][!tonline=
+]>
+                                                <div style=3D"height:100%;w=
+ord-break: break-word;mso-line-height-rule: exactly;font-family:Raleway, sa=
+ns-serif!important;font-size:16px;font-weight:500;color: #212121;background=
+-color:#001272;line-height: 150%;" class=3D"gg0l4hb">
+                                                <![endif]-->
+                                                    <!--[if !gte mso 9]><!-=
+->
+                                                    <div data-content-item-=
+id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" style=3D"height:100%;word-break=
+: break-word;mso-line-height-rule: exactly;font-family:Raleway, sans-serif!=
+important;font-size:16px;font-weight:500;color: #212121;background-color:#0=
+01272;line-height:1.5;" class=3D"gg0l4hb"><!-- <![endif] hidden --><p style=
+=3D"text-align:center"><span style=3D"color:#ffffff">Supporting Kiwis for o=
+ver <strong>150 years</strong></span></p></div>
+                                            </td>
+                                        </tr>
+                                   =20
+                                </table>
+                            </td>
+                        </tr>
+                   =20
+                </table>
+            </td>
+        </tr>
+   =20
+</table>
+
+</div>
+
+                                </div>
+                           =20
+                                <div class=3D"layout-grid-cell-content layo=
+ut-grid-cell-content-mso" style=3D"            width: 600px;
+overflow-wrap:anywhere;overflow:hidden;" data-content-item-id=3D"2f224148-3=
+538-42d6-b9ca-9fbc66c0942b">
+                                    <div>
+<table data-content-item-id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0"  style=3D"width:100%;border-spac=
+ing:0 !important;padding-top:0px; padding-bottom:0px;box-sizing:border-box;=
+">
+   =20
+        <tr>
+            <td>
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"  st=
+yle=3D"width:100%;border-spacing:0 !important;background-color:#F5F5F5;">
+                   =20
+                        <tr>
+                            <td>                                <table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:100%;border-spa=
+cing:0 !important;height:100%;">
+                                   =20
+                                        <tr>
+                                            <td style=3D"padding-right:35px=
+;padding-top:50px;padding-bottom:50px;padding-left:35px;">
+                                                <!--[if gte mso 9][!tonline=
+]>
+                                                <div style=3D"height:100%;w=
+ord-break: break-word;mso-line-height-rule: exactly;font-family:Raleway, sa=
+ns-serif!important;font-size:16px;font-weight:500;color: #212121;background=
+-color:#F5F5F5;line-height: 150%;" class=3D"gg0l4hb">
+                                                <![endif]-->
+                                                    <!--[if !gte mso 9]><!-=
+->
+                                                    <div data-content-item-=
+id=3D"2f224148-3538-42d6-b9ca-9fbc66c0942b" style=3D"height:100%;word-break=
+: break-word;mso-line-height-rule: exactly;font-family:Raleway, sans-serif!=
+important;font-size:16px;font-weight:500;color: #212121;background-color:#F=
+5F5F5;line-height:1.5;" class=3D"gg0l4hb"><!-- <![endif] hidden --><pre sty=
+le=3D"color:#212121;font-family:'raleway' , sans-serif;font-size:12px;font-=
+weight:500"><span style=3D"font-size:11px"><strong>Important information:</=
+strong></span></pre><pre style=3D"color:#212121;font-family:'raleway' , san=
+s-serif;font-size:12px;font-weight:500"><span style=3D"font-size:11px">&nbs=
+p;</span></pre><pre style=3D"color:#212121;font-family:'raleway' , sans-ser=
+if;font-size:12px;font-weight:500"><span style=3D"font-size:11px">You are r=
+eceiving this service message because you are a current Tower customer.</sp=
+an></pre><pre style=3D"color:#212121;font-family:'raleway' , sans-serif;fon=
+t-size:12px;font-weight:500">&nbsp;</pre><pre style=3D"color:#212121;font-f=
+amily:'raleway' , sans-serif;font-size:12px;font-weight:500"><span style=3D=
+"font-size:11px">*Claims for contract works, pet, travel, lifestyle and bus=
+iness insurance cannot be lodged through My Tower</span></pre><pre style=3D=
+"color:#212121;font-family:'raleway' , sans-serif;font-size:12px;font-weigh=
+t:500"><span style=3D"font-size:11px">&nbsp;</span></pre><pre style=3D"colo=
+r:#212121;font-family:'raleway' , sans-serif;font-size:12px;font-weight:500=
+"><span style=3D"font-size:11px">If you provide any personal information, i=
+t will be collected, used, and stored in accordance with the Privacy Act 20=
+20 and Tower's Privacy Statement, which is available </span><a style=3D"col=
+or:#007acc;text-decoration:underline" href=3D"https://links.e.tower.co.nz/e=
+ls/v2/N9tLaZytw/RjRmUGlyZm4ySTBJemc3OElMMlEzckNiMndrTS9OYy9DbTRWWnJKZkJ0U0t=
+TZU1XVlpUQjBXeHR6bmpUNkJjRWthVG82dmluejJpOXRUNkxmckYxcEk3NjRzUmpGN3ZSR3pGeE=
+VwT2JyejVaVll4blN5UkJLY0J5SVlJREI4VmUS1/WmNqU29Pa2syUlBFd1BLSzFkeU13amJIbEt=
+tN1VaR2dCSnFRZ3FOSUdwdlRkd0JvQnZENUNBc0orRVdrcnExMAS2" name=3D"Privacy_Stat=
+ement_Footer"  data-key=3D"13d4b9c3-a141-4067-bcf0-edeed2f2c1ec:73f53c79-72=
+59-4aeb-918a-ddafc6186186" target=3D"_blank" rel=3D"noopener noreferrer noo=
+pener noreferrer noopener noreferrer noopener noreferrer"><span style=3D"fo=
+nt-size:11px"><u>here.</u></span></a></pre><pre style=3D"color:#212121;font=
+-family:'raleway' , sans-serif;font-size:12px;font-weight:500"><span style=
+=3D"font-size:11px">&nbsp;</span></pre><pre style=3D"color:#212121;font-fam=
+ily:'raleway' , sans-serif;font-size:12px;font-weight:500"><span style=3D"f=
+ont-size:11px">This email was sent to: </span><a style=3D"color:rgb( 0 , 12=
+2 , 204 );text-decoration:underline" href=3D"mailto:raffaellanz@icloud.com?=
+subject=3D" name=3D"Customer Email Footer"  data-key=3D"0ad23ef2-93f5-40b6-=
+8f67-93d27e616e7e:0588201c-ce37-4fae-ace5-acdc4ce555f2" target=3D"_blank" r=
+el=3D"noopener noreferrer noopener noreferrer noopener noreferrer noopener =
+noreferrer"><span style=3D"font-size:11px"><strong><u>raffaellanz@icloud.co=
+m</u></strong></span></a><span style=3D"font-size:11px">. If you believe th=
+is was sent to you in error, please </span><a style=3D"color:#007acc;text-d=
+ecoration:underline" href=3D"https://links.e.tower.co.nz/els/v2/2vtkbAGfq/R=
+jRmUGlyZm4ySTBJemc3OElMMlEzckNiMndrTS9OYy9DbTRWWnJKZkJ0U0tTZU1XVlpUQjBXeHR6=
+bmpUNkJjRWthVG82dmluejJpOXRUNkxmckYxcEk3NjRzUmpGN3ZSR3pGeEVwT2JyejVaVll4blN=
+5UkJLY0J5SVlJREI4VmUS1/WmNqU29Pa2syUlBFd1BLSzFkeU13amJIbEttN1VaR2dCSnFRZ3FO=
+SUdwdlRkd0JvQnZENUNBc0orRVdrcnExMAS2" name=3D"Contact_us_Footer"  data-key=
+=3D"cf08bcb1-4e56-4eb4-bff6-348d37da2523:47da7632-9282-4a0e-a767-bc7f2cc58d=
+3d" target=3D"_blank" rel=3D"noopener noreferrer noopener noreferrer noopen=
+er noreferrer noopener noreferrer"><span style=3D"font-size:11px"><u>contac=
+t us</u></span></a><span style=3D"font-size:11px"> to let us know.</span></=
+pre><pre style=3D"color:#212121;font-family:'raleway' , sans-serif;font-siz=
+e:12px;font-weight:500"><span style=3D"font-size:11px">&nbsp;</span></pre><=
+pre style=3D"color:#212121;font-family:'raleway' , sans-serif;font-size:12p=
+x;font-weight:500"><span style=3D"font-size:11px">&nbsp;</span></pre><pre s=
+tyle=3D"color:#212121;font-family:'raleway' , sans-serif;font-size:12px;fon=
+t-weight:500"><span style=3D"font-size:11px">=C2=A9 Tower Limited 2025</spa=
+n></pre></div>
+                                            </td>
+                                        </tr>
+                                   =20
+                                </table>
+                            </td>
+                        </tr>
+                   =20
+                </table>
+            </td>
+        </tr>
+   =20
+</table>
+
+</div>
+
+                                </div>
+                        </td>
+                    <td class=3D"layout-grid-section-cell displayNone" key=
+=3D"after"></td>
+                </tr>
+           =20
+   =20
+</table>
+<IMG src=3D"https://links.e.tower.co.nz/eos/v1/ZTMzWEZ1WVV3bEhNdVU3LzZjWisz=
+SGp2OWw0VWRDdzJPb3VDQ3RGekxaYVJrQUlldnloRlV5a3BzbXZnT252NnU3QkdoK2NjeDlneFR=
+Oajd2ODlsQTVqS2ppaEs1NDdFb1lubDJtZDFiUWZsaklnZUM5ODBnWmZuK2FSK0hBSlN0Z1E5OW=
+ZYRGdsdUhHQWdmL0pFWTE3MklSUTI5N1E0UDVZOHR1aml3bTZ1MHVXY3dzcFFPWnhNU3RmZU5GU=
+GkvS0" style=3D"display: none"></body>
+</html>
+
+
+
+------=_Part_182160_1032961546.1758656687338--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>conversation-id</key>
+	<integer>65236</integer>
+	<key>date-last-viewed</key>
+	<integer>1758945274</integer>
+	<key>date-received</key>
+	<integer>1758656696</integer>
+	<key>flags</key>
+	<integer>25770065025</integer>
+	<key>remote-id</key>
+	<string>70959</string>
+</dict>
+</plist>

@@ -1,0 +1,788 @@
+37834     
+Return-path: <Lance.ORiley@tower.co.nz>
+Original-recipient: rfc822;raffaellanz@icloud.com
+Received: from p00-icloudmta-smtpin-us-central-1n-60-percent-26 by p136-mailgateway-smtp-5675f678b9-hbbf4 (mailgateway 2542B101)
+	with SMTP id 581df16c-a5d3-4fa5-8545-67e9086a9d7c 
+	for <raffaellanz@icloud.com>; Wed, 5 Nov 2025 22:08:33 GMT
+X-Apple-MoveToFolder: INBOX 
+X-Apple-Action: MOVE_TO_FOLDER/INBOX
+X-Apple-UUID: 581df16c-a5d3-4fa5-8545-67e9086a9d7c
+Received: from mx08-0055a601.pphosted.com (mx08-0055a601.pphosted.com [185.183.31.4])
+	by p00-icloudmta-smtpin-us-central-1n-60-percent-26 (Postfix) with ESMTPS id 851E5C000A8
+	for <raffaellanz@icloud.com>; Wed,  5 Nov 2025 22:08:23 +0000 (UTC)
+X-ICL-Info: GAtbRVYDBVFFSlVHSgQCUFUKE0oWX1gHVQoPB0UBDldbSF5EVgMHTEFZAxNFfFcMFhxIOCpZWgcMORIYD1VETBYWSBkCEFAGSA0JAB1CGAEaVwgNWEJVXwcYABEZVVoOFBccNxFTWg0AHUgUF10WChAVCUoVSAZaWElWQk1RAFJEVxYHEF9FFhAdSBQXXRYSAQtbGgAADk9FSVNCGQYGU1sJFh8XQ0IHEVcFGBUQUgZIDQkAHUIYARpXCA1YXV8GSEUrMiFgBFpHNCRGTAYFJkY6VkVJdQNaQztXMU90D1YzOyczTnMDIzU0Iy4oAg5QODtXQ04DGCMgKjZFQAIYMic2Ilk3ZWIuOjYtWTt/e1w=
+X-ICL-Score: 2.33303302442
+Authentication-Results: bimi.icloud.com; bimi=none
+X-ARC-Info: policy=fail; arc=fail; id=mx.microsoft.com 1; r1=-20; r2=-18
+Authentication-Results: arc.icloud.com; arc=fail
+Authentication-Results: dmarc.icloud.com; dmarc=pass header.from=tower.co.nz
+X-DMARC-Policy: v=DMARC1; p=reject; rua=mailto:dmarc_rua@emaildefense.proofpoint.com,mailto:dmarc_agg@vali.email,mailto:dmarc-reports@tower.co.nz; ruf=mailto:dmarc-reports@tower.co.nz,mailto:dmarc_ruf@emaildefense.proofpoint.com; fo=1; ri=3600
+X-DMARC-Info: pass=pass; dmarc-policy=reject; s=r1; d=r1; pdomain=tower.co.nz
+Authentication-Results: dkim-verifier.icloud.com; dkim=pass header.d=tower.co.nz header.i=@tower.co.nz header.b=EmCykAIj
+Authentication-Results: dkim-verifier.icloud.com; dkim=fail reason="body hash did not verify" header.d=tower.co.nz header.i=@tower.co.nz header.b=TycywrAM
+Received-SPF: pass (spf.icloud.com: domain of Lance.ORiley@tower.co.nz designates 185.183.31.4 as permitted sender) receiver=spf.icloud.com; client-ip=185.183.31.4; helo=mx08-0055a601.pphosted.com; envelope-from=Lance.ORiley@tower.co.nz
+Authentication-Results: spf.icloud.com; spf=pass (spf.icloud.com: domain of Lance.ORiley@tower.co.nz designates 185.183.31.4 as permitted sender) smtp.mailfrom=Lance.ORiley@tower.co.nz
+Received: from pps.filterd (m0210312.ppops.net [127.0.0.1])
+	by mx08-0055a601.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 5A5IAsbv1117757;
+	Thu, 6 Nov 2025 11:08:20 +1300
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tower.co.nz; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=towerpp; bh=bHqvu9ec/vvsD3aZcNmIrRTN+/
+	gRJCusycWU7bYfIDM=; b=EmCykAIjZYIgfas5KwLW/vXO3wfE7YPzoDZsMn1exg
+	UAUwyvHo2HfFBcw4NO8iLBadaE6ssCKJHXYwEWWDzcStZ1whkOoIQDGGhM5jvALF
+	3E963BUp0OLngNz7kGvGXUh/GSmIf6sn/oMaDiRLsn4T+MH4eR9QOOU7mg2xFJ3S
+	n29b8SX2kbThjApIb9lAol2GqbY2UrJq+s4dTaS+zr9VB9hb0qcyE9b4RGiCbQTb
+	dOn7R62C1bvEC76le5n4XKN/s62cYar6s9wj4U3W8qWf4Trp05qT/7AMgKkgqD9w
+	41cCO6H7ulJU1Edr7GWid6ZK0S2bS3ezkVMssetk/7cw==
+Received: from sy2pr01cu004.outbound.protection.outlook.com (mail-australiaeastazon11021125.outbound.protection.outlook.com [40.107.39.125])
+	by mx08-0055a601.pphosted.com (PPS) with ESMTPS id 4a7w6r0er9-1
+	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT);
+	Thu, 06 Nov 2025 11:08:20 +1300 (NZD)
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=w07gLO9i/Bl+qF3+d43YZo1WAZcg2eNuSQhEE46PlH7NkXLWgJgZydJZUhqoecZsvXjuytsLHVKES58PY45POZofYUkQfS3Z2Zr5FspG3DIdl+kKLcmHSo44LXjkG6gVQx6iULrbY+50/3memCMQV4pDdhSgWTQpe+8KbIx+WiD8h97e0fVsLeaCC7CgXWvRwUT05uFL0bLhOmfl1emhJLWzCPTrlBE4I0+n8n61SbUW2Q5JgSD78KTLCjopJYdCrWkz0ZncPgNvbTdR0whf+Pzua6byPnAqGMd32PYnChq/TdxEMIRYIdPJL+4uoOA2W21sN94CVi3Ac5bsasM/Bw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=wxeMRSR8K+SViAmoeE7bAIMbBnjtKSYO3faYVBwCeUM=;
+ b=XzjpMZGZVymW4GBlcAUHmsfggHcQ3TZwJgEkeMUCTizfOevIKeyavQjtux2IUD4CieGa23aADN1x3oEbyBBKMvtCpw1JInYlPr8VT7SY4NM/GizISASo/ANX4iymCqsVXaMXSUE0Y/U5rrhmPZnWlifEMN3OrdFUvb3VP+x//XCo8aJ1Pd4sPoQJ5liNEx7lJiBr2DQFaVsgsrX2B9vwWWgJS2F/BVi6/8eR+dqqPPz5UA1D1P/TVosnjCV1e4W3qMLZZcdQof15bFZDuc3kxVDqBHUYbWLfi7BFh4y/45qgDsBsM6aq4LfITyybUlPNP1yxmo/Hx6WNzN7mbcVcLw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=tower.co.nz; dmarc=pass action=none header.from=tower.co.nz;
+ dkim=pass header.d=tower.co.nz; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tower.co.nz;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=wxeMRSR8K+SViAmoeE7bAIMbBnjtKSYO3faYVBwCeUM=;
+ b=TycywrAM1B8NTka052jz6zpuFBMktP64S8BPRhy2jNRjV7MKC+2yw1Q9TLHParPkiuaq4vaATVZoLyQYwG9KzLti0ZtRQiOnT86DjnsSsTpHThRcoQSK3r+7P+UeI6rchIyW3LJjF919KDZHg+Fxxu46ayhZ7DrUCgeCk0dXuZo=
+Received: from MEYP282MB1463.AUSP282.PROD.OUTLOOK.COM (2603:10c6:220:c1::15)
+ by SY4P282MB0732.AUSP282.PROD.OUTLOOK.COM (2603:10c6:10:a5::16) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9298.12; Wed, 5 Nov
+ 2025 22:08:13 +0000
+Received: from MEYP282MB1463.AUSP282.PROD.OUTLOOK.COM
+ ([fe80::36cf:2aa4:1b42:bc8e]) by MEYP282MB1463.AUSP282.PROD.OUTLOOK.COM
+ ([fe80::36cf:2aa4:1b42:bc8e%5]) with mapi id 15.20.9298.010; Wed, 5 Nov 2025
+ 22:08:12 +0000
+From: Lance O'Riley <Lance.ORiley@tower.co.nz>
+To: "raffaellanz@icloud.com" <raffaellanz@icloud.com>,
+        Claims
+	<Claims@tower.co.nz>
+CC: Abigail Collin <Abigail.Collin@wynnwilliams.co.nz>,
+        Richard Hargreaves
+	<Richard.Hargreaves@wynnwilliams.co.nz>,
+        Zach Pion <Zach.Pion@tower.co.nz>
+Subject: RE: Overdue Temporary Accommodation Refund - Action Required ASAP
+Thread-Topic: Overdue Temporary Accommodation Refund - Action Required ASAP
+Thread-Index: AQHcTpt5ctqL2iaTUUaFfKQtwvS6i7Tko94A
+Date: Wed, 5 Nov 2025 22:08:12 +0000
+Message-ID:
+ <MEYP282MB1463D3C021E586B1F7D94FBAD6C5A@MEYP282MB1463.AUSP282.PROD.OUTLOOK.COM>
+References: <2BFB86C2-669F-F344-BA71-C609BD06353B@hxcore.ol>
+In-Reply-To: <2BFB86C2-669F-F344-BA71-C609BD06353B@hxcore.ol>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: yes
+X-MS-TNEF-Correlator:
+msip_labels:
+ MSIP_Label_b473d1de-6c91-4122-90ca-30dd6cc17832_Enabled=True;MSIP_Label_b473d1de-6c91-4122-90ca-30dd6cc17832_SiteId=ff85220d-ac35-48f0-b12a-0ca11f170147;MSIP_Label_b473d1de-6c91-4122-90ca-30dd6cc17832_SetDate=2025-11-05T22:08:09.0000000Z;MSIP_Label_b473d1de-6c91-4122-90ca-30dd6cc17832_Name=Sensitive
+ -
+ External;MSIP_Label_b473d1de-6c91-4122-90ca-30dd6cc17832_ContentBits=3;MSIP_Label_b473d1de-6c91-4122-90ca-30dd6cc17832_Method=Privileged
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: MEYP282MB1463:EE_|SY4P282MB0732:EE_
+x-ms-office365-filtering-correlation-id: 9eadc9bf-d26e-49f8-134c-08de1cb7d016
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam:
+ BCL:0;ARA:13230040|376014|366016|1800799024|38070700021|8096899003|4053099003|4013099003|7053199007;
+x-microsoft-antispam-message-info:
+ =?utf-8?B?SlByZFhqaWRDSzFXN1ZjbUZ6ZHVRQytaNk80bHpkbGJxK2NaWXVoSXFYMUpJ?=
+ =?utf-8?B?dE5XREJNcVZhaG9uQUNOZFFNcm9iRTFPNHhaUjF0bjhJNW4yeEpDZjIvRFBG?=
+ =?utf-8?B?ZnAzN3lqbEN2Y3V1VlBGS2xIVjgwSnNhZWkyV3hiVzA1SUNjUFF4eHJFcjhk?=
+ =?utf-8?B?YUZWMkxvendiOC8vUVNVWk91cVpKUXVzYjQydHVURFQ2dU93cEZwSklvTlY2?=
+ =?utf-8?B?VXZJSGVMaTg4TnNPT21YWTZjVEhJYVZXangwanlOOGNzaHlaN01qcDhISlhG?=
+ =?utf-8?B?TE40RFZXbm0wR0VDWURIU252b1poVDhvMy9qTGN3bFFLMkdFUmNhK090QkVK?=
+ =?utf-8?B?ekNCUEozMlh6YnErWlVOYm1nOGt3RWRSSUxsZm9yZVI3cHVwSGl4MytDOVRN?=
+ =?utf-8?B?V0ZnMHZRc094TmJLNkY1a0toUGVqSXZlYjYrVTkzWVp2TkhNcWpnTWhWVnhP?=
+ =?utf-8?B?SjBMcUFFemhvd1drQ2QxeDlWK1R2MnQzYkpVOWRmZkxaYmU0SU56bURSNS9D?=
+ =?utf-8?B?NFVzQmpwSzVUUk5rZGJDN3o1S1JrRzBPVXdTczdxNzhpeGR1aVIybmRmbVBX?=
+ =?utf-8?B?c1dqeDJCcmR1YW1CSGU1TkQ3U1NmaG1ZLzA0N0ZveGY2SmF3ck5zTzBKT0hy?=
+ =?utf-8?B?UlpEUk5VdTBlUnZqaWp2U2dLUkxGbVhDa1JRV0dadmdOL1pwMFpYL0VEa2x1?=
+ =?utf-8?B?ajA2NStuMlpGcjdZOHFBNHJWa3cyK1VqKzNUMTgvaU5TamRYSUZEd0l3dWVZ?=
+ =?utf-8?B?bjBoTGl0TXdZQm5qSit1eWtBWFBNK05LU2FFVWpqcER6T0F4NWJvNU11WkFY?=
+ =?utf-8?B?SzVQeTJ5NTdkMnVBOGRwTGFXS1lvclVGOUwranFYTG1zOEREWjdjSTlzN1pn?=
+ =?utf-8?B?aCtkWWRROG04T2ZYOG1IMXI0Zi9td3JFMVdRa0tFT3RER2Y3bUFtSkNPem5J?=
+ =?utf-8?B?NzZ4TnVIcTJ6K3JzaXQrbU1DaTllMlhreitFMnRVRXpWQ1hwRTVBYkFJOVJr?=
+ =?utf-8?B?dEg4Mlpla0QwTkVHUTZVdmhuTkFLSmVDUFJYckFsYzI5dzdHVXR0bUJDR092?=
+ =?utf-8?B?c1BXM01zQ1BzYXRFaHFseTJoSy9Xa3MrTmk1VkdBU3EycHhHSG1BNkVaMldK?=
+ =?utf-8?B?TC9LZjVvZU9DYTNrSHk4UEo5aEhiWjRuUVJEMVJSdTQ0VVZNNVh1Vkl6UkEz?=
+ =?utf-8?B?Z1BrZGo0UlM4OWRhNjNCNUlVQ1pzWnViaHpPY0d1bXhoam9TMkh0ellPZTJu?=
+ =?utf-8?B?OTJMTFg5blg5Q3NmcCszNUJKVk9oMzFzM2VwTTRnM2NtMjQxZnpDM3VRdUZs?=
+ =?utf-8?B?clUyREJna3JWR3R3Q2UzZm1CSmI5MmhyWk54ekp3Z1dsZ1FDellubFJJMXpS?=
+ =?utf-8?B?bmNwVE9DVkdEa01UZjZKenBDSVFRVUlCbE1BYXVtWTE0TTV1djlPNG9rTWQ3?=
+ =?utf-8?B?NUh0bWt3SXJnWGlYQWtyNloyNHlOVUJZakVpalVYYUl5a1FtcFp6OWpHQVNM?=
+ =?utf-8?B?cytPMjhacmE0Q09XT2J1QmlxdWk1NURubGh2ZzFRdDBhUTNCZ1lySkd0RU8z?=
+ =?utf-8?B?M3cxVXFOcHIycm0zc2RCbjg4NCtXSi9hRDFxMVI4Q1IvaERHOXRYNllJd2Fs?=
+ =?utf-8?B?NWFOSHliSjZVWSs5ZWh0NVNDNFE4ZmdKZmk2MFRJSGgxeFlISm9GZis2ZHZZ?=
+ =?utf-8?B?MGl5NTgvaStFMjdsWU5WL1I3QTl2bjNhS290VGNPOTFYU25SamNXZE43dmJa?=
+ =?utf-8?B?Y2UxOEtINkVMdzNvaXVSeVQyb2E5WkN6aXVrb0o2MVVwUjJwT2M4a3UwVkpz?=
+ =?utf-8?B?Unh5bk5yS2R6RGdHdzhNTjl2VXg3NGNMOHhkL3BsZG5sWENDTkoxNXo5ZDRw?=
+ =?utf-8?B?VFFIVHorL3V5bDd3emdsRXArcmtHalppaUJCYUU4UDBKMFkyRXJ3U0RPZHFT?=
+ =?utf-8?B?R3loa1krVXFGd2llRFB3c29oNGdYbDk4S1lvSHI2Q0JVOXYyTkc0QjU0V2Vr?=
+ =?utf-8?Q?s5d881FcIo74hQm4OYs/EGmScO0pQs=3D?=
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:MEYP282MB1463.AUSP282.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(376014)(366016)(1800799024)(38070700021)(8096899003)(4053099003)(4013099003)(7053199007);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0:
+ =?utf-8?B?S2xCdmdNQ3RQM2tOa1VSMExRWW5DaFM2NFB0QUc1UmxWRGNUdlMyT0lQYjBS?=
+ =?utf-8?B?bDh5cEVpbVNYSXYzWFdkcER2RGZBWHB0ZWljZk9QK21PaUlQcnZ0ZyswdkZ5?=
+ =?utf-8?B?VmtCTHVmWitxM1E0VTYveXQ2TmEreHdFTE8ycnl0M3pzSmVNY3NRWGRjNlN4?=
+ =?utf-8?B?VE1UL01hbUR5WjZvSmh2eWhuaUtiUFQ5a1dxU21aV1ZNMWZGWlo1eU1GTkoy?=
+ =?utf-8?B?TzZPTCtES2VucmNVUWYzZi9sUndSQTlMOVBWRFRqbklXVnRDRkNYOFRHYTd3?=
+ =?utf-8?B?eFZ6MkZoaThXVXhQVDFycmtBVHZLK3h2MzR2Z0hIQVFrcCtNWlg2SW8vR2tl?=
+ =?utf-8?B?OE1hckViVnQvYVdTd29qSmU1bnd3VDZXbjlkU1EwcTYrczVhSG5YT3NYQ1dI?=
+ =?utf-8?B?anIvUSt3aFV6cU1MRHJFbDhOMnY2S1QzUWtta3YwTS9hNmhXR1YyNGFXU2dm?=
+ =?utf-8?B?U2FHZ3JlZlJRc202ZGt2dnNMc3craXlSQ3ducG03UllaUGRYY1ZjYm1SeG94?=
+ =?utf-8?B?MXRzQ2k1ZjdueUpWSDhDbHZHZ0lhQTI0Zy9TaGovczJEUlVYdHJ3aU0vVFEv?=
+ =?utf-8?B?VWo3UVlNSUZHYlhqdFdWTTNGN2xaNmtQWlFzWGZrcEJPU0JrbkJzTFUxYmNU?=
+ =?utf-8?B?c1RlZW8vNXU3OFpDWm5UNkVsQk1lRDB0eEtka3ZJY004NWpJQXl6cjdxRWl4?=
+ =?utf-8?B?MHZhR3o2RTB4ME9UWlNidjQ1OUJhdm9scG1MQXBTbnd3N3dUVmVodDZ1b3Zq?=
+ =?utf-8?B?UEtJVGZhZlZoTFNUd0VrVE1Fb0tGU2d1YmQvSkpJSWxjblgyajlOc3BUbHlV?=
+ =?utf-8?B?NU10K0E1ZHluR1ppZzhkeENlQU1RQ0NvT241aExjTXl3OHJ4c2dGMjFVbFVL?=
+ =?utf-8?B?Q0FYZTVtMGdMMmgzRm5aQk5keVVJbXhScTRMcnR2a2k4ck9hdnkvVmlmc2d1?=
+ =?utf-8?B?U1E0RDBtcVFEV2dkeGRXYktjSzNBK25TSEN2UndMWTh0MmpkcFNxTDlvd2Jh?=
+ =?utf-8?B?WmJOTytjNHZhV3U1NFJpSUxjUmxGaHRQb1I0encyMy85dWw0bmZNUWRhekY0?=
+ =?utf-8?B?WVh4bHJtZUgyQW9DdmVjRFcyWDJhN1liVXVPR3lNMUhiT01TU24yZHJmVjhH?=
+ =?utf-8?B?OURvVDlqbG5RK2dHYkpRTFhiZ2dMSkxhY0ZxWklTQ3lBTit0Vm1FejIzZGZU?=
+ =?utf-8?B?T1hUT3liS2NUQTdCdWNKMlc2bXRESnhHdmR3dGorNUVJMTMwOUl5K1E2SmpX?=
+ =?utf-8?B?bWcwbU1LS1pTTGxNY2tWZDVuMTRXd3FQTmxRak9zTHlrSVFyK1pBQXUxYlV6?=
+ =?utf-8?B?b1FpUzdDc25VM2p4NjRHZGVXZSsrYmJ1UnJVQnNyZ0o2T0NPSjNTV29GdVM2?=
+ =?utf-8?B?a005TDVaRE9NUStteU1aRXc4VnhGbDZqWmt1ZjF4eWdHVnRlYklXbEFQcWtw?=
+ =?utf-8?B?MUVZWHBlSitSdUtoZGxUZkRCcE5sR0NDT3RuTW0rM1JGdFJ1Rmh5ZllMbXVp?=
+ =?utf-8?B?c1NZTnc1ZEluUXRFZUJLRmh3ZzZTaytKUUZGaWJIaDQ1U1loUURGdTZRZUVX?=
+ =?utf-8?B?NytCbVA3aVNFVUpzUU43bHRBOEpjeklGT2FoZTBSUm1KS0ZCY0lVeDN1V3Iv?=
+ =?utf-8?B?RWYyMkpxUTNYRmQzajdhZ200RUIyNVlRVXZkRFhPcVVmN1dHMGJXQ1poRmhC?=
+ =?utf-8?B?TWc2ZTM2c2thN2lxR2JXMFNjRmVXelZGMmROMUwxd1U4MVFsdWxnRXE0UEZk?=
+ =?utf-8?B?UEZDbklKcmdkOUhzVy8vd2NBaDVDL01uNGVFSVZOZlR3OTZ0U3MxcGt4dTNv?=
+ =?utf-8?B?aGhQSXhDbDhMdll2WkJ4MENpWmllTGY2RHpXR0RyMDZ4TW0xZTA3OTdYRWE4?=
+ =?utf-8?B?ZUlLQzE0Ykprcyt1SGE1QWxoUXk1YVlTdEdRMjZqUzNsYXNHRVZQcG9KK2lQ?=
+ =?utf-8?B?OFV3N2pLa3ptSEd4eGxWTXRxcmduSEdydEhiWG0wK1ZIbnF5TTVpdkdmMlBr?=
+ =?utf-8?B?cFh6dTVZYkN1Yk5UYzltSWRiL2NFSW0rUFpUOExPcEl0M0JWS3hpY3BTWVRC?=
+ =?utf-8?B?SkR3SDMyQXoxQXVoOXZpcXNGb0FQRWdUbSs5U05sQ0xNUjB2dzlzMS9DcXcw?=
+ =?utf-8?Q?MC4RvVFHiBtnKN1zEH9XjseRU?=
+Content-Type: multipart/related;
+	boundary="_005_MEYP282MB1463D3C021E586B1F7D94FBAD6C5AMEYP282MB1463AUSP_";
+	type="multipart/alternative"
+MIME-Version: 1.0
+X-OriginatorOrg: tower.co.nz
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: MEYP282MB1463.AUSP282.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-Network-Message-Id: 9eadc9bf-d26e-49f8-134c-08de1cb7d016
+X-MS-Exchange-CrossTenant-originalarrivaltime: 05 Nov 2025 22:08:12.8506
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: ff85220d-ac35-48f0-b12a-0ca11f170147
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: KLzZBuvUN42Li/jVoZnmBuw9MadCF2EHDJjyZiYR7qmCHJLlpRsfANgOnbOys0675jxcKTRh2+RkCzRVbqmOJRHIY4hVhvmPdVFuCb0apzM=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SY4P282MB0732
+X-MANTSH: 1TFkXGxoaHxEKWUQXbm9ARnNmZR4FT3sRCllNF25PRkNcT1gRCl9ZFxkZEhEKX00
+ XZEVETxEKWUkXHR9xGwYbHxp3BhMaBhwaQhgbBhoGHRkGGnEaEBp3BhoGGxoGGRoGGgYaBhpxG
+ hAadwYaEQpZXhdsbHkRCkNOF255QUEHUEt6fk5hT3tGRmt6XUAZexhMYXMTZWYeRUVEEQpYXBc
+ ZBBoEHx4FGxoaBBIYBB4YBBgdEBseGh8aEQpeWRdNe30TGREKTVwXGx4dEQpMWhdoaU1raxEKT
+ EYXb2tra2xNaxEKQ1oXGxIfBBsSGQQZGwQeEQpCXhcbEQpEXhcZEQpESRcZEQpCXBcbEQpeThc
+ bEQpCSxdgbR8Yc3p5bHpPUhEKQkkXYG0fGHN6eWx6T1IRCkJFF3oFRh5dHnBEU21sEQpCThdgb
+ R8Yc3p5bHpPUhEKQkwXYlAFXGFtfhNnc0ERCkJsF2lMekNBTx1FcGIYEQpCQBdkBWhCQgEbHxl
+ 6WhEKQlgXYkZpTEkTW0lYemURCk1eFwcbEQpwZxdpXktjeXpBQ3BTaBAHGRoRCnBoF3pkbHptS
+ Fpcb11LEAcZGhEKcGgXZFISe3lGb3hOfFgQBxkaEQpwaBdiE199aFlaWB9gexAHGRoRCnBoF2t
+ FT0hBQH5pfUZiEAcZGhEKcGgXaBlGZU14f3pfexIQBxkaEQpwaBdiZl1AWFB5bX5IHRAHGRoRC
+ nBoF25AQEgFHGdmT1lnEAcZGhEKcGgXaGwTGQVkRlhmAUgQBxkaEQpwfxdhemQfexxeYgF5RRA
+ ZGhEKcF8XbW5iaxJDW2VaaEwQBxkaEQpwfRdoW3AZbWh7BQVpSRAHGRoRCnBnF2VzRlpMYx5hY
+ XBuEAcZGhEKcGcXbVpwBV5IZVxGa3kQBxkaEQpwZxdleFlwZFgbH2J9XBAHGRoRCnBnF2ROZHl
+ 7a3NOX0ddEAcZGhEKcGcXekZ9aH5kH0tZb0IQBxkaEQpwfRdoW3AZbWh7BQVpSRAHGRoRCnBjF
+ 2sbTk1YYWEcEklCEAcZGhEKcGMXZntvUlxbAURNeFsQBxkaEQpwbBdnWEIdHmkTE3x8axAHGRo
+ RCnBDF2IaREtTQFJdXExfEBkaEQptfhcHGxEKWE0XSxE=
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMTA1MDE3NSBTYWx0ZWRfX78fDOZBcmawK
+ 3kPqkCSO71aNL2n4LL/Wp2+POe8j9fUWSym92Z5zst4J5hIlwRMkZAucCFF1bjZAHFNKLnyBDWo
+ 1V7XYaSrmu4Op+Ok0Ooi2HMav0//XBhTPr7c3RyjOIai/pQgEWqjTISqlRq5Jg1GqgUyWRH+H5t
+ 1gEuvg4I7zd59R0orYzofkQuwow8w5Mxyl6M+BooEv6qifWpaegRU2X9SLNhryBsdakN/eiInsQ
+ R7Zs0JhPff62mBfxbLQf9vGlvZumA63qzDzgNcyEWfo1HdWsqwFbGsvo9UJqkhRdnM6vcZfLYhZ
+ W6NCwbvkDgCHwskAhWb
+X-Proofpoint-GUID: DSkk-zaPTdKeQllAPwj3Q2fKY9OL4oon
+X-Proofpoint-ORIG-GUID: DSkk-zaPTdKeQllAPwj3Q2fKY9OL4oon
+X-JNJ: AAAAAAAB/NuIzZ9jyGFqRxPHihb+ifvPwI5hnpMYqNaBfGEY4CEgo8rKqbx4gzjkVytp2sC5YoH3mYcXmEI8fRTt9cN+eXnF6H5O7jnrTTeEv60fzZoOs85k46zkGX48jQWp3MtLcfdtYRdicCB37MuJF97GoFdO4yc797loooKc0jKVSppuee4zSWivGhNRH5NWDtPwTpgvw+kuMNUFpPFBQwhDM/Wc2d84ComhjWE/w1N3qeo7rPhAOIMUyua1nWQf7wxHF7mTNMAB5MLpshgEOFDomAu3zPqdHW4U6XV+bmYrnSyu+wwfH5aXhS9Fb2kOHQUq2/dErrj0yV016ZSOd/+VMxJvH+zNwwc9LYqLG8Hc3fKrRHGSF8g1y9pT4aHb/ASLr31dAab8lza4m11WIQEgjjSyEwq3tTlRredLhGo36kP29htPbtNZBEtIdFEjzH8w9OKbmGn/oirQKuwnSF0qeUn4jsKXvauR2DKVmhqDnRgAZD6NwrEzQku4Y9SlS5zQSFt7AHSEO1ZsHSE9l6ie5rmu4JtTBnJeqaps0oHgcZZDdDki5OqykS4sr9U0cwYZjkFM0mYWJlymsRwUuYd2O4N5z3ApuRBAd9C6FqwHDQEg+jL2KJu+Cxwq+OWugffHpJhXz81XQU773omffwH0c6dVyXGCzsMbjNrXO+tbHuJJlUrvWJg+qdf/qzeNlyXlrEEjMMliff8sxJquMobwW0erZ1O1m7nCGF6G+sqmXhY5QWhEhAv0
+
+
+--_005_MEYP282MB1463D3C021E586B1F7D94FBAD6C5AMEYP282MB1463AUSP_
+Content-Type: multipart/alternative;
+	boundary=_000_MEYP282MB1463D3C021E586B1F7D94FBAD6C5AMEYP282MB1463AUSP_
+
+
+--_000_MEYP282MB1463D3C021E586B1F7D94FBAD6C5AMEYP282MB1463AUSP_
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=utf-8
+
+Hi Raffaella,
+
+My apologies for the slow action on this, I will review today for you and s=
+end a response once actioned.
+
+Kind Regards
+Lance
+[cid:image001.png@01DC4F0D.A2B17420]
+Lance O=E2=80=99Riley
+Team Leader - Claims
+0800 808 808 | 09 369 0598
+Level 5, 136 Fanshawe Street,
+PO Box 90347, Auckland 1142
+[Text    Description automatically generated with low confidence]
+Fair Insurance Code
+Tower is a member of the Insurance Council of New Zealand (ICNZ).
+We abide by the ICNZ Fair Insurance Code<https://www.icnz.org.nz/fair-insur=
+ance-code/>.
+
+
+
+
+
+
+Classification: Sensitive
+From: raffaellanz@icloud.com <raffaellanz@icloud.com>
+Sent: Thursday, 6 November 2025 10:31 am
+To: Lance O'Riley <Lance.ORiley@tower.co.nz>; Claims <Claims@tower.co.nz>
+Cc: Abigail Collin <Abigail.Collin@wynnwilliams.co.nz>; Richard Hargreaves =
+<Richard.Hargreaves@wynnwilliams.co.nz>; Zach Pion <Zach.Pion@tower.co.nz>
+Subject: Overdue Temporary Accommodation Refund - Action Required ASAP
+Importance: High
+
+Hi Lance / Tower Claims, I=E2=80=99m writing about my temporary accommodati=
+on refund submitted on 9 October 2025 under the content insurance claim, wh=
+ich remains unpaid. On 2 September 2025, Tower confirmed the remaining amou=
+nt under my temporary accommodation
+
+Hi Lance / Tower Claims,
+
+I=E2=80=99m writing about my temporary accommodation refund submitted on 9 =
+October 2025 under the content insurance claim, which remains unpaid.
+
+On 2 September 2025, Tower confirmed the remaining amount under my temporar=
+y accommodation benefit was $13,820.62. As at 6 November 2025 (20 business =
+days since my submission), I have received no acknowledgement, no payment, =
+and no progress update, despite repeated follow-ups. While previous refunds=
+ of the same were acknowledged within about 3 business days and paid prompt=
+ly.
+
+In line with my policy commitment to prompt payment and the Fair Insurance =
+Code obligations for timely communication, please:
+
+  *   Process immediate payment of the temporary accommodation expenses sub=
+mitted on 9 October 2025; and
+  *   Confirm the payment date
+Please also confirm in writing that, going forward, Tower will acknowledge =
+each accommodation refund request within 10 business days, and pay promptly.
+
+Kind regards,
+Raffaella del Prete
+
+
+
+________________________________
+
+The information contained in this email message is confidential and may be =
+legally privileged. If you are not the intended recipient, please note that=
+ any use, dissemination, distribution, or reproduction of this message in a=
+ny form whatsoever, is strictly prohibited. If you received this email in e=
+rror, please notify me by return email, delete your copy, and accept my apo=
+logies for any inconvenience caused. Please note that your receipt of this =
+email from a Tower email address does not constitute our consent for you to=
+ send any other electronic information to Tower by return, unless specifica=
+lly stated otherwise.
+
+--_000_MEYP282MB1463D3C021E586B1F7D94FBAD6C5AMEYP282MB1463AUSP_
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=utf-8
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micr=
+osoft-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:x=3D"urn:schemas-microsoft-com:office:excel" xmlns:m=3D"http://schema=
+s.microsoft.com/office/2004/12/omml" xmlns=3D"http://www.w3.org/TR/REC-html=
+40">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<meta name=3D"Generator" content=3D"Microsoft Word 15 (filtered medium)">
+<!--[if !mso]><style>v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style><![endif]--><style><!--
+/* Font Definitions */
+@font-face
+	{font-family:Helvetica;
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+@font-face
+	{font-family:"Segoe UI";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;
+	mso-ligatures:standardcontextual;}
+span.EmailStyle20
+	{mso-style-type:personal-reply;
+	font-family:"Aptos",sans-serif;
+	color:windowtext;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:10.0pt;
+	mso-ligatures:none;}
+@page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+/* List Definitions */
+@list l0
+	{mso-list-id:1077627872;
+	mso-list-template-ids:1077174156;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1
+	{mso-list-id:1083649606;
+	mso-list-template-ids:-198526860;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l1:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+--></style>
+</head>
+<body lang=3D"EN-NZ" link=3D"#467886" vlink=3D"#96607D" style=3D"word-wrap:=
+break-word">
+<div class=3D"WordSection1">
+<p class=3D"MsoNormal"><span style=3D"mso-fareast-language:EN-US">Hi Raffae=
+lla, <o:p>
+</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"mso-fareast-language:EN-US"><o:p>&nbs=
+p;</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"mso-fareast-language:EN-US">My apolog=
+ies for the slow action on this, I will review today for you and send a res=
+ponse once actioned.
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"mso-fareast-language:EN-US"><o:p>&nbs=
+p;</o:p></span></p>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-top:2.0pt;mso-margin-bottom-alt:auto=
+;line-height:115%;background:white">
+<span style=3D"color:#151515;mso-ligatures:none">Kind Regards</span><span s=
+tyle=3D"mso-ligatures:none"><o:p></o:p></span></p>
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:2.0pt;margin-right:0cm;m=
+argin-bottom:15.0pt;margin-left:0cm;line-height:115%;background:white">
+<span style=3D"color:#151515;mso-ligatures:none">Lance&nbsp;</span><span st=
+yle=3D"mso-ligatures:none"><o:p></o:p></span></p>
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" width=3D"599" style=3D"width:449.25pt;border-collapse:collapse">
+<tbody>
+<tr style=3D"height:97.5pt">
+<td width=3D"191" colspan=3D"2" style=3D"width:143.25pt;padding:0cm 5.4pt 0=
+cm 5.4pt;height:97.5pt">
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto"><span style=3D"font-family:&quot;Segoe UI&quot;,sans-serif;color:b=
+lack;mso-ligatures:none"><img width=3D"175" height=3D"123" style=3D"width:1=
+.8229in;height:1.2812in" id=3D"Picture_x0020_1" src=3D"cid:image001.png@01D=
+C4F0D.A2B17420"></span><o:p></o:p></p>
+</td>
+<td width=3D"408" colspan=3D"2" style=3D"width:306.0pt;padding:0cm 5.4pt 0c=
+m 5.4pt;height:97.5pt">
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto;line-height:18.0pt">
+<b><span style=3D"font-size:10.0pt;font-family:&quot;Arial&quot;,sans-serif=
+;color:#001272">Lance O=E2=80=99Riley</span></b><span style=3D"font-family:=
+&quot;Segoe UI&quot;,sans-serif;color:black"><br>
+</span><span style=3D"font-size:9.0pt;font-family:&quot;Arial&quot;,sans-se=
+rif;color:#001272">Team Leader - Claims
+</span><span style=3D"font-family:&quot;Segoe UI&quot;,sans-serif;color:bla=
+ck"><br>
+</span><span style=3D"font-size:9.0pt;font-family:&quot;Arial&quot;,sans-se=
+rif;color:#001272">0800 808 808 | 09 369 0598</span><span style=3D"font-fam=
+ily:&quot;Segoe UI&quot;,sans-serif;color:black"><br>
+</span><span style=3D"font-size:9.0pt;font-family:&quot;Arial&quot;,sans-se=
+rif;color:#001272">Level 5, 136 Fanshawe Street,</span><span style=3D"font-=
+family:&quot;Segoe UI&quot;,sans-serif;color:black"><br>
+</span><span style=3D"font-size:9.0pt;font-family:&quot;Arial&quot;,sans-se=
+rif;color:#001272">PO Box 90347,&nbsp;Auckland&nbsp;1142</span><o:p></o:p><=
+/p>
+</td>
+</tr>
+<tr style=3D"height:15.0pt">
+<td width=3D"71" style=3D"width:53.25pt;padding:0cm 5.4pt 0cm 5.4pt;height:=
+15.0pt">
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto;text-align:justify">
+<span style=3D"font-family:&quot;Segoe UI&quot;,sans-serif;color:black;mso-=
+ligatures:none"><img width=3D"54" height=3D"57" style=3D"width:.5625in;heig=
+ht:.5937in" id=3D"Picture_x0020_2" src=3D"cid:image002.png@01DC4F0D.A2B1742=
+0" alt=3D"Text
+
+Description automatically generated with low confidence"></span><o:p></o:p>=
+</p>
+</td>
+<td width=3D"364" colspan=3D"2" style=3D"width:272.9pt;padding:0cm 5.4pt 0c=
+m 5.4pt;height:15.0pt">
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto;line-height:13.8pt">
+<b><span style=3D"font-size:7.0pt;font-family:&quot;Arial&quot;,sans-serif;=
+color:#001272">Fair Insurance Code</span></b><span style=3D"font-family:&qu=
+ot;Segoe UI&quot;,sans-serif;color:black"><br>
+</span><span style=3D"font-size:7.0pt;font-family:&quot;Arial&quot;,sans-se=
+rif;color:#001272">Tower is a member of the Insurance Council of New Zealan=
+d (ICNZ).</span><span style=3D"font-family:&quot;Segoe UI&quot;,sans-serif;=
+color:black"><br>
+</span><span style=3D"font-size:7.0pt;font-family:&quot;Arial&quot;,sans-se=
+rif;color:#001272">We abide by the
+</span><u><span style=3D"font-size:7.0pt;font-family:&quot;Arial&quot;,sans=
+-serif;color:blue"><a href=3D"https://www.icnz.org.nz/fair-insurance-code/"=
+><span style=3D"color:blue">ICNZ Fair Insurance Code</span></a></span></u><=
+span style=3D"font-size:7.0pt;font-family:&quot;Arial&quot;,sans-serif;colo=
+r:#001272">.&nbsp;</span><o:p></o:p></p>
+</td>
+<td width=3D"164" style=3D"width:123.1pt;padding:0cm 5.4pt 0cm 5.4pt;height=
+:15.0pt">
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto;text-align:justify">
+<span style=3D"font-size:8.0pt;font-family:&quot;Arial&quot;,sans-serif;col=
+or:#001272">&nbsp;</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style=3D"height:1.5pt">
+<td width=3D"71" style=3D"width:53.25pt;padding:.75pt .75pt .75pt .75pt;hei=
+ght:1.5pt">
+</td>
+<td width=3D"120" style=3D"width:90.0pt;padding:.75pt .75pt .75pt .75pt;hei=
+ght:1.5pt">
+</td>
+<td width=3D"244" style=3D"width:182.9pt;padding:.75pt .75pt .75pt .75pt;he=
+ight:1.5pt">
+</td>
+<td width=3D"164" style=3D"width:123.1pt;padding:.75pt .75pt .75pt .75pt;he=
+ight:1.5pt">
+</td>
+</tr>
+</tbody>
+</table>
+<p class=3D"MsoNormal"><span style=3D"mso-ligatures:none">&nbsp;<o:p></o:p>=
+</span></p>
+<p class=3D"MsoNormal">&nbsp;<o:p></o:p></p>
+</div>
+<p class=3D"MsoNormal"><span style=3D"mso-fareast-language:EN-US"><o:p>&nbs=
+p;</o:p></span></p>
+<br>
+<p style=3D"font-family:Calibri;font-size:10pt;color:#000000;margin:5pt;fon=
+t-style:normal;font-weight:normal;text-decoration:none;" align=3D"Center">
+Classification: Sensitive<br>
+</p>
+<div style=3D"border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0cm =
+0cm 0cm">
+<p class=3D"MsoNormal"><b><span lang=3D"EN-US" style=3D"font-size:11.0pt;fo=
+nt-family:&quot;Calibri&quot;,sans-serif;mso-ligatures:none">From:</span></=
+b><span lang=3D"EN-US" style=3D"font-size:11.0pt;font-family:&quot;Calibri&=
+quot;,sans-serif;mso-ligatures:none"> raffaellanz@icloud.com &lt;raffaellan=
+z@icloud.com&gt;
+<br>
+<b>Sent:</b> Thursday, 6 November 2025 10:31 am<br>
+<b>To:</b> Lance O'Riley &lt;Lance.ORiley@tower.co.nz&gt;; Claims &lt;Claim=
+s@tower.co.nz&gt;<br>
+<b>Cc:</b> Abigail Collin &lt;Abigail.Collin@wynnwilliams.co.nz&gt;; Richar=
+d Hargreaves &lt;Richard.Hargreaves@wynnwilliams.co.nz&gt;; Zach Pion &lt;Z=
+ach.Pion@tower.co.nz&gt;<br>
+<b>Subject:</b> Overdue Temporary Accommodation Refund - Action Required AS=
+AP<br>
+<b>Importance:</b> High<o:p></o:p></span></p>
+</div>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<div>
+<p class=3D"MsoNormal" style=3D"mso-line-height-alt:.75pt"><span style=3D"f=
+ont-size:1.0pt;color:white">Hi Lance / Tower Claims, I=E2=80=99m writing ab=
+out my temporary accommodation refund submitted on 9 October 2025 under the=
+ content insurance claim, which remains unpaid.
+ On 2 September 2025, Tower confirmed the remaining amount under my tempora=
+ry accommodation</span><span style=3D"font-size:1.0pt;color:white;mso-ligat=
+ures:none"><o:p></o:p></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"mso-line-height-alt:.75pt"><span style=3D"f=
+ont-size:1.0pt;color:white"><o:p></o:p></span></p>
+</div>
+<p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-size:9.0pt;font-f=
+amily:&quot;Helvetica&quot;,sans-serif;color:black;mso-ligatures:none">Hi L=
+ance / Tower Claims,<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-size:9.0pt;font-f=
+amily:&quot;Helvetica&quot;,sans-serif;color:black;mso-ligatures:none"><o:p=
+>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-size:9.0pt;font-f=
+amily:&quot;Helvetica&quot;,sans-serif;color:black;mso-ligatures:none">I=E2=
+=80=99m writing about my temporary accommodation refund submitted on 9 Octo=
+ber 2025 under the content insurance claim, which remains
+ unpaid.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-size:9.0pt;font-f=
+amily:&quot;Helvetica&quot;,sans-serif;color:black;mso-ligatures:none"><o:p=
+>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-size:9.0pt;font-f=
+amily:&quot;Helvetica&quot;,sans-serif;color:black;mso-ligatures:none">On 2=
+ September 2025, Tower confirmed the remaining amount under my temporary ac=
+commodation benefit was $13,820.62. As at 6 November
+ 2025 (20 business days since my submission), I have received no acknowledg=
+ement, no payment, and no progress update, despite repeated follow-ups. Whi=
+le previous refunds of the same were acknowledged within about 3 business d=
+ays and paid promptly.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-size:9.0pt;font-f=
+amily:&quot;Helvetica&quot;,sans-serif;color:black;mso-ligatures:none"><o:p=
+>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-size:9.0pt;font-f=
+amily:&quot;Helvetica&quot;,sans-serif;color:black;mso-ligatures:none">In l=
+ine with my policy commitment to prompt payment and the Fair Insurance Code=
+ obligations for timely communication, please:<o:p></o:p></span></p>
+<ul type=3D"disc">
+<li class=3D"MsoNormal" style=3D"color:black;mso-margin-top-alt:auto;mso-ma=
+rgin-bottom-alt:auto;mso-list:l1 level1 lfo3">
+<span lang=3D"EN-US" style=3D"font-size:9.0pt;font-family:&quot;Helvetica&q=
+uot;,sans-serif;mso-ligatures:none">Process immediate payment of the tempor=
+ary accommodation expenses submitted on 9 October 2025; and<o:p></o:p></spa=
+n></li><li class=3D"MsoNormal" style=3D"color:black;mso-margin-top-alt:auto=
+;mso-margin-bottom-alt:auto;mso-list:l1 level1 lfo3">
+<span lang=3D"EN-US" style=3D"font-size:9.0pt;font-family:&quot;Helvetica&q=
+uot;,sans-serif;mso-ligatures:none">Confirm the payment date
+<o:p></o:p></span></li></ul>
+<p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-size:9.0pt;font-f=
+amily:&quot;Helvetica&quot;,sans-serif;color:black;mso-ligatures:none">Plea=
+se also confirm in writing that, going forward, Tower will acknowledge each=
+ accommodation refund request within 10 business
+ days, and pay promptly.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-size:9.0pt;font-f=
+amily:&quot;Helvetica&quot;,sans-serif;color:black;mso-ligatures:none"><o:p=
+>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-size:9.0pt;font-f=
+amily:&quot;Helvetica&quot;,sans-serif;color:black;mso-ligatures:none">Kind=
+ regards,<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-size:9.0pt;font-f=
+amily:&quot;Helvetica&quot;,sans-serif;color:black;mso-ligatures:none">Raff=
+aella del Prete<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-US"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-US"><o:p>&nbsp;</o:p></span></p>
+</div>
+<br>
+<hr>
+<font face=3D"Arial" color=3D"Gray" size=3D"1"><br>
+The information contained in this email message is confidential and may be =
+legally privileged. If you are not the intended recipient, please note that=
+ any use, dissemination, distribution, or reproduction of this message in a=
+ny form whatsoever, is strictly
+ prohibited. If you received this email in error, please notify me by retur=
+n email, delete your copy, and accept my apologies for any inconvenience ca=
+used. Please note that your receipt of this email from a Tower email addres=
+s does not constitute our consent
+ for you to send any other electronic information to Tower by return, unles=
+s specifically stated otherwise.<br>
+</font>
+</body>
+</html>
+
+--_000_MEYP282MB1463D3C021E586B1F7D94FBAD6C5AMEYP282MB1463AUSP_--
+
+--_005_MEYP282MB1463D3C021E586B1F7D94FBAD6C5AMEYP282MB1463AUSP_
+Content-Transfer-Encoding: base64
+Content-Disposition: inline;
+	size=6482;
+	modification-date="Wed, 05 Nov 2025 22:08:12 GMT";
+	filename=image001.png;
+	creation-date="Wed, 05 Nov 2025 22:08:12 GMT"
+Content-Type: image/png;
+	name=image001.png
+X-Apple-Content-Length: 8758
+Content-Id: <image001.png@01DC4F0D.A2B17420>
+
+
+--_005_MEYP282MB1463D3C021E586B1F7D94FBAD6C5AMEYP282MB1463AUSP_
+Content-Transfer-Encoding: base64
+Content-Disposition: inline;
+	size=4573;
+	modification-date="Wed, 05 Nov 2025 22:08:12 GMT";
+	filename=image002.png;
+	creation-date="Wed, 05 Nov 2025 22:08:12 GMT"
+Content-Type: image/png;
+	name=image002.png
+X-Apple-Content-Length: 6181
+Content-Id: <image002.png@01DC4F0D.A2B17420>
+
+
+--_005_MEYP282MB1463D3C021E586B1F7D94FBAD6C5AMEYP282MB1463AUSP_--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>conversation-id</key>
+	<integer>81816</integer>
+	<key>date-last-viewed</key>
+	<integer>1762382218</integer>
+	<key>date-received</key>
+	<integer>1762380513</integer>
+	<key>flags</key>
+	<integer>8590133377</integer>
+	<key>remote-id</key>
+	<string>74426</string>
+</dict>
+</plist>
