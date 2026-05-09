@@ -1,0 +1,362 @@
+19805     
+Return-path: <david@assetrestore.co.nz>
+Original-recipient: rfc822;raffaellanz@icloud.com
+Received: from p00-icloudmta-smtpin-us-east-1a-60-percent-20 by p136-mailgateway-smtp-67c7b56f9-5n9tt (mailgateway 2530B71)
+	with SMTP id 5dd030c2-76d8-4a22-bfce-c8b6b35dc752 
+	for <raffaellanz@icloud.com>; Thu, 7 Aug 2025 06:33:34 GMT
+X-Apple-MoveToFolder: INBOX 
+X-Apple-Action: MOVE_TO_FOLDER/INBOX
+X-Apple-UUID: 5dd030c2-76d8-4a22-bfce-c8b6b35dc752
+Received: from MEUPR01CU001.outbound.protection.outlook.com (mail-australiasoutheastazon11020127.outbound.protection.outlook.com [52.101.152.127])
+	by p00-icloudmta-smtpin-us-east-1a-60-percent-20 (Postfix) with ESMTPS id B7FB2C00094
+	for <raffaellanz@icloud.com>; Thu,  7 Aug 2025 06:33:28 +0000 (UTC)
+X-ICL-Info: GAtbRVYDBVBFSlVHSgMFUFUKE0oWX1gHVQoPB0UFBExESVdZSQUETERLUVcdVAsGFA8PEzhRRREQDRQSC0RZEBBXBRhWXkxCEx1bFgtDUxYHHBUDF0JTTBYWSBkCEEQBSAsHER5RUw4ZGAgNOFlVDhoMAlkbX1tCHRwKGEV9czclK1ZGO2UGUkRXCQIMUlkXGx1IBwpfQgcWDQ8YFh5ZFwEVCRgTHlUNGFkWAwoNWwMcFUsWDUNCEBQVDxYLX0MWHRwHBAxRTA0bSFdHSgAHUEJXCQIMUlkXGx1IBwpfQgcWDQ8YFh5ZFwEVCRgTHlUNGFkCE0VRRREQDQsWFlFRBwcKCh4VWUIHEVcJGRVZVRAaCgkRDB5VDRhZCx4cDQoxLDg2JUgBeyBHTlVCSAMGJjBJJ0M7B3VaMT1UQ0oIdSRNTVQ0OXBlOzQpNEdJfXRQQkpTWRlFRRIHHVZGVkBEDRFXCQIMXFkNHlcFGBUO
+X-ICL-Score: 2.33203302332
+Authentication-Results: bimi.icloud.com; bimi=skipped reason="insufficient dmarc"
+X-ARC-Info: policy=pass; arc=pass; id=mx.microsoft.com 1
+Authentication-Results: arc.icloud.com; arc=pass
+Authentication-Results: dmarc.icloud.com; dmarc=none header.from=assetrestore.co.nz
+X-DMARC-Policy: none
+X-DMARC-Info: pass=none; dmarc-policy=(nopolicy); s=u0; d=u0; pdomain=assetrestore.co.nz
+Authentication-Results: dkim-verifier.icloud.com;
+	dkim=pass (1024-bit key) header.d=assetmanagerslimited.onmicrosoft.com header.i=@assetmanagerslimited.onmicrosoft.com header.b=L1DBzKbo
+Authentication-Results: spf.icloud.com; spf=pass (spf.icloud.com: domain of david@assetrestore.co.nz designates 52.101.152.127 as permitted sender) smtp.mailfrom=david@assetrestore.co.nz
+Received-SPF: pass (spf.icloud.com: domain of david@assetrestore.co.nz designates 52.101.152.127 as permitted sender) receiver=spf.icloud.com; client-ip=52.101.152.127; helo=MEUPR01CU001.outbound.protection.outlook.com; envelope-from=david@assetrestore.co.nz
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=CwKGtbUJyXYjR5i6VExZyeXMyM5ZmuiwFXRmRNL6JJ03PCz6b7r37gH2ulvkNg8DfEgxJVuwWMbi/NDy66uUx7TIvsaMruuCoJ1WAVLgU3zX5CaIm2nUNDdYJJDNql3Ud0IWiuFhjRB8waDI7xBqFuoXydufAB5GFrQLcJGlyBOrWAqei+KILCXfOOO6Vs7oP31Ojh3Rl2SXs+Kbu4CPT2gmCw7WKYUoxi+x4YRxTTq/mub5jqM3SgLIrxTDpuViuUhDj4X+7dTf18ncWVxVRqgrDSyP3YbOkB76FSTewUmTErjKLHwsnRPiLiya+eXNjNhXsa76P1he3yYVlWBNyg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=Ank2UVXCFAK8eGFIeATtTBa6HP9xhAuDF/uh8HMy0kk=;
+ b=mbcmqgy2JNgmoz5moF/wtDPWaPneD9hTnUSqLsU3x3ybw+CWU4ILtZR91HIy/lnw6o6hxoHMCPOd8YI1DmYiiCQuW+UFFd3XV3S4hyeVMZ0q+nAC6FQr1mCV5OxKrcSEMd3IgxYXUbiTnd3jplVfO6LBYq50D97v6TKZ4+FODBbcY1hbEtKedoeW4tjOgXYerf8oHXPngeVeDIa0x8fp/r7AMRSa/s8KyrHFy2VF31ni5YPwMgexiU+KTwzTbg7jUlp9RP7IukgJaylH4rjcTkNpyfScC8Ujx1+DDmyLqIdQiWh9OfSeXy2sicFwj9ZxUUuMtXVPIzQ7awLePtr8rA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=assetrestore.co.nz; dmarc=pass action=none
+ header.from=assetrestore.co.nz; dkim=pass header.d=assetrestore.co.nz;
+ arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=assetmanagerslimited.onmicrosoft.com;
+ s=selector2-assetmanagerslimited-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Ank2UVXCFAK8eGFIeATtTBa6HP9xhAuDF/uh8HMy0kk=;
+ b=L1DBzKboqg0CPIGXGhHiUJRHXsLFwVPqiQbb+l4qLQJADIIRWGGld1NXTZx8Owe+Mpl14iX/GZidm7erax5hSvexgRXCWFl9Vo9s02Q51Tl0wYicb2eSo5e2w1/m0kn/LIQO6Yxt4VpBCVYcsXttEtcCxEIaZF+LeNuQ14g39WQ=
+Received: from SYAPR01MB2735.ausprd01.prod.outlook.com (2603:10c6:1:b::20) by
+ ME3PR01MB6193.ausprd01.prod.outlook.com (2603:10c6:220:104::11) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9009.16; Thu, 7 Aug
+ 2025 06:33:23 +0000
+Received: from SYAPR01MB2735.ausprd01.prod.outlook.com
+ ([fe80::9adf:7265:2176:aa67]) by SYAPR01MB2735.ausprd01.prod.outlook.com
+ ([fe80::9adf:7265:2176:aa67%3]) with mapi id 15.20.9009.013; Thu, 7 Aug 2025
+ 06:33:23 +0000
+From: David Tallot <david@assetrestore.co.nz>
+To: Raffaella del Prete <raffaellanz@icloud.com>
+CC: Claims <claims@tower.co.nz>, Grant Metson <grant.metson@tower.co.nz>
+Subject: 23 Mays Road -  C90306048 - total loss documentation
+Thread-Topic: 23 Mays Road -  C90306048 - total loss documentation
+Thread-Index: AdwHZMBzaRd6uxVhSQuocNeVX4cfPA==
+Date: Thu, 7 Aug 2025 06:33:23 +0000
+Message-ID:
+ <SYAPR01MB2735030DE0A4C7C8DD2428CF842CA@SYAPR01MB2735.ausprd01.prod.outlook.com>
+Accept-Language: en-NZ, en-US
+Content-Language: en-US
+X-MS-Has-Attach: yes
+X-MS-TNEF-Correlator:
+x-bromium-msgid: effb2e3d-88ca-4f43-bdf5-e673e96efdca
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: SYAPR01MB2735:EE_|ME3PR01MB6193:EE_
+x-ms-office365-filtering-correlation-id: 57160cb2-c0bc-45fa-ef53-08ddd57c4ece
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam:
+ BCL:0;ARA:13230040|376014|1800799024|366016|13003099007|4053099003|38070700018|8096899003;
+x-microsoft-antispam-message-info:
+ =?us-ascii?Q?IUMDZyQ7oY0l9a0ihKrBHMizbsQ/Tc8cAqkeOEJiFpg+JxFy8Jl+sRy8Vm5W?=
+ =?us-ascii?Q?6Su44DLnveauECbcR3b18sZvpR9b0eglqh4Z0BcutJjOYUjgh9BYhjEU9YMb?=
+ =?us-ascii?Q?XUnMRJWcOoU5EW9DWKunWFfoY1PChenN274p1I7bcExCPAOrzttjd0wfZMor?=
+ =?us-ascii?Q?/tC5ZNYFFBO6m0zD7IaLsHaew4AfAHS1NhZWRsQviGAD/rapgZeje+dWL/22?=
+ =?us-ascii?Q?xA5TQJxdLRqg22PJEUWo+UZkF9vlVNqAO33pFPsqZN1jWEvaXAZE7PwkZmd5?=
+ =?us-ascii?Q?t3WIh+3gGL70QGKhSCU06pATRqjI582LWkdQlI/mbHUhsJlziu2QXW8haoFy?=
+ =?us-ascii?Q?s2h8BzLOTtahqRn4ull8ZPeALeBzeOHWK2RnRjfOv1JNC+MPrIMivAR+x6F5?=
+ =?us-ascii?Q?9ny6n+NcKc0xesulLx7zZN00/gzMPMazA8HeSWFc2SSEIY8c59ygdMDu1m3S?=
+ =?us-ascii?Q?PbX8dLqz6Cu8eedl/qq4m3fjYDF/k3iG6KHPy8wbxsPltHgr2LMMITSKWdPM?=
+ =?us-ascii?Q?fTZQz/U/yyFaP4Zi+bYRMPSVdKAOdmzRPDhanXDq/UIEs/yCKocGrxz7h0MO?=
+ =?us-ascii?Q?rKczt5+Vm+pVnIbJ1Ro+VEYTmbZ7xTFSfDVSiPIRI1tfN7wWXHOkOhrvvcdr?=
+ =?us-ascii?Q?mf178l29f726hHgCidXtEc58PnLShKcPOxU7GJTnSbmpD0V52QyBCVYT5Kvr?=
+ =?us-ascii?Q?L3BIPhACRkK6bDGdnLyqymUUVLucMcuMQQOsLyhQQS4aI1idmin3y3/lbMSV?=
+ =?us-ascii?Q?jiMdIJVkAFknhI29OKQzCOfebqsTq2iipicDQRcIXs8tNrgOmr5QN+j4osNk?=
+ =?us-ascii?Q?UdxJt1VFh3b4EZN6GBYEep/de4XEfr/1vGAL5qQQ9AUErOMrJkBaTsengvAJ?=
+ =?us-ascii?Q?rnWnd9XbNFxyKkt34fWB9r2bNIXT9kj+WmVWuzpmGOZEQooJBrt3O6egxFTA?=
+ =?us-ascii?Q?T5HT6//efQ+zZu0ytjVK6iAkboAQMcCDO6e0Hj0wLgTMVlygdEQrEfY8J2LR?=
+ =?us-ascii?Q?8A7S2H+EMBm15DJuAQOIS9X3OhI/3g61cCC84pWEFJxw60gXE1n2aCPnZf4t?=
+ =?us-ascii?Q?8h5ORgSaCE0tXuJnfzd54UEicIIOuMpC5bNQORc0ue8jSyLJI9bzdjJpdn8z?=
+ =?us-ascii?Q?HRKApOeHv86slI88iZq110Cbwarb05GeAVpIuge4OnY1giwsKWrgKQ/upV42?=
+ =?us-ascii?Q?NVjWj9vFlExRviAcln8bqmkw3D32B8LlaTr/idkIQHrPeVBHaDmMYAp2urKg?=
+ =?us-ascii?Q?sVbSSu+imNVBekP0VC7lBfXy9bNeq9M/erfGUUEvlGqdFCwMcWUtRxo+ArWC?=
+ =?us-ascii?Q?njJiqcoucJ0znBCf06muQf/d90sYNF+WlfmmkBeZpV6tIIy7BZhCQbeVflYc?=
+ =?us-ascii?Q?tF01+NuvkHtZg1uPKyhtHMGtYxvFmCBJnlyM//LXNWa/YbQabJk880ZBlLke?=
+ =?us-ascii?Q?EkiODwURnDA=3D?=
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SYAPR01MB2735.ausprd01.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(1800799024)(366016)(13003099007)(4053099003)(38070700018)(8096899003);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0:
+ =?us-ascii?Q?OfMUnw1HNbXUsJW/n9mGaj+Y0kTLeRWbGSXTkz6td1gJBMTLoRH60AlIt3eY?=
+ =?us-ascii?Q?/oahv4a36ZHE4o6g1nCsKPbek9NOAhwQyIbNVjxTi1s024c+xpdhK9/E1ayF?=
+ =?us-ascii?Q?dYTH4AGkn8+bRK3dOALc6vrqTvoRAd77MTHzTQpRa1WOPybvvutqclT0LPZu?=
+ =?us-ascii?Q?3R2Ua+1tGc5rntxRZUw2dIgPAaf4fo/zdHL+nGvtU73fR1pEO52vu+g95ybU?=
+ =?us-ascii?Q?PSn5wYUKkyDyNMG2sa07aYBdP6n8BzffBLKD9kXaZdRK6FVHPfEz3XInujQs?=
+ =?us-ascii?Q?CbclN+QPh9Skiuj4VHt5w2m+KnsgcR51ynGp2nfmWm6ECwDQ/I3jkbaHbfTx?=
+ =?us-ascii?Q?uE+Ku31zsVCx4JIMv096l3Dsw/GYdiUiyINrTEDvBo8dDrqOLRvQkGA2EvHY?=
+ =?us-ascii?Q?AjUu+t8d1/NsfVD5y6+xA4JEVp20OVO3N4mLMrNP0sm7NWTjp3twS+5rrIDq?=
+ =?us-ascii?Q?aHhH8CSEQm4bxMsqOVKJptLByGBTpKyPGUrMQve5nh1+QtMH9S73Ualvxfhx?=
+ =?us-ascii?Q?lvLJbnZq7GH1yLWduCPkfIZiAlP9YFyekNn/6pslY8dNWQObYJwckB9oIHel?=
+ =?us-ascii?Q?xL1LGlfuDKzAqpjpvOQzfcrPUkzSNk/n2ZVsKUb43gKQ22ScMJgmXPhwsIDF?=
+ =?us-ascii?Q?CptiegEp/9R6i2sd5bERquKubi8u+tr50Ja5fObaTLFhXN7LWKn0WtDd9TNb?=
+ =?us-ascii?Q?anG1h7VInuhb4XtAokcjxlhr8pqf8C43BUuuAF2tbcsUsO59t6tmY9boQ2pf?=
+ =?us-ascii?Q?gF+jl+Ez2YMBcqQT/04nR22/NE8TzO2jVQff0PQ++djTOFQ9QuSGagzh5xZM?=
+ =?us-ascii?Q?6rLPS5jgvgOes0nlq+QQWP1mZ+DLo5LfGHTTAMeBjAXV20Hj486UjnX/Es4l?=
+ =?us-ascii?Q?1vk63eWFkopX2r8HjMw/iPQE+wsJ1WRqze0fiPvuIdmYTkvcGHOikmOlS1NW?=
+ =?us-ascii?Q?63haX8+m0Vf4a6S6CYyQwYhXw8RgUfpMHiA2ub1cvHbsTesf1jtwahrH4z0s?=
+ =?us-ascii?Q?RJzjPlJGG0g5eWNPBlLi+w0cjbcG/Ntmaw0y+p+lug5F/XER9AjN8OfFwxon?=
+ =?us-ascii?Q?o0b7+tJ5HNUek/fCmC80tj52j+qAisZZ/c1nGvFIQatKCP+hYr/V0ts3xRqx?=
+ =?us-ascii?Q?1RV/yc4B0BtRMFX73ruOhGam06JqyFH59CMqGxg+4A3oQ5XFIcp679ZncsuX?=
+ =?us-ascii?Q?tHW2btp4aXQkaDNSnYxYgvHNFJRBLGGUeSO6WLrlMt6hC1edvixaSzGfNVsR?=
+ =?us-ascii?Q?cnk95z52uypJPqJrCq4ydm/QxOhtOElA3lRr15PJ7sadJnjOtstEHXMoPOYu?=
+ =?us-ascii?Q?XRsdsHRmtDd4U5u5l5KOrRBv5cvLSu0R6YlDs49H4Ov9QDnBdcpNXWQW5000?=
+ =?us-ascii?Q?FBzSF7qejROMwWI64poaPQFuA6JwgQzx4Yz2/X6RKOAJ5XHutCTUKNekF0Yj?=
+ =?us-ascii?Q?MLvqWHnAcaOpipw/TCi72SWwrFFpUE4bWXl8v8RKEADRCZlo73g+zh9ulRnt?=
+ =?us-ascii?Q?uFUpDDP3amT63Zr5mooA7JphBV4SVojxjoLA6YPbVaSgTVvv39wlQLXZ0LN/?=
+ =?us-ascii?Q?UYBAMV5T9XHoh4sUB450LocgbRkRzpDM5a2JfIed?=
+Content-Type: multipart/related;
+	boundary="_004_SYAPR01MB2735030DE0A4C7C8DD2428CF842CASYAPR01MB2735ausp_";
+	type="multipart/alternative"
+MIME-Version: 1.0
+X-OriginatorOrg: assetrestore.co.nz
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: SYAPR01MB2735.ausprd01.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 57160cb2-c0bc-45fa-ef53-08ddd57c4ece
+X-MS-Exchange-CrossTenant-originalarrivaltime: 07 Aug 2025 06:33:23.0864
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 53343139-541b-441c-9d5d-86a5b39c21a6
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: u56cfLlv1OCOPBi+U/x854Hy2BMVK4Nvb5RBRBa14VwZ/G86k40iXIyWpA/P2SZdzibiH+0hAKJ0R/vgHIqeu4MCsmgtvMqYUEkVKGlmY5c=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: ME3PR01MB6193
+X-MANTSH: 1TFkXGxoaHxEKWUQXZ2VOYmxpHX9yZxoRCllNF25PRkNcT1gRCl9ZFxkSGxEKX00
+ XZEVETxEKWUkXHR9xGwYbHxp3BhsfGAYYHEIaBhoGExMGGnEaEBp3BhoGGgYZGgYaBhoGGnEaE
+ Bp3BhoRClleF2hjeREKQ04XUkN9XHl4dVllWmdQeHV8WVpofWseHUkaeBxCZmdQb0YRClhcFxk
+ EGgQfHgUbGhoEHRsEGxwaBBMYEBseGh8aEQpeWRdMU08bfxEKTVwXGxMTEQpMWhdoaWtraxEKT
+ EYXb2tra2tNaxEKQ1oXHxgEGxobBBsfGAQbGB0RCkJeFxsRCkRJFxgRCkJFF2tsHGtIaX5sEkl
+ vEQpCThdmSEtEbBxiZmRSZBEKQkwXbEhsbEVkTFxrRVoRCkJsF28dW2YaBRtoRlISEQpCQBdge
+ mtbbHhbRGVbbREKQlgXYkZpTEkTW0lYemURCk1eFwcbEQpaWBcYEQpwZxdiGVBwaVBQXWhOcBA
+ TBB0RCnBoF2BgSAFMQGVNYFgTEAcZGhEKcGgXblpfGUBaW0dhUG0QBxkaEQpwaBdnSVxITkFzT
+ BxQGhAHGRoRCnBoF24BElt6Hm54W0tiEAcZGhEKcGgXaVAFTVBpY3wTa3wQBxkaEQpwaBdkf0R
+ lQnlsTUhPXhAHGRoRCnBoF2IFTVpQfH5LYx4fEAcZGhEKcGgXZXwcRhtaZ39Dex0QBxkaEQpwf
+ xduaR9yH1xeBURCExAZEQpwXxdnZGlESwEZWBhTYhAHGRoRCnB9F2kZRVkbElhfQ2JEEAcZGhE
+ KcGcXY3lgE15jexNeRUEQBxkaEQpwfRd6fm4bW1BJX2NuWxAHGRoRCnBjF2dpch5BbX0cQx9NE
+ AcZGhEKcGwXZQEYeUZpZk9hTXsQBxkaEQpwTBdsXFgFfXxZZnl7GBAHGRoRCm1+FwcbEQpYTRd
+ LEQ==
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODA3MDA0OSBTYWx0ZWRfXybfpJrOge6qz
+ Hc9PKjO+4MIW3BA8P/Y941cXhfN5AypnPfYR3NGL/o4cfWO3L5CA5jQQ5lMWWTqxH8lMQVVv5Mj
+ DGCTpvbfkS1aSrhFqcLMpuV23iodtIMNC1DiyFdHE3QR1cq70JpTaiCH5dJasoYLNoKFXWOPGkz
+ GTswmViFSwmoRUkTaW0uTQtIebFE9tjr7DsylzIKekuvyEcUCgf23VgkfZ2GdWxUn8TLcMAITZV
+ Ycf54ffCCcNNbOAsKS86iSY+5BwR4qcIhcnl3z7ohFiSHNvuVvcbwKqoKB/C0H5Ico+bkWfjhU/
+ tKHFS0fp8HBQx7kzp5M
+X-Proofpoint-ORIG-GUID: xiWvSR_sOpMzR_VspBWA47c0R6hLMzEl
+X-Proofpoint-GUID: xiWvSR_sOpMzR_VspBWA47c0R6hLMzEl
+
+
+--_004_SYAPR01MB2735030DE0A4C7C8DD2428CF842CASYAPR01MB2735ausp_
+Content-Type: multipart/alternative;
+	boundary=_000_SYAPR01MB2735030DE0A4C7C8DD2428CF842CASYAPR01MB2735ausp_
+
+
+--_000_SYAPR01MB2735030DE0A4C7C8DD2428CF842CASYAPR01MB2735ausp_
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=us-ascii
+
+Hi Raffaella
+
+I've attached a drop box link of documented items in your basement area, no=
+t including side closet yet.
+
+Are you able to confirm for me if I can dispose these contents or if there =
+is an item you see that you wish to retain.
+
+Thanks
+
+https://www.dropbox.com/scl/fo/jx59t7li7kfl7hf95koda/AByKyyGn0ZVMUXZghJ1M7h=
+k?rlkey=3D7trpvu453iu4bog34gye22l9v&dl=3D0
+
+David Tallott
+Manager
+[cid:image001.jpg@01DC07C9.A5342070]
+Asset Restore limited
+Postal : Po Box 64217, Botany, Auckland.
+T 09 272 4985 M  021379318 E david@assetrestore.co.nz<mailto:david@assetres=
+tore.co.nz>
+
+PLEASE CONSIDER THE ENVIRONMENT BEFORE PRINTING THIS EMAIL
+
+
+--_000_SYAPR01MB2735030DE0A4C7C8DD2428CF842CASYAPR01MB2735ausp_
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=us-ascii
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micr=
+osoft-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" xmlns=3D"http:=
+//www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dus-ascii"=
+>
+<meta name=3D"Generator" content=3D"Microsoft Word 15 (filtered medium)">
+<!--[if !mso]><style>v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style><![endif]--><style><!--
+/* Font Definitions */
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ligatures:standardcontextual;
+	mso-fareast-language:EN-US;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:#0563C1;
+	text-decoration:underline;}
+span.EmailStyle17
+	{mso-style-type:personal-compose;
+	font-family:"Calibri",sans-serif;
+	color:windowtext;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-family:"Calibri",sans-serif;
+	mso-ligatures:standardcontextual;
+	mso-fareast-language:EN-US;}
+@page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]-->
+</head>
+<body lang=3D"EN-NZ" link=3D"#0563C1" vlink=3D"#954F72" style=3D"word-wrap:=
+break-word">
+<div class=3D"WordSection1">
+<p class=3D"MsoNormal">Hi Raffaella<o:p></o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal">I&#8217;ve attached a drop box link of documented it=
+ems in your basement area, not including side closet yet.<o:p></o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal">Are you able to confirm for me if I can dispose thes=
+e contents or if there is an item you see that you wish to retain.<o:p></o:=
+p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal">Thanks<o:p></o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal"><a href=3D"https://www.dropbox.com/scl/fo/jx59t7li7k=
+fl7hf95koda/AByKyyGn0ZVMUXZghJ1M7hk?rlkey=3D7trpvu453iu4bog34gye22l9v&amp;d=
+l=3D0">https://www.dropbox.com/scl/fo/jx59t7li7kfl7hf95koda/AByKyyGn0ZVMUXZ=
+ghJ1M7hk?rlkey=3D7trpvu453iu4bog34gye22l9v&amp;dl=3D0</a><o:p></o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal"><b><span lang=3D"EN-US" style=3D"color:#4F81BD;mso-l=
+igatures:none;mso-fareast-language:EN-NZ">David Tallott
+<o:p></o:p></span></b></p>
+<p class=3D"MsoNormal"><b><span lang=3D"EN-US" style=3D"color:#4F81BD;mso-l=
+igatures:none;mso-fareast-language:EN-NZ">Manager<o:p></o:p></span></b></p>
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto"><span style=3D"color:#1F497D;mso-fareast-language:EN-NZ"><img bord=
+er=3D"0" width=3D"136" height=3D"94" style=3D"width:1.4166in;height:.9791in=
+" id=3D"Picture_x0020_3" src=3D"cid:image001.jpg@01DC07C9.A5342070"><span s=
+tyle=3D"mso-ligatures:none"><o:p></o:p></span></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-size:10.0pt;color=
+:gray;mso-ligatures:none;mso-fareast-language:EN-NZ">Asset Restore limited<=
+o:p></o:p></span></p>
+<p class=3D"MsoNormal"><b><span lang=3D"EN-US" style=3D"font-size:10.0pt;co=
+lor:#0070C0;mso-ligatures:none;mso-fareast-language:EN-NZ">Postal</span></b=
+><b><span lang=3D"EN-US" style=3D"font-size:10.0pt;color:gray;mso-ligatures=
+:none;mso-fareast-language:EN-NZ">
+</span></b><span lang=3D"EN-US" style=3D"font-size:10.0pt;color:gray;mso-li=
+gatures:none;mso-fareast-language:EN-NZ">: Po Box 64217, Botany, Auckland.<=
+o:p></o:p></span></p>
+<p class=3D"MsoNormal"><b><span lang=3D"EN-US" style=3D"font-size:10.0pt;co=
+lor:#0070C0;mso-ligatures:none;mso-fareast-language:EN-NZ">T</span></b><b><=
+span lang=3D"EN-US" style=3D"font-size:10.0pt;color:gray;mso-ligatures:none=
+;mso-fareast-language:EN-NZ">
+</span></b><span lang=3D"EN-US" style=3D"font-size:10.0pt;color:gray;mso-li=
+gatures:none;mso-fareast-language:EN-NZ">09 272 4985
+</span><b><span lang=3D"EN-US" style=3D"font-size:10.0pt;color:#0070C0;mso-=
+ligatures:none;mso-fareast-language:EN-NZ">M</span></b><span lang=3D"EN-US"=
+ style=3D"font-size:10.0pt;color:#0070C0;mso-ligatures:none;mso-fareast-lan=
+guage:EN-NZ">&nbsp;
+</span><span lang=3D"EN-US" style=3D"font-size:10.0pt;color:#7F7F7F;mso-lig=
+atures:none;mso-fareast-language:EN-NZ">021379318</span><span lang=3D"EN-US=
+" style=3D"font-size:10.0pt;color:#0070C0;mso-ligatures:none;mso-fareast-la=
+nguage:EN-NZ">
+<b>E</b></span><b><span lang=3D"EN-US" style=3D"font-size:10.0pt;color:gray=
+;mso-ligatures:none;mso-fareast-language:EN-NZ">
+</span></b><span lang=3D"EN-US" style=3D"font-size:10.0pt;color:#0070C0;mso=
+-ligatures:none;mso-fareast-language:EN-NZ"><a href=3D"mailto:david@assetre=
+store.co.nz"><span style=3D"color:blue">david@assetrestore.co.nz</span></a>=
+</span><span lang=3D"EN-US" style=3D"font-size:10.0pt;color:gray;mso-ligatu=
+res:none;mso-fareast-language:EN-NZ"><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-size:10.0pt;color=
+:gray;mso-ligatures:none;mso-fareast-language:EN-NZ"><o:p>&nbsp;</o:p></spa=
+n></p>
+<p class=3D"MsoNormal"><b><span lang=3D"EN-US" style=3D"font-size:10.0pt;co=
+lor:gray;mso-ligatures:none;mso-fareast-language:EN-NZ">PLEASE CONSIDER THE=
+ ENVIRONMENT BEFORE PRINTING THIS EMAIL</span></b><span style=3D"mso-ligatu=
+res:none;mso-fareast-language:EN-NZ"><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+</body>
+</html>
+
+--_000_SYAPR01MB2735030DE0A4C7C8DD2428CF842CASYAPR01MB2735ausp_--
+
+--_004_SYAPR01MB2735030DE0A4C7C8DD2428CF842CASYAPR01MB2735ausp_
+Content-Transfer-Encoding: base64
+Content-Disposition: inline;
+	size=4082;
+	modification-date="Thu, 07 Aug 2025 06:33:22 GMT";
+	filename=image001.jpg;
+	creation-date="Thu, 07 Aug 2025 06:33:22 GMT"
+Content-Type: image/jpeg;
+	name=image001.jpg
+X-Apple-Content-Length: 5516
+Content-Id: <image001.jpg@01DC07C9.A5342070>
+
+
+--_004_SYAPR01MB2735030DE0A4C7C8DD2428CF842CASYAPR01MB2735ausp_--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>conversation-id</key>
+	<integer>60045</integer>
+	<key>date-last-viewed</key>
+	<integer>1758945509</integer>
+	<key>date-received</key>
+	<integer>1754548414</integer>
+	<key>flags</key>
+	<integer>8590132485</integer>
+	<key>remote-id</key>
+	<string>67421</string>
+</dict>
+</plist>

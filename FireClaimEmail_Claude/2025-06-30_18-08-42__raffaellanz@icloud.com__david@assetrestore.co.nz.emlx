@@ -1,0 +1,620 @@
+32656     
+Return-path: <raffaellanz@icloud.com>
+Original-recipient: rfc822;raffaellanz@icloud.com
+Received: from p00-icloudmta-asmtp-us-west-2a-100-percent-5 by p136-mailgateway-smtp-6897c75769-wdtr7 (mailgateway 2524B62)
+	with SMTP id 35dbd6f0-54b7-4d78-8c4a-b18181c459ed 
+	for <raffaellanz@icloud.com>; Mon, 30 Jun 2025 06:10:35 GMT
+X-Apple-MoveToFolder: INBOX 
+X-Apple-Action: MOVE_TO_FOLDER/INBOX
+X-Apple-UUID: 35dbd6f0-54b7-4d78-8c4a-b18181c459ed
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=icloud.com;
+	s=1a1hai; bh=R1SeWETirfFGY/bBnfeagTG9GkwPzuGF84ZmXKBuikI=;
+	h=Content-Type:Mime-Version:Subject:From:Date:Message-Id:To:x-icloud-hme;
+	b=KBDCBDZHrptPencbgUTMAuGoHolWx5JbVgwR0/eTw3av6f+8qIJTC6m5Hsepqi9P2
+	 5nTmc45ZohMZMXs/Z8jwyEpu4pw8akuKSvs9nHm9ULS3Cc4hVr/nCpQiZtOfp1GtYj
+	 3N6+ShUBe3aCzd5fb8P7H63bAjI6JW8wymoMYCx7+yraiG1WFdJTo+GqgkyiAmRu36
+	 x2T7wrnzgc+9N/eI/F0s7IHvQC6hakK3FiE73dGlG4fI0Ox+HB9vX27jkL6xL23KcU
+	 J5U3Jukyn/zfQCHyoHDFPZX1LXNTpZF+jLCDY49ODhYbpyEeBTbew98bLwdhT5dcBi
+	 2TO3YdIYIzwFw==
+Received: from outbound.mr.icloud.com (unknown [127.0.0.2])
+	by outbound.mr.icloud.com (Postfix) with ESMTPS id 249B41800197;
+	Mon, 30 Jun 2025 06:10:32 +0000 (UTC)
+Received: from smtpclient.apple (mr-asmtp-me-k8s.p00.prod.me.com [17.57.152.38])
+	by outbound.mr.icloud.com (Postfix) with ESMTPSA id 775EB18001A8;
+	Mon, 30 Jun 2025 06:10:31 +0000 (UTC)
+Content-Type: multipart/alternative;
+	boundary="Apple-Mail=_D837219C-A7B4-45C2-AABA-CAF98A5ADA66"
+Mime-Version: 1.0 (Mac OS X Mail 16.0 \(3826.600.51.1.1\))
+Subject: Re: 23 Mays street Devenport - Tower claim C90306048
+From: Raffaella del Prete <raffaellanz@icloud.com>
+In-Reply-To: <2785EC93-5349-463D-9909-2B79359D3E92@icloud.com>
+Date: Mon, 30 Jun 2025 18:08:42 +1200
+Cc: Chris Cornwall <chris.cornwall@tower.co.nz>,
+ Raffaella del Prete <raffaellanz@icloud.com>
+Message-Id: <FE83B396-24F8-4D6D-A8CD-7B45CC30DD85@icloud.com>
+References: <SYAPR01MB2735FF3890949C4AC87CD75C8445A@SYAPR01MB2735.ausprd01.prod.outlook.com>
+ <4511BC12-75FE-4B46-BE91-4DCF88BC5380@icloud.com>
+ <SYAPR01MB2735F171BCACC699F7086EA08445A@SYAPR01MB2735.ausprd01.prod.outlook.com>
+ <SYAPR01MB2735EB08A4C7BA7ABAB4F5DD8447A@SYAPR01MB2735.ausprd01.prod.outlook.com>
+ <2785EC93-5349-463D-9909-2B79359D3E92@icloud.com>
+To: David Tallot <david@assetrestore.co.nz>
+X-Mailer: Apple Mail (2.3826.600.51.1.1)
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjMwMDA1MCBTYWx0ZWRfX0L3IS5s1TOXR
+ ebbLgHUSgYT8u53oh8Incg2HANUdoErXN1xRtmUkMXMQr9LUFwKqv8jJI6+b3a3mjRC7A2+Gyaa
+ Ga5wKpLZWIaxRrz8otCu7NZx1qIbaGCxF8c8JrmglSykIWcCAF6L8Wlziug5e05rc5POSfU8JD0
+ 3y8GRnmZTV6igO2neh/ORNomhmv3Ibo+szBakUKE0AtIDrYpW9IkFbDAmqseniA1ys5sJ0gYbPD
+ hJPE9fyRNx2g8F56om70MrYs2PwT8fmjEIY1cLNQHU1j3q96WQQ3BRjHZBizxjnxUJUPFCOEE=
+X-Proofpoint-ORIG-GUID: -nkab71VYt2Lv699xa2HUHx30hELHn4L
+X-Proofpoint-GUID: -nkab71VYt2Lv699xa2HUHx30hELHn4L
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.7,FMLib:17.12.80.40
+ definitions=2025-06-27_05,2025-06-27_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ bulkscore=0 mlxlogscore=999 clxscore=1015 phishscore=0 malwarescore=0
+ adultscore=0 suspectscore=0 mlxscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.22.0-2506060001 definitions=main-2506300050
+
+
+--Apple-Mail=_D837219C-A7B4-45C2-AABA-CAF98A5ADA66
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=utf-8
+
+Good afternoon David and Chris,
+
+Thank you for your follow-up email, David, and for clarifying the =
+misunderstanding from our call. I appreciate your flexibility, and since =
+you=E2=80=99re busy on Tuesday, Wednesday at 2:00 PM works for =
+me=E2=80=94please confirm if that suits.
+
+Before we proceed, I want to reiterate two key priorities to ensure a =
+safe and effective process:
+
+Health & Safety (H&S) Risk Mitigation: No work should start until H&S =
+risks are identified and addressed by independent experts, given the =
+master electrician=E2=80=99s finding that the property is uninhabitable =
+due to electrical hazards.
+Assessment-Focused Work: Initial tasks should enable damage assessment =
+(e.g., securing the site, removing debris for inspection) rather than =
+repairs (e.g., cleaning curtains or upholstery), allowing me to exercise =
+my right to an independent assessment and for both parties to agree on a =
+remediation plan.
+I=E2=80=99ve been told by firefighters that there was substantial fire =
+damage and significant smoke exiting the roof=E2=80=94initially thought =
+to originate there by Devonport Flagstaff=E2=80=94which penetrated the =
+house structure. Yet, the roof, the gas unit beneath it, and overall =
+structural integrity remain uninspected. This, alongside asbestos and =
+moisture concerns, raises serious safety issues.
+
+I=E2=80=99m particularly worried about the asbestos plan. The scope =
+mentions removing less than 10m=C2=B2, but the deck=E2=80=99s =
+fire-damaged section connects to the main area, suggesting potential =
+wider involvement. I raised this with Chris, requesting a full =
+inspection, and I=E2=80=99d like this addressed before any removal =
+begins.
+
+Could we please align on this H&S-first, assessment-only approach? I=E2=80=
+=99d prefer to defer repair-focused cleaning until after experts assess =
+the damage and we agree on a plan. This seems fair to ensure safety and =
+accuracy=E2=80=94do you agree? I=E2=80=99m happy to discuss this onsite =
+at 2:00 PM Wednesday if confirmed.
+
+Thanks so much for your understanding=E2=80=94I look forward to your =
+response.
+
+Kind regards,
+
+Raffaella del Prete
+
+>=20
+>=20
+>> On 30 Jun 2025, at 11:25=E2=80=AFAM, David Tallot =
+<david@assetrestore.co.nz> wrote:
+>>=20
+>> Good Morning Raffaella
+>> =20
+>> Just wanted to follow up with you so we can get this work underway =
+for you.
+>> =20
+>> I have an appointment now tomorrow at midday but still have =
+availability Wednesday.
+>> =20
+>> thanks
+>> =20
+>> David Tallott=20
+>> Manager
+>> <image001.jpg>
+>> Asset Restore limited
+>> Postal : Po Box 64217, Botany, Auckland.
+>> T 09 272 4985 M  021379318 E david@assetrestore.co.nz =
+<mailto:david@assetrestore.co.nz>
+>> =20
+>> PLEASE CONSIDER THE ENVIRONMENT BEFORE PRINTING THIS EMAIL
+>> =20
+>> From: David Tallot
+>> Sent: Friday, June 27, 2025 3:28 PM
+>> To: Raffaella del Prete <raffaellanz@icloud.com>
+>> Subject: RE: 23 Mays street Devenport
+>> =20
+>> My apologies Raffaella,
+>> =20
+>> I miss heard you, I thought Monday was ok that=E2=80=99s my mistake.
+>> =20
+>> What day would better suit you so we can go through things ?
+>> =20
+>> I can do Tuesday or Wednesday at the same time ?
+>> =20
+>> Also, if you like to let me know any Health and Safety concerns you =
+have so I can answer them for you now or again if its better for you can =
+let me know onsite.
+>> =20
+>> thanks
+>> =20
+>> =20
+>> David Tallott=20
+>> Manager
+>> <image001.jpg>
+>> Asset Restore limited
+>> Postal : Po Box 64217, Botany, Auckland.
+>> T 09 272 4985 M  021379318 E david@assetrestore.co.nz =
+<mailto:david@assetrestore.co.nz>
+>> =20
+>> PLEASE CONSIDER THE ENVIRONMENT BEFORE PRINTING THIS EMAIL
+>> =20
+>> From: Raffaella del Prete <raffaellanz@icloud.com =
+<mailto:raffaellanz@icloud.com>>
+>> Sent: Friday, June 27, 2025 3:15 PM
+>> To: David Tallot <david@assetrestore.co.nz =
+<mailto:david@assetrestore.co.nz>>
+>> Cc: Raffaella del Prete <raffaellanz@icloud.com =
+<mailto:raffaellanz@icloud.com>>
+>> Subject: Re: 23 Mays street Devenport
+>> =20
+>> Hi David,
+>> =20
+>> Thank you for your call earlier and for sending the email. I=E2=80=99m =
+a bit concerned, as we just spoke over the phone and I explained that I =
+cannot meet you on Monday with such short notice (less than 24 working =
+hours). You had agreed to send me the scope of work with a few available =
+options for when we could meet (not Monday) and that I would get back to =
+you.
+>> =20
+>> I=E2=80=99m not sure why, just minutes after our call, you=E2=80=99re =
+now pressing me to meet at 12 PM despite our agreement to sync back on =
+Monday to find a convenient time. This feels a little unexpected.
+>> =20
+>> I=E2=80=99m also worried about the sequencing and the Health & Safety =
+aspects of the proposed scope, which I=E2=80=99d like to discuss further =
+when we arrange a suitable time.
+>> =20
+>> Thanks and regards,
+>> Raffaella del Prete
+>> =20
+>> =20
+>> On 27 Jun 2025, at 2:41=E2=80=AFPM, David Tallot =
+<david@assetrestore.co.nz <mailto:david@assetrestore.co.nz>> wrote:
+>> =20
+>> Hi Raffaella=20
+>> =20
+>> Thanks for your time on the phone earlier.
+>> =20
+>> As discussed, Tower insurance has approved our quote to carry out the =
+following work we discussed at your house. (Scope attached)
+>> =20
+>> Can I please come and meet with you Monday 12pm ? so we can go =
+through the scope together and I can show my staff who will be doing the =
+work, we can then also arrange key access with you and install a lock =
+box.
+>> =20
+>> Thanks
+>> =20
+>> =20
+>> =20
+>> =20
+>> =20
+>> David Tallott
+>> Manager
+>> <image001.jpg>
+>> Asset Restore limited
+>> Postal : Po Box 64217, Botany, Auckland.
+>> T 09 272 4985 M  021379318 E david@assetrestore.co.nz =
+<mailto:david@assetrestore.co.nz>
+>> =20
+>> PLEASE CONSIDER THE ENVIRONMENT BEFORE PRINTING THIS EMAIL
+>=20
+
+
+--Apple-Mail=_D837219C-A7B4-45C2-AABA-CAF98A5ADA66
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=utf-8
+
+<html><head><meta http-equiv=3D"content-type" content=3D"text/html; =
+charset=3Dutf-8"></head><body style=3D"overflow-wrap: break-word; =
+-webkit-nbsp-mode: space; line-break: after-white-space;"><p dir=3D"auto" =
+style=3D"white-space: pre-wrap;">Good afternoon David and Chris,</p><p =
+dir=3D"auto" style=3D"white-space: pre-wrap;">Thank you for your =
+follow-up email, David, and for clarifying the misunderstanding from our =
+call. I appreciate your flexibility, and since you=E2=80=99re busy on =
+Tuesday, Wednesday at 2:00 PM works for me=E2=80=94please confirm if =
+that suits.</p><p dir=3D"auto" style=3D"white-space: pre-wrap;">Before =
+we proceed, I want to reiterate two key priorities to ensure a safe and =
+effective process:</p><ul dir=3D"auto"><li><strong>Health &amp; Safety =
+(H&amp;S) Risk Mitigation</strong>: No work should start until H&amp;S =
+risks are identified and addressed by independent experts, given the =
+master electrician=E2=80=99s finding that the property is uninhabitable =
+due to electrical hazards.</li><li><strong>Assessment-Focused =
+Work</strong>: Initial tasks should enable damage assessment (e.g., =
+securing the site, removing debris for inspection) rather than repairs =
+(e.g., cleaning curtains or upholstery), allowing me to exercise my =
+right to an independent assessment and for both parties to agree on a =
+remediation plan.</li></ul><p dir=3D"auto" style=3D"white-space: =
+pre-wrap;">I=E2=80=99ve been told by firefighters that there was =
+substantial fire damage and significant smoke exiting the =
+roof=E2=80=94initially thought to originate there by Devonport =
+Flagstaff=E2=80=94which penetrated the house structure. Yet, the roof, =
+the gas unit beneath it, and overall structural integrity remain =
+uninspected. This, alongside asbestos and moisture concerns, raises =
+serious safety issues.</p><p dir=3D"auto" style=3D"white-space: =
+pre-wrap;">I=E2=80=99m particularly worried about the asbestos plan. The =
+scope mentions removing less than 10m=C2=B2, but the deck=E2=80=99s =
+fire-damaged section connects to the main area, suggesting potential =
+wider involvement. I raised this with Chris, requesting a full =
+inspection, and I=E2=80=99d like this addressed before any removal =
+begins.</p><p dir=3D"auto" style=3D"white-space: pre-wrap;">Could we =
+please align on this H&amp;S-first, assessment-only approach? I=E2=80=99d =
+prefer to defer repair-focused cleaning until after experts assess the =
+damage and we agree on a plan. This seems fair to ensure safety and =
+accuracy=E2=80=94do you agree? I=E2=80=99m happy to discuss this onsite =
+at 2:00 PM Wednesday if confirmed.</p><p dir=3D"auto" =
+style=3D"white-space: pre-wrap;">Thanks so much for your =
+understanding=E2=80=94I look forward to your response.</p><p dir=3D"auto" =
+style=3D"white-space: pre-wrap;">Kind regards,<br>
+Raffaella del Prete</p><div><blockquote type=3D"cite"><div><div =
+dir=3D"auto" style=3D"overflow-wrap: break-word; -webkit-nbsp-mode: =
+space; line-break: after-white-space;"><br =
+id=3D"lineBreakAtBeginningOfMessage"><div style=3D"direction: =
+ltr;"><br><blockquote type=3D"cite"><div>On 30 Jun 2025, at 11:25=E2=80=AF=
+AM, David Tallot &lt;david@assetrestore.co.nz&gt; wrote:</div><br =
+class=3D"Apple-interchange-newline"><div><meta charset=3D"UTF-8"><div =
+class=3D"WordSection1" style=3D"page: WordSection1; caret-color: rgb(0, =
+0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; =
+font-variant-caps: normal; font-weight: 400; letter-spacing: normal; =
+text-align: start; text-indent: 0px; text-transform: none; white-space: =
+normal; word-spacing: 0px; -webkit-text-stroke-width: 0px; =
+text-decoration: none;"><div style=3D"margin: 0cm; font-size: 11pt; =
+font-family: Calibri, sans-serif;"><span>Good Morning =
+Raffaella<o:p></o:p></span></div><div style=3D"margin: 0cm; font-size: =
+11pt; font-family: Calibri, =
+sans-serif;"><span><o:p>&nbsp;</o:p></span></div><div style=3D"margin: =
+0cm; font-size: 11pt; font-family: Calibri, sans-serif;"><span>Just =
+wanted to follow up with you so we can get this work underway for =
+you.<o:p></o:p></span></div><div style=3D"margin: 0cm; font-size: 11pt; =
+font-family: Calibri, =
+sans-serif;"><span><o:p>&nbsp;</o:p></span></div><div style=3D"margin: =
+0cm; font-size: 11pt; font-family: Calibri, sans-serif;"><span>I have an =
+appointment now tomorrow at midday but still have availability =
+Wednesday.<o:p></o:p></span></div><div style=3D"margin: 0cm; font-size: =
+11pt; font-family: Calibri, =
+sans-serif;"><span><o:p>&nbsp;</o:p></span></div><div style=3D"margin: =
+0cm; font-size: 11pt; font-family: Calibri, =
+sans-serif;"><span>thanks<o:p></o:p></span></div><div style=3D"margin: =
+0cm; font-size: 11pt; font-family: Calibri, =
+sans-serif;"><span><o:p>&nbsp;</o:p></span></div><div><div =
+style=3D"margin: 0cm; font-size: 11pt; font-family: Calibri, =
+sans-serif;"><b><span lang=3D"EN-US" style=3D"color: rgb(79, 129, =
+189);">David Tallott<span =
+class=3D"Apple-converted-space">&nbsp;</span><o:p></o:p></span></b></div><=
+div style=3D"margin: 0cm; font-size: 11pt; font-family: Calibri, =
+sans-serif;"><b><span lang=3D"EN-US" style=3D"color: rgb(79, 129, =
+189);">Manager<o:p></o:p></span></b></div><div style=3D"margin: 0cm; =
+font-size: 11pt; font-family: Calibri, sans-serif;"><span style=3D"color: =
+rgb(31, 73, 125);"><span =
+id=3D"cid:image001.jpg@01DBE778.00FFAF90">&lt;image001.jpg&gt;</span><o:p>=
+</o:p></span></div><div style=3D"margin: 0cm; font-size: 11pt; =
+font-family: Calibri, sans-serif;"><span lang=3D"EN-US" =
+style=3D"font-size: 10pt; color: gray;">Asset Restore =
+limited<o:p></o:p></span></div><div style=3D"margin: 0cm; font-size: =
+11pt; font-family: Calibri, sans-serif;"><b><span lang=3D"EN-US" =
+style=3D"font-size: 10pt; color: rgb(0, 112, =
+192);">Postal</span></b><b><span lang=3D"EN-US" style=3D"font-size: =
+10pt; color: gray;"><span =
+class=3D"Apple-converted-space">&nbsp;</span></span></b><span =
+lang=3D"EN-US" style=3D"font-size: 10pt; color: gray;">: Po Box 64217, =
+Botany, Auckland.<o:p></o:p></span></div><div style=3D"margin: 0cm; =
+font-size: 11pt; font-family: Calibri, sans-serif;"><b><span =
+lang=3D"EN-US" style=3D"font-size: 10pt; color: rgb(0, 112, =
+192);">T</span></b><b><span lang=3D"EN-US" style=3D"font-size: 10pt; =
+color: gray;"><span =
+class=3D"Apple-converted-space">&nbsp;</span></span></b><span =
+lang=3D"EN-US" style=3D"font-size: 10pt; color: gray;">09 272 4985<span =
+class=3D"Apple-converted-space">&nbsp;</span></span><b><span =
+lang=3D"EN-US" style=3D"font-size: 10pt; color: rgb(0, 112, =
+192);">M</span></b><span lang=3D"EN-US" style=3D"font-size: 10pt; color: =
+rgb(0, 112, 192);">&nbsp;<span =
+class=3D"Apple-converted-space">&nbsp;</span></span><span lang=3D"EN-US" =
+style=3D"font-size: 10pt; color: rgb(127, 127, =
+127);">021379318</span><span lang=3D"EN-US" style=3D"font-size: 10pt; =
+color: rgb(0, 112, 192);"><span =
+class=3D"Apple-converted-space">&nbsp;</span><b>E</b></span><b><span =
+lang=3D"EN-US" style=3D"font-size: 10pt; color: gray;"><span =
+class=3D"Apple-converted-space">&nbsp;</span></span></b><span =
+lang=3D"EN-US" style=3D"font-size: 10pt; color: rgb(0, 112, 192);"><a =
+href=3D"mailto:david@assetrestore.co.nz" style=3D"color: blue; =
+text-decoration: underline;">david@assetrestore.co.nz</a></span><span =
+lang=3D"EN-US" style=3D"font-size: 10pt; color: =
+gray;"><o:p></o:p></span></div><div style=3D"margin: 0cm; font-size: =
+11pt; font-family: Calibri, sans-serif;"><span lang=3D"EN-US" =
+style=3D"font-size: 10pt; color: =
+gray;"><o:p>&nbsp;</o:p></span></div><div style=3D"margin: 0cm; =
+font-size: 11pt; font-family: Calibri, sans-serif;"><b><span =
+lang=3D"EN-US" style=3D"font-size: 10pt; color: gray;">PLEASE CONSIDER =
+THE ENVIRONMENT BEFORE PRINTING THIS =
+EMAIL</span></b><o:p></o:p></div></div><div style=3D"margin: 0cm; =
+font-size: 11pt; font-family: Calibri, =
+sans-serif;"><span><o:p>&nbsp;</o:p></span></div><div><div =
+style=3D"border-width: 1pt medium medium; border-style: solid none none; =
+border-color: rgb(225, 225, 225) currentcolor currentcolor; =
+border-image: none; padding: 3pt 0cm 0cm;"><div style=3D"margin: 0cm; =
+font-size: 11pt; font-family: Calibri, sans-serif;"><b><span =
+lang=3D"EN-US">From:</span></b><span lang=3D"EN-US"><span =
+class=3D"Apple-converted-space">&nbsp;</span>David =
+Tallot<br><b>Sent:</b><span =
+class=3D"Apple-converted-space">&nbsp;</span>Friday, June 27, 2025 3:28 =
+PM<br><b>To:</b><span =
+class=3D"Apple-converted-space">&nbsp;</span>Raffaella del Prete =
+&lt;raffaellanz@icloud.com&gt;<br><b>Subject:</b><span =
+class=3D"Apple-converted-space">&nbsp;</span>RE: 23 Mays street =
+Devenport<o:p></o:p></span></div></div></div><div style=3D"margin: 0cm; =
+font-size: 11pt; font-family: Calibri, =
+sans-serif;"><o:p>&nbsp;</o:p></div><div style=3D"margin: 0cm; =
+font-size: 11pt; font-family: Calibri, sans-serif;"><span>My apologies =
+Raffaella,<o:p></o:p></span></div><div style=3D"margin: 0cm; font-size: =
+11pt; font-family: Calibri, =
+sans-serif;"><span><o:p>&nbsp;</o:p></span></div><div style=3D"margin: =
+0cm; font-size: 11pt; font-family: Calibri, sans-serif;"><span>I miss =
+heard you, I thought Monday was ok that=E2=80=99s my =
+mistake.<o:p></o:p></span></div><div style=3D"margin: 0cm; font-size: =
+11pt; font-family: Calibri, =
+sans-serif;"><span><o:p>&nbsp;</o:p></span></div><div style=3D"margin: =
+0cm; font-size: 11pt; font-family: Calibri, sans-serif;"><span>What day =
+would better suit you so we can go through things =
+?<o:p></o:p></span></div><div style=3D"margin: 0cm; font-size: 11pt; =
+font-family: Calibri, =
+sans-serif;"><span><o:p>&nbsp;</o:p></span></div><div style=3D"margin: =
+0cm; font-size: 11pt; font-family: Calibri, sans-serif;"><span>I can do =
+Tuesday or Wednesday at the same time ?<o:p></o:p></span></div><div =
+style=3D"margin: 0cm; font-size: 11pt; font-family: Calibri, =
+sans-serif;"><span><o:p>&nbsp;</o:p></span></div><div style=3D"margin: =
+0cm; font-size: 11pt; font-family: Calibri, sans-serif;"><span>Also, if =
+you like to let me know any Health and Safety concerns you have so I can =
+answer them for you now or again if its better for you can let me know =
+onsite.<o:p></o:p></span></div><div style=3D"margin: 0cm; font-size: =
+11pt; font-family: Calibri, =
+sans-serif;"><span><o:p>&nbsp;</o:p></span></div><div style=3D"margin: =
+0cm; font-size: 11pt; font-family: Calibri, =
+sans-serif;"><span>thanks<o:p></o:p></span></div><div style=3D"margin: =
+0cm; font-size: 11pt; font-family: Calibri, =
+sans-serif;"><span><o:p>&nbsp;</o:p></span></div><div style=3D"margin: =
+0cm; font-size: 11pt; font-family: Calibri, =
+sans-serif;"><span><o:p>&nbsp;</o:p></span></div><div><div =
+style=3D"margin: 0cm; font-size: 11pt; font-family: Calibri, =
+sans-serif;"><b><span lang=3D"EN-US" style=3D"color: rgb(79, 129, =
+189);">David Tallott<span =
+class=3D"Apple-converted-space">&nbsp;</span><o:p></o:p></span></b></div><=
+div style=3D"margin: 0cm; font-size: 11pt; font-family: Calibri, =
+sans-serif;"><b><span lang=3D"EN-US" style=3D"color: rgb(79, 129, =
+189);">Manager<o:p></o:p></span></b></div><div style=3D"margin: 0cm; =
+font-size: 11pt; font-family: Calibri, sans-serif;"><span style=3D"color: =
+rgb(31, 73, 125);"><span =
+id=3D"cid:image001.jpg@01DBE778.00FFAF90">&lt;image001.jpg&gt;</span></spa=
+n><span style=3D"color: rgb(31, 73, 125);"><o:p></o:p></span></div><div =
+style=3D"margin: 0cm; font-size: 11pt; font-family: Calibri, =
+sans-serif;"><span lang=3D"EN-US" style=3D"font-size: 10pt; color: =
+gray;">Asset Restore limited<o:p></o:p></span></div><div style=3D"margin: =
+0cm; font-size: 11pt; font-family: Calibri, sans-serif;"><b><span =
+lang=3D"EN-US" style=3D"font-size: 10pt; color: rgb(0, 112, =
+192);">Postal</span></b><b><span lang=3D"EN-US" style=3D"font-size: =
+10pt; color: gray;"><span =
+class=3D"Apple-converted-space">&nbsp;</span></span></b><span =
+lang=3D"EN-US" style=3D"font-size: 10pt; color: gray;">: Po Box 64217, =
+Botany, Auckland.<o:p></o:p></span></div><div style=3D"margin: 0cm; =
+font-size: 11pt; font-family: Calibri, sans-serif;"><b><span =
+lang=3D"EN-US" style=3D"font-size: 10pt; color: rgb(0, 112, =
+192);">T</span></b><b><span lang=3D"EN-US" style=3D"font-size: 10pt; =
+color: gray;"><span =
+class=3D"Apple-converted-space">&nbsp;</span></span></b><span =
+lang=3D"EN-US" style=3D"font-size: 10pt; color: gray;">09 272 4985<span =
+class=3D"Apple-converted-space">&nbsp;</span></span><b><span =
+lang=3D"EN-US" style=3D"font-size: 10pt; color: rgb(0, 112, =
+192);">M</span></b><span lang=3D"EN-US" style=3D"font-size: 10pt; color: =
+rgb(0, 112, 192);">&nbsp;<span =
+class=3D"Apple-converted-space">&nbsp;</span></span><span lang=3D"EN-US" =
+style=3D"font-size: 10pt; color: rgb(127, 127, =
+127);">021379318</span><span lang=3D"EN-US" style=3D"font-size: 10pt; =
+color: rgb(0, 112, 192);"><span =
+class=3D"Apple-converted-space">&nbsp;</span><b>E</b></span><b><span =
+lang=3D"EN-US" style=3D"font-size: 10pt; color: gray;"><span =
+class=3D"Apple-converted-space">&nbsp;</span></span></b><span =
+lang=3D"EN-US" style=3D"font-size: 10pt; color: rgb(0, 112, 192);"><a =
+href=3D"mailto:david@assetrestore.co.nz" style=3D"color: blue; =
+text-decoration: underline;">david@assetrestore.co.nz</a></span><span =
+lang=3D"EN-US" style=3D"font-size: 10pt; color: =
+gray;"><o:p></o:p></span></div><div style=3D"margin: 0cm; font-size: =
+11pt; font-family: Calibri, sans-serif;"><span lang=3D"EN-US" =
+style=3D"font-size: 10pt; color: =
+gray;"><o:p>&nbsp;</o:p></span></div><div style=3D"margin: 0cm; =
+font-size: 11pt; font-family: Calibri, sans-serif;"><b><span =
+lang=3D"EN-US" style=3D"font-size: 10pt; color: gray;">PLEASE CONSIDER =
+THE ENVIRONMENT BEFORE PRINTING THIS =
+EMAIL</span></b><o:p></o:p></div></div><div style=3D"margin: 0cm; =
+font-size: 11pt; font-family: Calibri, =
+sans-serif;"><span><o:p>&nbsp;</o:p></span></div><div><div =
+style=3D"border-width: 1pt medium medium; border-style: solid none none; =
+border-color: rgb(225, 225, 225) currentcolor currentcolor; =
+border-image: none; padding: 3pt 0cm 0cm;"><div style=3D"margin: 0cm; =
+font-size: 11pt; font-family: Calibri, sans-serif;"><b><span =
+lang=3D"EN-US">From:</span></b><span lang=3D"EN-US"><span =
+class=3D"Apple-converted-space">&nbsp;</span>Raffaella del Prete &lt;<a =
+href=3D"mailto:raffaellanz@icloud.com" style=3D"color: blue; =
+text-decoration: =
+underline;">raffaellanz@icloud.com</a>&gt;<br><b>Sent:</b><span =
+class=3D"Apple-converted-space">&nbsp;</span>Friday, June 27, 2025 3:15 =
+PM<br><b>To:</b><span class=3D"Apple-converted-space">&nbsp;</span>David =
+Tallot &lt;<a href=3D"mailto:david@assetrestore.co.nz" style=3D"color: =
+blue; text-decoration: =
+underline;">david@assetrestore.co.nz</a>&gt;<br><b>Cc:</b><span =
+class=3D"Apple-converted-space">&nbsp;</span>Raffaella del Prete &lt;<a =
+href=3D"mailto:raffaellanz@icloud.com" style=3D"color: blue; =
+text-decoration: =
+underline;">raffaellanz@icloud.com</a>&gt;<br><b>Subject:</b><span =
+class=3D"Apple-converted-space">&nbsp;</span>Re: 23 Mays street =
+Devenport<o:p></o:p></span></div></div></div><div style=3D"margin: 0cm; =
+font-size: 11pt; font-family: Calibri, =
+sans-serif;"><o:p>&nbsp;</o:p></div><div><div><div><div style=3D"margin: =
+0cm; font-size: 11pt; font-family: Calibri, sans-serif;">Hi =
+David,<o:p></o:p></div></div><div><div style=3D"margin: 0cm; font-size: =
+11pt; font-family: Calibri, =
+sans-serif;"><o:p>&nbsp;</o:p></div></div><div><div style=3D"margin: =
+0cm; font-size: 11pt; font-family: Calibri, sans-serif;">Thank you for =
+your call earlier and for sending the email. I=E2=80=99m a bit =
+concerned, as we just spoke over the phone and I explained that I cannot =
+meet you on Monday with such short notice (less than 24 working hours). =
+You had agreed to send me the scope of work with a few available options =
+for when we could meet (not Monday) and that I would get back to =
+you.<o:p></o:p></div></div><div><div style=3D"margin: 0cm; font-size: =
+11pt; font-family: Calibri, =
+sans-serif;"><o:p>&nbsp;</o:p></div></div><div><div style=3D"margin: =
+0cm; font-size: 11pt; font-family: Calibri, sans-serif;">I=E2=80=99m not =
+sure why, just minutes after our call, you=E2=80=99re now pressing me to =
+meet at 12 PM despite our agreement to sync back on Monday to find a =
+convenient time. This feels a little =
+unexpected.<o:p></o:p></div></div><div><div style=3D"margin: 0cm; =
+font-size: 11pt; font-family: Calibri, =
+sans-serif;"><o:p>&nbsp;</o:p></div></div><div><div style=3D"margin: =
+0cm; font-size: 11pt; font-family: Calibri, sans-serif;">I=E2=80=99m =
+also worried about the sequencing and the Health &amp; Safety aspects of =
+the proposed scope, which I=E2=80=99d like to discuss further when we =
+arrange a suitable time.<o:p></o:p></div></div><div><div style=3D"margin: =
+0cm; font-size: 11pt; font-family: Calibri, =
+sans-serif;"><o:p>&nbsp;</o:p></div></div><div><div style=3D"margin: =
+0cm; font-size: 11pt; font-family: Calibri, sans-serif;">Thanks and =
+regards,<o:p></o:p></div></div><div><div style=3D"margin: 0cm; =
+font-size: 11pt; font-family: Calibri, sans-serif;">Raffaella del =
+Prete<o:p></o:p></div></div></div><div><div style=3D"margin: 0cm; =
+font-size: 11pt; font-family: Calibri, =
+sans-serif;"><o:p>&nbsp;</o:p></div></div><div><div style=3D"margin: =
+0cm; font-size: 11pt; font-family: Calibri, =
+sans-serif;"><o:p>&nbsp;</o:p></div></div><div><div><blockquote =
+style=3D"margin-top: 5pt; margin-bottom: 5pt;"><div><div style=3D"margin: =
+0cm; font-size: 11pt; font-family: Calibri, sans-serif;">On 27 Jun 2025, =
+at 2:41=E2=80=AFPM, David Tallot &lt;<a =
+href=3D"mailto:david@assetrestore.co.nz" style=3D"color: blue; =
+text-decoration: underline;">david@assetrestore.co.nz</a>&gt; =
+wrote:<o:p></o:p></div></div><div style=3D"margin: 0cm; font-size: 11pt; =
+font-family: Calibri, =
+sans-serif;"><o:p>&nbsp;</o:p></div><div><div><div><div style=3D"margin: =
+0cm; font-size: 11pt; font-family: Calibri, sans-serif;">Hi =
+Raffaella<span =
+class=3D"xapple-converted-space">&nbsp;</span><o:p></o:p></div></div><div>=
+<div style=3D"margin: 0cm; font-size: 11pt; font-family: Calibri, =
+sans-serif;">&nbsp;<o:p></o:p></div></div><div><div style=3D"margin: =
+0cm; font-size: 11pt; font-family: Calibri, sans-serif;">Thanks for your =
+time on the phone earlier.<o:p></o:p></div></div><div><div =
+style=3D"margin: 0cm; font-size: 11pt; font-family: Calibri, =
+sans-serif;">&nbsp;<o:p></o:p></div></div><div><div style=3D"margin: =
+0cm; font-size: 11pt; font-family: Calibri, sans-serif;">As discussed, =
+Tower insurance has approved our quote to carry out the following work =
+we discussed at your house. (Scope =
+attached)<o:p></o:p></div></div><div><div style=3D"margin: 0cm; =
+font-size: 11pt; font-family: Calibri, =
+sans-serif;">&nbsp;<o:p></o:p></div></div><div><div style=3D"margin: =
+0cm; font-size: 11pt; font-family: Calibri, sans-serif;">Can I please =
+come and meet with you Monday 12pm ? so we can go through the scope =
+together and I can show my staff who will be doing the work, we can then =
+also arrange key access with you and install a lock =
+box.<o:p></o:p></div></div><div><div style=3D"margin: 0cm; font-size: =
+11pt; font-family: Calibri, =
+sans-serif;">&nbsp;<o:p></o:p></div></div><div><div style=3D"margin: =
+0cm; font-size: 11pt; font-family: Calibri, =
+sans-serif;">Thanks<o:p></o:p></div></div><div><div style=3D"margin: =
+0cm; font-size: 11pt; font-family: Calibri, =
+sans-serif;">&nbsp;<o:p></o:p></div></div><div><div style=3D"margin: =
+0cm; font-size: 11pt; font-family: Calibri, =
+sans-serif;">&nbsp;<o:p></o:p></div></div><div><div style=3D"margin: =
+0cm; font-size: 11pt; font-family: Calibri, =
+sans-serif;">&nbsp;<o:p></o:p></div></div><div><div style=3D"margin: =
+0cm; font-size: 11pt; font-family: Calibri, =
+sans-serif;">&nbsp;<o:p></o:p></div></div><div><div style=3D"margin: =
+0cm; font-size: 11pt; font-family: Calibri, =
+sans-serif;">&nbsp;<o:p></o:p></div></div><div><div style=3D"margin: =
+0cm; font-size: 11pt; font-family: Calibri, sans-serif;"><b><span =
+lang=3D"EN-US" style=3D"color: rgb(79, 129, 189);">David =
+Tallott</span></b><o:p></o:p></div></div><div><div style=3D"margin: 0cm; =
+font-size: 11pt; font-family: Calibri, sans-serif;"><b><span =
+lang=3D"EN-US" style=3D"color: rgb(79, 129, =
+189);">Manager</span></b><o:p></o:p></div></div></div></div></blockquote><=
+/div></div></div><div><div style=3D"margin: 0cm; font-size: 11pt; =
+font-family: Calibri, sans-serif;"><span =
+id=3D"cid:image001.jpg@01DBE778.00FFAF90">&lt;image001.jpg&gt;</span><o:p>=
+</o:p></div></div><div><div><div><blockquote style=3D"margin-top: 5pt; =
+margin-bottom: 5pt;"><div><div><div><div style=3D"margin: 0cm; =
+font-size: 11pt; font-family: Calibri, sans-serif;"><span lang=3D"EN-US" =
+style=3D"font-size: 10pt; color: gray;">Asset Restore =
+limited</span><o:p></o:p></div></div><div><div style=3D"margin: 0cm; =
+font-size: 11pt; font-family: Calibri, sans-serif;"><b><span =
+lang=3D"EN-US" style=3D"font-size: 10pt; color: rgb(0, 112, =
+192);">Postal</span></b><span class=3D"xapple-converted-space"><b><span =
+lang=3D"EN-US" style=3D"font-size: 10pt; color: =
+gray;">&nbsp;</span></b></span><span lang=3D"EN-US" style=3D"font-size: =
+10pt; color: gray;">: Po Box 64217, Botany, =
+Auckland.</span><o:p></o:p></div></div><div><div style=3D"margin: 0cm; =
+font-size: 11pt; font-family: Calibri, sans-serif;"><b><span =
+lang=3D"EN-US" style=3D"font-size: 10pt; color: rgb(0, 112, =
+192);">T</span></b><span class=3D"xapple-converted-space"><b><span =
+lang=3D"EN-US" style=3D"font-size: 10pt; color: =
+gray;">&nbsp;</span></b></span><span lang=3D"EN-US" style=3D"font-size: =
+10pt; color: gray;">09 272 4985<span =
+class=3D"xapple-converted-space">&nbsp;</span></span><b><span =
+lang=3D"EN-US" style=3D"font-size: 10pt; color: rgb(0, 112, =
+192);">M</span></b><span lang=3D"EN-US" style=3D"font-size: 10pt; color: =
+rgb(0, 112, 192);">&nbsp;<span =
+class=3D"xapple-converted-space">&nbsp;</span></span><span lang=3D"EN-US" =
+style=3D"font-size: 10pt; color: rgb(127, 127, =
+127);">021379318</span><span class=3D"xapple-converted-space"><span =
+lang=3D"EN-US" style=3D"font-size: 10pt; color: rgb(0, 112, =
+192);">&nbsp;</span></span><b><span lang=3D"EN-US" style=3D"font-size: =
+10pt; color: rgb(0, 112, 192);">E</span></b><span =
+class=3D"xapple-converted-space"><b><span lang=3D"EN-US" =
+style=3D"font-size: 10pt; color: gray;">&nbsp;</span></b></span><span =
+lang=3D"EN-US" style=3D"font-size: 10pt; color: rgb(0, 112, 192);"><a =
+href=3D"mailto:david@assetrestore.co.nz" style=3D"color: blue; =
+text-decoration: =
+underline;">david@assetrestore.co.nz</a></span><o:p></o:p></div></div><div=
+><div style=3D"margin: 0cm; font-size: 11pt; font-family: Calibri, =
+sans-serif;"><span lang=3D"EN-US" style=3D"font-size: 10pt; color: =
+gray;">&nbsp;</span><o:p></o:p></div></div><div><div style=3D"margin: =
+0cm; font-size: 11pt; font-family: Calibri, sans-serif;"><b><span =
+lang=3D"EN-US" style=3D"font-size: 10pt; color: gray;">PLEASE CONSIDER =
+THE ENVIRONMENT BEFORE PRINTING THIS =
+EMAIL</span></b></div></div></div></div></blockquote></div></div></div></d=
+iv></div></blockquote></div><br></div></div></blockquote></div><br></body>=
+</html>=
+
+--Apple-Mail=_D837219C-A7B4-45C2-AABA-CAF98A5ADA66--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>conversation-id</key>
+	<integer>62715</integer>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1751263835</integer>
+	<key>flags</key>
+	<integer>8590195717</integer>
+	<key>remote-id</key>
+	<string>64715</string>
+</dict>
+</plist>

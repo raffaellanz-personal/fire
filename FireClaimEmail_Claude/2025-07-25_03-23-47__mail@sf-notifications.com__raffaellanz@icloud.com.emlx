@@ -1,0 +1,587 @@
+30087     
+Return-path: <bounces+49669673-1746-raffaellanz=icloud.com@em5234.sf-notifications.com>
+Original-recipient: rfc822;raffaellanz@icloud.com
+Received: from p00-icloudmta-smtpin-us-west-3a-60-percent-37 by p136-mailgateway-smtp-6b56d59fd7-g89pg (mailgateway 2528B40)
+	with SMTP id 79cec67d-1966-4c7f-ab80-3c1c92b62c93 
+	for <raffaellanz@icloud.com>; Fri, 25 Jul 2025 03:23:52 GMT
+X-Apple-MoveToFolder: INBOX 
+X-Apple-Action: MOVE_TO_FOLDER/INBOX
+X-Apple-UUID: 79cec67d-1966-4c7f-ab80-3c1c92b62c93
+Received: from o5.ptr6234.sf-notifications.com (o5.ptr6234.sf-notifications.com [167.89.16.230])
+	by p00-icloudmta-smtpin-us-west-3a-60-percent-37 (Postfix) with ESMTPS id A3C1BC0016A
+	for <raffaellanz@icloud.com>; Fri, 25 Jul 2025 03:23:48 +0000 (UTC)
+X-ICL-Info: GAtbRVYDBVFFSlVFSgQEUFUKE0oWX1gHVQoPB0UBAFVbQV9ZSQYYUEZJRhIcDVQNABcFEgsbAltDT19BTwMbU0JNUFoKUVAEFBwKGxleTF8cGgoYDVQYARoUJhIVBQRRQVcVEVVeWRYcHw8UGURfDRsKSBQXXRYEEUQVEVVeWRYcHw8UGURfDRsKSBQXXRYQFkQUFh5WVwcZFQcZAnBfARkWExNWU1kPVREDGxcNWVdbCRIFTgIFVlsKAFoWX0ILExAFFgxZWQwGVwUYFRBGFgdECUJWQEIQQ0tVQ1ZDUE8bFhIeHllVAwEQCRkLHlUNGFkCE0VDUE8bFhIeHllVAwEQCRkLHlUNGFkLHhwNClFBTVE2QQNzITZBVzVNAHJXQEtTMUgBdCQzSFRASnQFWkw7IDY7CAYiPClWNjsBBlRCSVRJ
+X-ICL-Score: 2.33303322422
+Authentication-Results: bimi.icloud.com; bimi=none
+X-ARC-Info: policy=fail; arc=none
+Authentication-Results: arc.icloud.com; arc=none
+Authentication-Results: dmarc.icloud.com; dmarc=pass header.from=sf-notifications.com
+X-DMARC-Policy: v=DMARC1; p=quarantine; rua=mailto:c503e53751ee581@rep.dmarcanalyzer.com; ruf=mailto:c503e53751ee581@for.dmarcanalyzer.com; fo=1;
+X-DMARC-Info: pass=pass; dmarc-policy=quarantine; s=r1; d=r1; pdomain=sf-notifications.com
+Authentication-Results: dkim-verifier.icloud.com;
+	dkim=pass (2048-bit key) header.d=sf-notifications.com header.i=@sf-notifications.com header.b=g9SUJwMH
+Authentication-Results: spf.icloud.com; spf=pass (spf.icloud.com: domain of bounces+49669673-1746-raffaellanz=icloud.com@em5234.sf-notifications.com designates 167.89.16.230 as permitted sender) smtp.mailfrom="bounces+49669673-1746-raffaellanz=icloud.com@em5234.sf-notifications.com"
+Received-SPF: pass (spf.icloud.com: domain of bounces+49669673-1746-raffaellanz=icloud.com@em5234.sf-notifications.com designates 167.89.16.230 as permitted sender) receiver=spf.icloud.com; client-ip=167.89.16.230; helo=o5.ptr6234.sf-notifications.com; envelope-from="bounces+49669673-1746-raffaellanz=icloud.com@em5234.sf-notifications.com"
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sf-notifications.com;
+	h=mime-version:date:content-type:sender:from:subject:reply-to:to:cc:
+	content-type:date:from:subject:to;
+	s=sf; bh=2yRksmpyESimM5KQx20NpU3F3C4kltWUyGODHjHxikY=;
+	b=g9SUJwMH7vaCBPu57N/savcMxV1911BTB57/oXs9FLBSSkbb9WudaQ6eRlFJyBZWPS4Q
+	/qkG8Yu8OO2Ny3385QtN6ErnaxSsw4jAP9RFXvKNis6/PKXTHp9bOSQoeU3djjab3vBHQB
+	iaNIsoPg/8sIIvgQHIxvOCIJF2FUVnlSOkeSXj08TlP0W8pBCF7u7axCj0UR/svxw53ZXF
+	ZEDVBYCfqmNMtKBG/7FTKm6m2it/HnlUJ7WHq+Kh1BAodqWAHVImAOE50XLYlcyaRCpbN4
+	VxAqHVcGNvdMssU4cfd94rRTjMX+BZ1QZRyUGNJyfisRYTTepY++R9TNQCYW0upA==
+Received: by recvd-57475cd989-4bldc with SMTP id recvd-57475cd989-4bldc-1-6882F8C3-6
+	2025-07-25 03:23:47.064809085 +0000 UTC m=+4358387.214028268
+Received: from IP-AC106702.sf-notifications.com (unknown)
+	by geopod-ismtpd-canary-0 (SG) with ESMTP id kbMSlaKmTEmcGi5eY2-n9w
+	for <raffaellanz@icloud.com>; Fri, 25 Jul 2025 03:23:47.034 +0000 (UTC)
+Received: from IP-AC106702 ([127.0.0.1]) by IP-AC106702.sf-notifications.com with Microsoft SMTPSVC(10.0.14393.4169);
+	 Thu, 24 Jul 2025 23:23:46 -0400
+MIME-Version: 1.0
+Date: Fri, 25 Jul 2025 03:23:47 +0000 (UTC)
+Message-ID: <3447A93ECC81B50D5525F01BFF1272D389BFAC80@IP0AC106702>
+Content-Type: multipart/alternative; boundary="------------050809020204010007070703"
+X-Priority: 3 (Normal)
+Sender: mail@sf-notifications.com
+From: Johann Engelbrecht <mail@sf-notifications.com>
+Subject: Johann Engelbrecht has shared the folder 'Raffaella Del Prete' with
+ you.
+X-OriginalArrivalTime: 25 Jul 2025 03:23:46.0941 (UTC) FILETIME=[883C22D0:01DBFD13]
+Reply-To: Johann.Engelbrecht@tower.co.nz
+X-SG-EID: 
+ =?us-ascii?Q?u001=2E2yNN7yoiPBGls1cjey9+wZFPgmGkwrUXhvqlPSqoNR4LL468zLih5FBCQ?=
+ =?us-ascii?Q?M31J3mNbJvM4Kl2SMTUEyOK5VWgexqm5MRfVc+Z?=
+ =?us-ascii?Q?QtDDHlPKA3FVFY6V7E6LaWJ8fgn9RjdVoLXmSzz?=
+ =?us-ascii?Q?36DBB8RocYVRYGXWRGdB73rWaOUqmY043bG4RA+?=
+ =?us-ascii?Q?lmXM4P6avJT8Q9U3aW8F871AjEqorfqB5uAR53K?=
+ =?us-ascii?Q?Aj1dMFfSvNkDic+5ouqilnykKayJxoh5zwfU2Na?= =?us-ascii?Q?HOnL?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BpTL9BgbK5wfSJMJGMsmprBdiDR+bQ7bMIKuE?=
+ =?us-ascii?Q?iWng=2FgpkUa1tev2F6kno+cTnqNWsHIjgN6G7z6t?=
+ =?us-ascii?Q?WJZh2N8m8UxvUQSW1FL=2F9Cpq+ZXOGw8k?=
+To: raffaellanz@icloud.com
+X-Entity-ID: u001.zNeXPmU7DYacYHsIzcoiSw==
+X-MANTSH: 1TFkXHxwRCllEF2JGZktFbEBmTlh7EQpZTRdkRURPEQpZSRcacRoQGncGGRxxHB0
+ bEBgTHncGGBoGGhEKWV4XbGx5EQpDThdbTW5zc1pPRGFLH3tFGGB5YE1EWmRyU0V9dWt1RH5oe
+ BEKWFwXGQQaBB8bBRsaGgQSGAQbHxIEGBMQGx4aHxoRCl5ZF0xfYBtNEQpNXBcbHB8RCkxaF2l
+ 4bV1NTREKRVkXaGtrEQpMXxd6BQUFBQUFBQUFHREKTEYXY01rEQpDWhcbHB0EEhMEGxwEGBkaE
+ QpCXhcbEQpCXBcbEQpeThcbEQpCSxdic1ABThtyH0NSExEKQkkXYnNQAU4bch9DUhMRCkJFF2N
+ EZV4dGG4SQWxCEQpCThdic1ABThtyH0NSExEKQkwXbW9aeVBMQUgYcBkRCkJsF2EeGk8BWVlzb
+ lIbEQpCQBdgUHJlZGx+GgFeHhEKQlgXYkZpTEkTW0lYemURCk1eFxsRClpYFxwRCnBnF2EfBWB
+ SaX9OT1kBEBoRCnBoF2decBxoUGh/RU15EBkaEQpwaBdicENiY39jTlAYHRAZGhEKcGgXaEMFa
+ FBCThITHRwQGhEKcGgXYXxpR04fWl5neWAQGRoRCnBoF21uW0haW0l8XUJQEB4SEQpwaBdkQh1
+ uHB8efVpbQxAcGhEKcGgXZWJQYkBnb3sYRXoQGRoRCnBoF2FIQ2wFXmtTa2NCEBkaEQpwfxdmZ
+ 3x8SV5sbWcdRxAbBB8RCnBfF2JMTnhTf1kacnluEAcbGBEKcH0XZH5weW17TW1vSX4QGxIRCnB
+ fF25+QkJCb0hFfkR6EAcZBBgRCnB9F3pCYGxZe1AZQ0IFEAcZBBgRCnB/F2JPTWlEaEJQbhgYE
+ BkSEQpwXxdjGUllUGFHHxJ6eBAcGhEKcH0XYwFvaxhwAWlLAXkQHBoRCnB9F3oYTmBtRG4YSUN
+ oEBwaEQpwXxdiYHtlbnhCRGdtYRAaEQpwfRdsGXlEex1aUl14SRAaEQpwXxdjaGxmWGJrYmgYW
+ hAaEQpwfRdpTmZsemd9S1toSBAaEQpwfRdpTmZsemd9S1toSBAaEQpwXxdvRmd/SUZ6eU5QSxA
+ cGhEKcH0XY10TQE96SEIFQnoQHBoRCnB9F2wZeUR7HVpSXXhJEBoRCnB9F2lOZmx6Z31LW2hIE
+ BoRCnB9F2lOZmx6Z31LW2hIEBoRCnB9F2NdE0BPekhCBUJ6EBwaEQpwfxdiQU9Be09MQH9fehA
+ cGhEKcF8XbHljSUdiWWUSG2EQHBoRCnB9F2RfT3ltRGtISBhyEBoRCnBsF2cTcGAYZhxlQ19kE
+ BoRCm1+FxsRClhNF0sR
+X-Proofpoint-GUID: qgDYYpenKa5Qo2JSJgnpNXyoW_A_nTBR
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzI1MDAyNSBTYWx0ZWRfX6jrRlSM8o3CM
+ KhufHUSCrf53aeTBI/t6iexy3wfR+IK7sI9osR6QXKzMXmcLjYM6DvZDeb/z3wFJrF0u8elYYuV
+ Cw4bu8E0vMEOJyXTMdgPf5gjtxZMa3CkJllL6j4hf1ezSdXnczyFI0DzPddqJYmQ+V7+xSxhRya
+ kdKw72wclaIe143mI6ZpIid7fzmBLV42X0gHTNm3GdWMUw+nhI1DXJw+3Hfjsa1eAgO3tFx2PLA
+ mdUhoMeo+3JU5v5whX/zoZSg/CvmGyzG83DnUAlk63X4wQ2Z9JubBFERi11dQs8pvKehSVb1I=
+X-Proofpoint-ORIG-GUID: qgDYYpenKa5Qo2JSJgnpNXyoW_A_nTBR
+
+--------------050809020204010007070703
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8; format=flowed
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.or=
+g/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns=3D"https://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1.0">
+    <title>ShareFile</title>
+    <style type=3D"text/css">
+        a:hover {
+            text-decoration: underline;
+        }
+
+        td {
+            padding: 0;
+        }
+    </style>
+
+    <!--[if mso]>
+        <style type=3D"text/css">
+            table {border-collapse:collapse; font-family:Arial,Helvetica,sa=
+ns-serif; width: 100%;}
+        </style>
+    <![endif]-->
+</head>
+<body style=3D"width: 100%; margin: 0; padding: 0;">
+    <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" role=3D"present=
+ation" style=3D"background: #F2F2F3; margin: 0; padding: 0; width: 100%; mi=
+n-width: 420px; line-height: 100%; border-collapse:collapse;">
+        <tbody>
+            <tr>
+                <td valign=3D"top" style=3D"padding: 40px 24px;">
+                    <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0"=
+ role=3D"presentation" align=3D"center" style=3D"background: #F2F2F3; borde=
+r-collapse:collapse; width: 100%; max-width: 700px;">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <table cellpadding=3D"0" cellspacing=3D=
+"0" border=3D"0" role=3D"presentation" align=3D"center" style=3D"background=
+: #FFFFFF; border-collapse:collapse; width: 100%;">
+                                        <tbody>
+                                            <tr>
+                                                <td background=3D"https://s=
+f-assets.sharefile.com/notifications/v1/images/transparent.gif">
+                                                    <table cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" style=
+=3D"border-collapse:collapse; font-family:Arial,Helvetica,sans-serif; width=
+: 100%;">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td height=
+=3D"4" background=3D"&quot;https://sf-assets.sharefile.com/notifications/v1=
+/images/transparent.gif&quot;" style=3D"background-color: #0C0D0D; height:4=
+px;"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td height=
+=3D"80" style=3D"height:80px;vertical-align:middle;padding: 0 40px;backgrou=
+nd:#FAF9F9;">
+                                                                    <img st=
+yle=3D"display: block; outline:none; text-decoration:none; -ms-interpolatio=
+n-mode: bicubic; border:none;" src=3D"https://towernz.sharefile.com/styles/=
+images/b130a8a0-0806-466e-867f-569be8406206.png">
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style=3D"padding:24px 4=
+0px;">
+                                                    <table cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" style=
+=3D"margin:auto; width:100%!important; max-width:620px;">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td style=
+=3D"vertical-align: middle;">
+                                                                    <table =
+cellpadding=3D"0" cellspacing=3D"0" border=3D"0" role=3D"presentation" styl=
+e=3D"border-collapse:collapse; width:100%;">
+    <tbody>
+        <tr>
+                <td style=3D"font-family:Arial,Helvetica,sans-serif;color:#=
+0C0D0D;font-size:28px;line-height:32px; padding-bottom: 16px;">
+                    Raffaella ,
+                </td>
+        </tr>
+        <tr>
+            <td style=3D"font-family:Arial,Helvetica,sans-serif;color:#0C0D=
+0D;font-size:20px;line-height:32px; padding-bottom: 40px;">
+                Johann Engelbrecht has shared the folder <b>Raffaella Del P=
+rete</b> with you.
+            </td>
+        </tr>
+            <tr>
+                <td style=3D"padding-bottom:40px;">
+                    <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0"=
+ role=3D"presentation" style=3D"border-collapse:collapse; width:100%;">
+                        <tbody>
+                            <tr>
+                                <td style=3D"background-color: #798186;heig=
+ht:1px;" height=3D"1px"></td>
+                            </tr>
+                            <tr>
+                                <td style=3D"font-family:Arial,Helvetica,sa=
+ns-serif;color:#555A5E;font-size:16px;line-height:24px;font-weight:700; pad=
+ding: 16px 16px 8px 16px">
+                                    Message from Johann
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style=3D"font-family:Arial,Helvetica,sa=
+ns-serif;color:#0C0D0D;font-size:16px;line-height:24px; padding: 0 16px 8px=
+ 16px">
+                                    I&#x27;ve added you to a folder
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style=3D"background-color: #798186;heig=
+ht:1px;" height=3D"1px"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        <tr>
+            <td>
+                 <!--[if mso]><table border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" style=3D"border-collapse:separate;mso-table-lspace:0pt;mso-table=
+-rspace:0pt;width:40%;box-sizing:border-box;" width=3D"40%"><tr><td align=
+=3D"left" style=3D"font-family:Arial,Helvetica,sans-serif;font-size:16px;li=
+ne-height:18px;vertical-align:top;padding-bottom:15px;" valign=3D"top"><tab=
+le border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-collaps=
+e:separate;mso-table-lspace:0pt;mso-table-rspace:0pt;width:auto;"><tr><td s=
+tyle=3D"font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1=
+8px;border:solid 2px #0C0D0D;background-color:#0C0D0D;padding:14px 30px;ver=
+tical-align:middle;text-align:center;"><a href=3D"https://towernz.sharefile=
+.com/f/fo71b632-7b9c-4f53-ae74-406e7f390212?a=3D515b31e0b00a8e2e" style=3D"=
+font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;colo=
+r:#ffffff;background-color:#0C0D0D;display:inline-block;box-sizing:border-b=
+ox;cursor:pointer;text-decoration:none;margin:0;"><strong style=3D"font-wei=
+ght:normal;">Go to Folder</strong></a></td></tr></table></td></tr></table><=
+![endif]--><![if !mso]><div style=3D"display:inline-block;padding:16px 32px=
+;border-radius:32px;text-align:center;background:#0C0D0D;"><a href=3D"https=
+://towernz.sharefile.com/f/fo71b632-7b9c-4f53-ae74-406e7f390212?a=3D515b31e=
+0b00a8e2e" style=3D"font-family:Arial,Helvetica,sans-serif;font-size:16px;l=
+ine-height:18px;text-decoration:none;color:#ffffff;">Go to Folder</a></div>=
+<![endif]>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style=
+=3D"padding: 40px 0 0 0;">
+                                                                    <table =
+cellpadding=3D"0" cellspacing=3D"0" border=3D"0" role=3D"presentation" widt=
+h=3D"100%" style=3D"border-collapse:collapse; font-family:Arial,Helvetica,s=
+ans-serif; width: 100%;">
+                                                                        <tb=
+ody>
+                                                                           =
+ <tr>
+                                                                           =
+     <td style=3D"vertical-align: middle; background-color: #F2F2F3; text-a=
+lign:center; padding:16px;">
+                                                                           =
+         <span style=3D"font-family:Arial,Helvetica,sans-serif;color:#0C0D0=
+D;font-size:16px;line-height:24px;font-weight:700;">Need help? We&#39;re he=
+re for you.</span>
+
+                                                                           =
+         <span style=3D"font-family:Arial,Helvetica,sans-serif;color:#0C0D0=
+D;font-size:16px;line-height:24px;">
+                                                                           =
+             Visit <a style=3D'color:#0C0D0D;' href=3D'https://sharefile.co=
+m/support'>sharefile.com/support</a> and look for =E2=80=9CStart chat.=E2=
+=80=9D
+                                                                           =
+         </span>
+                                                                           =
+     </td>
+                                                                           =
+ </tr>
+                                                                        </t=
+body>
+                                                                    </table=
+>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table cellpadding=3D"0" cellspacing=3D=
+"0" border=3D"0" role=3D"presentation" style=3D"margin:auto; width: 100%; m=
+ax-width: 700px;">
+                                        <tbody>
+                                            <tr>
+                                                <td style=3D"font-family:Ar=
+ial,Helvetica,sans-serif;color:#555A5E;font-size:10px;line-height:11.5px; t=
+ext-align:center; padding:24px 40px 0 40px;">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+
+--------------050809020204010007070703
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.or=
+g/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns=3D"https://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1.0">
+    <title>ShareFile</title>
+    <style type=3D"text/css">
+        a:hover {
+            text-decoration: underline;
+        }
+
+        td {
+            padding: 0;
+        }
+    </style>
+
+    <!--[if mso]>
+        <style type=3D"text/css">
+            table {border-collapse:collapse; font-family:Arial,Helvetica,sa=
+ns-serif; width: 100%;}
+        </style>
+    <![endif]-->
+</head>
+<body style=3D"width: 100%; margin: 0; padding: 0;">
+    <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" role=3D"present=
+ation" style=3D"background: #F2F2F3; margin: 0; padding: 0; width: 100%; mi=
+n-width: 420px; line-height: 100%; border-collapse:collapse;">
+        <tbody>
+            <tr>
+                <td valign=3D"top" style=3D"padding: 40px 24px;">
+                    <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0"=
+ role=3D"presentation" align=3D"center" style=3D"background: #F2F2F3; borde=
+r-collapse:collapse; width: 100%; max-width: 700px;">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <table cellpadding=3D"0" cellspacing=3D=
+"0" border=3D"0" role=3D"presentation" align=3D"center" style=3D"background=
+: #FFFFFF; border-collapse:collapse; width: 100%;">
+                                        <tbody>
+                                            <tr>
+                                                <td background=3D"https://s=
+f-assets.sharefile.com/notifications/v1/images/transparent.gif">
+                                                    <table cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" style=
+=3D"border-collapse:collapse; font-family:Arial,Helvetica,sans-serif; width=
+: 100%;">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td height=
+=3D"4" background=3D"&quot;https://sf-assets.sharefile.com/notifications/v1=
+/images/transparent.gif&quot;" style=3D"background-color: #0C0D0D; height:4=
+px;"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td height=
+=3D"80" style=3D"height:80px;vertical-align:middle;padding: 0 40px;backgrou=
+nd:#FAF9F9;">
+                                                                    <img st=
+yle=3D"display: block; outline:none; text-decoration:none; -ms-interpolatio=
+n-mode: bicubic; border:none;" src=3D"https://towernz.sharefile.com/styles/=
+images/b130a8a0-0806-466e-867f-569be8406206.png">
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style=3D"padding:24px 4=
+0px;">
+                                                    <table cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" style=
+=3D"margin:auto; width:100%!important; max-width:620px;">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td style=
+=3D"vertical-align: middle;">
+                                                                    <table =
+cellpadding=3D"0" cellspacing=3D"0" border=3D"0" role=3D"presentation" styl=
+e=3D"border-collapse:collapse; width:100%;">
+    <tbody>
+        <tr>
+                <td style=3D"font-family:Arial,Helvetica,sans-serif;color:#=
+0C0D0D;font-size:28px;line-height:32px; padding-bottom: 16px;">
+                    Raffaella ,
+                </td>
+        </tr>
+        <tr>
+            <td style=3D"font-family:Arial,Helvetica,sans-serif;color:#0C0D=
+0D;font-size:20px;line-height:32px; padding-bottom: 40px;">
+                Johann Engelbrecht has shared the folder <b>Raffaella Del P=
+rete</b> with you.
+            </td>
+        </tr>
+            <tr>
+                <td style=3D"padding-bottom:40px;">
+                    <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0"=
+ role=3D"presentation" style=3D"border-collapse:collapse; width:100%;">
+                        <tbody>
+                            <tr>
+                                <td style=3D"background-color: #798186;heig=
+ht:1px;" height=3D"1px"></td>
+                            </tr>
+                            <tr>
+                                <td style=3D"font-family:Arial,Helvetica,sa=
+ns-serif;color:#555A5E;font-size:16px;line-height:24px;font-weight:700; pad=
+ding: 16px 16px 8px 16px">
+                                    Message from Johann
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style=3D"font-family:Arial,Helvetica,sa=
+ns-serif;color:#0C0D0D;font-size:16px;line-height:24px; padding: 0 16px 8px=
+ 16px">
+                                    I&#x27;ve added you to a folder
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style=3D"background-color: #798186;heig=
+ht:1px;" height=3D"1px"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        <tr>
+            <td>
+                 <!--[if mso]><table border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" style=3D"border-collapse:separate;mso-table-lspace:0pt;mso-table=
+-rspace:0pt;width:40%;box-sizing:border-box;" width=3D"40%"><tr><td align=
+=3D"left" style=3D"font-family:Arial,Helvetica,sans-serif;font-size:16px;li=
+ne-height:18px;vertical-align:top;padding-bottom:15px;" valign=3D"top"><tab=
+le border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-collaps=
+e:separate;mso-table-lspace:0pt;mso-table-rspace:0pt;width:auto;"><tr><td s=
+tyle=3D"font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1=
+8px;border:solid 2px #0C0D0D;background-color:#0C0D0D;padding:14px 30px;ver=
+tical-align:middle;text-align:center;"><a href=3D"https://towernz.sharefile=
+.com/f/fo71b632-7b9c-4f53-ae74-406e7f390212?a=3D515b31e0b00a8e2e" style=3D"=
+font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;colo=
+r:#ffffff;background-color:#0C0D0D;display:inline-block;box-sizing:border-b=
+ox;cursor:pointer;text-decoration:none;margin:0;"><strong style=3D"font-wei=
+ght:normal;">Go to Folder</strong></a></td></tr></table></td></tr></table><=
+![endif]--><![if !mso]><div style=3D"display:inline-block;padding:16px 32px=
+;border-radius:32px;text-align:center;background:#0C0D0D;"><a href=3D"https=
+://towernz.sharefile.com/f/fo71b632-7b9c-4f53-ae74-406e7f390212?a=3D515b31e=
+0b00a8e2e" style=3D"font-family:Arial,Helvetica,sans-serif;font-size:16px;l=
+ine-height:18px;text-decoration:none;color:#ffffff;">Go to Folder</a></div>=
+<![endif]>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style=
+=3D"padding: 40px 0 0 0;">
+                                                                    <table =
+cellpadding=3D"0" cellspacing=3D"0" border=3D"0" role=3D"presentation" widt=
+h=3D"100%" style=3D"border-collapse:collapse; font-family:Arial,Helvetica,s=
+ans-serif; width: 100%;">
+                                                                        <tb=
+ody>
+                                                                           =
+ <tr>
+                                                                           =
+     <td style=3D"vertical-align: middle; background-color: #F2F2F3; text-a=
+lign:center; padding:16px;">
+                                                                           =
+         <span style=3D"font-family:Arial,Helvetica,sans-serif;color:#0C0D0=
+D;font-size:16px;line-height:24px;font-weight:700;">Need help? We&#39;re he=
+re for you.</span><br>
+                                                                           =
+         <span style=3D"font-family:Arial,Helvetica,sans-serif;color:#0C0D0=
+D;font-size:16px;line-height:24px;">
+                                                                           =
+             Visit <a style=3D'color:#0C0D0D;' href=3D'https://sharefile.co=
+m/support'>sharefile.com/support</a> and look for =E2=80=9CStart chat.=E2=
+=80=9D
+                                                                           =
+         </span>
+                                                                           =
+     </td>
+                                                                           =
+ </tr>
+                                                                        </t=
+body>
+                                                                    </table=
+>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table cellpadding=3D"0" cellspacing=3D=
+"0" border=3D"0" role=3D"presentation" style=3D"margin:auto; width: 100%; m=
+ax-width: 700px;">
+                                        <tbody>
+                                            <tr>
+                                                <td style=3D"font-family:Ar=
+ial,Helvetica,sans-serif;color:#555A5E;font-size:10px;line-height:11.5px; t=
+ext-align:center; padding:24px 40px 0 40px;">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+<img src=3D"http://url1945.sf-notifications.com/wf/open?upn=3Du001.5weoVKtJ=
+C18FklTHg1KmOHVC7B-2BGrqnzyZiOfpH6CQBD8RWIfC-2BVSWrc-2FSKIGukgWg9zNJjotQ7Jb=
+TUiNpU1HjLmSOfBZ-2F7P6mr5qeIjvzsAR70yLtKL4FfLtlod5UeQd3yMmncKfX4HAY8nlm8a-2=
+BTCI-2BTEICICRwpJKr091d4aPYRuB89j7KXSqRSdbkprUChfgNysw8RBnAMymhezGnpyAeD-2F=
+dphAmLz9ck38Sdjyrw0XnqaxuPaETrmbv7I4xDZtKWqkYtnC-2Fqk-2FQoV9Kk-2BjTqswNsRcz=
+0MgCe1crokM-3D" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"hei=
+ght:1px !important;width:1px !important;border-width:0 !important;margin-to=
+p:0 !important;margin-bottom:0 !important;margin-right:0 !important;margin-=
+left:0 !important;padding-top:0 !important;padding-bottom:0 !important;padd=
+ing-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+
+--------------050809020204010007070703--
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>conversation-id</key>
+	<integer>60783</integer>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1753413832</integer>
+	<key>flags</key>
+	<integer>8590195713</integer>
+	<key>remote-id</key>
+	<string>66490</string>
+</dict>
+</plist>

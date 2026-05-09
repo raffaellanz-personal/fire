@@ -1,0 +1,519 @@
+27778     
+Return-path: <Claims@tower.co.nz>
+Original-recipient: rfc822;raffaellanz@icloud.com
+Received: from p00-icloudmta-smtpin-us-west-1a-20-percent-8 by p136-mailgateway-smtp-6b56d59fd7-z82qc (mailgateway 2528B40)
+	with SMTP id 4d197882-74da-4233-bfb0-aff9dee3faf2 
+	for <raffaellanz@icloud.com>; Wed, 30 Jul 2025 03:11:17 GMT
+X-Apple-MoveToFolder: INBOX 
+X-Apple-Action: MOVE_TO_FOLDER/INBOX
+X-Apple-UUID: 4d197882-74da-4233-bfb0-aff9dee3faf2
+Received: from mx07-0055a601.pphosted.com (mx07-0055a601.pphosted.com [185.132.183.220])
+	by p00-icloudmta-smtpin-us-west-1a-20-percent-8 (Postfix) with ESMTPS id C7FD4C0010F
+	for <raffaellanz@icloud.com>; Wed, 30 Jul 2025 03:11:08 +0000 (UTC)
+X-ICL-Info: GAtbRVYDBVFFSlVHSgMFUFUKE0oWX1gHVQoPB0UBDldbSFVFVgEOUVtLVEdYVVJfNhUHHhVDdhYaDgMFVlNZTBsDRhEcDUINAhwUWRtfGAwPWRQURUJXBBMYAxsUUVgYNRAFGxdFUkwWFgtXEFVaDUgUHkdPHQZSQEwHQUgBGBIFEQkEDFVSTBYWC1cIRERfGAFWQFUABldAGFBHSR5GEh0WFQMdVBgBGhRGExwNQg0CHBRZG18YDA9ZCx4cDQoxLCA2RUACeyBFQVJBOXEFVEJLVkBNAgRVR0hUNkwAcCE0PVRDOXBlOywpVE9KfXRSTU1QWTllZTJHQVRZKGJ5Jls2MyM0f3kpWzopOkY=
+X-ICL-Score: 2.33303302332
+Authentication-Results: bimi.icloud.com; bimi=none
+X-ARC-Info: policy=pass; arc=pass; id=mx.microsoft.com 1
+Authentication-Results: arc.icloud.com; arc=pass
+Authentication-Results: dmarc.icloud.com; dmarc=pass header.from=tower.co.nz
+X-DMARC-Policy: v=DMARC1; p=reject; rua=mailto:dmarc_rua@emaildefense.proofpoint.com,mailto:dmarc_agg@vali.email,mailto:dmarc-reports@tower.co.nz; ruf=mailto:dmarc-reports@tower.co.nz,mailto:dmarc_ruf@emaildefense.proofpoint.com; fo=1; ri=3600
+X-DMARC-Info: pass=pass; dmarc-policy=reject; s=r1; d=r1; pdomain=tower.co.nz
+Authentication-Results: dkim-verifier.icloud.com;
+	dkim=pass (2048-bit key) header.d=tower.co.nz header.i=@tower.co.nz header.b=lW+x+tfl
+Authentication-Results: dkim-verifier.icloud.com;
+	dkim=pass (1024-bit key) header.d=tower.co.nz header.i=@tower.co.nz header.b=MpCI/YWU
+Authentication-Results: spf.icloud.com; spf=pass (spf.icloud.com: domain of Claims@tower.co.nz designates 185.132.183.220 as permitted sender) smtp.mailfrom=Claims@tower.co.nz
+Received-SPF: pass (spf.icloud.com: domain of Claims@tower.co.nz designates 185.132.183.220 as permitted sender) receiver=spf.icloud.com; client-ip=185.132.183.220; helo=mx07-0055a601.pphosted.com; envelope-from=Claims@tower.co.nz
+Received: from pps.filterd (m0210313.ppops.net [127.0.0.1])
+	by mx08-0055a601.pphosted.com (8.18.1.8/8.18.1.8) with ESMTP id 56U1GetZ2462540
+	for <raffaellanz@icloud.com>; Wed, 30 Jul 2025 15:11:06 +1200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tower.co.nz; h=
+	content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=towerpp; bh=mXQ/Cpw35uEYqPX+FmgNxTNk2S
+	NKeVSwr5fqfYH0VFM=; b=lW+x+tfl2m6gB0HnbcQ+SNhZE0s6BLZNic4yXix/8V
+	aiukU2tHZ0KkakYlXFz8QMai0gLkZoEZO/biwbb76oXKWmq1hNLALojaay6fC71+
+	UcIH7B6b+U9vTqafG1N6W+d4UA0jKSjvNWEIbl1IGhueaBTlyygbdvRNNcy1bPOg
+	xtxBTdOIGRqyrGNh3QF2Gs4HOK8HjQZ1feoUx5xunZFWzpUuU/Qt4RHaLPEdIkDs
+	dgkWHmYCSI8i2eRzFybn2iJAkQQnjBX/dX8HHTWGPuxIs5D3myOaBSX4x6HHPCK/
+	TLnVEOBdqxgBnApe5kOZdQPdd3Q9j11RvEdRV5K/lIsg==
+Received: from sy5pr01cu010.outbound.protection.outlook.com (mail-australiaeastazon11022077.outbound.protection.outlook.com [40.107.40.77])
+	by mx08-0055a601.pphosted.com (PPS) with ESMTPS id 484c1yjjxs-1
+	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT)
+	for <raffaellanz@icloud.com>; Wed, 30 Jul 2025 15:11:05 +1200 (NZT)
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=lclkuBpBYSVDDUmcXbYcwiQtXPnUEqkxJiPPje0NsVMaSLEPXrThGfBItAV9sMT6NbAgUUYoBCQ2NSPcJY+57Zw0DlYlp323FNta51qo6csQVK486IeI+L26832klQjX3CfN9ceoHvwEGJoOStE1GfBsM1nyoohZi/w4HxkOIGXBaNjMGFkh2+VamGSPmGuTe8a0DXqDcCiki1Qj/L2obmtj7bz12XjJ697/RTQJvCzaIfvifGfpOA/SpOGB0FIBtpjtBFjGB0DPwV2MlnB1wQtjLgrePXYA2bk1Kt6hFeWPW8H2+6V+qvG0gZvRJVlHZ/V3xALDAv5lnGk9fyoUVg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=mXQ/Cpw35uEYqPX+FmgNxTNk2SNKeVSwr5fqfYH0VFM=;
+ b=yBhU2SifW7DkDS1cCCjQshEP9vAx9znOXz7R80U0ZeC5ybwYygehLyuvX+3Wkxbi57322UZxyUDRzqV64eRS83PsoIf5flcJ960LEIqZkBivBtru3kwMjI4EHtAgjOJxhcBlpVFb4secdAXogGVzIXsU06MDmcVJ79VWfXVncJZNn5vxG+k60CRo9Qke0ZigI3Ui1ORrlkWxrMIt2Ro5Lu6UnXVyk+6gNOW7zR+rh0mBVAVHasupZ4yWtmPbaVrem9Ubj8bbFFpAtfN72JFW5bTMLJzE36PIdSTStfCT4zXqCCZ9X5XJOrH6R8k74Y33wERkN6EYi1dgwJfi+4DNBw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=tower.co.nz; dmarc=pass action=none header.from=tower.co.nz;
+ dkim=pass header.d=tower.co.nz; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tower.co.nz;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=mXQ/Cpw35uEYqPX+FmgNxTNk2SNKeVSwr5fqfYH0VFM=;
+ b=MpCI/YWUCEZ8rvNelk6QKhT81NfHzrqbiVyMaZ30Ybj3dv/VIU8ZgM0t8KJsXOxqlZkIQRVMlwOX6sx3pNOiFOFe7C674uMYZ4I4S2cV+B0l9NQ++LRN5BgrkeTnAxolJ9xGEU4LXpo4csm5Rt0IMg/IQps9XlQw2mY9gmoZZmg=
+Received: from SYYP282MB0846.AUSP282.PROD.OUTLOOK.COM (2603:10c6:10:be::9) by
+ SYYP282MB0767.AUSP282.PROD.OUTLOOK.COM (2603:10c6:10:74::9) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.8964.27; Wed, 30 Jul 2025 03:11:01 +0000
+Received: from SYYP282MB0846.AUSP282.PROD.OUTLOOK.COM
+ ([fe80::9066:3420:3116:27]) by SYYP282MB0846.AUSP282.PROD.OUTLOOK.COM
+ ([fe80::9066:3420:3116:27%6]) with mapi id 15.20.8989.010; Wed, 30 Jul 2025
+ 03:11:01 +0000
+From: Claims <Claims@tower.co.nz>
+To: Raffaella del Prete <raffaellanz@icloud.com>
+Subject: Contents Claim: #C90306256
+Thread-Topic: Contents Claim: #C90306256
+Thread-Index: AdwA/iKKCwqrmauzSr+YDNZAsQG6kAAATxNw
+Date: Wed, 30 Jul 2025 03:11:01 +0000
+Message-ID:
+ <SYYP282MB0846AA3672075227212A40FCAD24A@SYYP282MB0846.AUSP282.PROD.OUTLOOK.COM>
+References:
+ <SYYP282MB0846D002E51A988646EC6124AD24A@SYYP282MB0846.AUSP282.PROD.OUTLOOK.COM>
+In-Reply-To:
+ <SYYP282MB0846D002E51A988646EC6124AD24A@SYYP282MB0846.AUSP282.PROD.OUTLOOK.COM>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: yes
+X-MS-TNEF-Correlator:
+msip_labels:
+ MSIP_Label_b473d1de-6c91-4122-90ca-30dd6cc17832_Enabled=True;MSIP_Label_b473d1de-6c91-4122-90ca-30dd6cc17832_SiteId=ff85220d-ac35-48f0-b12a-0ca11f170147;MSIP_Label_b473d1de-6c91-4122-90ca-30dd6cc17832_SetDate=2025-07-30T03:08:46.0000000Z;MSIP_Label_b473d1de-6c91-4122-90ca-30dd6cc17832_Name=Sensitive
+ -
+ External;MSIP_Label_b473d1de-6c91-4122-90ca-30dd6cc17832_ContentBits=3;MSIP_Label_b473d1de-6c91-4122-90ca-30dd6cc17832_Method=Privileged
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: SYYP282MB0846:EE_|SYYP282MB0767:EE_
+x-ms-office365-filtering-correlation-id: e953f99d-5d16-472a-f347-08ddcf16b649
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam:
+ BCL:0;ARA:13230040|376014|366016|1800799024|10070799003|4053099003|13003099007|8096899003|38070700018;
+x-microsoft-antispam-message-info:
+ =?us-ascii?Q?ZNqJgIBpXL1k5HMkkNLYvrJ4BW5ajjxd7lOinZRHogUGHavudR635+TW/ChG?=
+ =?us-ascii?Q?1TTN2xo/1pP9n3dD8FHedm6SztEv7ngFOjtX8tzNzI1kCcbVmbMHusGcoz9E?=
+ =?us-ascii?Q?l6al6GPFcTRSNSdRZlljglc1HA8mA7YrlfooUyWpYuGCtPeyc0c5dzHVqqfi?=
+ =?us-ascii?Q?+o1XWsLfDWnBW6sVtsbNKMaPNTsDTxbtd1MlpxlBNvKn6A7witaSNr1zpPEY?=
+ =?us-ascii?Q?Ze683dz5wc/VrX4ESbrYCHHnuIQ8puwic9CpK/Cd1sV7Oi061DTa4fiamP17?=
+ =?us-ascii?Q?42K2mQtZFKj12Jkk34xsqpfqZ0oprJaHznfEeVkOne2psqB4N9LpMyx47kt3?=
+ =?us-ascii?Q?wy6yw0Iri5mNWzqwWQnVKMBcO9RtgKZsiNbubT5pzAJ7m/dyDqY2T+9+ymok?=
+ =?us-ascii?Q?mUR0m5pjl5qcVmTC1cePE14jJgMtl7HxwnRC1C5K2/TrSReRhA7DK7ptWfQe?=
+ =?us-ascii?Q?3jt+7grNL/3oioiGO9cWqAGrj8TJI4i0kz7fP0ykZe8xHVoUGhEyKLtxCuS8?=
+ =?us-ascii?Q?N9eu1Qo/PYEUIrFFkwjIGEJHAkPYxss/2U0NGOws0RxBVOzK/Z7jtv9nBmMI?=
+ =?us-ascii?Q?sVt/+5ev2fJKpkgT4nbicTcnhFweWug3BwX/YLejqnOUtDEBTz/CUtmOLuJm?=
+ =?us-ascii?Q?/2zopASg9TmfDn1Xe7JcY5WTiKewH/YYWmtjGXrLYSSEEGhnUTv7VYuLKL1T?=
+ =?us-ascii?Q?p/frnJTOG2FNS+RmDmAwW0nRi8Z0dekPJdusI6FD1NafoayDHPcJtFZXYBpj?=
+ =?us-ascii?Q?q5xRe7uPFG/Wh4JGlmA5usKhatelouKLHwCsZmLNNcRxBVb09NnOKujiayZc?=
+ =?us-ascii?Q?EUYfN6jbQDQvVWQZ+ahigBPc7iGPEm2I3vfc3qHWp2lKXNORXx0P4YCMlpUZ?=
+ =?us-ascii?Q?aYxKm0Gq5iLa08XsItiY7uA3IzbGIHBs34HAZpU03ixvaQlB95Y8at2geU+1?=
+ =?us-ascii?Q?hutk1Fg/vYoBXLtjngf1KHJ6nJNRm5XhVMZ6aqKGV9Cxmu4/LSZfboseNwmk?=
+ =?us-ascii?Q?S/E4IS4MoZG5SvFh4VgnECYTz5/rX9mlnqhcSTFzUdfoO+k3y+fSL0spNx8D?=
+ =?us-ascii?Q?FKNXdK/swmWkjLL5aT1C9n0HXaqUdBajYeolCqrSe/Tvc1V9ukfH59TbSXt3?=
+ =?us-ascii?Q?cGDBJqGDtDTyp1cpP8Jd769/L5aOMREI3eF3hge1qSb1GuG1124T+7o9DLU2?=
+ =?us-ascii?Q?8QEwbOnxDaGn+1iRueD24hTwcJ2hxDhcGdS8v3CvRDKDsM0TLkUS0yB/kgki?=
+ =?us-ascii?Q?Nsk/G7WFLkeV2r2UzZUKHvfo3GNA8bTE2kmIi82eSp2cj6H0PPKbWte93cs7?=
+ =?us-ascii?Q?cTMlXqZ8W+OFRv/Wc9yu7X5vuaPuvMvdlcZQ+Fy0UoJRP9n/8c1nDO+nTZHW?=
+ =?us-ascii?Q?2+L3dD3bgmrxsxLJwQhqh+ybdaQro58IvlGfp2JLvl+dKj+MoiGfCAxpgTqt?=
+ =?us-ascii?Q?zdn7HIZVxsE=3D?=
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SYYP282MB0846.AUSP282.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(376014)(366016)(1800799024)(10070799003)(4053099003)(13003099007)(8096899003)(38070700018);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0:
+ =?us-ascii?Q?Xg/PqlTMqvJhueaKC8p1E6OPYFAFWJk4u6VYwCnyWgIJvAVftTUIWpAOgoAI?=
+ =?us-ascii?Q?Q2IS0/gJ5pRgUXgYzgvDRJvHdxkGxhb3qhH2Y7MRHuU2c5a46WoQTWPylh14?=
+ =?us-ascii?Q?Z7Ik99cphqcmoQmxf/2pEevHW2Uh7IW8KxmUaU/+ldaTobjTxq13NsW8qRZz?=
+ =?us-ascii?Q?J8m/u2FUaLPGqpJdsWI33cV64yHlMvz8s1uoGY2tR57l1N1k38p/6p4jT9bW?=
+ =?us-ascii?Q?0fJMaZdb2iNEE4QOG2wZiIyJPI+TI0pQDH1Xt0q/Tw5JNgp34NFohmjBXvIL?=
+ =?us-ascii?Q?ZTNUcG6cI3X/h0zC9m6KROqSMvIEoZehYxr0KGPrmLLEz3qwlplcSPJhWopx?=
+ =?us-ascii?Q?z3jelWaAhoeT5eMp4L9shUp1NcBeFmIk/SS07kjak0fMbKKUSNdQ4qYOzKNF?=
+ =?us-ascii?Q?3HJ+78cqfe2ERUPwXhggaAAPYc40cdsJ/BGn+IZpCY5Ip2mHQ31eeR0KUcWe?=
+ =?us-ascii?Q?563SyPK66B/1jmWPtPnaPz9DUoF24bxN8PN5s1eidWgBHz8FY1Z/zb1ri+4M?=
+ =?us-ascii?Q?SlLumjuPP/gVfYxr/7tiNzh+mW7fh/WeUSO66mNEg/7AzD6EhlbGUaAxyivs?=
+ =?us-ascii?Q?CBX/AOxKcYvRQzEU9pJZnVISSdau8RybetB7KaQ/+wWUYw+/moy/9/nd4rMs?=
+ =?us-ascii?Q?tyzM/uA4ZFGe6EBfL0mrmIaEwV/LB/37noaYZaKRPq6IooMQJn7qCN8Hpno3?=
+ =?us-ascii?Q?knf9X5tp7FkLEycpDtuSPO6AzszKvwbkpYotvwf1ikvKTrVq4o+OCQYBGEHL?=
+ =?us-ascii?Q?5KxItUGgis8i5T4BLJKKfQIXtLIz7wZrCVTsUlCizEkHyNai1axwEf7vip0Y?=
+ =?us-ascii?Q?c9SdCs7UuE1Br5PzsN0pLnzAgbKqDRpsKUZ2iBJaKCsw3eN9On6rlJoGlZXT?=
+ =?us-ascii?Q?SKjl50MoatnJruIEGU/q2uodFI//XTJJF7UbeqLkMPdM/SRHYTxSVUygPeAj?=
+ =?us-ascii?Q?pFBzd/O/HgMtEv01WkolXCzKn+TafShOHpuJBtgmTpAf80sTKyW6O61WijW1?=
+ =?us-ascii?Q?BlczrQQVDO7HyN0m1mIvvQGNLLNVbMTxh4BMW7rYg1CwMi3bDVtaqxdU0YPe?=
+ =?us-ascii?Q?c0UadziwSm1csPNsK5e1RjmEHDs4PnJSGrhVic9yhMKxJ0vhxih5zuJEJiEY?=
+ =?us-ascii?Q?KyJEfizYKieYD/ZDBrUln4OyJjNaz7tlbthmVuX+qEBL6TESWrLF4DduDfhO?=
+ =?us-ascii?Q?E+wUK/TGgpdluBgc9KJkWxGL+S0+PxZTkAgGk+VxyLN9GOtn4aYmgS+Rt/B2?=
+ =?us-ascii?Q?QQBZcdgp/gtNEY00OROVi3sw/kitd5cAqW1XCMnrpkZTdocsT1qFV6bLNjYs?=
+ =?us-ascii?Q?fxSaKdfJat50AYPCD9SDNCv87x6a6VH6g1Y8zWsaoZKOGjT3O2Yo456qBKdT?=
+ =?us-ascii?Q?Ax4FYwGJKdZimGrkQyiLSnJU3mSnlikSlGJyVThONDgERHlXxlW4q0pcSBZg?=
+ =?us-ascii?Q?sCfcq0KWkDgb7LWRLHFUOiilPO3swmiuJL5qQifd6Hr/k/EfEV2FQTcP9CIW?=
+ =?us-ascii?Q?rvjVVL7EL0DtGjcMJImwfB7NklfYsPl1JmH3bDizmWcPWRdJOl/DoAkBLnGD?=
+ =?us-ascii?Q?Pr7rVjC/pcMWsVEGYCXtWU1RUgNw3sU0aazkzwEW6O+ZQ1WMdtKIgLMQ6aQZ?=
+ =?us-ascii?Q?B6I+ip5dIC4m7QAS1GI7Hc+8AEhmCg0sSoYpgcBnAiHuMQDFIOziD6SrnbhK?=
+ =?us-ascii?Q?RJoIyg=3D=3D?=
+Content-Type: multipart/related;
+	boundary="_005_SYYP282MB0846AA3672075227212A40FCAD24ASYYP282MB0846AUSP_";
+	type="multipart/alternative"
+MIME-Version: 1.0
+X-OriginatorOrg: tower.co.nz
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: SYYP282MB0846.AUSP282.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-Network-Message-Id: e953f99d-5d16-472a-f347-08ddcf16b649
+X-MS-Exchange-CrossTenant-originalarrivaltime: 30 Jul 2025 03:11:01.0764
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: ff85220d-ac35-48f0-b12a-0ca11f170147
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: TfxtjOyhc4XLIDc0/xSRXhrZhi5GIvl4ncfQLKWDSaw61EhKODfAM3zIP6VE+AEp8F+L+PRv3yQzurg4GqH0IMUdGewtq22scoN751MWkHw=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SYYP282MB0767
+X-MANTSH: 1TFkXGxoaHxEKWUQXYFpEYHlbSGNjeX4RCllNF25PRkNcT1gRCl9ZFxgZHhEKX00
+ XZEVETxEKWUkXGnEaEBp3BhgbHnEbGR0QGncGGBoGGhEKWV4XbGx5EQpDThdYZ3Jua2weaH91U
+ n1rE0NbfHkaEkxzGXAfYRJ5RXlYexEKWFwXGQQaBB8eBRsaBBscHwQYGAQYHhwQGx4aHxoRCl5
+ ZF0xcUGJFEQpNXBcZGhoRCkxaF2loaWtNaxEKTEYXb2tra2xNaxEKQ1oXGxIfBBsZGAQbEhkEG
+ BgaEQpCXhcbEQpCXBcbEQpeThcbEQpCSxdgbR8Yc3p5bHpPUhEKQkkXYG0fGHN6eWx6T1IRCkJ
+ FF3p9BUVQfFJ9QF8SEQpCThdgbR8Yc3p5bHpPUhEKQkwXYUZOH3p9H2xyAUYRCkJsF2FgBW9rQ
+ k1eTGttEQpCQBdhWkVIE0ISQHxiRREKQlgXYkZpTEkTW0lYemURClpYFxsRCnBnF21acAVeSGV
+ cRmt5EBkaEQpwaBduSB9gf3NHc0tgXhAaEQpwaBdrT1B7HnAcBV9IWxAaEQpwaBdmGG9oWX9aY
+ kUcZRAaEQpwaBdkSHlScHl9Rm5DARAaEQpwaBdvfmROH0t5ExJbQBAaEQpwaBdneU5ebUFpTnt
+ saxAaEQpwaBduHhlCSElhE0QaeRAaEQpwaBdocEx+SxNLZn9LZhAaEQpwfxd6TEFgcEBpbWISH
+ RAZGhEKcF8XYE9Fa3hwT2t4f2kQGRoRCnB9F2BhT0ZdHHtkcBxjEBkaEQpwfxdhemQfexxeYgF
+ 5RRAdGhEKcF8XbW5iaxJDW2VaaEwQHhIRCnB9F2hbcBltaHsFBWlJEB4SEQpwfxdpExpNbVlMH
+ 3NpGRAbGBEKcF8XYBpuWRx/GEduUGcQHhIRCnB9F28ab0QBXExCbFgFEB4SEQpwfRdoW3AZbWh
+ 7BQVpSRAeEhEKcH0XYGFPRl0ce2RwHGMQGRoRCnBnF2xcTGlPE1xnfmdwEBoRCnB9F2hbcBlta
+ HsFBWlJEB4SEQpwZxdkE2JjHXNpG1JJbhAaEQpwfRdvGm9EAVxMQmxYBRAeEhEKcH0XaFtwGW1
+ oewUFaUkQHhIRCnBjF2ldU2YbRHoZR1trEBoRCnBjF2AdcxhHcxhObUh8EBoRCnBsF2NhU2tjc
+ hl5enkeEB0eEQpwTBdsXFgFfXxZZnl7GBAaEQpwQxdvGkVLU0BYeGF7ExAZGhEKbX4XGhEKWE0
+ XSxE=
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzMwMDAyMSBTYWx0ZWRfXyeyDORR4cm3+
+ nMDWQJRxRBRp7qzurKJmy+YqFelyVhNqYMfdM96wa4izOwaCWpXucVaHKxZN67nMJW0IyOKT2HZ
+ SthQRHm/nmEG8PNCweabq91NGxbmhOeH6H1uqTEq74sAM5i6+mpqxTgZOOQ5FJT0QkHspqG4nwn
+ vZ+zprvMbvd5/9R6CT1229eHsUWI6UYYI12em5lhHFgp3eCod53dydBXjqzNicaDMOdGwMMOQA3
+ 3Vf3C+YsjsfvMQYzOfZm4/ePtJleHlm2OOSz9ZzBOM9N5vkiqBe1FUHqMCfT7MEnIM78k6OG5Mw
+ K00GBx9LabV0ZG1vEQz
+X-Proofpoint-GUID: rMXDAF4BU_xWA9iqVS08fY3Z5K8SoSrQ
+X-Proofpoint-ORIG-GUID: rMXDAF4BU_xWA9iqVS08fY3Z5K8SoSrQ
+
+
+--_005_SYYP282MB0846AA3672075227212A40FCAD24ASYYP282MB0846AUSP_
+Content-Type: multipart/alternative;
+	boundary=_000_SYYP282MB0846AA3672075227212A40FCAD24ASYYP282MB0846AUSP_
+
+
+--_000_SYYP282MB0846AA3672075227212A40FCAD24ASYYP282MB0846AUSP_
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=us-ascii
+
+
+Hi Raffaella,
+
+I hope you're doing well. My apologies resending with correct spelling of y=
+our name.
+
+I am just touching base with you with regards to the electronic items that =
+you took with you from the property (laptops, tablets, and mobile phones) t=
+hat you have concerns about.
+
+I can arrange for our assessment company, Connect, to carry out an assessme=
+nt of these items for you. They will provide the necessary packaging so you=
+ can send the items directly to them.
+
+All I need is a list of said items and I can get that arranged for you.
+
+Kindest Regards
+
+
+Sasha C
+Claims Consultant | Tower
+DDI: 09 369 0583
+PO Box 90347, Auckland 1142
+claims@tower.co.nz<mailto:claims@tower.co.nz> | tower.co.nz<http://www.towe=
+r.co.nz/>
+
+[Logo, company name  Description automatically generated] [Financial Insura=
+nce Code] <https://www.icnz.org.nz/fair-insurance-code/>
+
+
+Tower Limited holds a transitional Financial Advice Provider license by the=
+ Financial Markets Authority.
+Our staff are Tower Nominated Representatives and may provide financial adv=
+ice on insurance products provided by Tower.
+Tower Insurance is a member of the Insurance and Financial Services Ombudsm=
+an Scheme.
+Please click here<https://www.tower.co.nz/about-us/publicly-available-discl=
+osure/> for our publicly available disclosure document.
+
+Fair Insurance Code
+Tower is a member of the Insurance Council of New Zealand (ICNZ). We abide =
+by the ICNZ Fair Insurance Code<https://www.icnz.org.nz/fair-insurance-code=
+/>.
+
+
+
+
+________________________________
+
+The information contained in this email message is confidential and may be =
+legally privileged. If you are not the intended recipient, please note that=
+ any use, dissemination, distribution, or reproduction of this message in a=
+ny form whatsoever, is strictly prohibited. If you received this email in e=
+rror, please notify me by return email, delete your copy, and accept my apo=
+logies for any inconvenience caused. Please note that your receipt of this =
+email from a Tower email address does not constitute our consent for you to=
+ send any other electronic information to Tower by return, unless specifica=
+lly stated otherwise.
+
+
+Classification: Sensitive
+
+--_000_SYYP282MB0846AA3672075227212A40FCAD24ASYYP282MB0846AUSP_
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=us-ascii
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micr=
+osoft-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:x=3D"urn:schemas-microsoft-com:office:excel" xmlns:m=3D"http://schema=
+s.microsoft.com/office/2004/12/omml" xmlns=3D"http://www.w3.org/TR/REC-html=
+40">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dus-ascii"=
+>
+<meta name=3D"Generator" content=3D"Microsoft Word 15 (filtered medium)">
+<!--[if !mso]><style>v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style><![endif]--><style><!--
+/* Font Definitions */
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:Aptos;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ligatures:standardcontextual;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:#0563C1;
+	text-decoration:underline;}
+span.EmailStyle19
+	{mso-style-type:personal-reply;
+	font-family:"Calibri",sans-serif;
+	color:windowtext;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:10.0pt;
+	mso-ligatures:none;}
+@page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]-->
+</head>
+<body lang=3D"EN-US" link=3D"#0563C1" vlink=3D"#954F72" style=3D"word-wrap:=
+break-word">
+<div class=3D"WordSection1">
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">Hi Raffaella, <o:p>=
+</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt"><o:p>&nbsp;</o:p></=
+span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">I hope you're doing=
+ well. My apologies resending with correct spelling of your name.<b>
+<o:p></o:p></b></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">&nbsp;<o:p></o:p></=
+span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">I am just touching =
+base with you with regards to the electronic items that you took with you f=
+rom the property (laptops, tablets, and mobile phones) that you have concer=
+ns about.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">&nbsp;<o:p></o:p></=
+span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">I can arrange for o=
+ur assessment company, Connect, to carry out an assessment of these items f=
+or you. They will provide the necessary packaging so you can send the items=
+ directly to them.&nbsp;<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt"><o:p>&nbsp;</o:p></=
+span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">All I need is a lis=
+t of said items and I can get that arranged for you.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">&nbsp;<o:p></o:p></=
+span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">Kindest Regards<o:p=
+></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt"><o:p>&nbsp;</o:p></=
+span></p>
+<p class=3D"MsoNormal"><b><span lang=3D"EN-NZ" style=3D"font-size:11.0pt;ms=
+o-ligatures:none"><o:p>&nbsp;</o:p></span></b></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;color:#001272;mso=
+-ligatures:none">Sasha C<br>
+</span></b><span style=3D"font-size:11.0pt;color:#001272;mso-ligatures:none=
+">Claims Consultant | Tower<br>
+<b>DDI: </b>09 369 0583<br>
+PO Box 90347,&nbsp;Auckland&nbsp;1142<br>
+</span><span style=3D"font-size:11.0pt;color:black;mso-ligatures:none"><a h=
+ref=3D"mailto:claims@tower.co.nz"><span style=3D"color:blue">claims@tower.c=
+o.nz</span></a></span><span style=3D"font-size:11.0pt;color:#001272;mso-lig=
+atures:none">&nbsp;|&nbsp;</span><span lang=3D"EN-NZ" style=3D"font-size:11=
+.0pt;color:black;mso-ligatures:none"><a href=3D"http://www.tower.co.nz/"><s=
+pan lang=3D"EN-US" style=3D"color:#001272">tower.co.nz</span></a></span><sp=
+an lang=3D"EN-NZ" style=3D"font-size:11.0pt;color:#001272;mso-ligatures:non=
+e"><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-NZ" style=3D"font-size:8.0pt;font-f=
+amily:&quot;Verdana&quot;,sans-serif;color:#001272;mso-ligatures:none"><o:p=
+>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-NZ" style=3D"font-size:8.0pt;font-f=
+amily:&quot;Verdana&quot;,sans-serif;color:#001272;mso-ligatures:none"><img=
+ border=3D"0" width=3D"129" height=3D"58" style=3D"width:1.3437in;height:.6=
+041in" id=3D"Picture_x0020_72" src=3D"cid:image001.jpg@01DC0162.ACCFBAF0" a=
+lt=3D"Logo, company name=0A=
+=0A=
+Description automatically generated"></span><span style=3D"font-size:8.0pt;=
+font-family:&quot;Verdana&quot;,sans-serif;color:#001272;mso-ligatures:none=
+">&nbsp;</span><a href=3D"https://www.icnz.org.nz/fair-insurance-code/"><sp=
+an lang=3D"EN-NZ" style=3D"font-size:8.0pt;font-family:&quot;Verdana&quot;,=
+sans-serif;color:#001272;mso-ligatures:none;text-decoration:none"><img bord=
+er=3D"0" width=3D"56" height=3D"55" style=3D"width:.5833in;height:.5729in" =
+id=3D"Picture_x0020_71" src=3D"cid:image002.png@01DC0162.ACCFBAF0" alt=3D"F=
+inancial Insurance Code"></span></a><span style=3D"font-size:8.0pt;font-fam=
+ily:&quot;Verdana&quot;,sans-serif;color:#001272;mso-ligatures:none"><o:p><=
+/o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:8.0pt;font-family:&quot;Ver=
+dana&quot;,sans-serif;color:#001272;mso-ligatures:none"><o:p>&nbsp;</o:p></=
+span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-NZ" style=3D"font-size:8.0pt;font-f=
+amily:&quot;Verdana&quot;,sans-serif;color:#001272;mso-ligatures:none"><o:p=
+>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-NZ" style=3D"font-size:8.0pt;font-f=
+amily:&quot;Verdana&quot;,sans-serif;color:#001272;mso-ligatures:none">Towe=
+r&nbsp;Limited&nbsp;holds a transitional Financial Advice Provider&nbsp;lic=
+ense&nbsp;by the Financial Markets Authority.
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-NZ" style=3D"font-size:8.0pt;font-f=
+amily:&quot;Verdana&quot;,sans-serif;color:#001272;mso-ligatures:none">Our =
+staff are&nbsp;Tower Nominated Representatives&nbsp;and may provide financi=
+al advice on insurance products provided&nbsp;by Tower.
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-NZ" style=3D"font-size:8.0pt;font-f=
+amily:&quot;Verdana&quot;,sans-serif;color:#001272;mso-ligatures:none">Towe=
+r Insurance is a member of the Insurance and Financial Services Ombudsman S=
+cheme.
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-NZ" style=3D"font-size:8.0pt;font-f=
+amily:&quot;Verdana&quot;,sans-serif;color:#001272;mso-ligatures:none">Plea=
+se
+</span><span lang=3D"EN-NZ" style=3D"font-size:11.0pt;color:black;mso-ligat=
+ures:none"><a href=3D"https://www.tower.co.nz/about-us/publicly-available-d=
+isclosure/"><span style=3D"font-size:8.0pt;font-family:&quot;Verdana&quot;,=
+sans-serif;color:#001272">click here</span></a></span><span lang=3D"EN-NZ" =
+style=3D"font-size:8.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:#=
+001272;mso-ligatures:none">
+ for our&nbsp;publicly available disclosure document.&nbsp;<o:p></o:p></spa=
+n></p>
+<p class=3D"MsoNormal"><b><span lang=3D"EN-NZ" style=3D"font-size:8.0pt;fon=
+t-family:&quot;Verdana&quot;,sans-serif;color:#001272;mso-ligatures:none"><=
+o:p>&nbsp;</o:p></span></b></p>
+<p class=3D"MsoNormal"><b><span lang=3D"EN-NZ" style=3D"font-size:8.0pt;fon=
+t-family:&quot;Verdana&quot;,sans-serif;color:#001272;mso-ligatures:none">F=
+air Insurance Code</span></b><span lang=3D"EN-NZ" style=3D"font-size:8.0pt;=
+font-family:&quot;Verdana&quot;,sans-serif;color:#001272;mso-ligatures:none=
+"><br>
+Tower is a member of the Insurance Council of New Zealand (ICNZ). We abide =
+by the&nbsp;</span><span lang=3D"EN-NZ" style=3D"font-size:11.0pt;color:bla=
+ck;mso-ligatures:none"><a href=3D"https://www.icnz.org.nz/fair-insurance-co=
+de/" target=3D"_blank" title=3D"Fair Insurance Code link"><span style=3D"fo=
+nt-size:8.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:#001272">ICN=
+Z
+ Fair Insurance Code</span></a></span><span lang=3D"EN-NZ" style=3D"font-si=
+ze:8.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:#001272;mso-ligat=
+ures:none">.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-NZ" style=3D"font-size:8.0pt;font-f=
+amily:&quot;Verdana&quot;,sans-serif;color:#001272;mso-ligatures:none"><o:p=
+>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Verdana&quot;,sans-serif;color:#001272;mso-ligatures:none"><o:p>&nbsp;</o:=
+p></span></b></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+<br>
+<hr>
+<font face=3D"Arial" color=3D"Gray" size=3D"1"><br>
+The information contained in this email message is confidential and may be =
+legally privileged. If you are not the intended recipient, please note that=
+ any use, dissemination, distribution, or reproduction of this message in a=
+ny form whatsoever, is strictly
+ prohibited. If you received this email in error, please notify me by retur=
+n email, delete your copy, and accept my apologies for any inconvenience ca=
+used. Please note that your receipt of this email from a Tower email addres=
+s does not constitute our consent
+ for you to send any other electronic information to Tower by return, unles=
+s specifically stated otherwise.<br>
+</font><br>
+<p style=3D"font-family:Calibri;font-size:10pt;color:#000000;margin:5pt;fon=
+t-style:normal;font-weight:normal;text-decoration:none;" align=3D"Center">
+Classification: Sensitive<br>
+</p>
+</body>
+</html>
+
+--_000_SYYP282MB0846AA3672075227212A40FCAD24ASYYP282MB0846AUSP_--
+
+--_005_SYYP282MB0846AA3672075227212A40FCAD24ASYYP282MB0846AUSP_
+Content-Transfer-Encoding: base64
+Content-Disposition: inline;
+	size=1999;
+	modification-date="Wed, 30 Jul 2025 03:11:00 GMT";
+	filename=image001.jpg;
+	creation-date="Wed, 30 Jul 2025 03:11:00 GMT"
+Content-Type: image/jpeg;
+	name=image001.jpg
+X-Apple-Content-Length: 2704
+Content-Id: <image001.jpg@01DC0162.ACCFBAF0>
+
+
+--_005_SYYP282MB0846AA3672075227212A40FCAD24ASYYP282MB0846AUSP_
+Content-Transfer-Encoding: base64
+Content-Disposition: inline;
+	size=5135;
+	modification-date="Wed, 30 Jul 2025 03:11:00 GMT";
+	filename=image002.png;
+	creation-date="Wed, 30 Jul 2025 03:11:00 GMT"
+Content-Type: image/png;
+	name=image002.png
+X-Apple-Content-Length: 6939
+Content-Id: <image002.png@01DC0162.ACCFBAF0>
+
+
+--_005_SYYP282MB0846AA3672075227212A40FCAD24ASYYP282MB0846AUSP_--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>conversation-id</key>
+	<integer>60221</integer>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1753845077</integer>
+	<key>flags</key>
+	<integer>8590133249</integer>
+	<key>remote-id</key>
+	<string>66824</string>
+</dict>
+</plist>

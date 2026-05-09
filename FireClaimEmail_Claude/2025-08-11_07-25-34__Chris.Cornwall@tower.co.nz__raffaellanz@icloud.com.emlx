@@ -1,0 +1,288 @@
+16084     
+Return-path: <>
+Original-recipient: rfc822;raffaellanz@icloud.com
+Received: from p00-icloudmta-smtpin-us-central-1n-100-percent-16 by p136-mailgateway-smtp-67c7b56f9-hnb2c (mailgateway 2530B71)
+	with SMTP id ffe273d5-9fc6-4923-b8fa-3cdd8c9a4d36 
+	for <raffaellanz@icloud.com>; Mon, 11 Aug 2025 07:25:47 GMT
+X-Apple-MoveToFolder: INBOX 
+X-Apple-Action: MOVE_TO_FOLDER/INBOX
+X-Apple-UUID: ffe273d5-9fc6-4923-b8fa-3cdd8c9a4d36
+Received: from mx07-0055a601.pphosted.com (mx07-0055a601.pphosted.com [185.132.183.220])
+	by p00-icloudmta-smtpin-us-central-1n-100-percent-16 (Postfix) with ESMTPS id 09E35C000AB
+	for <raffaellanz@icloud.com>; Mon, 11 Aug 2025 07:25:42 +0000 (UTC)
+X-ICL-Info: GAtbRVYCBVFFSlVHSgQFUFUKE0oWX1gHVQoPB0UBDldbSFVFVgEOUVtLVEdYVVJfABcNGRdHWEITHVsDF0dTEFsaCVkWShYQFkQUFh5WVwcZFQcZAnBfARkWExNWU1kPVREDGxcNWxpFTktHSAUDA0NJV1kIQF4NBg0DE1ZTWQ9VCRIFRV1OUkJUVkdNBVdURUhIBwhYWREBHAJZG19bQhEdWwMXR1MQWxoJWRZKFg8cHVtLQQYPBkEcXhYbUwFbQU1VFEEFV1cTSFUTHVRQUBQYURE4Y29WJUteRTVyB1tCTkg2LWNmUE1LSCcqf3JMOiwyOzd/fUw2NitJ
+X-ICL-Score: 2.23303302432
+Authentication-Results: bimi.icloud.com; bimi=none
+X-ARC-Info: policy=fail; arc=pass; id=mx.microsoft.com 1
+Authentication-Results: arc.icloud.com; arc=pass
+Authentication-Results: dmarc.icloud.com; dmarc=pass header.from=tower.co.nz
+X-DMARC-Policy: v=DMARC1; p=reject; rua=mailto:dmarc_rua@emaildefense.proofpoint.com,mailto:dmarc_agg@vali.email,mailto:dmarc-reports@tower.co.nz; ruf=mailto:dmarc-reports@tower.co.nz,mailto:dmarc_ruf@emaildefense.proofpoint.com; fo=1; ri=3600
+X-DMARC-Info: pass=pass; dmarc-policy=reject; s=r0; d=r1; pdomain=tower.co.nz
+Authentication-Results: dkim-verifier.icloud.com;
+	dkim=pass (1024-bit key) header.d=tower.co.nz header.i=@tower.co.nz header.b=ei8lFmH2
+Authentication-Results: spf.icloud.com; spf=none (spf.icloud.com: mailer_daemon@mx07-0055a601.pphosted.com does not designate permitted sender hosts) smtp.mailfrom=
+Received-SPF: none (spf.icloud.com: mailer_daemon@mx07-0055a601.pphosted.com does not designate permitted sender hosts) receiver=spf.icloud.com; client-ip=185.132.183.220; helo=mx07-0055a601.pphosted.com; envelope-from=
+Received: from pps.filterd (m0385030.ppops.net [127.0.0.1])
+	by mx07-0055a601.pphosted.com (8.18.1.8/8.18.1.8) with ESMTP id 57B7IRJY1907739
+	for <raffaellanz@icloud.com>; Mon, 11 Aug 2025 19:25:40 +1200
+Received: from sy2pr01cu004.outbound.protection.outlook.com (mail-australiaeastazhn15011023.outbound.protection.outlook.com [52.102.200.23])
+	by mx07-0055a601.pphosted.com (PPS) with ESMTPS id 48enycgkq9-1
+	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT)
+	for <raffaellanz@icloud.com>; Mon, 11 Aug 2025 19:25:39 +1200 (NZT)
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=zCB7oq353y44v9gIqPtccmiPOMBq+5nCs0L+kM1aD5XQw42uJFMrbO96R/XjYeeD93ikqZ+gsGkwOwkUMT2r2HbcM7Umx3KE6pfFV6Qlm3Krj/xhUaaCAT8CJcwMj2Y7Ldb1/M2brNlV4Pe7tbxMGkgNNLycd9kE9mdd6ws700GLXUXrsyQxuMl0gF3btC+HRt8BzLMbFLTPst8Q+nEjNfFyPkS6oyhzXcpmFxjQJ9AeNdC4KKe2I29FGoFyA3xdGHiWG+ENp/6Oqwo6aTZVDKV3HJmfEjhTwKEIwpK6bFtcYcW/R9RMBT0GoZ+pbG7e1BiGh5xy/BUERmF6w03Rlw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=YXDQX9ypes9sQr5vXlqQ8e9O8JWut4VB8++CFlzf3qM=;
+ b=aPGLEzIn6YhXZbMrKy1Kc+cMLNSdwGF3kk+P5viGvNONtZk7VhXsBO0CNMsahClNoJammEv7hS4ddbTGuBNgU0xtVC81ecwU4j+WkbEctJn+vhH53dz7GoDcWOBIIscIvT4U3+pJc5dIMSQ6tWoJy79SbsZIp+ld/sKRS1xhcakxtozvVPik8T1u5KWP/FYVw2phwaw+SCQism1pBqtDshcO2AZlgF6E5aiEnAd8y5LMhiQbQtTxGcqfk5m9fB7b3SYvIcuDgW4mMOyucLT5vcU+X1v8Xd5ojAfG2VZ+LEOuUEPLOOi1npN2QaqGDXJmLhs07j8NnLAum1W7U0tnTQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=pass
+ action=none header.from=tower.co.nz; dkim=pass header.d=tower.co.nz; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tower.co.nz;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=YXDQX9ypes9sQr5vXlqQ8e9O8JWut4VB8++CFlzf3qM=;
+ b=ei8lFmH2xI172tYbFv7zEf8dRDWioemhBOOs5trimFn5BiII35Vt4k3D7+ZwIV/uHd/ATNkaPQhzwQgEgp6FtXm6/RBecpwP1aGJblrkcQUI2FTjpzRA93IOBct5yaPvFbGhXeC/bqdECWhZpqBqq3NyFSO4/2OFvd8ZWeA3oWA=
+Received: from SY4P282MB1977.AUSP282.PROD.OUTLOOK.COM (2603:10c6:10:cc::7) by
+ SY8P282MB5260.AUSP282.PROD.OUTLOOK.COM (2603:10c6:10:2b7::8) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.9009.21; Mon, 11 Aug 2025 07:25:34 +0000
+Received: from SY4P282MB1977.AUSP282.PROD.OUTLOOK.COM ([::1]) by
+ SY4P282MB1977.AUSP282.PROD.OUTLOOK.COM ([fe80::f8c5:64ca:a8b5:a7bd%6]) with
+ Microsoft SMTP Server id 15.20.9009.018; Mon, 11 Aug 2025 07:25:34 +0000
+From: Chris Cornwall <Chris.Cornwall@tower.co.nz>
+To: Raffaella del Prete <raffaellanz@icloud.com>
+Subject: Automatic reply: 23 Mays Road, Devonport - C90306048 - Repair Scoping
+ - 12:30 today
+Thread-Topic: 23 Mays Road, Devonport - C90306048 - Repair Scoping - 12:30
+ today
+Thread-Index: AdwKN0WR2nTP8JUST9umgKwZj+y5uQAPYrmwAAcOtIAAAAVUCg==
+Date: Mon, 11 Aug 2025 07:25:34 +0000
+Message-ID:
+ <969d4e8acc79443c95a5f13dedf2aa7f@SY4P282MB1977.AUSP282.PROD.OUTLOOK.COM>
+References:
+ <ME0P282MB44035C3C7982D8FB68D6DC23D729A@ME0P282MB4403.AUSP282.PROD.OUTLOOK.COM>
+ <ME0P282MB4403FA14A2B8961D76C4B7AAD728A@ME0P282MB4403.AUSP282.PROD.OUTLOOK.COM>
+ <990ACE4E-4A43-479A-8F49-F29BA67BD411@icloud.com>
+In-Reply-To: <990ACE4E-4A43-479A-8F49-F29BA67BD411@icloud.com>
+X-MS-Has-Attach:
+X-Auto-Response-Suppress: All
+X-MS-Exchange-Inbox-Rules-Loop: chris.cornwall@tower.co.nz
+X-MS-TNEF-Correlator:
+x-ms-exchange-parent-message-id:
+ <990ACE4E-4A43-479A-8F49-F29BA67BD411@icloud.com>
+auto-submitted: auto-generated
+x-ms-exchange-generated-message-source: Mailbox Rules Agent
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: SY4P282MB1977:EE_|SY8P282MB5260:EE_
+x-ms-office365-filtering-correlation-id: 325497f5-a01f-4620-16d3-08ddd8a8430f
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam:
+ BCL:0;ARA:13230040|50650200027|1800799024|366016|10070799003|376014|8096899003|80100003;
+x-microsoft-antispam-message-info:
+ =?us-ascii?Q?Vv45Wp3v48AgJbMM1mCEHZIyidGcMymXqDLLFuf3gAkxDST/odGK6/CgKijv?=
+ =?us-ascii?Q?T0qvMmdRe/sKMOYF5HFEqwehKiO7c33M4xFXZ6W7DWX2IG1h5sG5MbDBry2q?=
+ =?us-ascii?Q?0pYM1tBo4Sa2soSZyKHUuLPKWStMxKmvvkKXsQ3QUQ3XABLpnyJx8AD6ULKG?=
+ =?us-ascii?Q?UtCXfNy3iwiWy/VtVlpbR+EbIZFDU97vzYuv6F1vC/o2H1yYJOcBbEb0cIKy?=
+ =?us-ascii?Q?V7zymWrAY3JzMFZYRbWpX1xLKlaGcWCLZXS67tpXiyBKsqtTKlUEk0phedlW?=
+ =?us-ascii?Q?o9KDm80uNMCxaKcPEk0eiZyf9fPNsWiLYblVQuMuYHagDJPrAUppcEXS5UIu?=
+ =?us-ascii?Q?uy11nIq1osJ/ofbiab7fsfbusrb04jmargY8Z5jmMTKsUbYkXiIIuZhDW1Gr?=
+ =?us-ascii?Q?SKwqlyRrNy3GfJE3LHt581bvWxhX3BW4gcAKAg4uIs+HrJz7VICpydFBJeLl?=
+ =?us-ascii?Q?+UNQc7ePf53VWgD1HeJuxygvSFpOzIK8CWsIPLi3O+8CghwGS18Lug4/jhKb?=
+ =?us-ascii?Q?hxmsBiV7j4GKfXvpJuAxVd/cPL9fP/XQCS6PorlFxhvTUSQ8jpA8NU4ydfHw?=
+ =?us-ascii?Q?PIh7Br2or2tH1O6tl91P6Q3YtgKzWuH9thwYJqURAN+4vrYOwGS+h7Dy1zBB?=
+ =?us-ascii?Q?mA4kX8Xq31gU1MBZu+Jqzgue7z8z05c9QTymnloG/uhsT27JNPmh0hmXbRrV?=
+ =?us-ascii?Q?uigsOBrwfGrEuAzvlPk5AJinMa7E7I0QfF57LBNjw+4ELGBHHgamnJJYCmJm?=
+ =?us-ascii?Q?QXfyPcQZlExa2wUhRwbLYAwCTBJGLey98Z99r1oaawd004qwoeXK/5Gl3hf+?=
+ =?us-ascii?Q?NLZFEuLVpDoiKHIDOBoe8oQS3LQufp6x0njWaCVgBhH2QCQvb1O/xlFPqt1+?=
+ =?us-ascii?Q?s2pQ1VFcgbocOoNIPqnBACBQWrSKYzZUxBLso6jvrvbSnRdLUdvr1R3SADKG?=
+ =?us-ascii?Q?9aeRgR1sgq2D5KFrFDkjsrgkmkOA60tXc/C3ARebvm7gXyIXSeRwjU6sXd9j?=
+ =?us-ascii?Q?OCRbZODOUOBLup6zicn+ENd68lLDtjdA3EMRP2FmlRQpDNVCXX9B0JOlxhsG?=
+ =?us-ascii?Q?lf0LtNtiL1RmdvukMREy1l/GXk5TD5YIzUR/nYg/buRrjfWb8AQyY5xxsGX+?=
+ =?us-ascii?Q?Ht+4XdGnOci2OdTakDwkHq4KS1WzHtjkla8W5FPxwjI0O6sXP5QU0H63APIU?=
+ =?us-ascii?Q?JoXGv7wbFQn3sgDoaCurpG0S5I4rHy84HmdFDFI0zDkrxw1N/mrPutfwrsgJ?=
+ =?us-ascii?Q?3SJz1CrPOnd+/Tv/FQYGhPE73QWblUzuyzXeiLAxiWtRJO0XsOOz3/pq9nKJ?=
+ =?us-ascii?Q?zKd84sCMXR8ejcEjwL8+bpIbTGXHubw4n3aMQJ16kAZUpNP6I4I/1xkhNXca?=
+ =?us-ascii?Q?52eI4T+3p33UcJNAqilmGqZKwiT0nqFtHeNsWLktB41D01R4joqff+8GNlHl?=
+ =?us-ascii?Q?1V/35MxrC5Q=3D?=
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SY4P282MB1977.AUSP282.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(50650200027)(1800799024)(366016)(10070799003)(376014)(8096899003)(80100003);DIR:OUT;SFP:1501;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0:
+ LjsWe73z8K+8HonzQrSb8GqaI32yJzvQqK6o62DDTWpeNJNC8LJKb7Pxhz53R1s/nG1MclQZEieKGU/hrXvYHfEu9UiSg45JV0RNFwPP5dxrOu2nJRfL5f8fqz8crCGqTWLOYXRiK0PJIaPtr07q3CQocX5/Ck9h8DuV9XBASoz2aM/EjzrEBrh+x8AVr1p0sgn2cU/V9gptGgvLUulKSIAAV6uwf4FupWz82/FfC70rF+lnC4dT+KSkK9Bx3ouKXXbbEakKTHhz3LLNcGRodrhKjvRgZuLnNb9SwvjwSsdLbPUwxFcwsQBNJc3Of1Vu
+Content-Type: multipart/alternative;
+	boundary="_000_969d4e8acc79443c95a5f13dedf2aa7fSY4P282MB1977AUSP282PRO_"
+MIME-Version: 1.0
+X-OriginatorOrg: tower.co.nz
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: SY4P282MB1977.AUSP282.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-Network-Message-Id: 325497f5-a01f-4620-16d3-08ddd8a8430f
+X-MS-Exchange-CrossTenant-originalarrivaltime: 11 Aug 2025 07:25:34.7497
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: ff85220d-ac35-48f0-b12a-0ca11f170147
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SY8P282MB5260
+X-MANTSH: 1TFkXGxoaHxEKWUQXZVkBXU9LYG1EUGgRCllNF25PRkNcT1gRCl9ZFxsTGBEKX00
+ XZEVETxEKWUkXGnEaEBp3BhsdGHEbGhgQGncGGBoGGhEKWV4XbGx5EQpDThduY1tsc0d+UnVAe
+ nV7eEATHntYfm1YUm0TXxlIGUkTWBEKWFwXGQQaBB8eBRsaBBscHwQYGAQYHh0QGx4aHxoRCl5
+ ZF0xQUAF5EQpNXBceHBEKTFoXaG9rTWsRCkxGF29Na2NiTWsRCkNaFxsSHwQbGRgEGxIZBBgYG
+ hEKQl4XGxEKQlwXGxEKXk4XGxEKQksXYG0fGHN6eWx6T1IRCkJJF2BtHxhzenlsek9SEQpCRRd
+ pekBPa3oSSXlEexEKQk4XYG0fGHN6eWx6T1IRCkJMF2BiUmxaZV1pa2VnEQpCbBdrZl9HZk95U
+ 39MAREKQkAXZmdZbGllXkNcGhoRCkJYF2JGaUxJE1tJWHplEQpNXhcbEQpwZxdhHX9QcngYZBh
+ ZTBAZGhEKcGgXax4ZXWZ9UE56ZWkQGRoRCnBoF3puaEZNGFp9RBpfEB8bEQpwaBdkc11deERNW
+ EdjGhAeEhEKcGgXYUd+R05SRmBhYXIQGRoRCnBoF2BmbhxaZ0tjc3xcEBkaEQpwaBdoXB4THnl
+ ZeRoTRxAZGhEKcGgXYhtyfW9TRU9bQ3sQGRoRCnBoF2dffm17c3lwZE1TEBkaEQpwbBd6e1ocS
+ 1p/fERQRBAZGhEKcEwXbFxYBX18WWZ5exgQGRoRCnBDF2hMY3BAeV5PHHoZEB4SEQptfhcbEQp
+ YTRdLEQ==
+X-Proofpoint-ORIG-GUID: DIqFYmTx_jP_QRj94QrTGrxG9u3b3c9r
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODExMDA0OSBTYWx0ZWRfXxB2w3si7mSgG
+ MTQ1nYO155+4hUSI0MV/o+nJmfK4AxHb39UYZ0mcyxjPL7R1QmwfD9h3UMaU5MhURWNup56/4th
+ OTOQSYt6m+PsPpC3HaYN9h2TXxHDYDFeHqOwZsLA0LFq2mnDKc/aFRsnwI2d1FbO2RtPuki2lJ0
+ GDiyoyW8sEKgkr+SeH7im+Z5Kl/m66Z4ktwKfuDrfsV4F0G9F1MpnQDZmeHgFmVWR3iO075Spbe
+ 6eU39zk3nOPAY2yqnVie0hBdW/jolYbDWQw6OlqakphEUq1thpcAIdHK8bN8A9bLlNBPW1OXPdT
+ empN8WotyQdJp36fPpNV32BqN3Uj1z0Loif0LZ1hg==
+X-Proofpoint-GUID: DIqFYmTx_jP_QRj94QrTGrxG9u3b3c9r
+
+--_000_969d4e8acc79443c95a5f13dedf2aa7fSY4P282MB1977AUSP282PRO_
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+Thanks for your email.  I am currently on Annual Leave and will be returnin=
+g to the office on the 18th of August.
+
+If your Email is in relation to a claim please redirect to  Grant.metson@to=
+wer.co.nz with the claim number in the subject line and you will recieve a =
+response as soon as possible.
+For urgent matters please call Tower on 0800 808 808.
+
+
+Kind Regards,
+Chris Cornwall
+
+
+________________________________
+
+The information contained in this email message is confidential and may be =
+legally privileged. If you are not the intended recipient, please note that=
+ any use, dissemination, distribution, or reproduction of this message in a=
+ny form whatsoever, is strictly prohibited. If you received this email in e=
+rror, please notify me by return email, delete your copy, and accept my apo=
+logies for any inconvenience caused. Please note that your receipt of this =
+email from a Tower email address does not constitute our consent for you to=
+ send any other electronic information to Tower by return, unless specifica=
+lly stated otherwise.
+
+--_000_969d4e8acc79443c95a5f13dedf2aa7fSY4P282MB1977AUSP282PRO_
+Content-Type: text/html; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns:o=3D"urn:schemas-microsoft-com:office:office" xmlns:w=3D"urn:sc=
+hemas-microsoft-com:office:word" xmlns:m=3D"http://schemas.microsoft.com/of=
+fice/2004/12/omml" xmlns=3D"http://www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dus-ascii"=
+>
+<meta name=3D"Generator" content=3D"Microsoft Word 15 (filtered medium)">
+<style><!--
+/* Font Definitions */
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	font-size:11.0pt;
+	font-family:"Aptos",sans-serif;
+	mso-ligatures:standardcontextual;
+	mso-fareast-language:EN-US;}
+span.EmailStyle17
+	{mso-style-type:personal-compose;
+	font-family:"Calibri",sans-serif;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:11.0pt;
+	mso-fareast-language:EN-US;}
+@page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+--></style>
+</head>
+<body lang=3D"EN-NZ" link=3D"#467886" vlink=3D"#96607D" style=3D"word-wrap:=
+break-word">
+<div class=3D"WordSection1">
+<p class=3D"MsoNormal" style=3D"text-autospace:none"><span style=3D"font-si=
+ze:12.0pt;font-family:&quot;Calibri&quot;,sans-serif">Thanks for your email=
+.&nbsp; I am currently on Annual Leave and will be returning to the office =
+on the 18th of August.<o:p></o:p></span></p>
+<p class=3D"MsoNormal" style=3D"text-autospace:none"><span style=3D"font-si=
+ze:12.0pt;font-family:&quot;Calibri&quot;,sans-serif"><o:p>&nbsp;</o:p></sp=
+an></p>
+<p class=3D"MsoNormal" style=3D"text-autospace:none"><span style=3D"font-si=
+ze:12.0pt;font-family:&quot;Calibri&quot;,sans-serif">If your Email is in r=
+elation to a claim please redirect to&nbsp; Grant.metson@tower.co.nz with t=
+he claim number in the subject line and you will recieve
+ a response as soon as possible.<o:p></o:p></span></p>
+<p class=3D"MsoNormal" style=3D"text-autospace:none"><span style=3D"font-si=
+ze:12.0pt;font-family:&quot;Calibri&quot;,sans-serif">For urgent matters pl=
+ease call Tower on 0800 808 808.<o:p></o:p></span></p>
+<p class=3D"MsoNormal" style=3D"text-autospace:none"><span style=3D"font-si=
+ze:8.0pt;font-family:&quot;Tahoma&quot;,sans-serif"><o:p>&nbsp;</o:p></span=
+></p>
+<p class=3D"MsoNormal" style=3D"text-autospace:none"><span style=3D"font-si=
+ze:12.0pt;font-family:&quot;Calibri&quot;,sans-serif"><o:p>&nbsp;</o:p></sp=
+an></p>
+<p class=3D"MsoNormal" style=3D"text-autospace:none"><span style=3D"font-si=
+ze:12.0pt;font-family:&quot;Calibri&quot;,sans-serif">Kind Regards,<o:p></o=
+:p></span></p>
+<p class=3D"MsoNormal" style=3D"text-autospace:none"><span style=3D"font-si=
+ze:12.0pt;font-family:&quot;Calibri&quot;,sans-serif">Chris Cornwall<o:p></=
+o:p></span></p>
+<p class=3D"MsoNormal" style=3D"text-autospace:none"><span style=3D"font-si=
+ze:8.0pt;font-family:&quot;Tahoma&quot;,sans-serif"><o:p>&nbsp;</o:p></span=
+></p>
+</div>
+<br>
+<hr>
+<font face=3D"Arial" color=3D"Gray" size=3D"1"><br>
+The information contained in this email message is confidential and may be =
+legally privileged. If you are not the intended recipient, please note that=
+ any use, dissemination, distribution, or reproduction of this message in a=
+ny form whatsoever, is strictly
+ prohibited. If you received this email in error, please notify me by retur=
+n email, delete your copy, and accept my apologies for any inconvenience ca=
+used. Please note that your receipt of this email from a Tower email addres=
+s does not constitute our consent
+ for you to send any other electronic information to Tower by return, unles=
+s specifically stated otherwise.<br>
+</font>
+</body>
+</html>
+
+--_000_969d4e8acc79443c95a5f13dedf2aa7fSY4P282MB1977AUSP282PRO_--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>conversation-id</key>
+	<integer>78043</integer>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1754897147</integer>
+	<key>flags</key>
+	<integer>8590195713</integer>
+	<key>remote-id</key>
+	<string>71263</string>
+</dict>
+</plist>

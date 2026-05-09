@@ -1,0 +1,415 @@
+23687     
+Return-path: <Grant.Metson@tower.co.nz>
+Original-recipient: rfc822;raffaellanz@icloud.com
+Received: from p00-icloudmta-smtpin-us-central-1n-20-percent-1 by p136-mailgateway-smtp-5867f44684-g4mjl (mailgateway 2614B88)
+	with SMTP id c3ad69bf-df7b-49e1-bb53-eb5f3b6a1d8f 
+	for <raffaellanz@icloud.com>; Thu, 16 Apr 2026 01:54:43 GMT
+X-Apple-MoveToFolder: INBOX 
+X-Apple-Action: MOVE_TO_FOLDER/INBOX
+X-Apple-UUID: c3ad69bf-df7b-49e1-bb53-eb5f3b6a1d8f
+Received: from mx07-0055a601.pphosted.com (mx07-0055a601.pphosted.com [185.132.183.220])
+	by p00-icloudmta-smtpin-us-central-1n-20-percent-1 (Postfix) with ESMTPS id AF54CC00111
+	for <raffaellanz@icloud.com>; Thu, 16 Apr 2026 01:54:37 +0000 (UTC)
+X-ICL-Info: GAtbRVYDBVFFSlVHSgMFUFUKE0oWX1gHVQoPB0UBDldbSFVFVgEOUVtLVEdYVVJfMgsHGQweewcBCgkZOERZFRALSBQXHlgYVR8CSgxfQQcHVwUYVl5MQgcaWwUZVlADEBUKFhZKdgsWFQkCHB5VDRhZDhIUXwsPDUlRWkgAA1cUT1ZGVkBGChoKEhIcHlUNGFkWAwoNWxpFTktHSAUDA0NJV1kIQF4NBg0DE1ZTWQ9VHQJKDF9BBwdXBRhWXkxCGBACSkR9c1IlS15FNXICVkVKVzU5dXJRRElQT08GAlVFQCdCQXRyVUdKVDc1dQYyR0FUOjoEAlJGVyciK2AEWkdXNiU3dBgtIC0qODd7GCE6NFg=
+X-ICL-Score: 2.33303302332
+Authentication-Results: bimi.icloud.com; bimi=none
+X-ARC-Info: policy=pass; arc=pass; id=mx.microsoft.com 1; r1=1; r2=1
+Authentication-Results: arc.icloud.com; arc=pass
+Authentication-Results: dmarc.icloud.com; dmarc=pass header.from=tower.co.nz
+X-DMARC-Policy: v=DMARC1; p=reject; rua=mailto:dmarc_rua@emaildefense.proofpoint.com,mailto:dmarc_agg@vali.email,mailto:dmarc-reports@tower.co.nz; ruf=mailto:dmarc-reports@tower.co.nz,mailto:dmarc_ruf@emaildefense.proofpoint.com; fo=1; ri=3600
+X-DMARC-Info: pass=pass; dmarc-policy=reject; s=r1; d=r1; pdomain=tower.co.nz
+Authentication-Results: dkim-verifier.icloud.com; dkim=pass header.d=tower.co.nz header.i=@tower.co.nz header.b=tRn1SLri
+Authentication-Results: dkim-verifier.icloud.com; dkim=pass header.d=tower.co.nz header.i=@tower.co.nz header.b=cs+iA8dx
+Received-SPF: pass (spf.icloud.com: domain of Grant.Metson@tower.co.nz designates 185.132.183.220 as permitted sender) receiver=spf.icloud.com; client-ip=185.132.183.220; helo=mx07-0055a601.pphosted.com; envelope-from=Grant.Metson@tower.co.nz
+Authentication-Results: spf.icloud.com; spf=pass (spf.icloud.com: domain of Grant.Metson@tower.co.nz designates 185.132.183.220 as permitted sender) smtp.mailfrom=Grant.Metson@tower.co.nz
+Received: from pps.filterd (m0385030.ppops.net [127.0.0.1])
+	by mx07-0055a601.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 63FFTRtA2466562;
+	Thu, 16 Apr 2026 13:54:27 +1200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tower.co.nz; h=
+	cc:content-type:date:from:message-id:mime-version:subject:to; s=
+	towerpp; bh=CHpB42K1wJoxoxFWhw7gooYUcDyh7tXcXwPk3GNYh+I=; b=tRn1
+	SLri8SzzA9DfIhA5C/H7helceufl2Z6Uh5lVdWjhsqS8NOoRxHUVpDVKH30kY9PB
+	VOLcOFjUVyGjtyVvoPv6Y+0dUtxtPG6EPWZ/bnIIERaj4FqBPEQkTsyQaYlWFr5L
+	aOgKc8oE8z1/UcnIt3s9B2OXT2wCCSIANVjM36QkXtsGZp5TpQ/JmO7oOOZz047d
+	hZpnPG1xdr2Z4gZHDlwiGAt31KoIFfwlGENxZLtqcUZ1+rViVRZiVu3XdveEe4cA
+	Litnxr+kiErHDq/UB30V06knf3Uq7YRj/z+lWlmxWNI7WZpwawW0wjpK4Z34vg1N
+	NqALJZpOw8cmP545gg==
+Received: from meupr01cu001.outbound.protection.outlook.com (mail-australiasoutheastazon11020075.outbound.protection.outlook.com [52.101.152.75])
+	by mx07-0055a601.pphosted.com (PPS) with ESMTPS id 4dh84j4x5m-1
+	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT);
+	Thu, 16 Apr 2026 13:54:27 +1200 (NZT)
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=KIqcrAaHLqpdl07Eba6LJ0XdLvdQA5ECrtBEDkfOnUJee7YxT5+q3GSZRt44MRula+bOkgR/MsA44twAwJTjcEqovq8IR3XbPOR+12BZRHpgaNmlxaTClRHSgYSTTzuulJNMxUyvFPf/KjVsm9YtHRif2BtwWjIHb00O1u1hNifMvDDmOwAKRpNvYrhoqMXVC8GIn+DErcbXJkjuVOdGDWCXASvQSm15+2Di1ZVXcSrtsZJ/wEYMiPh6P28beekYayOKZ7gkaKiRFazr+s5zruRzaomd0u5HY/zhxxftrqjrLhJHWjZR+ngx0Nk21gv6d/gGWDje0neY8GmGFjf7vg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=CHpB42K1wJoxoxFWhw7gooYUcDyh7tXcXwPk3GNYh+I=;
+ b=fzows7u/SyUqhSwsgMUWj/YAPsMyOhAdvi9lo0XEiUvCSdy1W9PE+DG8e01rvpeUo1KZNy3aqrH0S0aOlxodj4xYxtebkMcW3BzI5dWKpCquVa8tacvyuWR30lRb7SE7qnEyRtVza5vpGX71OUzvizAslDtp9iPG5m/XDwwanbVzbi4CMrro/LYrusZSqZAY0FsMIZ33ZD1Ufm4K3Uqk2SZPbWGzqEPv8Wvbiv7k6S2MZEqAUV2PkjnBAvcKNhQ3qZAxeYp4AOJxJ9G7uo3KtksyY4OtSrTXu8IO1WrUYk4lcx6ZlFIA6RrLlJRMFy20DSVHeJvh/zCo2InJ9Qm5vA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=tower.co.nz; dmarc=pass action=none header.from=tower.co.nz;
+ dkim=pass header.d=tower.co.nz; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tower.co.nz;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=CHpB42K1wJoxoxFWhw7gooYUcDyh7tXcXwPk3GNYh+I=;
+ b=cs+iA8dxFOTFFpQE04s4a71wwmsSzoPLxbTfKNo1wA6aquEJ0EjuLewqcZugAsyasBCXj9Xk2F+c1pPKW/VSLCxDMuedFDjJZ58SGn2N3wtItQyygYe4iDQDiAckOXj6mk9RSeTVQetQPp0PAkS03z3YYpvItC0k3JMhgjIXIRc=
+Received: from ME0P282MB4403.AUSP282.PROD.OUTLOOK.COM (2603:10c6:220:221::13)
+ by SY7P282MB4485.AUSP282.PROD.OUTLOOK.COM (2603:10c6:10:274::18) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9818.21; Thu, 16 Apr
+ 2026 01:54:23 +0000
+Received: from ME0P282MB4403.AUSP282.PROD.OUTLOOK.COM
+ ([fe80::4d27:8025:23:d7a7]) by ME0P282MB4403.AUSP282.PROD.OUTLOOK.COM
+ ([fe80::4d27:8025:23:d7a7%6]) with mapi id 15.20.9818.017; Thu, 16 Apr 2026
+ 01:54:23 +0000
+From: Grant Metson <Grant.Metson@tower.co.nz>
+To: Peter Sparrow <psparrow@asurnz.com>,
+        Warwick Banks
+	<warwick@kclengineering.co>,
+        Raffaella del Prete <raffaellanz@icloud.com>
+CC: Richard Hargreaves <richard.hargreaves@wynnwilliams.co.nz>
+Subject: 23 Mays Street, Devonport - Site Visit
+Thread-Topic: 23 Mays Street, Devonport - Site Visit
+Thread-Index: AdzNQMtOJ/oU2t4sRU+E7VfIoUT/1QAAyTvQ
+Date: Thu, 16 Apr 2026 01:54:23 +0000
+Message-ID:
+ <ME0P282MB44031BAED31068764709A59DD7232@ME0P282MB4403.AUSP282.PROD.OUTLOOK.COM>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+msip_labels:
+x-ms-publictraffictype: Email
+x-ms-exchange-calendar-series-instance-id:
+ BAAAAIIA4AB0xbcQGoLgCAAAAADg1BnWpM3cAQAAAAAAAAAAEAAAAOrS9+pA46pFo0urtUDSSXM=
+x-ms-traffictypediagnostic:
+ ME0P282MB4403:EE_MeetingMessage|SY7P282MB4485:EE_MeetingMessage
+x-ms-office365-filtering-correlation-id: f4b40d88-3d7c-411a-89a7-08de9b5b1518
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam:
+ BCL:0;ARA:13230040|366016|30040799003|1800799024|376014|13003099007|56012099003|8096899003|18002099003|38070700021;
+x-microsoft-antispam-message-info:
+ E27akEsU3yF1IbR1C9u0DL+vItTv5x4Z6EQur3/7p5HAq/sz/m6jlbvlAzOvyzXolqsvfL8LGLF8xxtHwQB/0+U1L2rV7HU+SRCl8+wPBaYrx7/XM1TAPUDNfVtntmbxXlMb6iv0OxE/sim3aEQteXwiod2RF6LHZo9eN543RTd33Gh3h2FEUk19NBEPZ1r0t9fZ1dyxAjVLiNhfnzlycfa8DA0/kPkPgqxav5EprYxnk8Sd936x38mRSIEIU9gJhNypIWuUMzJoqHXyp2fDCAg/EeyJgovR+EBai8W5bbShCUGBj8/e3kIJn7NAvV1DPbG7UjhgW4yLqn/QNpeJzPTfB4O6ch11tfZSmy1iQgPa5Ee994JFbBvViKsroavJ9xmuqos03ax5C7gKt1XdTBpOEXjZdSGcDUFh2oFpteGozhBI6o8GMmwqPvxTe6gT+83J/peokE6w46JtA+Dxpo8B8TJPl7APRQCwLinXvw2mp+eIT5fNsUcWCYAZDiEKWu02u3QNUSRg2GrAro0L534sw1tV8T61LSSMc3eJGBidvh6uhfTaybw1U+idljn/4Dpbv5U52Z8RWhbkEoEHePY67VrWRl3DVyOZ/AFrAD9TbNptoSwL+QbLBmqRuaVQ8F6EdNp3vuHX9iZkHPWJN9r1RXaBdQyll9dOAgzjDfCDu4BMQKFqXNTOGEaGZzvIyRH0ioUo6CYTujxbM7+3c0YiYTa0BPH5VANNS/RxTTr01AutkpYeq7/JDCQy4FNJ3OknjN5SMkvQ+9xPVOtB8GZn1YYQt6d/keZQPYJ7YWI=
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:ME0P282MB4403.AUSP282.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(366016)(30040799003)(1800799024)(376014)(13003099007)(56012099003)(8096899003)(18002099003)(38070700021);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0:
+ =?iso-8859-1?Q?g5E/2JjgKx8yIt1pZpdR0TE8Xn/slv4qaepyV8QeAJIYhv1Q7q6fdrcrek?=
+ =?iso-8859-1?Q?2k7xXKOUbAcf3z6DkvoCXWJO0thZUVXJqG1uq/sAtxhvR8QLDAtLiouckT?=
+ =?iso-8859-1?Q?J0Sw9psCVwAcrCxkhsp92rs1SjtLXbT1/22E4ZPP5SCQ43adGGIQa6jFQ0?=
+ =?iso-8859-1?Q?F1f5FKBwLzNyi5ZbadxwD11hWGS/7KtTiPgLc84HHkB3qq0LoyLYY6nuWu?=
+ =?iso-8859-1?Q?IqihD3d2U+nz/fTqdJmMWrRyRLOgsJBJwJC9+OXpB+pYQELODdt5smfFVs?=
+ =?iso-8859-1?Q?JP4erG6TPDGdVZdOOwEgewuEyxFnh1WtDGH22MUDHCsGaxMAjnldcTpV8R?=
+ =?iso-8859-1?Q?H8/901PTH4rVdJV2N2CKcbseBZygGvQb7ZGw93o/1S9dHRKrLlsqj6g2FM?=
+ =?iso-8859-1?Q?haCtRR++JFgkqg367aiSavNHwTeP7695UX/zRrzEKVQDo6JiWp+xywPM7v?=
+ =?iso-8859-1?Q?nwbRS63BOVaRiuHNd/PvRv39YDX4/+HssKF3FF1tAsm545P9pguUL9E0/4?=
+ =?iso-8859-1?Q?KFVGSSNgNw6tkyUIG4QuSmQ/0tIn261Dqn6GYrARUXbgjJefR5ITS3SU5G?=
+ =?iso-8859-1?Q?gXrbdXmiqgCZPcjNn0Z3vRvMbL6RBnldLpcyb2J6z803It+IcufACLeZ1p?=
+ =?iso-8859-1?Q?zazHts8ZTSzqtb/4vo2gYUSNqRCzPgpTCPP+2KKCSOZCSoaQHwOYjzzd3n?=
+ =?iso-8859-1?Q?Hkr2CBL189J2+yRMcMK3bCvU8SDCZdJr4IR7YC1xsWcC4rgwjRi+2o+EOy?=
+ =?iso-8859-1?Q?jGHrMze/YZLyTOAUaG4PW1BOlJkK78taPaX2QnsKrbjj+hE2g4hjbZ/Jlv?=
+ =?iso-8859-1?Q?teqimtl27HKRtozh6E1cMXAfdsVIU3amSFr+fnUY7piTAu/eB4JRC7h2zR?=
+ =?iso-8859-1?Q?tq1rsRQ//K0QxT1AX58/H6P1qOZ00T8fGb7dU7nVubmzxB38eD/rBlZEvg?=
+ =?iso-8859-1?Q?Hz/2Znge2Iak8RofkbZqHbhslF7BDzL7Hn458cmUYyYdbR5MzyKlzHLA1Z?=
+ =?iso-8859-1?Q?rEBqwjJdQgdpAhSNjno12kyTkaj8R9IkRMeM2JlkH5ly+iX11kUdw46UJA?=
+ =?iso-8859-1?Q?P/sIZ12IKByPUsRQZK6Y5zPWU67M0+CrGOe15seIV/411buv752c7TtbNo?=
+ =?iso-8859-1?Q?fJOuYOXtis+/xD14zkRF8YrWq3F6mKTym0Z1oUhYUsK8/N/WIWDnUPC24I?=
+ =?iso-8859-1?Q?vhC6VV1hBuvw7MUqdbUWuWudrSFr/0RqcSFQpLxe3rW7KXaIm7lpUYRdt2?=
+ =?iso-8859-1?Q?41o6+hC/4DJAWM4KyetpeX7RGQPyM9RhfY75qekGP5Z1ABFuWeLSj7Oz+V?=
+ =?iso-8859-1?Q?B7R77U1e990ByomPZyUnrWNnEm/wzwNI1si+JAfr8++qXYrBfrDkuE3/7x?=
+ =?iso-8859-1?Q?ENn84TbTq0e7ZllixIcDqNv0b1GzkBmQ0747RlsZ5iv0wS/D0oo8oEsVqp?=
+ =?iso-8859-1?Q?qo2Uah0vT3iz1H0qFzGNx2X4h3yC2UYaMoUQIu85hvXltaMgIBq+zOVXgY?=
+ =?iso-8859-1?Q?YQPLtLvoXjYkFOLpOOUWg4/dCwcBk915cW955MqI19Ipwfow/0/1bYcdwz?=
+ =?iso-8859-1?Q?pPsqcms5V/7cwRqucxQTd6cxrk/QEJFAcwSUq2zhAJudXLNe6wkPQrrC5e?=
+ =?iso-8859-1?Q?osgyQxwq9yRDO+dr8wDBhZawk5St/6sKDO0inf4Az0y/iPZu4sEggNSgcA?=
+ =?iso-8859-1?Q?CBK/9epmbkbOY0nCS2JVeyDc3odyCEOeHCzn5hfD9VWEDbzNrrDtkT4UrF?=
+ =?iso-8859-1?Q?s8dsBTJomyaisWTb3BiqJB/gacpaIbKAW86jl+AkrsTuieuevzKl/8vOES?=
+ =?iso-8859-1?Q?HGNUeDWPig=3D=3D?=
+Content-Type: multipart/alternative;
+	boundary="_000_ME0P282MB44031BAED31068764709A59DD7232ME0P282MB4403AUSP_"
+MIME-Version: 1.0
+X-Exchange-RoutingPolicyChecked:
+	RVRp2Jiek5m2KVITvkyblgYgbhRD2dzM1nsF9PiVpfVKVBpGkXKfsUJWrJFvUsboJvGsHXTKQXfMtEx122DzIyyMR9Of+B1Ats2s60P/5vP0Yx8fz/cq0I5qyn+al3O4e2W8ReMVasF9l7lkF6SZ9gzrfM4IrJWYOHhBw1O5sABxLrjyB/onvI3qdYhPYi7godn9MRoMRp34DKjd8Wm38vbxt4TIwpkqpMiqpmypO8Mn5HnzLX/GzC60DQoXUUDDxTt7rwlts8OSc9opROBIQ00qCeFKIzgecL22X6Ty6HlKlHi86zM5yEv+cLJLKPXIaNLwR1cx7QmQmh/a7j/aaQ==
+X-OriginatorOrg: tower.co.nz
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: ME0P282MB4403.AUSP282.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-Network-Message-Id: f4b40d88-3d7c-411a-89a7-08de9b5b1518
+X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Apr 2026 01:54:23.0854
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: ff85220d-ac35-48f0-b12a-0ca11f170147
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: qa5v8s8tH3po+roSz7+eau1sknVEEgeqJXTApH6oXIQEzVCulaieVNduZVTaHbEQ963AQ8Ui8wQyftPueho463MBmnxP0Hzq1zdTjzQFZyc=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SY7P282MB4485
+X-MANTSH: 1TFkXGxoaHxEKWUQXbUtdS05ZYmFwQlIRCllNF25PRkNcT1gRCl9ZFxgbExEKX00
+ XZEVETxEKWUkXGnEaEBp3BhsTE3EbExkQGncGGBoGGhEKWV4XbGx5EQpDThceS3VoaGNjWl5kU
+ 3JOXFliThxJRl9nRmJnW2xLGGRLHREKWFwXGQQaBB8eBRsaGgQdGgQbExIEGx8QGx4aHxoRCl5
+ ZF0JsT3IcEQpNXBcfGhEKTFoXaGlrTWsRCkxGF29ra2trTWsRCkNaFxsSHwQbGRgEGxIZBBgYG
+ hEKQl4XGxEKRF4XGREKREkXGxEKQlwXGxEKXk4XGxEKQksXYG0fGHN6eWx6T1IRCkJJF2BtHxh
+ zenlsek9SEQpCRRdiRBllYEhNbBxBHxEKQk4XYG0fGHN6eWx6T1IRCkJMF2RJGHtFGxlvTGJ/E
+ QpCbBdtWAVDQ3lsYRocTxEKQkAXbU1ffWdQTBtNS0ERCkJYF2JGaUxJE1tJWHplEQpaWBcbGRE
+ KcGcXa2RbG2FibnocSBMQGhEKcGgXYGZkaRteaR1JHmUQBx8YEQpwaBdoThleXmdIBURhchAHG
+ B4RCnBoF2dpX0VlWmNJT10eEAceGhEKcGgXbkl5cht8WkFLaUIQBxkbEQpwaBdiHVpFQR5OG0B
+ QWxAaEQpwaBdpWQVjfFBaTFpPUxAHGBwRCnBoF2lNXW1DfklwH1hoEBoRCnBoF2dffm17c3lwZ
+ E1TEBoRCnB/F2JGa0ESGgUFS2dFEAceHhEKcF8XZWsBXxtiGQFbE04QBxsTEQpwfRdiH2xcc0t
+ sYGRYRRAaEQpwfxdvG0ISRUxvGEZZHxAbHBEKcF8XenhTElBoY0VEcm8QBx4bEQpwfRdpHWJtb
+ Vl9ckIdARAHGR0RCnBfF2YeHGBkHmVvYFxzEAcZGBEKcH0XZ0MeQF9IektHfWEQGhEKcF8XbBJ
+ /GRNNfWRcRG0QBxkfEQpwfRduAUltaFhMYh98HRAaEQpwfRdiH2xcc0tsYGRYRRAaEQpwfRdpH
+ WJtbVl9ckIdARAHGR0RCnB9F2dDHkBfSHpLR31hEBoRCnBnF2lAW0JTRRhkWAFBEBoRCnBrF3p
+ DQHMFb29kHEZ6EBoRCnBLF2MYGGV+S35Ccn0FEAccHxEKcGwXZn9tRH0Sc2Jfex8QGhEKcEwXb
+ FxYBX18WWZ5exgQGhEKcEMXb19zcH57a2lITG8QBxkaEQptfhcaEQpYTRdLEQ==
+X-Proofpoint-GUID: 4a_BBIIptNyXdvsHd6cluMlHMqFa2Na7
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNDE2MDAxNiBTYWx0ZWRfX5WM2PRCnMH/g
+ GOCk3yCSvctKvdfrmx0DSFcmZJhpPH5eqBCan1Mqd51VWo6WFa4J7Wgvup06Xw9DD4fKqxgsb3m
+ rgc3JXZF0mRr0s+ShxiY5zjrMt6TUR0FUz9WDQsdC5bmD/3fhLU629Rgu2RhsbbspKJlzbkNR59
+ 0PEBJ6+QMkj08PXJTEECI6aNIEmbaZiSPKjGH/RC5/4bnwN9Xs5ZGWnL7zEQAWFRd12Lcq6wWiO
+ xj/+sweaQJw5qqshmgUCUI+HqPt8GeuBBiksxXGUfQF5Ks/QEVW1OdHaC+83pSaknKf57st6JxY
+ 0Wxy8ub7djkiWdqfsWz76g9IPCkwLPHL+aWt8Hfcg==
+X-Proofpoint-ORIG-GUID: 4a_BBIIptNyXdvsHd6cluMlHMqFa2Na7
+X-JNJ: AAAAAAABmaj2KVXaKOlFh9OFJY79Wt7QylzymLoFB2VN/4J6niYSUQrArxUnRiW5I1ETGdykpsKMsTQv26/UV7vIbmxmp+xp3S9fsvE/O6twulHDFxQwdQdtVzKYOF2BLa7bh8V7VS/+/WOgpvRPJklMwTcV5I4hrmxZ0v7644xunM2av3/b64tBNBLd+MUQoD098vu1aDU8+pnecex/mcRQx4y82WLwTZHWqXn4TaYUpNleVU+CtpNEsLuZUqgy4ZxdcfmML3mon+nbIj5exowIf5ZMUwhRhX+kA4zku8tsbi7AVzlmHH8Iu+AwlmqNam9ZDATOKE1tUCJogTdY6OdjPKL87sKTiU0bgB7N13gj+u9bjBw2j91ROy4UIJyHrYl8VHo7Bfzx0XPXx3zfiVkf+9r7tAYoomQ7ow/weVsRIkZjYYZg+xIjNoeKInr3gFibw45/xv3EhqqukmpaGIE39Q2ml5mZTXDzRMaa5PP4MW5ckXVx2t0xhnt0HzcUq0Ep64kdTRS8nHn+88LkmQlI1/z31zMbASXmsZrjTDZOS9Kw+DsHcxMfAvQAJZp6JlEubL8oBTTDvpQhOx38WAJTSqLCW5o1ulIjbPOdWv6H3DV5iJkn4IbDYFoXq2/vqietSNgzZjioyFK4tdv2Ng4GlkUr+4MKLJKMVHtlGC6WOdGbc0fwav5EPgNmNj8KCqDxjVDXq69/Vitz81yDYI4BRcYGicSraMZOWbvjH+Y9sx0QOoh6lgA4n7U=
+
+
+--_000_ME0P282MB44031BAED31068764709A59DD7232ME0P282MB4403AUSP_
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=iso-8859-1
+
+Site visit to further review external walls and bracing elements, etc,
+___________________________________________________________________________=
+_____
+Microsoft Teams meeting
+Join: https://teams.microsoft.com/meet/43945406121409?p=3DWCNZGG2qBqDdKIF7h=
+x
+Meeting ID: 439 454 061 214 09
+Passcode: 2Ka7BD62
+________________________________
+Need help?<https://aka.ms/JoinTeamsMeeting?omkt=3Den-US> | System reference=
+<https://teams.microsoft.com/l/meetup-join/19%3ameeting_YzZjYTdlN2YtYWI0ZS0=
+0ZGEzLWE0ZjYtZmEwYzk5OTY5NWY1%40thread.v2/0?context=3D%7b%22Tid%22%3a%22ff8=
+5220d-ac35-48f0-b12a-0ca11f170147%22%2c%22Oid%22%3a%22fdef5830-15eb-46d4-8d=
+53-8bc06ce4d26a%22%7d>
+For organizers: Meeting options<https://teams.microsoft.com/meetingOptions/=
+?organizerId=3Dfdef5830-15eb-46d4-8d53-8bc06ce4d26a&tenantId=3Dff85220d-ac3=
+5-48f0-b12a-0ca11f170147&threadId=3D19_meeting_YzZjYTdlN2YtYWI0ZS00ZGEzLWE0=
+ZjYtZmEwYzk5OTY5NWY1@thread.v2&messageId=3D0&language=3Den-US>
+___________________________________________________________________________=
+_____
+
+
+________________________________
+
+The information contained in this email message is confidential and may be =
+legally privileged. If you are not the intended recipient, please note that=
+ any use, dissemination, distribution, or reproduction of this message in a=
+ny form whatsoever, is strictly prohibited. If you received this email in e=
+rror, please notify me by return email, delete your copy, and accept my apo=
+logies for any inconvenience caused. Please note that your receipt of this =
+email from a Tower email address does not constitute our consent for you to=
+ send any other electronic information to Tower by return, unless specifica=
+lly stated otherwise.
+
+--_000_ME0P282MB44031BAED31068764709A59DD7232ME0P282MB4403AUSP_
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=iso-8859-1
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micr=
+osoft-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" xmlns=3D"http:=
+//www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+<meta name=3D"Generator" content=3D"Microsoft Word 15 (filtered medium)">
+<!--[if !mso]><style>v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style><![endif]--><style><!--
+/* Font Definitions */
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:DengXian;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+@font-face
+	{font-family:"\@DengXian";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"Segoe UI";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:#467886;
+	text-decoration:underline;}
+span.me-email-text
+	{mso-style-name:me-email-text;}
+span.me-email-text-secondary
+	{mso-style-name:me-email-text-secondary;}
+span.EmailStyle20
+	{mso-style-type:personal-compose;
+	font-family:"Aptos",sans-serif;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:10.0pt;
+	mso-ligatures:none;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]-->
+</head>
+<body lang=3D"EN-US" link=3D"#467886" vlink=3D"#96607D" style=3D"word-wrap:=
+break-word">
+<div class=3D"WordSection1">
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Aptos&quot;,sans-se=
+rif">Site visit to further review external walls and bracing elements, etc,
+<o:p></o:p></span></p>
+<div>
+<div style=3D"margin-bottom:.25in;overflow:hidden">
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Segoe UI&quot;,sans=
+-serif;color:#242424">_____________________________________________________=
+___________________________</span><span style=3D"font-size:12.0pt;font-fami=
+ly:&quot;Segoe UI&quot;,sans-serif;color:#242424"><o:p></o:p></span></p>
+</div>
+<div style=3D"margin-bottom:9.0pt">
+<p class=3D"MsoNormal"><span class=3D"me-email-text"><b><span style=3D"font=
+-size:15.0pt;font-family:&quot;Segoe UI&quot;,sans-serif;color:#242424">Mic=
+rosoft Teams meeting</span></b></span><span style=3D"font-family:&quot;Sego=
+e UI&quot;,sans-serif;color:#242424">
+<o:p></o:p></span></p>
+</div>
+<div style=3D"margin-bottom:4.5pt;overflow-wrap: break-word">
+<p class=3D"MsoNormal"><span class=3D"me-email-text"><b><span style=3D"font=
+-size:15.0pt;font-family:&quot;Segoe UI&quot;,sans-serif;color:#242424">Joi=
+n:
+</span></b></span><span style=3D"font-family:&quot;Segoe UI&quot;,sans-seri=
+f;color:#242424"><a href=3D"https://teams.microsoft.com/meet/43945406121409=
+?p=3DWCNZGG2qBqDdKIF7hx" title=3D"Meeting join"><span style=3D"font-size:15=
+.0pt;color:#5B5FC7">https://teams.microsoft.com/meet/43945406121409?p=3DWCN=
+ZGG2qBqDdKIF7hx</span></a>
+<o:p></o:p></span></p>
+</div>
+<div style=3D"margin-bottom:4.5pt">
+<p class=3D"MsoNormal"><span class=3D"me-email-text-secondary"><span style=
+=3D"font-size:10.5pt;font-family:&quot;Segoe UI&quot;,sans-serif;color:#616=
+161">Meeting ID:
+</span></span><span class=3D"me-email-text"><span style=3D"font-size:10.5pt=
+;font-family:&quot;Segoe UI&quot;,sans-serif;color:#242424">439 454 061 214=
+ 09</span></span><span style=3D"font-family:&quot;Segoe UI&quot;,sans-serif=
+;color:#242424">
+<o:p></o:p></span></p>
+</div>
+<div style=3D"margin-bottom:24.0pt">
+<p class=3D"MsoNormal"><span class=3D"me-email-text-secondary"><span style=
+=3D"font-size:10.5pt;font-family:&quot;Segoe UI&quot;,sans-serif;color:#616=
+161">Passcode:
+</span></span><span class=3D"me-email-text"><span style=3D"font-size:10.5pt=
+;font-family:&quot;Segoe UI&quot;,sans-serif;color:#242424">2Ka7BD62</span>=
+</span><span style=3D"font-family:&quot;Segoe UI&quot;,sans-serif;color:#24=
+2424">
+<o:p></o:p></span></p>
+</div>
+<div style=3D"margin-bottom:9.0pt">
+<div class=3D"MsoNormal" align=3D"center" style=3D"text-align:center"><span=
+ style=3D"font-family:&quot;Segoe UI&quot;,sans-serif;color:#242424">
+<hr size=3D"1" width=3D"100%" align=3D"center">
+</span></div>
+</div>
+<div style=3D"margin-bottom:.25in">
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Segoe UI&quot;,sans=
+-serif;color:#242424"><a href=3D"https://aka.ms/JoinTeamsMeeting?omkt=3Den-=
+US"><span style=3D"font-size:10.5pt;color:#5B5FC7">Need help?</span></a>
+</span><span style=3D"font-family:&quot;Segoe UI&quot;,sans-serif;color:#61=
+6161">|</span><span style=3D"font-family:&quot;Segoe UI&quot;,sans-serif;co=
+lor:#242424">
+<a href=3D"https://teams.microsoft.com/l/meetup-join/19%3ameeting_YzZjYTdlN=
+2YtYWI0ZS00ZGEzLWE0ZjYtZmEwYzk5OTY5NWY1%40thread.v2/0?context=3D%7b%22Tid%2=
+2%3a%22ff85220d-ac35-48f0-b12a-0ca11f170147%22%2c%22Oid%22%3a%22fdef5830-15=
+eb-46d4-8d53-8bc06ce4d26a%22%7d">
+<span style=3D"font-size:10.5pt;color:#5B5FC7">System reference</span></a> =
+<o:p></o:p></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span class=3D"me-email-text-secondary"><span style=
+=3D"font-size:10.5pt;font-family:&quot;Segoe UI&quot;,sans-serif;color:#616=
+161">For organizers:
+</span></span><span style=3D"font-family:&quot;Segoe UI&quot;,sans-serif;co=
+lor:#242424"><a href=3D"https://teams.microsoft.com/meetingOptions/?organiz=
+erId=3Dfdef5830-15eb-46d4-8d53-8bc06ce4d26a&amp;tenantId=3Dff85220d-ac35-48=
+f0-b12a-0ca11f170147&amp;threadId=3D19_meeting_YzZjYTdlN2YtYWI0ZS00ZGEzLWE0=
+ZjYtZmEwYzk5OTY5NWY1@thread.v2&amp;messageId=3D0&amp;language=3Den-US" targ=
+et=3D"_blank"><span style=3D"font-size:10.5pt;color:#5B5FC7">Meeting
+ options</span></a> <o:p></o:p></span></p>
+</div>
+<div style=3D"margin-bottom:.25in;overflow:hidden">
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Segoe UI&quot;,sans=
+-serif;color:#242424">_____________________________________________________=
+___________________________<o:p></o:p></span></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Aptos&quot;,sans-se=
+rif"><o:p>&nbsp;</o:p></span></p>
+</div>
+<br>
+<hr>
+<font face=3D"Arial" color=3D"Gray" size=3D"1"><br>
+The information contained in this email message is confidential and may be =
+legally privileged. If you are not the intended recipient, please note that=
+ any use, dissemination, distribution, or reproduction of this message in a=
+ny form whatsoever, is strictly
+ prohibited. If you received this email in error, please notify me by retur=
+n email, delete your copy, and accept my apologies for any inconvenience ca=
+used. Please note that your receipt of this email from a Tower email addres=
+s does not constitute our consent
+ for you to send any other electronic information to Tower by return, unles=
+s specifically stated otherwise.<br>
+</font>
+</body>
+</html>
+
+--_000_ME0P282MB44031BAED31068764709A59DD7232ME0P282MB4403AUSP_
+X-Apple-Content-Length: 6582
+Content-Type: text/calendar;
+	charset=utf-8;
+	method=REQUEST
+Content-Transfer-Encoding: base64
+
+
+--_000_ME0P282MB44031BAED31068764709A59DD7232ME0P282MB4403AUSP_--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>conversation-id</key>
+	<integer>130283</integer>
+	<key>date-last-viewed</key>
+	<integer>1776304495</integer>
+	<key>date-received</key>
+	<integer>1776304483</integer>
+	<key>flags</key>
+	<integer>25770001537</integer>
+	<key>remote-id</key>
+	<string>90035</string>
+</dict>
+</plist>
