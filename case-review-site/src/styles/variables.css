@@ -1,0 +1,17 @@
+:root {
+  --color-primary: rgb(56, 197, 240);
+  --color-primary-hover: rgba(36, 177, 220, 0.8);
+  --color-background: #f7f3ed;
+
+  --color-sidebar: #15202b;
+
+  --color-text: #1f2933;
+  --color-text-muted: #6b7280;
+
+  --color-card: #ffffff;
+
+  --shadow-card: 0 6px 22px rgba(15, 23, 42, 0.08);
+
+  --radius-card: 18px;
+  --radius-button: 10px;
+}

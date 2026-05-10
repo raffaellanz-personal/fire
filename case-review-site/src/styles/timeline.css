@@ -1,0 +1,64 @@
+.timelinePage {
+  max-width: 1200px;
+}
+
+.timelineForm {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.timelineForm input,
+.timelineForm textarea {
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.timelineForm textarea {
+  min-height: 120px;
+}
+
+.timelineList {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.timelineEventCard {
+  display: flex;
+  gap: 24px;
+  background: white;
+  border-radius: var(--radius-card);
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+  text-align: left;
+}
+
+.timelineLeft {
+  min-width: 140px;
+}
+
+.timelineDate {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.timelineTime {
+  color: var(--color-text-muted);
+}
+
+.timelineRight h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.timelineLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 14px;
+}

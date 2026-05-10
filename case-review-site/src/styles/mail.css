@@ -1,0 +1,187 @@
+.emailDetail {
+  max-width: 1200px;
+}
+
+.emailHeader {
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6b7280;
+  font-weight: 700;
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+}
+
+.evidenceCard {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 24px;
+  margin-bottom: 18px;
+  box-shadow: 0 6px 22px rgba(15, 23, 42, 0.08);
+  text-align: left;
+}
+
+.metaGrid {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 14px 24px;
+  margin: 0;
+  align-items: start;
+}
+
+.metaGrid div {
+  display: contents;
+}
+
+.metaGrid dt {
+  font-weight: 700;
+  color: #475569;
+}
+
+.metaGrid dd {
+  margin: 0;
+  color: #111827;
+}
+
+.muted {
+  color: #6b7280;
+}
+
+.primaryButton {
+  margin-top: 12px;
+  background: #8b341f;
+  color: white;
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.emailBody {
+  margin-top: 20px;
+  background: #f8fafc;
+  border-radius: 14px;
+  padding: 18px;
+  border: 1px solid #e5e7eb;
+}
+
+.emailBody pre {
+  white-space: pre-wrap;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  line-height: 1.6;
+  margin: 0;
+}
+.emailHeader h1 {
+  margin: 0;
+  color: #23a2b8;
+  font-size: 2.4rem;
+}
+
+.evidenceCard h2 {
+  margin-top: 0;
+  margin-bottom: 18px;
+  color: #111827;
+}
+
+.evidenceCard p {
+  line-height: 1.7;
+}
+
+.sourceLinks {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  margin-top: 12px;
+}
+.tagRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.tagPill {
+  border: 0;
+  border-radius: 999px;
+  background: #e0f2fe;
+  color: #075985;
+  padding: 7px 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.inlineForm {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.inlineForm input {
+  flex: 1;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+}
+
+.summaryEditor {
+  width: 100%;
+  min-height: 120px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: inherit;
+}
+
+.secondaryButton {
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  background: #334155;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.issuesList {
+  padding-left: 0;
+  list-style: none;
+}
+
+.issuesList li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+.issuesList button {
+  border: 0;
+  background: transparent;
+  color: #23b9db;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.notesEditor {
+  width: 100%;
+  min-height: 160px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: inherit;
+  resize: vertical;
+}
