@@ -10,6 +10,8 @@ The active project repository is located locally in Git at:
 /Users/raffaelladelprete/Library/Mobile Documents/com~apple~CloudDocs/Documents/Personale/Houses/23 Mays Street/02 Fire/Git/case-review-site
 ```
 
+URL https://github.com/raffaellanz-personal/fire.git 
+
 This is the main working repository.
 
 The intention is:
